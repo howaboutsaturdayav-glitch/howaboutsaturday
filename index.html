@@ -125,10 +125,80 @@
 
     /* ── HERO ── */
     .hero {
-      padding: 5rem 2rem 4rem;
-      text-align: center;
-      max-width: 680px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 88vh;
+      align-items: center;
+      max-width: 1200px;
       margin: 0 auto;
+      padding: 4rem 2rem;
+      gap: 4rem;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: fadeUp 0.7s ease both;
+    }
+    .hero-right {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(58,46,40,0.12);
+      background: var(--parchment);
+      text-decoration: none;
+      display: block;
+    }
+    .hero-right img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-right-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: var(--parchment);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+    }
+    .hero-card-info {
+      padding: 1.5rem 1.75rem 1.75rem;
+      background: var(--parchment);
+    }
+    .hero-card-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #d4847a;
+      margin-bottom: 0.5rem;
+      font-family: var(--sans);
+      font-weight: 500;
+    }
+    .hero-card-title {
+      font-family: var(--display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #5383c6;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .hero-card-desc {
+      font-size: 0.88rem;
+      color: #5a3e32;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+      font-family: var(--sans);
+    }
+    .hero-card-meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.78rem;
+      color: #d4847a;
+      font-family: var(--sans);
+      font-weight: 500;
     }
 
     .hero-eyebrow {
@@ -140,13 +210,12 @@
       font-weight: 400;
       margin-bottom: 1.2rem;
     }
-
     .hero h1 {
       font-family: var(--display);
-      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-size: clamp(2.4rem, 4.5vw, 4rem);
       font-weight: 600;
       line-height: 1.1;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.01em;
       color: var(--deep);
       margin-bottom: 1.25rem;
     }
@@ -162,14 +231,12 @@
       font-weight: 400;
       color: #5a3e32;
       max-width: 440px;
-      margin: 0 auto 2.5rem;
+      margin: 0 0 2.5rem;
       line-height: 1.75;
     }
-
     .hero-actions {
       display: flex;
       gap: 1rem;
-      justify-content: center;
       flex-wrap: wrap;
     }
 
@@ -350,6 +417,76 @@
       padding: 3rem;
       color: var(--light-mid);
       font-size: 0.9rem;
+    }
+
+    /* ── INSTAGRAM GRID ── */
+    .gram-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+    }
+    .gram-tile {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      display: block;
+      background: var(--parchment);
+      text-decoration: none;
+    }
+    .gram-tile img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .gram-tile:hover img { transform: scale(1.05); }
+    .gram-fallback {
+      width: 100%; height: 100%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+    .gram-hover {
+      position: absolute;
+      inset: 0;
+      background: rgba(45, 30, 20, 0.55);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      padding: 1rem;
+      text-align: center;
+    }
+    .gram-tile:hover .gram-hover { opacity: 1; }
+    .gram-hover-tag {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #d4847a;
+      margin-bottom: 0.4rem;
+    }
+    .gram-hover-title {
+      font-family: var(--display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .gram-tile.hidden { display: none; }
+    .gram-no-results {
+      display: none;
+      grid-column: 1/-1;
+      text-align: center;
+      padding: 3rem;
+      color: var(--light-mid);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      .gram-grid { grid-template-columns: repeat(3, 1fr); gap: 2px; }
     }
 
     /* ── RECIPE GRID ── */
@@ -586,6 +723,8 @@
 
     /* ── MOBILE ── */
     @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; gap: 2rem; padding: 2rem 1.5rem; }
+      .hero-left { padding: 0; }
       .content-with-sidebar { grid-template-columns: 1fr; }
       .ad-sidebar-sticky { display: none; }
       .featured-inner { grid-template-columns: 1fr; gap: 2rem; }
@@ -610,52 +749,83 @@
     .hero-sub { animation: fadeUp 0.7s 0.2s ease both; }
     .hero-actions { animation: fadeUp 0.7s 0.3s ease both; }
 
+    
+
     /* ── NAV DROPDOWNS ── */
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-item { position: relative; list-style: none; }
-    .nav-item > a { display: flex; align-items: center; gap: 0.3rem; }
+    .nav-item > a {
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #5a3e32; text-decoration: none;
+      display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s;
+    }
+    .nav-item > a:hover { color: #5383c6; }
     .nav-item > a .nav-arrow { font-size: 0.55rem; transition: transform 0.2s; }
     .nav-item:hover > a .nav-arrow { transform: rotate(180deg); }
+
+    /* Level 1 dropdown */
     .nav-dropdown {
       display: none;
       position: absolute;
-      top: calc(100% + 12px);
+      top: calc(100% + 10px);
       left: 50%;
       transform: translateX(-50%);
-      background: var(--cream);
-      border: 1px solid var(--warm-tan);
+      background: #fde9c8;
+      border: 1px solid #f0d4a8;
       border-radius: 12px;
-      padding: 0.6rem 0;
-      min-width: 220px;
-      z-index: 200;
+      padding: 0.4rem 0;
+      min-width: 160px;
+      z-index: 300;
       box-shadow: 0 8px 32px rgba(58,46,40,0.1);
     }
-    .nav-item:hover .nav-dropdown { display: block; }
-    .nav-dropdown-group { padding: 0.4rem 0; }
-    .nav-dropdown-label {
-      display: block;
-      padding: 0.3rem 1.1rem;
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--light-mid);
-      font-family: var(--sans);
+    .nav-item:hover > .nav-dropdown { display: block; }
+
+    /* Level 1 items */
+    .nav-dropdown > .nav-sub-item {
+      position: relative;
     }
-    .nav-dropdown a {
-      display: block;
-      padding: 0.45rem 1.1rem;
-      font-size: 0.82rem;
-      font-weight: 400;
-      color: var(--mid);
-      text-decoration: none;
-      letter-spacing: 0;
-      text-transform: none;
+    .nav-dropdown > .nav-sub-item > a {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.55rem 1.1rem;
+      font-size: 0.8rem; font-weight: 500;
+      color: #5a3e32; text-decoration: none;
+      letter-spacing: 0.05em; text-transform: none;
       transition: background 0.15s, color 0.15s;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
-    .nav-dropdown a:hover { background: var(--parchment); color: var(--terracotta); }
-    .nav-dropdown-divider { height: 1px; background: var(--warm-tan); margin: 0.4rem 0; }
+    .nav-dropdown > .nav-sub-item > a:hover { background: #faebd8; color: #5383c6; }
+    .nav-dropdown > .nav-sub-item > a .sub-arrow { font-size: 0.55rem; opacity: 0.5; }
+
+    /* Level 2 dropdown */
+    .nav-sub-dropdown {
+      display: none;
+      position: absolute;
+      top: -0.4rem;
+      left: calc(100% + 4px);
+      background: #fde9c8;
+      border: 1px solid #f0d4a8;
+      border-radius: 12px;
+      padding: 0.4rem 0;
+      min-width: 220px;
+      z-index: 400;
+      box-shadow: 0 8px 32px rgba(58,46,40,0.1);
+    }
+    .nav-sub-item:hover > .nav-sub-dropdown { display: block; }
+    .nav-sub-dropdown a {
+      display: block;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.82rem; font-weight: 400;
+      color: #5a3e32; text-decoration: none;
+      text-transform: none; letter-spacing: 0;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .nav-sub-dropdown a:hover { background: #faebd8; color: #5383c6; }
+    .nav-dropdown-divider { height: 1px; background: #f0d4a8; margin: 0.3rem 0; }
+
+    @media (max-width: 860px) {
+      .nav-links li:not(:last-child) { display: none; }
+    }
 
   </style>
 </head>
@@ -668,61 +838,113 @@
   <a class="nav-logo" href="#">How About Saturday</a>
   <ul class="nav-links">
 
+    <!-- RECIPES -->
     <li class="nav-item">
-      <a href="#recipes">Recipes <span class="nav-arrow">▼</span></a>
+      <a href="index.html#recipes">Recipes <span class="nav-arrow">▼</span></a>
       <div class="nav-dropdown">
-        <div class="nav-dropdown-group">
-          <span class="nav-dropdown-label">Beverage</span>
-          <a href="jasmine-matcha-latte.html">Jasmine Matcha Latte</a>
-          <a href="matcha-latte-coffee-cake.html">Matcha Latte Coffee Cake</a>
-          <a href="guava-oolong-milk-tea.html">Guava Oolong Cream Cheese Milk Tea</a>
-          <a href="grape-tea-fizz.html">Grape Tea Fizz</a>
-          <a href="ube-hojicha-latte.html">Ube Hojicha Latte</a>
-          <a href="earl-grey-orange-latte.html">Earl Grey Orange Latte</a>
-          <a href="almond-hot-chocolate.html">Almond Hot Chocolate</a>
+
+        <!-- Beverage -->
+        <div class="nav-sub-item">
+          <a href="#">Beverage <span class="sub-arrow">▶</span></a>
+          <div class="nav-sub-dropdown">
+            <div class="nav-sub-item">
+              <a href="#">Matcha <span class="sub-arrow">▶</span></a>
+              <div class="nav-sub-dropdown">
+                <a href="jasmine-matcha-latte.html">Jasmine Matcha Latte</a>
+                <a href="matcha-brown-butter-blondie.html">Matcha Brown Butter Blondie</a>
+                <a href="matcha-latte-coffee-cake.html">Matcha Latte Coffee Cake</a>
+              </div>
+            </div>
+            <div class="nav-sub-item">
+              <a href="#">Cozy Sips <span class="sub-arrow">▶</span></a>
+              <div class="nav-sub-dropdown">
+                <a href="guava-oolong-milk-tea.html">Guava Oolong Cream Cheese Milk Tea</a>
+                <a href="grape-tea-fizz.html">Grape Tea Fizz</a>
+                <a href="ube-hojicha-latte.html">Ube Hojicha Latte</a>
+                <a href="earl-grey-orange-latte.html">Earl Grey Orange Latte</a>
+                <a href="almond-hot-chocolate.html">Almond Hot Chocolate</a>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="nav-dropdown-divider"></div>
-        <div class="nav-dropdown-group">
-          <span class="nav-dropdown-label">Baking</span>
-          <a href="orange-earl-grey-chocolate-cake.html">Orange Earl Grey Chocolate Cake</a>
-          <a href="lemon-iced-tea-cake.html">Lemon Iced Tea Cake</a>
-          <a href="hojicha-tiramisu.html">Hojicha Tiramisu</a>
-          <a href="almond-poppy-berries-muffin.html">Almond Poppy Berries Muffin</a>
-          <a href="strawberry-hojicha-cheesecake.html">Strawberry Hojicha Cheesecake</a>
-          <a href="peppermint-chocolate-brownie.html">Peppermint Chocolate Brownie</a>
-          <a href="matcha-brown-butter-blondie.html">Matcha Brown Butter Blondie</a>
-          <a href="jasmine-chiffon-cake.html">Jasmine Chiffon Cake</a>
+
+        <!-- Baking -->
+        <div class="nav-sub-item">
+          <a href="#">Baking <span class="sub-arrow">▶</span></a>
+          <div class="nav-sub-dropdown">
+            <div class="nav-sub-item">
+              <a href="#">Cake <span class="sub-arrow">▶</span></a>
+              <div class="nav-sub-dropdown">
+                <a href="orange-earl-grey-chocolate-cake.html">Orange Earl Grey Chocolate Cake</a>
+                <a href="strawberry-hojicha-cheesecake.html">Strawberry Hojicha Cheesecake</a>
+                <a href="jasmine-chiffon-cake.html">Jasmine Chiffon Cake</a>
+              </div>
+            </div>
+            <div class="nav-sub-item">
+              <a href="#">Muffin <span class="sub-arrow">▶</span></a>
+              <div class="nav-sub-dropdown">
+                <a href="almond-poppy-berries-muffin.html">Almond Poppy Berries Muffin</a>
+              </div>
+            </div>
+            <div class="nav-sub-item">
+              <a href="#">Cookies <span class="sub-arrow">▶</span></a>
+              <div class="nav-sub-dropdown">
+                <a href="peppermint-chocolate-brownie.html">Peppermint Chocolate Brownie</a>
+                <a href="matcha-brown-butter-blondie.html">Matcha Brown Butter Blondie</a>
+              </div>
+            </div>
+            <div class="nav-sub-item">
+              <a href="#">Loaf <span class="sub-arrow">▶</span></a>
+              <div class="nav-sub-dropdown">
+                <a href="lemon-iced-tea-cake.html">Lemon Iced Tea Cake</a>
+              </div>
+            </div>
+            <div class="nav-sub-item">
+              <a href="#">Tiramisu <span class="sub-arrow">▶</span></a>
+              <div class="nav-sub-dropdown">
+                <a href="hojicha-tiramisu.html">Hojicha Tiramisu</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </li>
+
+    <!-- SERIES -->
+    <li class="nav-item">
+      <a href="index.html#series">Series <span class="nav-arrow">▼</span></a>
+      <div class="nav-dropdown">
+        <div class="nav-sub-item">
+          <a href="#">Flavours of My Childhood <span class="sub-arrow">▶</span></a>
+          <div class="nav-sub-dropdown">
+            <a href="lemon-iced-tea-cake.html">Lemon Iced Tea Cake</a>
+            <a href="jasmine-chiffon-cake.html">Jasmine Chiffon Cake</a>
+            <a href="orange-earl-grey-chocolate-cake.html">Orange Earl Grey Chocolate Cake</a>
+          </div>
+        </div>
+        <div class="nav-sub-item">
+          <a href="#">Matcha Series <span class="sub-arrow">▶</span></a>
+          <div class="nav-sub-dropdown">
+            <a href="jasmine-matcha-latte.html">Jasmine Matcha Latte</a>
+            <a href="matcha-brown-butter-blondie.html">Matcha Brown Butter Blondie</a>
+            <a href="matcha-latte-coffee-cake.html">Matcha Latte Coffee Cake</a>
+          </div>
+        </div>
+        <div class="nav-sub-item">
+          <a href="#">Hojicha Series <span class="sub-arrow">▶</span></a>
+          <div class="nav-sub-dropdown">
+            <a href="hojicha-tiramisu.html">Hojicha Tiramisu</a>
+            <a href="ube-hojicha-latte.html">Ube Hojicha Latte</a>
+            <a href="strawberry-hojicha-cheesecake.html">Strawberry Hojicha Cheesecake</a>
+          </div>
         </div>
       </div>
     </li>
 
-    <li class="nav-item">
-      <a href="#series">Series <span class="nav-arrow">▼</span></a>
-      <div class="nav-dropdown">
-        <div class="nav-dropdown-group">
-          <span class="nav-dropdown-label">Flavours of My Childhood</span>
-          <a href="lemon-iced-tea-cake.html">Lemon Iced Tea Cake</a>
-          <a href="jasmine-chiffon-cake.html">Jasmine Chiffon Cake</a>
-          <a href="orange-earl-grey-chocolate-cake.html">Orange Earl Grey Chocolate Cake</a>
-        </div>
-        <div class="nav-dropdown-divider"></div>
-        <div class="nav-dropdown-group">
-          <span class="nav-dropdown-label">Matcha Series</span>
-          <a href="jasmine-matcha-latte.html">Jasmine Matcha Latte</a>
-          <a href="matcha-brown-butter-blondie.html">Matcha Brown Butter Blondie</a>
-          <a href="matcha-latte-coffee-cake.html">Matcha Latte Coffee Cake</a>
-        </div>
-        <div class="nav-dropdown-divider"></div>
-        <div class="nav-dropdown-group">
-          <span class="nav-dropdown-label">Hojicha Series</span>
-          <a href="hojicha-tiramisu.html">Hojicha Tiramisu</a>
-          <a href="ube-hojicha-latte.html">Ube Hojicha Latte</a>
-          <a href="strawberry-hojicha-cheesecake.html">Strawberry Hojicha Cheesecake</a>
-        </div>
-      </div>
-    </li>
-
-    <li class="nav-item"><a href="#about">About</a></li>
+    <li class="nav-item"><a href="index.html#about">About</a></li>
     <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram ↗</a></li>
   </ul>
 </nav>
@@ -735,7 +957,7 @@
   <!-- ADSENSE — LEADERBOARD (728×90)
   <ins class="adsbygoogle"
        style="display:inline-block;width:728px;height:90px"
-       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-client="ca-pub-1281955985735338"
        data-ad-slot="XXXXXXXXXX"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   -->
@@ -746,61 +968,40 @@
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
-     HERO
+     HERO — SPLIT PAGE WITH FEATURED RECIPE
 ════════════════════════════════════════════════════════════ -->
 <section class="hero">
-  <p class="hero-eyebrow">Baking · Slow Living · Cozy Drinks</p>
-  <h1>Recipes for a <em style="font-style:italic;color:#d4847a;font-weight:600;">slower</em> kind of Saturday</h1>
-  <p class="hero-sub">
-    Flour on the counter, matcha going cold on the bench, and something
-    already in the oven. Just a girl who loves slow weekends and homemade everything.
-  </p>
-  <div class="hero-actions">
-    <a class="btn btn-primary" href="#recipes">Browse Recipes</a>
-    <a class="btn btn-outline" href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">@howaboutsaturday</a>
-  </div>
-</section>
 
-<div class="divider"></div>
-
-<!-- ══════════════════════════════════════════════════════════
-     AD — POST-HERO RESPONSIVE BANNER (970×90)
-════════════════════════════════════════════════════════════ -->
-<div class="ad-banner" style="margin-bottom:2rem;">
-  <!-- ADSENSE — POST-HERO BANNER (970×90 / responsive)
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-       data-ad-slot="XXXXXXXXXX"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  -->
-  <div class="ad-placeholder" style="width:970px;max-width:100%;height:90px;">
-    Advertisement
-    <span>970 × 90 responsive — replace with AdSense code</span>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════════════
-     FEATURED RECIPE
-════════════════════════════════════════════════════════════ -->
-<section class="featured-section" id="series">
-  <div class="featured-inner">
-    <div class="featured-img-block">
-      <img src="images/orange-earl-grey-chocolate-cake.jpg" alt="Orange Earl Grey Chocolate Cake" style="width:100%;height:100%;object-fit:cover;border-radius:4px;">
-    </div>
-    <div>
-      <p class="featured-label">Featured · Flavours of My Childhood</p>
-      <h2 class="featured-title">Orange Earl Grey <em>Chocolate Cake</em></h2>
-      <p class="featured-body">
-        Bergamot, dark chocolate, and a whisper of candied orange. This one started
-        with a tin of tea and turned into the most requested recipe
-        I've ever made. Layered, fragrant, and very worth the afternoon.
-      </p>
-      <a class="btn btn-primary" href="orange-earl-grey-chocolate-cake.html" target="_blank" rel="noopener">View Recipe</a>
+  <!-- LEFT — text -->
+  <div class="hero-left">
+    <p class="hero-eyebrow">Baking · Slow Living · Cozy Drinks</p>
+    <h1>Recipes for a <em style="font-style:italic;color:#d4847a;font-weight:600;">slower</em> kind of Saturday</h1>
+    <p class="hero-sub">
+      Flour on the counter, matcha going cold on the bench, and something
+      already in the oven. Just a girl who loves slow weekends and homemade everything.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#recipes">Browse Recipes</a>
+      <a class="btn btn-outline" href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">@howaboutsaturday</a>
     </div>
   </div>
+
+  <!-- RIGHT — featured recipe card -->
+  <a class="hero-right" href="orange-earl-grey-chocolate-cake.html">
+    <img src="images/orange-earl-grey-chocolate-cake.jpg" alt="Orange Earl Grey Chocolate Cake"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="hero-right-placeholder" style="display:none;">🍊</div>
+    <div class="hero-card-info">
+      <p class="hero-card-tag">Featured · Cake · Baking</p>
+      <h2 class="hero-card-title">Orange Earl Grey Chocolate Cake</h2>
+      <p class="hero-card-desc">Bergamot, dark chocolate, and a whisper of candied orange. Layered, fragrant, and very worth the afternoon.</p>
+      <div class="hero-card-meta">
+        <span>90 min</span>
+        <span>Serves 10</span>
+      </div>
+    </div>
+  </a>
+
 </section>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -810,7 +1011,7 @@
   <!-- ADSENSE — MID-PAGE LEADERBOARD (728×90)
   <ins class="adsbygoogle"
        style="display:inline-block;width:728px;height:90px"
-       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-client="ca-pub-1281955985735338"
        data-ad-slot="XXXXXXXXXX"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   -->
@@ -821,322 +1022,51 @@
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
-     RECIPES + SIDEBAR
+     RECIPES — INSTAGRAM GRID
 ════════════════════════════════════════════════════════════ -->
-<div class="content-with-sidebar" id="recipes">
+<section id="recipes" style="max-width:1000px;margin:0 auto;padding:0 2rem 5rem;">
 
-  <!-- RECIPE GRID -->
-  <div>
-    <p class="section-label">All Recipes</p>
-    <h2 class="section-title" style="text-align:left;">From the kitchen</h2>
-
-    <!-- FILTER BAR -->
-    <div class="filter-bar">
-      <span class="filter-label">Filter</span>
-
-      <!-- Beverage dropdown -->
+  <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
+    <div>
+      <p class="section-label">All Recipes</p>
+      <h2 class="section-title" style="text-align:left;margin-bottom:0;">From the kitchen</h2>
+    </div>
+    <div class="filter-bar" style="margin-bottom:0;">
       <div class="filter-dropdown">
-        <button class="filter-btn" id="btn-beverage" onclick="toggleDropdown('beverage')">
-          Beverage <span class="arrow">▼</span>
-        </button>
+        <button class="filter-btn" id="btn-beverage" onclick="toggleDropdown('beverage')">Beverage <span class="arrow">▼</span></button>
         <div class="dropdown-menu" id="menu-beverage">
-          <button class="dropdown-item" onclick="filterRecipes('matcha', 'Matcha', 'beverage')">Matcha</button>
-          <button class="dropdown-item" onclick="filterRecipes('cozy-sips', 'Cozy Sips', 'beverage')">Cozy Sips</button>
+          <button class="dropdown-item" onclick="filterRecipes('matcha','Matcha','beverage')">Matcha</button>
+          <button class="dropdown-item" onclick="filterRecipes('cozy-sips','Cozy Sips','beverage')">Cozy Sips</button>
         </div>
       </div>
-
-      <!-- Baking dropdown -->
       <div class="filter-dropdown">
-        <button class="filter-btn" id="btn-baking" onclick="toggleDropdown('baking')">
-          Baking <span class="arrow">▼</span>
-        </button>
+        <button class="filter-btn" id="btn-baking" onclick="toggleDropdown('baking')">Baking <span class="arrow">▼</span></button>
         <div class="dropdown-menu" id="menu-baking">
-          <button class="dropdown-item" onclick="filterRecipes('cake', 'Cake', 'baking')">Cake</button>
-          <button class="dropdown-item" onclick="filterRecipes('muffin', 'Muffin', 'baking')">Muffin</button>
-          <button class="dropdown-item" onclick="filterRecipes('cookies', 'Cookies', 'baking')">Cookies</button>
-          <button class="dropdown-item" onclick="filterRecipes('loaf', 'Loaf', 'baking')">Loaf</button>
-          <button class="dropdown-item" onclick="filterRecipes('tiramisu', 'Tiramisu', 'baking')">Tiramisu</button>
+          <button class="dropdown-item" onclick="filterRecipes('cake','Cake','baking')">Cake</button>
+          <button class="dropdown-item" onclick="filterRecipes('muffin','Muffin','baking')">Muffin</button>
+          <button class="dropdown-item" onclick="filterRecipes('cookies','Cookies','baking')">Cookies</button>
+          <button class="dropdown-item" onclick="filterRecipes('loaf','Loaf','baking')">Loaf</button>
+          <button class="dropdown-item" onclick="filterRecipes('tiramisu','Tiramisu','baking')">Tiramisu</button>
         </div>
       </div>
-
-      <button class="filter-clear" id="clear-filter" onclick="clearFilter()" style="display:none;">✕ Clear filter</button>
+      <button class="filter-clear" id="clear-filter" onclick="clearFilter()" style="display:none;">✕ Clear</button>
     </div>
-
-    <div class="recipes-grid">
-
-      <!-- Card 1 -->
-      <a class="recipe-card" href="jasmine-matcha-latte.html" data-category="matcha">
-        <img src="images/jasmine-matcha-latte.jpg" alt="Jasmine Matcha Latte" class="recipe-thumb">
-        <div class="recipe-body">
-          <p class="recipe-tag">Matcha · Drinks</p>
-          <h3 class="recipe-title">Jasmine Matcha Latte</h3>
-          <p class="recipe-desc">Floral, earthy, and impossibly smooth. The latte you make when you need the morning to feel like a moment.</p>
-          <div class="recipe-meta">
-            <span>5 min</span>
-            <span>Serves 1</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 2 -->
-      <a class="recipe-card" href="lemon-iced-tea-cake.html" data-category="loaf">
-        <img src="images/lemon-iced-tea-cake.jpg" alt="Lemon Iced Tea Cake" class="recipe-thumb">
-        <div class="recipe-body">
-          <p class="recipe-tag">Cake · Baking</p>
-          <h3 class="recipe-title">Lemon Iced Tea Cake with Chatruemae Black Tea</h3>
-          <p class="recipe-desc">A tender loaf soaked in black tea syrup, finished with a lemon glaze that crinkles at the edges.</p>
-          <div class="recipe-meta">
-            <span>75 min</span>
-            <span>Serves 10</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 3 -->
-      <a class="recipe-card" href="hojicha-tiramisu.html" data-category="tiramisu">
-        <img src="images/hojicha-tiramisu.jpg" alt="Hojicha Tiramisu" class="recipe-thumb">
-        <div class="recipe-body">
-          <p class="recipe-tag">Dessert · Baking</p>
-          <h3 class="recipe-title">Hojicha Tiramisu</h3>
-          <p class="recipe-desc">Roasted, nutty hojicha layered into a cloud-soft tiramisu. Cosy and indulgent in equal measure.</p>
-          <div class="recipe-meta">
-            <span>30 min</span>
-            <span>Serves 6</span>
-          </div>
-        </div>
-      </a>
-
-    </div>
-
-    <!-- ══════════════════════════════════════════
-         AD — MID-GRID (728×90 or responsive)
-         Sits between recipe row 1 and row 2
-    ═══════════════════════════════════════════ -->
-    <div style="margin:2rem 0;display:flex;justify-content:center;">
-      <!-- ADSENSE — MID-GRID BANNER (728×90 / responsive)
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-           data-ad-slot="XXXXXXXXXX"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      -->
-      <div class="ad-placeholder" style="width:100%;max-width:728px;height:90px;">
-        Advertisement
-        <span>728 × 90 responsive — replace with AdSense code</span>
-      </div>
-    </div>
-
-    <div class="recipes-grid">
-
-      <!-- Card 4 -->
-      <a class="recipe-card" href="almond-poppy-berries-muffin.html" data-category="muffin">
-        <img src="images/almond-poppy-berries-muffin.jpg" alt="Almond Poppy Berries Muffin" class="recipe-thumb">
-        <div class="recipe-body">
-          <p class="recipe-tag">Baking · Muffins</p>
-          <h3 class="recipe-title">Almond Poppy Berries Muffin</h3>
-          <p class="recipe-desc">Tender, nutty, and bursting with berries. The kind of muffin worth waking up early for on a Saturday.</p>
-          <div class="recipe-meta">
-            <span>35 min</span>
-            <span>Serves 12</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 5 -->
-      <a class="recipe-card" href="guava-oolong-milk-tea.html" data-category="cozy-sips">
-        <img src="images/guava-oolong-milk-tea.jpg" alt="Guava Oolong Cream Cheese Milk Tea" class="recipe-thumb">
-        <div class="recipe-body">
-          <p class="recipe-tag">Drink · Cozy Sips</p>
-          <h3 class="recipe-title">Guava Oolong Cream Cheese Milk Tea</h3>
-          <p class="recipe-desc">Tropical and creamy with the gentle floral notes of oolong. A drink that feels like a little treat.</p>
-          <div class="recipe-meta">
-            <span>10 min</span>
-            <span>Serves 2</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 6 -->
-      <a class="recipe-card" href="grape-tea-fizz.html" data-category="cozy-sips">
-        <img src="images/grape-tea-fizz.jpg" alt="Grape Tea Fizz" class="recipe-thumb">
-        <div class="recipe-body">
-          <p class="recipe-tag">Drink · Cozy Sips</p>
-          <h3 class="recipe-title">Grape Tea Fizz</h3>
-          <p class="recipe-desc">Sparkling and deeply purple, this one is equal parts refreshing and showstopper. Perfect poured over ice at a dinner table.</p>
-          <div class="recipe-meta">
-            <span>5 min</span>
-            <span>Serves 4</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 7 -->
-      <a class="recipe-card" href="strawberry-hojicha-cheesecake.html" data-category="cake">
-        <img src="images/strawberry-hojicha-cheesecake.jpg" alt="Strawberry Hojicha Cheesecake" class="recipe-thumb">
-        <div class="recipe-body">
-          <p class="recipe-tag">Dessert · Baking</p>
-          <h3 class="recipe-title">Strawberry Hojicha Cheesecake</h3>
-          <p class="recipe-desc">Sweet strawberries meet the warm roasted depth of hojicha in a cheesecake that looks as good as it tastes.</p>
-          <div class="recipe-meta">
-            <span>60 min</span>
-            <span>Serves 8</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 8 -->
-      <a class="recipe-card" href="peppermint-chocolate-brownie.html" data-category="cookies">
-        <img src="images/peppermint-chocolate-brownie.jpg" alt="Peppermint Chocolate Brownie" class="recipe-thumb">
-        <div class="recipe-body">
-          <p class="recipe-tag">Baking · Chocolate</p>
-          <h3 class="recipe-title">Peppermint Chocolate Brownie</h3>
-          <p class="recipe-desc">Fudgy, rich, and cool with peppermint. The brownie you make when you want something a little extra.</p>
-          <div class="recipe-meta">
-            <span>40 min</span>
-            <span>Serves 9</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 9 -->
-      <a class="recipe-card" href="ube-hojicha-latte.html" data-category="cozy-sips">
-        <img src="images/ube-hojicha-latte.jpg" alt="Ube Hojicha Latte" class="recipe-thumb">
-        <div class="recipe-body">
-          <p class="recipe-tag">Drink · Cozy Sips</p>
-          <h3 class="recipe-title">Ube Hojicha Latte</h3>
-          <p class="recipe-desc">Purple, earthy, and warming. Ube and roasted hojicha together is a combination you didn't know you needed.</p>
-          <div class="recipe-meta">
-            <span>10 min</span>
-            <span>Serves 1</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 10 -->
-      <a class="recipe-card" href="earl-grey-orange-latte.html" data-category="cozy-sips">
-        <img src="images/earl-grey-orange-latte.jpg" alt="Earl Grey Orange Latte" class="recipe-thumb">
-        <div class="recipe-body">
-          <p class="recipe-tag">Drink · Cozy Sips</p>
-          <h3 class="recipe-title">Earl Grey Orange Latte</h3>
-          <p class="recipe-desc">Bergamot and fresh orange in a warm, silky latte. Elegant enough for a slow Sunday morning.</p>
-          <div class="recipe-meta">
-            <span>8 min</span>
-            <span>Serves 1</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 11 -->
-      <a class="recipe-card" href="matcha-brown-butter-blondie.html" data-category="cookies">
-        <img src="images/matcha-brown-butter-blondie.jpg" alt="Matcha Brown Butter Blondie" class="recipe-thumb">
-        <div class="recipe-body">
-          <p class="recipe-tag">Baking · Matcha</p>
-          <h3 class="recipe-title">Matcha Brown Butter Blondie</h3>
-          <p class="recipe-desc">Nutty brown butter meets earthy matcha in a chewy, golden blondie. Simple to make, impossible to stop eating.</p>
-          <div class="recipe-meta">
-            <span>35 min</span>
-            <span>Serves 9</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 12 -->
-      <a class="recipe-card" href="jasmine-chiffon-cake.html" data-category="cake">
-        <img src="images/jasmine-chiffon-cake.jpg" alt="Jasmine Chiffon Cake" class="recipe-thumb">
-        <div class="recipe-body">
-          <p class="recipe-tag">Cake · Baking</p>
-          <h3 class="recipe-title">Jasmine Chiffon Cake</h3>
-          <p class="recipe-desc">Delicate, floral, and impossibly light. A chiffon that smells like a tea garden and melts like a cloud.</p>
-          <div class="recipe-meta">
-            <span>65 min</span>
-            <span>Serves 8</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 13 -->
-      <a class="recipe-card" href="almond-hot-chocolate.html" data-category="cozy-sips">
-        <img src="images/almond-hot-chocolate.jpg" alt="Almond Hot Chocolate" class="recipe-thumb">
-        <div class="recipe-body">
-          <p class="recipe-tag">Drink · Cozy Sips</p>
-          <h3 class="recipe-title">Almond Hot Chocolate</h3>
-          <p class="recipe-desc">Rich, velvety, and nutty. The hot chocolate you curl up with when the world outside can wait.</p>
-          <div class="recipe-meta">
-            <span>10 min</span>
-            <span>Serves 1</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 14 -->
-      <a class="recipe-card" href="matcha-latte-coffee-cake.html" data-category="matcha">
-        <img src="images/matcha-latte-coffee-cake.jpg" alt="Matcha Latte Coffee Cake" class="recipe-thumb">
-        <div class="recipe-body">
-          <p class="recipe-tag">Baking · Matcha</p>
-          <h3 class="recipe-title">Matcha Latte Coffee Cake</h3>
-          <p class="recipe-desc">Swirled with matcha and topped with a buttery crumble. The kind of cake that makes the whole kitchen smell like a weekend.</p>
-          <div class="recipe-meta">
-            <span>55 min</span>
-            <span>Serves 10</span>
-          </div>
-        </div>
-      </a>
-
-      <div class="no-results">No recipes found in this category yet. Check back soon!</div>
-
-    </div><!-- /second recipes-grid -->
   </div>
 
-  <!-- SIDEBAR ADS — 300×600 + 300×250 stacked -->
-  <aside>
-    <div class="ad-sidebar-sticky" style="display:flex;flex-direction:column;gap:1.5rem;">
-      <!-- ADSENSE — SIDEBAR HALF-PAGE (300×600)
-      <ins class="adsbygoogle"
-           style="display:block;width:300px;height:600px"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-           data-ad-slot="XXXXXXXXXX"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      -->
-      <div class="ad-placeholder" style="width:300px;height:600px;max-width:100%;">
-        Advertisement
-        <span>300 × 600 — replace with AdSense code</span>
-      </div>
-
-      <!-- ADSENSE — SIDEBAR RECTANGLE (300×250)
-      <ins class="adsbygoogle"
-           style="display:block;width:300px;height:250px"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-           data-ad-slot="XXXXXXXXXX"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      -->
-      <div class="ad-placeholder" style="width:300px;height:250px;max-width:100%;">
-        Advertisement
-        <span>300 × 250 — replace with AdSense code</span>
-      </div>
-    </div>
-  </aside>
-
-</div>
-
-<!-- ══════════════════════════════════════════════════════════
-     IN-CONTENT AD — 300×250 rectangle
-     Great placement between recipe sections
-════════════════════════════════════════════════════════════ -->
-<div class="ad-inline">
-  <!-- ADSENSE — IN-CONTENT (300×250)
-  <ins class="adsbygoogle"
-       style="display:block;width:300px;height:250px"
-       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-       data-ad-slot="XXXXXXXXXX"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  -->
-  <div class="ad-placeholder" style="width:300px;height:250px;">
-    Advertisement
-    <span>300 × 250 — replace with AdSense code</span>
+  <div class="gram-grid">
+    <a class="gram-tile" href="orange-earl-grey-chocolate-cake.html" data-category="cake"><img src="images/orange-earl-grey-chocolate-cake.jpg" alt="Orange Earl Grey Chocolate Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🍊</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Orange Earl Grey Chocolate Cake</p></div></a>
+    <a class="gram-tile" href="jasmine-matcha-latte.html" data-category="matcha"><img src="images/jasmine-matcha-latte.jpg" alt="Jasmine Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Jasmine Matcha Latte</p></div></a>
+    <a class="gram-tile" href="hojicha-tiramisu.html" data-category="tiramisu"><img src="images/hojicha-tiramisu.jpg" alt="Hojicha Tiramisu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍮</div><div class="gram-hover"><p class="gram-hover-tag">Tiramisu</p><p class="gram-hover-title">Hojicha Tiramisu</p></div></a>
+    <a class="gram-tile" href="strawberry-hojicha-cheesecake.html" data-category="cake"><img src="images/strawberry-hojicha-cheesecake.jpg" alt="Strawberry Hojicha Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🍓</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Strawberry Hojicha Cheesecake</p></div></a>
+    <a class="gram-tile" href="guava-oolong-milk-tea.html" data-category="cozy-sips"><img src="images/guava-oolong-milk-tea.jpg" alt="Guava Oolong Milk Tea" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;">🧋</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Guava Oolong Cream Cheese Milk Tea</p></div></a>
+    <a class="gram-tile" href="grape-tea-fizz.html" data-category="cozy-sips"><img src="images/grape-tea-fizz.jpg" alt="Grape Tea Fizz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍇</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Grape Tea Fizz</p></div></a>
+    <a class="gram-tile" href="almond-poppy-berries-muffin.html" data-category="muffin"><img src="images/almond-poppy-berries-muffin.jpg" alt="Almond Poppy Berries Muffin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🫐</div><div class="gram-hover"><p class="gram-hover-tag">Muffin</p><p class="gram-hover-title">Almond Poppy Berries Muffin</p></div></a>
+    <a class="gram-tile" href="lemon-iced-tea-cake.html" data-category="loaf"><img src="images/lemon-iced-tea-cake.jpg" alt="Lemon Iced Tea Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;">🍋</div><div class="gram-hover"><p class="gram-hover-tag">Loaf</p><p class="gram-hover-title">Lemon Iced Tea Cake</p></div></a>
+    <a class="gram-tile" href="peppermint-chocolate-brownie.html" data-category="cookies"><img src="images/peppermint-chocolate-brownie.jpg" alt="Peppermint Chocolate Brownie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍫</div><div class="gram-hover"><p class="gram-hover-tag">Cookies</p><p class="gram-hover-title">Peppermint Chocolate Brownie</p></div></a>
+    <div class="gram-no-results">No recipes found in this category yet. Check back soon!</div>
   </div>
-</div>
+
+</section>
 
 <!-- ══════════════════════════════════════════════════════════
      ABOUT
@@ -1162,7 +1092,7 @@
   <!-- ADSENSE — PRE-FOOTER LEADERBOARD (970×90 / responsive)
   <ins class="adsbygoogle"
        style="display:block"
-       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-client="ca-pub-1281955985735338"
        data-ad-slot="XXXXXXXXXX"
        data-ad-format="auto"
        data-full-width-responsive="true"></ins>
@@ -1203,9 +1133,9 @@
 
   function filterRecipes(category, label, parent) {
     activeCategory = category;
-    const cards = document.querySelectorAll('.recipe-card');
-    cards.forEach(card => {
-      card.classList.toggle('hidden', card.dataset.category !== category);
+    const tiles = document.querySelectorAll('.gram-tile');
+    tiles.forEach(tile => {
+      tile.classList.toggle('hidden', tile.dataset.category !== category);
     });
     document.getElementById('btn-' + parent).textContent = label + ' ▼';
     document.getElementById('btn-' + parent).classList.add('active');
@@ -1217,18 +1147,18 @@
 
   function clearFilter() {
     activeCategory = null;
-    document.querySelectorAll('.recipe-card').forEach(c => c.classList.remove('hidden'));
+    document.querySelectorAll('.gram-tile').forEach(c => c.classList.remove('hidden'));
     document.getElementById('btn-beverage').textContent = 'Beverage ▼';
     document.getElementById('btn-baking').textContent = 'Baking ▼';
     document.getElementById('btn-beverage').classList.remove('active');
     document.getElementById('btn-baking').classList.remove('active');
     document.getElementById('clear-filter').style.display = 'none';
-    document.querySelector('.no-results').style.display = 'none';
+    document.querySelector('.gram-no-results').style.display = 'none';
   }
 
   function checkNoResults() {
-    const visible = document.querySelectorAll('.recipe-card:not(.hidden)').length;
-    document.querySelector('.no-results').style.display = visible === 0 ? 'block' : 'none';
+    const visible = document.querySelectorAll('.gram-tile:not(.hidden)').length;
+    document.querySelector('.gram-no-results').style.display = visible === 0 ? 'block' : 'none';
   }
 
   document.addEventListener('click', function(e) {
