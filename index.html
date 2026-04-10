@@ -609,6 +609,54 @@
     .hero h1 { animation: fadeUp 0.7s 0.1s ease both; }
     .hero-sub { animation: fadeUp 0.7s 0.2s ease both; }
     .hero-actions { animation: fadeUp 0.7s 0.3s ease both; }
+
+    /* ── NAV DROPDOWNS ── */
+    .nav-item { position: relative; list-style: none; }
+    .nav-item > a { display: flex; align-items: center; gap: 0.3rem; }
+    .nav-item > a .nav-arrow { font-size: 0.55rem; transition: transform 0.2s; }
+    .nav-item:hover > a .nav-arrow { transform: rotate(180deg); }
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 12px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--cream);
+      border: 1px solid var(--warm-tan);
+      border-radius: 12px;
+      padding: 0.6rem 0;
+      min-width: 220px;
+      z-index: 200;
+      box-shadow: 0 8px 32px rgba(58,46,40,0.1);
+    }
+    .nav-item:hover .nav-dropdown { display: block; }
+    .nav-dropdown-group { padding: 0.4rem 0; }
+    .nav-dropdown-label {
+      display: block;
+      padding: 0.3rem 1.1rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--light-mid);
+      font-family: var(--sans);
+    }
+    .nav-dropdown a {
+      display: block;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--mid);
+      text-decoration: none;
+      letter-spacing: 0;
+      text-transform: none;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .nav-dropdown a:hover { background: var(--parchment); color: var(--terracotta); }
+    .nav-dropdown-divider { height: 1px; background: var(--warm-tan); margin: 0.4rem 0; }
+
   </style>
 </head>
 <body>
@@ -619,10 +667,63 @@
 <nav>
   <a class="nav-logo" href="#">How About Saturday</a>
   <ul class="nav-links">
-    <li><a href="#recipes">Recipes</a></li>
-    <li><a href="#series">Series</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram ↗</a></li>
+
+    <li class="nav-item">
+      <a href="#recipes">Recipes <span class="nav-arrow">▼</span></a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-group">
+          <span class="nav-dropdown-label">Beverage</span>
+          <a href="jasmine-matcha-latte.html">Jasmine Matcha Latte</a>
+          <a href="matcha-latte-coffee-cake.html">Matcha Latte Coffee Cake</a>
+          <a href="guava-oolong-milk-tea.html">Guava Oolong Cream Cheese Milk Tea</a>
+          <a href="grape-tea-fizz.html">Grape Tea Fizz</a>
+          <a href="ube-hojicha-latte.html">Ube Hojicha Latte</a>
+          <a href="earl-grey-orange-latte.html">Earl Grey Orange Latte</a>
+          <a href="almond-hot-chocolate.html">Almond Hot Chocolate</a>
+        </div>
+        <div class="nav-dropdown-divider"></div>
+        <div class="nav-dropdown-group">
+          <span class="nav-dropdown-label">Baking</span>
+          <a href="orange-earl-grey-chocolate-cake.html">Orange Earl Grey Chocolate Cake</a>
+          <a href="lemon-iced-tea-cake.html">Lemon Iced Tea Cake</a>
+          <a href="hojicha-tiramisu.html">Hojicha Tiramisu</a>
+          <a href="almond-poppy-berries-muffin.html">Almond Poppy Berries Muffin</a>
+          <a href="strawberry-hojicha-cheesecake.html">Strawberry Hojicha Cheesecake</a>
+          <a href="peppermint-chocolate-brownie.html">Peppermint Chocolate Brownie</a>
+          <a href="matcha-brown-butter-blondie.html">Matcha Brown Butter Blondie</a>
+          <a href="jasmine-chiffon-cake.html">Jasmine Chiffon Cake</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a href="#series">Series <span class="nav-arrow">▼</span></a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-group">
+          <span class="nav-dropdown-label">Flavours of My Childhood</span>
+          <a href="lemon-iced-tea-cake.html">Lemon Iced Tea Cake</a>
+          <a href="jasmine-chiffon-cake.html">Jasmine Chiffon Cake</a>
+          <a href="orange-earl-grey-chocolate-cake.html">Orange Earl Grey Chocolate Cake</a>
+        </div>
+        <div class="nav-dropdown-divider"></div>
+        <div class="nav-dropdown-group">
+          <span class="nav-dropdown-label">Matcha Series</span>
+          <a href="jasmine-matcha-latte.html">Jasmine Matcha Latte</a>
+          <a href="matcha-brown-butter-blondie.html">Matcha Brown Butter Blondie</a>
+          <a href="matcha-latte-coffee-cake.html">Matcha Latte Coffee Cake</a>
+        </div>
+        <div class="nav-dropdown-divider"></div>
+        <div class="nav-dropdown-group">
+          <span class="nav-dropdown-label">Hojicha Series</span>
+          <a href="hojicha-tiramisu.html">Hojicha Tiramisu</a>
+          <a href="ube-hojicha-latte.html">Ube Hojicha Latte</a>
+          <a href="strawberry-hojicha-cheesecake.html">Strawberry Hojicha Cheesecake</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="nav-item"><a href="#about">About</a></li>
+    <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram ↗</a></li>
   </ul>
 </nav>
 
