@@ -14,7 +14,7 @@
   <!-- =========================================================
        GOOGLE ADSENSE — replace with your publisher ID
        ========================================================= -->
-  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281955985735338" crossorigin="anonymous"></script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -256,6 +256,100 @@
       letter-spacing: 0.05em;
       color: var(--deep);
       margin-bottom: 0.3rem;
+    }
+
+    /* ── RECIPE FILTER ── */
+    .filter-bar {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      align-items: center;
+    }
+    .filter-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--light-mid);
+      margin-right: 0.25rem;
+    }
+    .filter-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .filter-btn {
+      background: var(--parchment);
+      border: 1px solid var(--warm-tan);
+      border-radius: 999px;
+      padding: 0.45rem 1rem;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--mid);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--terracotta);
+      color: #fff;
+      border-color: var(--terracotta);
+    }
+    .filter-btn .arrow { font-size: 0.6rem; transition: transform 0.2s; }
+    .filter-btn.open .arrow { transform: rotate(180deg); }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      background: var(--cream);
+      border: 1px solid var(--warm-tan);
+      border-radius: 10px;
+      padding: 0.4rem 0;
+      min-width: 160px;
+      z-index: 50;
+      box-shadow: 0 8px 24px rgba(58,46,40,0.08);
+    }
+    .dropdown-menu.open { display: block; }
+    .dropdown-item {
+      display: block;
+      width: 100%;
+      padding: 0.55rem 1.1rem;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--mid);
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .dropdown-item:hover { background: var(--parchment); color: var(--terracotta); }
+    .dropdown-item.selected { color: var(--terracotta); font-weight: 500; }
+    .filter-clear {
+      background: none;
+      border: none;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      color: var(--light-mid);
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0.4rem 0.5rem;
+      transition: color 0.2s;
+    }
+    .filter-clear:hover { color: var(--terracotta); }
+    .recipe-card.hidden { display: none; }
+    .no-results {
+      display: none;
+      grid-column: 1/-1;
+      text-align: center;
+      padding: 3rem;
+      color: var(--light-mid);
+      font-size: 0.9rem;
     }
 
     /* ── RECIPE GRID ── */
@@ -635,10 +729,42 @@
     <p class="section-label">All Recipes</p>
     <h2 class="section-title" style="text-align:left;">From the kitchen</h2>
 
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <span class="filter-label">Filter</span>
+
+      <!-- Beverage dropdown -->
+      <div class="filter-dropdown">
+        <button class="filter-btn" id="btn-beverage" onclick="toggleDropdown('beverage')">
+          Beverage <span class="arrow">▼</span>
+        </button>
+        <div class="dropdown-menu" id="menu-beverage">
+          <button class="dropdown-item" onclick="filterRecipes('matcha', 'Matcha', 'beverage')">Matcha</button>
+          <button class="dropdown-item" onclick="filterRecipes('cozy-sips', 'Cozy Sips', 'beverage')">Cozy Sips</button>
+        </div>
+      </div>
+
+      <!-- Baking dropdown -->
+      <div class="filter-dropdown">
+        <button class="filter-btn" id="btn-baking" onclick="toggleDropdown('baking')">
+          Baking <span class="arrow">▼</span>
+        </button>
+        <div class="dropdown-menu" id="menu-baking">
+          <button class="dropdown-item" onclick="filterRecipes('cake', 'Cake', 'baking')">Cake</button>
+          <button class="dropdown-item" onclick="filterRecipes('muffin', 'Muffin', 'baking')">Muffin</button>
+          <button class="dropdown-item" onclick="filterRecipes('cookies', 'Cookies', 'baking')">Cookies</button>
+          <button class="dropdown-item" onclick="filterRecipes('loaf', 'Loaf', 'baking')">Loaf</button>
+          <button class="dropdown-item" onclick="filterRecipes('tiramisu', 'Tiramisu', 'baking')">Tiramisu</button>
+        </div>
+      </div>
+
+      <button class="filter-clear" id="clear-filter" onclick="clearFilter()" style="display:none;">✕ Clear filter</button>
+    </div>
+
     <div class="recipes-grid">
 
       <!-- Card 1 -->
-      <a class="recipe-card" href="jasmine-matcha-latte.html" target="_blank" rel="noopener">
+      <a class="recipe-card" href="jasmine-matcha-latte.html" data-category="matcha">
         <img src="images/jasmine-matcha-latte.jpg" alt="Jasmine Matcha Latte" class="recipe-thumb">
         <div class="recipe-body">
           <p class="recipe-tag">Matcha · Drinks</p>
@@ -652,7 +778,7 @@
       </a>
 
       <!-- Card 2 -->
-      <a class="recipe-card" href="lemon-iced-tea-cake.html" target="_blank" rel="noopener">
+      <a class="recipe-card" href="lemon-iced-tea-cake.html" data-category="loaf">
         <img src="images/lemon-iced-tea-cake.jpg" alt="Lemon Iced Tea Cake" class="recipe-thumb">
         <div class="recipe-body">
           <p class="recipe-tag">Cake · Baking</p>
@@ -666,7 +792,7 @@
       </a>
 
       <!-- Card 3 -->
-      <a class="recipe-card" href="hojicha-tiramisu.html" target="_blank" rel="noopener">
+      <a class="recipe-card" href="hojicha-tiramisu.html" data-category="tiramisu">
         <img src="images/hojicha-tiramisu.jpg" alt="Hojicha Tiramisu" class="recipe-thumb">
         <div class="recipe-body">
           <p class="recipe-tag">Dessert · Baking</p>
@@ -704,7 +830,7 @@
     <div class="recipes-grid">
 
       <!-- Card 4 -->
-      <a class="recipe-card" href="almond-poppy-berries-muffin.html" target="_blank" rel="noopener">
+      <a class="recipe-card" href="almond-poppy-berries-muffin.html" data-category="muffin">
         <img src="images/almond-poppy-berries-muffin.jpg" alt="Almond Poppy Berries Muffin" class="recipe-thumb">
         <div class="recipe-body">
           <p class="recipe-tag">Baking · Muffins</p>
@@ -718,7 +844,7 @@
       </a>
 
       <!-- Card 5 -->
-      <a class="recipe-card" href="guava-oolong-milk-tea.html" target="_blank" rel="noopener">
+      <a class="recipe-card" href="guava-oolong-milk-tea.html" data-category="cozy-sips">
         <img src="images/guava-oolong-milk-tea.jpg" alt="Guava Oolong Cream Cheese Milk Tea" class="recipe-thumb">
         <div class="recipe-body">
           <p class="recipe-tag">Drink · Cozy Sips</p>
@@ -732,7 +858,7 @@
       </a>
 
       <!-- Card 6 -->
-      <a class="recipe-card" href="grape-tea-fizz.html" target="_blank" rel="noopener">
+      <a class="recipe-card" href="grape-tea-fizz.html" data-category="cozy-sips">
         <img src="images/grape-tea-fizz.jpg" alt="Grape Tea Fizz" class="recipe-thumb">
         <div class="recipe-body">
           <p class="recipe-tag">Drink · Cozy Sips</p>
@@ -746,7 +872,7 @@
       </a>
 
       <!-- Card 7 -->
-      <a class="recipe-card" href="strawberry-hojicha-cheesecake.html" target="_blank" rel="noopener">
+      <a class="recipe-card" href="strawberry-hojicha-cheesecake.html" data-category="cake">
         <img src="images/strawberry-hojicha-cheesecake.jpg" alt="Strawberry Hojicha Cheesecake" class="recipe-thumb">
         <div class="recipe-body">
           <p class="recipe-tag">Dessert · Baking</p>
@@ -760,7 +886,7 @@
       </a>
 
       <!-- Card 8 -->
-      <a class="recipe-card" href="peppermint-chocolate-brownie.html" target="_blank" rel="noopener">
+      <a class="recipe-card" href="peppermint-chocolate-brownie.html" data-category="cookies">
         <img src="images/peppermint-chocolate-brownie.jpg" alt="Peppermint Chocolate Brownie" class="recipe-thumb">
         <div class="recipe-body">
           <p class="recipe-tag">Baking · Chocolate</p>
@@ -774,7 +900,7 @@
       </a>
 
       <!-- Card 9 -->
-      <a class="recipe-card" href="ube-hojicha-latte.html" target="_blank" rel="noopener">
+      <a class="recipe-card" href="ube-hojicha-latte.html" data-category="cozy-sips">
         <img src="images/ube-hojicha-latte.jpg" alt="Ube Hojicha Latte" class="recipe-thumb">
         <div class="recipe-body">
           <p class="recipe-tag">Drink · Cozy Sips</p>
@@ -788,7 +914,7 @@
       </a>
 
       <!-- Card 10 -->
-      <a class="recipe-card" href="earl-grey-orange-latte.html" target="_blank" rel="noopener">
+      <a class="recipe-card" href="earl-grey-orange-latte.html" data-category="cozy-sips">
         <img src="images/earl-grey-orange-latte.jpg" alt="Earl Grey Orange Latte" class="recipe-thumb">
         <div class="recipe-body">
           <p class="recipe-tag">Drink · Cozy Sips</p>
@@ -802,7 +928,7 @@
       </a>
 
       <!-- Card 11 -->
-      <a class="recipe-card" href="matcha-brown-butter-blondie.html" target="_blank" rel="noopener">
+      <a class="recipe-card" href="matcha-brown-butter-blondie.html" data-category="cookies">
         <img src="images/matcha-brown-butter-blondie.jpg" alt="Matcha Brown Butter Blondie" class="recipe-thumb">
         <div class="recipe-body">
           <p class="recipe-tag">Baking · Matcha</p>
@@ -816,7 +942,7 @@
       </a>
 
       <!-- Card 12 -->
-      <a class="recipe-card" href="jasmine-chiffon-cake.html" target="_blank" rel="noopener">
+      <a class="recipe-card" href="jasmine-chiffon-cake.html" data-category="cake">
         <img src="images/jasmine-chiffon-cake.jpg" alt="Jasmine Chiffon Cake" class="recipe-thumb">
         <div class="recipe-body">
           <p class="recipe-tag">Cake · Baking</p>
@@ -830,7 +956,7 @@
       </a>
 
       <!-- Card 13 -->
-      <a class="recipe-card" href="almond-hot-chocolate.html" target="_blank" rel="noopener">
+      <a class="recipe-card" href="almond-hot-chocolate.html" data-category="cozy-sips">
         <img src="images/almond-hot-chocolate.jpg" alt="Almond Hot Chocolate" class="recipe-thumb">
         <div class="recipe-body">
           <p class="recipe-tag">Drink · Cozy Sips</p>
@@ -844,7 +970,7 @@
       </a>
 
       <!-- Card 14 -->
-      <a class="recipe-card" href="matcha-latte-coffee-cake.html" target="_blank" rel="noopener">
+      <a class="recipe-card" href="matcha-latte-coffee-cake.html" data-category="matcha">
         <img src="images/matcha-latte-coffee-cake.jpg" alt="Matcha Latte Coffee Cake" class="recipe-thumb">
         <div class="recipe-body">
           <p class="recipe-tag">Baking · Matcha</p>
@@ -856,6 +982,8 @@
           </div>
         </div>
       </a>
+
+      <div class="no-results">No recipes found in this category yet. Check back soon!</div>
 
     </div><!-- /second recipes-grid -->
   </div>
@@ -956,6 +1084,59 @@
   </p>
   <p style="margin-top:1.5rem;">© 2025 How About Saturday · All rights reserved.</p>
 </footer>
+
+<script>
+  let activeCategory = null;
+
+  function toggleDropdown(name) {
+    const menu = document.getElementById('menu-' + name);
+    const btn = document.getElementById('btn-' + name);
+    const others = ['beverage','baking'].filter(n => n !== name);
+    others.forEach(n => {
+      document.getElementById('menu-' + n).classList.remove('open');
+      document.getElementById('btn-' + n).classList.remove('open');
+    });
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  function filterRecipes(category, label, parent) {
+    activeCategory = category;
+    const cards = document.querySelectorAll('.recipe-card');
+    cards.forEach(card => {
+      card.classList.toggle('hidden', card.dataset.category !== category);
+    });
+    document.getElementById('btn-' + parent).textContent = label + ' ▼';
+    document.getElementById('btn-' + parent).classList.add('active');
+    document.getElementById('menu-' + parent).classList.remove('open');
+    document.getElementById('btn-' + parent).classList.remove('open');
+    document.getElementById('clear-filter').style.display = 'inline-block';
+    checkNoResults();
+  }
+
+  function clearFilter() {
+    activeCategory = null;
+    document.querySelectorAll('.recipe-card').forEach(c => c.classList.remove('hidden'));
+    document.getElementById('btn-beverage').textContent = 'Beverage ▼';
+    document.getElementById('btn-baking').textContent = 'Baking ▼';
+    document.getElementById('btn-beverage').classList.remove('active');
+    document.getElementById('btn-baking').classList.remove('active');
+    document.getElementById('clear-filter').style.display = 'none';
+    document.querySelector('.no-results').style.display = 'none';
+  }
+
+  function checkNoResults() {
+    const visible = document.querySelectorAll('.recipe-card:not(.hidden)').length;
+    document.querySelector('.no-results').style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.filter-dropdown')) {
+      document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('open'));
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('open'));
+    }
+  });
+</script>
 
 </body>
 </html>
