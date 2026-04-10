@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How About Saturday | Baking, Slow Living & Cozy Drinks</title>
+  <meta name="description" content="Recipes, baking, and slow living by Amy. @howaboutsaturday" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- =========================================================
+       GOOGLE ADSENSE — replace with your publisher ID
+       ========================================================= -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:     #fde9c8;
+      --parchment: #faebd8;
+      --warm-tan:  #f0d4a8;
+      --terracotta:#5383c6;
+      --burnt:     #3a6aab;
+      --sage:      #998513;
+      --deep:      #5383c6;
+      --mid:       #5a3e32;
+      --light-mid: #d4847a;
+
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --display: 'Cormorant Garamond', Georgia, serif;
+      --sans:  'Jost', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: #5a3e32;
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--cream);
+      border-bottom: 1px solid var(--warm-tan);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-logo {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--deep);
+      text-decoration: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #5a3e32;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #5a3e32;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--terracotta); }
+
+    /* ── ADSENSE BANNER (top) ── */
+    .ad-banner {
+      background: var(--parchment);
+      border-bottom: 1px solid var(--warm-tan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1rem;
+      min-height: 90px;
+    }
+
+    .ad-placeholder {
+      border: 1.5px dashed var(--warm-tan);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      color: var(--light-mid);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      font-family: var(--sans);
+    }
+
+    .ad-placeholder span { font-size: 0.65rem; opacity: 0.7; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #d4847a;
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-family: var(--display);
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      color: var(--deep);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .hero-sub {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #5a3e32;
+      max-width: 440px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.6rem;
+      border-radius: 2px;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 400;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--terracotta);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: var(--burnt); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--deep);
+      border: 1px solid var(--warm-tan);
+    }
+
+    .btn-outline:hover { border-color: var(--terracotta); color: var(--terracotta); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--warm-tan);
+      margin: 0 auto 4rem;
+    }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: var(--display);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-align: center;
+      color: var(--deep);
+      margin-bottom: 3rem;
+    }
+    .recipe-title {
+      font-family: var(--display);
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--deep);
+      margin-bottom: 0.6rem;
+    }
+    .featured-title {
+      font-family: var(--display);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      color: var(--deep);
+      margin-bottom: 1rem;
+    }
+    .about-name {
+      font-family: var(--display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--deep);
+      margin-bottom: 0.3rem;
+    }
+
+    /* ── RECIPE GRID ── */
+    .recipes-section {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+    }
+
+    .recipes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .recipe-card {
+      background: var(--parchment);
+      border: 1px solid var(--warm-tan);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .recipe-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(58,46,40,0.1);
+    }
+
+    .recipe-thumb {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      background: var(--warm-tan);
+    }
+
+    /* Placeholder colour blocks for recipe images */
+    .thumb-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    .recipe-body {
+      padding: 1.25rem 1.4rem 1.5rem;
+    }
+
+    .recipe-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.5rem;
+    }
+
+    .recipe-title {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--deep);
+      margin-bottom: 0.6rem;
+    }
+
+    .recipe-desc {
+      font-size: 0.87rem;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+
+    .recipe-meta {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--light-mid);
+    }
+
+    /* ── IN-CONTENT AD ── */
+    .ad-inline {
+      max-width: 1140px;
+      margin: 0 auto 3rem;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* ── FEATURED / WIDE CARD ── */
+    .featured-section {
+      background: var(--parchment);
+      border-top: 1px solid var(--warm-tan);
+      border-bottom: 1px solid var(--warm-tan);
+      padding: 4rem 2rem;
+      margin-bottom: 5rem;
+    }
+
+    .featured-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .featured-img-block {
+      background: var(--warm-tan);
+      border-radius: 4px;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+
+    .featured-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.75rem;
+    }
+
+    .featured-title {
+      font-family: var(--display);
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--deep);
+      margin-bottom: 1rem;
+    }
+
+    .featured-title em { font-style: italic; color: var(--terracotta); }
+
+    .featured-body {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── ABOUT STRIP ── */
+    .about-section {
+      max-width: 640px;
+      margin: 0 auto 5rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .about-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--warm-tan);
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      border: 3px solid var(--parchment);
+      box-shadow: 0 0 0 2px var(--warm-tan);
+    }
+
+    .about-name {
+      font-family: var(--display);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--deep);
+      margin-bottom: 0.3rem;
+    }
+
+    .about-handle {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--terracotta);
+      margin-bottom: 1rem;
+    }
+
+    .about-text {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.8;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #5a3e32;
+      color: #fde9c8;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: var(--display);
+      font-size: 1.6rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: #d4847a;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    footer p {
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      opacity: 0.6;
+      margin-bottom: 0.4rem;
+    }
+
+    footer a { color: var(--terracotta); text-decoration: none; }
+
+    /* ── AD SIDEBAR LAYOUT ── */
+    .content-with-sidebar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+      margin-bottom: 5rem;
+    }
+
+    .ad-sidebar-sticky {
+      position: sticky;
+      top: 80px;
+      align-self: start;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 860px) {
+      .content-with-sidebar { grid-template-columns: 1fr; }
+      .ad-sidebar-sticky { display: none; }
+      .featured-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .featured-img-block { aspect-ratio: 16/9; }
+      nav { padding: 0 1.2rem; }
+      .nav-links { gap: 1.2rem; }
+    }
+
+    @media (max-width: 560px) {
+      .nav-links li:not(:last-child) { display: none; }
+    }
+
+    /* ── FADE-IN ANIMATION ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero { animation: fadeUp 0.7s ease both; }
+    .hero-eyebrow { animation: fadeUp 0.6s 0.05s ease both; }
+    .hero h1 { animation: fadeUp 0.7s 0.1s ease both; }
+    .hero-sub { animation: fadeUp 0.7s 0.2s ease both; }
+    .hero-actions { animation: fadeUp 0.7s 0.3s ease both; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAV
+════════════════════════════════════════════════════════════ -->
+<nav>
+  <a class="nav-logo" href="#">How About Saturday</a>
+  <ul class="nav-links">
+    <li><a href="#recipes">Recipes</a></li>
+    <li><a href="#series">Series</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram ↗</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════
+     TOP BANNER AD — 728×90 leaderboard
+     Replace the placeholder div below with your AdSense code
+════════════════════════════════════════════════════════════ -->
+<div class="ad-banner">
+  <!-- ADSENSE — LEADERBOARD (728×90)
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="XXXXXXXXXX"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+  <div class="ad-placeholder" style="width:728px;max-width:100%;height:90px;">
+    Advertisement
+    <span>728 × 90 — replace with Google AdSense code</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <p class="hero-eyebrow">Baking · Slow Living · Cozy Drinks</p>
+  <h1>Recipes for a <em style="font-style:italic;color:#d4847a;font-weight:600;">slower</em> kind of Saturday</h1>
+  <p class="hero-sub">
+    Flour on the counter, matcha going cold on the bench, and something
+    already in the oven. Just a girl who loves slow weekends and homemade everything.
+  </p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="#recipes">Browse Recipes</a>
+    <a class="btn btn-outline" href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">@howaboutsaturday</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     AD — POST-HERO RESPONSIVE BANNER (970×90)
+════════════════════════════════════════════════════════════ -->
+<div class="ad-banner" style="margin-bottom:2rem;">
+  <!-- ADSENSE — POST-HERO BANNER (970×90 / responsive)
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="XXXXXXXXXX"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+  <div class="ad-placeholder" style="width:970px;max-width:100%;height:90px;">
+    Advertisement
+    <span>970 × 90 responsive — replace with AdSense code</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     FEATURED RECIPE
+════════════════════════════════════════════════════════════ -->
+<section class="featured-section" id="series">
+  <div class="featured-inner">
+    <div class="featured-img-block">🍊</div>
+    <div>
+      <p class="featured-label">Featured · Flavours of My Childhood</p>
+      <h2 class="featured-title">Orange Earl Grey <em>Chocolate Cake</em></h2>
+      <p class="featured-body">
+        Bergamot, dark chocolate, and a whisper of candied orange. This one started
+        with a tin of tea and turned into the most requested recipe
+        I've ever made. Layered, fragrant, and very worth the afternoon.
+      </p>
+      <a class="btn btn-primary" href="#">View Recipe</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     AD — BETWEEN FEATURED & RECIPES (728×90 leaderboard)
+════════════════════════════════════════════════════════════ -->
+<div class="ad-banner" style="border-top:1px solid var(--warm-tan);border-bottom:none;margin-bottom:3rem;">
+  <!-- ADSENSE — MID-PAGE LEADERBOARD (728×90)
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="XXXXXXXXXX"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+  <div class="ad-placeholder" style="width:728px;max-width:100%;height:90px;">
+    Advertisement
+    <span>728 × 90 leaderboard — replace with AdSense code</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     RECIPES + SIDEBAR
+════════════════════════════════════════════════════════════ -->
+<div class="content-with-sidebar" id="recipes">
+
+  <!-- RECIPE GRID -->
+  <div>
+    <p class="section-label">All Recipes</p>
+    <h2 class="section-title" style="text-align:left;">From the kitchen</h2>
+
+    <div class="recipes-grid">
+
+      <!-- Card 1 -->
+      <a class="recipe-card" href="#">
+        <div class="thumb-placeholder" style="background:#998513; color:#fde9c8;">🍵</div>
+        <div class="recipe-body">
+          <p class="recipe-tag">Matcha · Baking</p>
+          <h3 class="recipe-title">Matcha Basque Cheesecake</h3>
+          <p class="recipe-desc">Burnished edges, a molten centre, and the gentle bitterness of ceremonial-grade matcha in every bite.</p>
+          <div class="recipe-meta">
+            <span>55 min</span>
+            <span>Serves 8</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a class="recipe-card" href="#">
+        <div class="thumb-placeholder" style="background:#d4847a;">🍋</div>
+        <div class="recipe-body">
+          <p class="recipe-tag">Cake · Flavours of My Childhood</p>
+          <h3 class="recipe-title">Lemon Iced Tea Cake with Chatruemae Black Tea</h3>
+          <p class="recipe-desc">A tender loaf soaked in black tea syrup, finished with a lemon glaze that crinkles at the edges.</p>
+          <div class="recipe-meta">
+            <span>75 min</span>
+            <span>Serves 10</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a class="recipe-card" href="#">
+        <div class="thumb-placeholder" style="background:#5383c6; color:#fde9c8;">🧇</div>
+        <div class="recipe-body">
+          <p class="recipe-tag">Chiffon · Flavours of My Childhood</p>
+          <h3 class="recipe-title">Soya Milk Chiffon Cake</h3>
+          <p class="recipe-desc">Cloud-soft and trembling. A chiffon made to be savoured slowly, with a cup of something warm on the side.</p>
+          <div class="recipe-meta">
+            <span>65 min</span>
+            <span>Serves 8</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- ══════════════════════════════════════════
+         AD — MID-GRID (728×90 or responsive)
+         Sits between recipe row 1 and row 2
+    ═══════════════════════════════════════════ -->
+    <div style="margin:2rem 0;display:flex;justify-content:center;">
+      <!-- ADSENSE — MID-GRID BANNER (728×90 / responsive)
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+      <div class="ad-placeholder" style="width:100%;max-width:728px;height:90px;">
+        Advertisement
+        <span>728 × 90 responsive — replace with AdSense code</span>
+      </div>
+    </div>
+
+    <div class="recipes-grid">
+
+      <!-- Card 4 -->
+      <a class="recipe-card" href="#">
+        <div class="thumb-placeholder" style="background:#998513; color:#fde9c8;">🫐</div>
+        <div class="recipe-body">
+          <p class="recipe-tag">Drink · Cozy Sips</p>
+          <h3 class="recipe-title">Blueberry Yuzu Peach Layered Lemonade</h3>
+          <p class="recipe-desc">Three layers of summer, stacked with vanilla extract and the floral lift of yuzu. Sip slowly.</p>
+          <div class="recipe-meta">
+            <span>10 min</span>
+            <span>Serves 2</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 5 -->
+      <a class="recipe-card" href="#">
+        <div class="thumb-placeholder" style="background:#5383c6; color:#fde9c8;">🌸</div>
+        <div class="recipe-body">
+          <p class="recipe-tag">Drink · Earl Grey</p>
+          <h3 class="recipe-title">Kyoto Rose Lemonade</h3>
+          <p class="recipe-desc">Rose water, earl grey, and lemon over ice. A drink that feels like a slow afternoon in a garden you've always wanted to visit.</p>
+          <div class="recipe-meta">
+            <span>8 min</span>
+            <span>Serves 2</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 6 -->
+      <a class="recipe-card" href="#">
+        <div class="thumb-placeholder" style="background:#d4847a;">🍇</div>
+        <div class="recipe-body">
+          <p class="recipe-tag">Drink · Sponsored</p>
+          <h3 class="recipe-title">Grape Tea Fizz</h3>
+          <p class="recipe-desc">Sparkling and deeply purple, this one is equal parts refreshing and showstopper. Perfect poured over ice at a dinner table.</p>
+          <div class="recipe-meta">
+            <span>5 min</span>
+            <span>Serves 4</span>
+          </div>
+        </div>
+      </a>
+
+    </div><!-- /second recipes-grid -->
+  </div>
+
+  <!-- SIDEBAR ADS — 300×600 + 300×250 stacked -->
+  <aside>
+    <div class="ad-sidebar-sticky" style="display:flex;flex-direction:column;gap:1.5rem;">
+      <!-- ADSENSE — SIDEBAR HALF-PAGE (300×600)
+      <ins class="adsbygoogle"
+           style="display:block;width:300px;height:600px"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+      <div class="ad-placeholder" style="width:300px;height:600px;max-width:100%;">
+        Advertisement
+        <span>300 × 600 — replace with AdSense code</span>
+      </div>
+
+      <!-- ADSENSE — SIDEBAR RECTANGLE (300×250)
+      <ins class="adsbygoogle"
+           style="display:block;width:300px;height:250px"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+      <div class="ad-placeholder" style="width:300px;height:250px;max-width:100%;">
+        Advertisement
+        <span>300 × 250 — replace with AdSense code</span>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     IN-CONTENT AD — 300×250 rectangle
+     Great placement between recipe sections
+════════════════════════════════════════════════════════════ -->
+<div class="ad-inline">
+  <!-- ADSENSE — IN-CONTENT (300×250)
+  <ins class="adsbygoogle"
+       style="display:block;width:300px;height:250px"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="XXXXXXXXXX"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+  <div class="ad-placeholder" style="width:300px;height:250px;">
+    Advertisement
+    <span>300 × 250 — replace with AdSense code</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════════════════════════ -->
+<section class="about-section" id="about">
+  <div class="about-avatar">🌿</div>
+  <p class="about-name">Amy</p>
+  <p class="about-handle">@howaboutsaturday</p>
+  <p class="about-text">
+    I'm a recipe developer and content creator based in Canada, baking my way through
+    slow-living rituals and nostalgic food memories. Here you'll find
+    recipes I actually make on repeat. Cakes that take all afternoon, drinks worth
+    sipping slowly, and flavours that feel like home.
+  </p>
+  <br />
+  <a class="btn btn-outline" href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Follow on Instagram</a>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     AD — PRE-FOOTER LEADERBOARD (970×90)
+════════════════════════════════════════════════════════════ -->
+<div class="ad-banner" style="border-top:1px solid var(--warm-tan);border-bottom:1px solid var(--warm-tan);margin-bottom:0;">
+  <!-- ADSENSE — PRE-FOOTER LEADERBOARD (970×90 / responsive)
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="XXXXXXXXXX"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  -->
+  <div class="ad-placeholder" style="width:970px;max-width:100%;height:90px;">
+    Advertisement
+    <span>970 × 90 responsive — replace with AdSense code</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer>
+  <span class="footer-logo">How About Saturday</span>
+  <p>Baking, slow living & cozy drinks from Canada.</p>
+  <p style="margin-top:1rem;">
+    <a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram</a>
+  </p>
+  <p style="margin-top:1.5rem;">© 2025 How About Saturday · All rights reserved.</p>
+</footer>
+
+</body>
+</html>
