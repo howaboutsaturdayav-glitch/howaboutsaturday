@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Beverage — How About Saturday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281955985735338" crossorigin="anonymous"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--cream:#fde9c8;--parchment:#faebd8;--warm-tan:#f0d4a8;--blue:#5383c6;--pink:#d4847a;--cork:#5a3e32;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--cream);color:var(--cork);font-family:var(--sans);font-size:16px;line-height:1.7;}
+    nav{background:var(--cream);border-bottom:1px solid var(--warm-tan);position:sticky;top:0;z-index:100;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+    .nav-logo{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--blue);text-decoration:none;letter-spacing:0.08em;}
+    
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-item { position: relative; list-style: none; }
+    .nav-item > a { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5a3e32; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; }
+    .nav-item > a:hover { color: #5383c6; }
+    .nav-item > a .nav-arrow { font-size: 0.55rem; transition: transform 0.2s; }
+    .nav-item:hover > a .nav-arrow { transform: rotate(180deg); }
+    .nav-item::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 14px; }
+    .nav-dropdown { display: none; position: absolute; top: calc(100% + 2px); right: 0; background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 180px; z-index: 300; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
+    .nav-item:hover > .nav-dropdown { display: block; }
+    .nav-dropdown-link { display: block; padding: 0.55rem 1.1rem; font-size: 0.8rem; font-weight: 600; color: #5383c6; text-decoration: none; transition: background 0.15s; border-bottom: 1px solid #f0d4a8; }
+    .nav-dropdown-link:hover { background: #faebd8; }
+    .nav-dropdown > .nav-sub-item { position: relative; }
+    .nav-dropdown > .nav-sub-item > a { display: flex; align-items: center; justify-content: space-between; padding: 0.55rem 1.1rem; font-size: 0.8rem; font-weight: 500; color: #5a3e32; text-decoration: none; text-transform: none; transition: background 0.15s, color 0.15s; white-space: nowrap; }
+    .nav-dropdown > .nav-sub-item > a:hover { background: #faebd8; color: #5383c6; }
+    .nav-dropdown > .nav-sub-item > a .sub-arrow { font-size: 0.55rem; opacity: 0.5; }
+    .nav-sub-dropdown { display: none; position: absolute; top: -0.4rem; right: calc(100% + 4px); background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 180px; z-index: 400; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
+    .nav-sub-item:hover > .nav-sub-dropdown { display: block; }
+    .nav-sub-item::after { content: ''; position: absolute; top: 0; right: -10px; width: 14px; height: 100%; }
+    .nav-sub-dropdown a { display: block; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 400; color: #5a3e32; text-decoration: none; transition: background 0.15s, color 0.15s; }
+    .nav-sub-dropdown a:hover { background: #faebd8; color: #5383c6; }
+    .nav-dropdown-divider { height: 1px; background: #f0d4a8; margin: 0.3rem 0; }
+
+    .page-header{max-width:1100px;margin:0 auto;padding:3rem 2rem 0.5rem;}
+    .page-eyebrow{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--pink);margin-bottom:0.5rem;}
+    .page-title{font-family:var(--serif);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--blue);margin-bottom:0.5rem;}
+    .page-intro{font-size:0.9rem;color:var(--cork);max-width:500px;margin-bottom:1rem;}
+    .cat-section{max-width:1100px;margin:0 auto;padding:2.5rem 2rem 0.5rem;}
+    .cat-section-title{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--cork);margin-bottom:1.5rem;padding:0.75rem 1.25rem;background:var(--parchment);border-radius:0 8px 8px 0;}
+    .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;}
+    .cat-card{background:var(--parchment);border:1px solid var(--warm-tan);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:transform 0.2s,box-shadow 0.2s;}
+    .cat-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(58,46,40,0.1);}
+    .cat-img{aspect-ratio:4/3;overflow:hidden;background:var(--warm-tan);position:relative;}
+    .cat-img img{width:100%;height:100%;object-fit:cover;display:block;}
+    .cat-fallback{display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:2.5rem;background:var(--warm-tan);}
+    .cat-body{padding:0.8rem 1rem;}
+    .cat-title{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--blue);line-height:1.25;}
+    footer{background:#5a3e32;color:#fde9c8;padding:2rem;text-align:center;font-size:0.8rem;margin-top:4rem;}
+    footer a{color:var(--pink);text-decoration:none;}
+    .footer-logo{font-family:var(--serif);font-size:1.3rem;font-weight:300;color:var(--pink);display:block;margin-bottom:0.5rem;}
+    @media(max-width:600px){.cat-grid{grid-template-columns:repeat(2,1fr);}}
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">How About Saturday</a>
+  <ul class="nav-links">
+    <li class="nav-item">
+      <a href="index.html#recipes">Recipes <span class="nav-arrow">&#9660;</span></a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-link" href="all-recipes.html">View All Recipes</a>
+        <div class="nav-dropdown-divider"></div>
+        <div class="nav-sub-item">
+          <a href="beverage.html">Beverage <span class="sub-arrow">&#9664;</span></a>
+          <div class="nav-sub-dropdown">
+            <a href="matcha.html">Matcha</a>
+            <a href="cozy-sips.html">Cozy Sips</a>
+          </div>
+        </div>
+        <div class="nav-sub-item">
+          <a href="baking.html">Baking <span class="sub-arrow">&#9664;</span></a>
+          <div class="nav-sub-dropdown">
+            <a href="baking.html#cake">Cake</a>
+            <a href="baking.html#muffin">Muffin</a>
+            <a href="baking.html#cookies">Cookies</a>
+            <a href="baking.html#loaf">Loaf</a>
+            <a href="baking.html#tiramisu">Tiramisu</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="all-series.html">Series <span class="nav-arrow">&#9660;</span></a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-link" href="all-series.html">View All Series</a>
+        <div class="nav-dropdown-divider"></div>
+        <div class="nav-sub-item"><a href="#">Flavours of My Childhood <span class="sub-arrow">&#9664;</span></a><div class="nav-sub-dropdown"><a href="Recipe/lemon-iced-tea-cake.html">Lemon Iced Tea Cake</a><a href="Recipe/tofu-hua-chiffon-cake.html">Tofu Hua Chiffon Cake</a></div></div>
+        <div class="nav-sub-item"><a href="#">Matcha Series <span class="sub-arrow">&#9664;</span></a><div class="nav-sub-dropdown"><a href="Recipe/jasmine-matcha-latte.html">Jasmine Matcha Latte</a><a href="Recipe/lychee-matcha-latte.html">Lychee Matcha Latte</a><a href="Recipe/maple-pumpkin-matcha-latte.html">Maple Pumpkin Matcha Latte</a><a href="Recipe/tofu-pudding-matcha-latte.html">Tofu Pudding Matcha Latte</a><a href="Recipe/matcha-brown-butter-blondie.html">Matcha Brown Butter Blondie</a><a href="Recipe/matcha-latte-coffee-cake.html">Matcha Latte Coffee Cake</a><a href="Recipe/blueberry-muffin-tea-matcha-snowballs.html">Blueberry Muffin Tea Matcha Snowballs</a></div></div>
+        <div class="nav-sub-item"><a href="#">Hojicha Series <span class="sub-arrow">&#9664;</span></a><div class="nav-sub-dropdown"><a href="Recipe/ube-hojicha-latte.html">Ube Hojicha Latte</a><a href="Recipe/london-fog-hojicha.html">London Fog Hojicha</a><a href="Recipe/hojicha-tiramisu.html">Hojicha Tiramisu</a><a href="Recipe/strawberry-hojicha-cheesecake.html">Strawberry Hojicha Cheesecake</a><a href="Recipe/hojicha-jasmine-longan-cake.html">Hojicha Jasmine Longan Cake</a><a href="Recipe/almond-hot-chocolate.html">Almond Hot Chocolate</a></div></div>
+        <div class="nav-sub-item"><a href="#">Holiday Cookies <span class="sub-arrow">&#9664;</span></a><div class="nav-sub-dropdown"><a href="Recipe/blueberry-muffin-tea-matcha-snowballs.html">Blueberry Muffin Tea Matcha Snowballs</a><a href="Recipe/jasmine-creme-brulee-shortbread.html">Jasmine Creme Brulee Shortbread</a><a href="Recipe/saigon-chai-gingerbread-cookies.html">Saigon Chai Gingerbread Cookies</a><a href="Recipe/vanilla-cappuccino-choc-chip-cookies.html">Vanilla Cappuccino Choc Chip Cookies</a><a href="Recipe/peanut-butter-thumbprint-cookies.html">Peanut Butter Thumbprint Cookies</a></div></div>
+      </div>
+    </li>
+    <li class="nav-item"><a href="index.html#about">About</a></li>
+    <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a></li>
+  </ul>
+</nav>
+<div class="page-header">
+  <p class="page-eyebrow">Drinks</p>
+  <h1 class="page-title">Beverage</h1>
+  <p class="page-intro">From matcha lattes to cozy sips. Every drink worth making slowly.</p>
+</div>
+
+  <div class="cat-section" id="matcha">
+    <h2 class="cat-section-title" style="border-left:5px solid #5383c6;">Matcha</h2>
+    <div class="cat-grid">
+      <a class="cat-card" href="Recipe/jasmine-matcha-latte.html">
+        <div class="cat-img"><img src="images/jasmine-matcha-latte.jpg" alt="Jasmine Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
+        <div class="cat-body"><h3 class="cat-title">Jasmine Matcha Latte</h3></div>
+      </a>
+      <a class="cat-card" href="Recipe/lychee-matcha-latte.html">
+        <div class="cat-img"><img src="images/lychee-matcha-latte.jpg" alt="Lychee Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
+        <div class="cat-body"><h3 class="cat-title">Lychee Matcha Latte</h3></div>
+      </a>
+      <a class="cat-card" href="Recipe/maple-pumpkin-matcha-latte.html">
+        <div class="cat-img"><img src="images/maple-pumpkin-matcha-latte.jpg" alt="Maple Pumpkin Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
+        <div class="cat-body"><h3 class="cat-title">Maple Pumpkin Matcha Latte</h3></div>
+      </a>
+      <a class="cat-card" href="Recipe/tofu-pudding-matcha-latte.html">
+        <div class="cat-img"><img src="images/tofu-pudding-matcha-latte.jpg" alt="Tofu Pudding Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
+        <div class="cat-body"><h3 class="cat-title">Tofu Pudding Matcha Latte</h3></div>
+      </a>
+      <a class="cat-card" href="Recipe/pickle-matcha-latte.html">
+        <div class="cat-img"><img src="images/pickle-matcha-latte.jpg" alt="Pickle Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
+        <div class="cat-body"><h3 class="cat-title">Pickle Matcha Latte</h3></div>
+      </a>
+    </div>
+  </div>
+  <div class="cat-section" id="cozy-sips">
+    <h2 class="cat-section-title" style="border-left:5px solid #d4847a;">Cozy Sips</h2>
+    <div class="cat-grid">
+      <a class="cat-card" href="Recipe/guava-oolong-milk-tea.html">
+        <div class="cat-img"><img src="images/guava-oolong-milk-tea.jpg" alt="Guava Oolong Cream Cheese Milk Tea" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
+        <div class="cat-body"><h3 class="cat-title">Guava Oolong Cream Cheese Milk Tea</h3></div>
+      </a>
+      <a class="cat-card" href="Recipe/grape-tea-fizz.html">
+        <div class="cat-img"><img src="images/grape-tea-fizz.jpg" alt="Grape Tea Fizz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
+        <div class="cat-body"><h3 class="cat-title">Grape Tea Fizz</h3></div>
+      </a>
+      <a class="cat-card" href="Recipe/ube-hojicha-latte.html">
+        <div class="cat-img"><img src="images/ube-hojicha-latte.jpg" alt="Ube Hojicha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
+        <div class="cat-body"><h3 class="cat-title">Ube Hojicha Latte</h3></div>
+      </a>
+      <a class="cat-card" href="Recipe/earl-grey-orange-latte.html">
+        <div class="cat-img"><img src="images/earl-grey-orange-latte.jpg" alt="Earl Grey Orange Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
+        <div class="cat-body"><h3 class="cat-title">Earl Grey Orange Latte</h3></div>
+      </a>
+      <a class="cat-card" href="Recipe/almond-hot-chocolate.html">
+        <div class="cat-img"><img src="images/almond-hot-chocolate.jpg" alt="Almond Hot Chocolate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
+        <div class="cat-body"><h3 class="cat-title">Almond Hot Chocolate</h3></div>
+      </a>
+      <a class="cat-card" href="Recipe/earl-grey-creme-brulee-latte.html">
+        <div class="cat-img"><img src="images/earl-grey-creme-brulee-latte.jpg" alt="Earl Grey Creme Brulee Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
+        <div class="cat-body"><h3 class="cat-title">Earl Grey Creme Brulee Latte</h3></div>
+      </a>
+      <a class="cat-card" href="Recipe/london-fog-hojicha.html">
+        <div class="cat-img"><img src="images/london-fog-hojicha.jpg" alt="London Fog Hojicha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
+        <div class="cat-body"><h3 class="cat-title">London Fog Hojicha</h3></div>
+      </a>
+    </div>
+  </div>
+<footer>
+  <span class="footer-logo">How About Saturday</span>
+  <p>Baking, slow living &amp; cozy drinks from Canada.</p>
+  <p style="margin-top:0.75rem;"><a href="https://instagram.com/howaboutsaturday" target="_blank">Instagram</a></p>
+</footer>
+</body>
+</html>
