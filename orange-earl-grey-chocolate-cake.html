@@ -67,52 +67,83 @@
     footer a { color: var(--pink); text-decoration: none; }
     .footer-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; color: var(--pink); display: block; margin-bottom: 0.5rem; }
 
+    
+
     /* ── NAV DROPDOWNS ── */
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-item { position: relative; list-style: none; }
-    .nav-item > a { display: flex; align-items: center; gap: 0.3rem; }
+    .nav-item > a {
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #5a3e32; text-decoration: none;
+      display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s;
+    }
+    .nav-item > a:hover { color: #5383c6; }
     .nav-item > a .nav-arrow { font-size: 0.55rem; transition: transform 0.2s; }
     .nav-item:hover > a .nav-arrow { transform: rotate(180deg); }
+
+    /* Level 1 dropdown */
     .nav-dropdown {
       display: none;
       position: absolute;
-      top: calc(100% + 12px);
+      top: calc(100% + 10px);
       left: 50%;
       transform: translateX(-50%);
       background: #fde9c8;
       border: 1px solid #f0d4a8;
       border-radius: 12px;
-      padding: 0.6rem 0;
-      min-width: 220px;
-      z-index: 200;
+      padding: 0.4rem 0;
+      min-width: 160px;
+      z-index: 300;
       box-shadow: 0 8px 32px rgba(58,46,40,0.1);
     }
-    .nav-item:hover .nav-dropdown { display: block; }
-    .nav-dropdown-group { padding: 0.4rem 0; }
-    .nav-dropdown-label {
-      display: block;
-      padding: 0.3rem 1.1rem;
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #a07850;
-      font-family: 'Jost', sans-serif;
+    .nav-item:hover > .nav-dropdown { display: block; }
+
+    /* Level 1 items */
+    .nav-dropdown > .nav-sub-item {
+      position: relative;
     }
-    .nav-dropdown a {
-      display: block;
-      padding: 0.45rem 1.1rem;
-      font-size: 0.82rem;
-      font-weight: 400;
-      color: #5a3e32;
-      text-decoration: none;
-      letter-spacing: 0;
-      text-transform: none;
+    .nav-dropdown > .nav-sub-item > a {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.55rem 1.1rem;
+      font-size: 0.8rem; font-weight: 500;
+      color: #5a3e32; text-decoration: none;
+      letter-spacing: 0.05em; text-transform: none;
       transition: background 0.15s, color 0.15s;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
-    .nav-dropdown a:hover { background: #faebd8; color: #5383c6; }
-    .nav-dropdown-divider { height: 1px; background: #f0d4a8; margin: 0.4rem 0; }
+    .nav-dropdown > .nav-sub-item > a:hover { background: #faebd8; color: #5383c6; }
+    .nav-dropdown > .nav-sub-item > a .sub-arrow { font-size: 0.55rem; opacity: 0.5; }
+
+    /* Level 2 dropdown */
+    .nav-sub-dropdown {
+      display: none;
+      position: absolute;
+      top: -0.4rem;
+      left: calc(100% + 4px);
+      background: #fde9c8;
+      border: 1px solid #f0d4a8;
+      border-radius: 12px;
+      padding: 0.4rem 0;
+      min-width: 220px;
+      z-index: 400;
+      box-shadow: 0 8px 32px rgba(58,46,40,0.1);
+    }
+    .nav-sub-item:hover > .nav-sub-dropdown { display: block; }
+    .nav-sub-dropdown a {
+      display: block;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.82rem; font-weight: 400;
+      color: #5a3e32; text-decoration: none;
+      text-transform: none; letter-spacing: 0;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .nav-sub-dropdown a:hover { background: #faebd8; color: #5383c6; }
+    .nav-dropdown-divider { height: 1px; background: #f0d4a8; margin: 0.3rem 0; }
+
+    @media (max-width: 860px) {
+      .nav-links li:not(:last-child) { display: none; }
+    }
 
   </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281955985735338" crossorigin="anonymous"></script>
