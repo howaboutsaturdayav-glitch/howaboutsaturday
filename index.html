@@ -762,6 +762,9 @@
     .nav-item > a:hover { color: #5383c6; }
     .nav-item > a .nav-arrow { font-size: 0.55rem; transition: transform 0.2s; }
     .nav-item:hover > a .nav-arrow { transform: rotate(180deg); }
+    .nav-item::after { content: ''; position: absolute; top: 100%; left: -10px; right: -10px; height: 14px; }
+    .nav-dropdown { padding-top: 4px; }
+    .nav-sub-item::after { content: ''; position: absolute; top: 0; right: -10px; width: 14px; height: 100%; }
 
     /* Level 1 dropdown */
     .nav-dropdown {
