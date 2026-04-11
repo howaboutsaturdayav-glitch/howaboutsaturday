@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Recipes — How About Saturday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281955985735338" crossorigin="anonymous"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream: #fde9c8; --parchment: #faebd8; --warm-tan: #f0d4a8; --blue: #5383c6; --pink: #d4847a; --cork: #5a3e32; --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'Jost', system-ui, sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--cork); font-family: var(--sans); font-size: 16px; line-height: 1.7; }
+    nav { background: var(--cream); border-bottom: 1px solid var(--warm-tan); position: sticky; top: 0; z-index: 100; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--blue); text-decoration: none; letter-spacing: 0.08em; }
+    
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-item { position: relative; list-style: none; }
+    .nav-item > a { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5a3e32; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; }
+    .nav-item > a:hover { color: #5383c6; }
+    .nav-item > a .nav-arrow { font-size: 0.55rem; transition: transform 0.2s; }
+    .nav-item:hover > a .nav-arrow { transform: rotate(180deg); }
+    .nav-item::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 14px; }
+    /* Level 1 dropdown */
+    .nav-dropdown { display: none; position: absolute; top: calc(100% + 2px); right: 0; background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 180px; z-index: 300; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
+    .nav-item:hover > .nav-dropdown { display: block; }
+    .nav-dropdown > .nav-sub-item { position: relative; }
+    .nav-dropdown-link { display: block; padding: 0.55rem 1.1rem; font-size: 0.8rem; font-weight: 600; color: #5383c6; text-decoration: none; letter-spacing: 0.03em; text-transform: none; transition: background 0.15s; border-bottom: 1px solid #f0d4a8; }
+    .nav-dropdown-link:hover { background: #faebd8; }
+    .nav-dropdown > .nav-sub-item > a { display: flex; align-items: center; justify-content: space-between; padding: 0.55rem 1.1rem; font-size: 0.8rem; font-weight: 500; color: #5a3e32; text-decoration: none; text-transform: none; transition: background 0.15s, color 0.15s; white-space: nowrap; }
+    .nav-dropdown > .nav-sub-item > a:hover { background: #faebd8; color: #5383c6; }
+    .nav-dropdown > .nav-sub-item > a .sub-arrow { font-size: 0.55rem; opacity: 0.5; }
+    /* Level 2 dropdown — opens to the LEFT */
+    .nav-sub-dropdown { display: none; position: absolute; top: -0.4rem; right: calc(100% + 4px); left: auto; background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 230px; z-index: 400; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
+    .nav-sub-item:hover > .nav-sub-dropdown { display: block; }
+    .nav-sub-item::after { content: ''; position: absolute; top: 0; right: -10px; width: 14px; height: 100%; }
+    .nav-sub-dropdown a { display: block; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 400; color: #5a3e32; text-decoration: none; text-transform: none; letter-spacing: 0; transition: background 0.15s, color 0.15s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .nav-sub-dropdown a:hover { background: #faebd8; color: #5383c6; }
+    .nav-dropdown-divider { height: 1px; background: #f0d4a8; margin: 0.3rem 0; }
+
+    .page-header { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 1rem; }
+    .page-eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.5rem; }
+    .page-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--blue); margin-bottom: 0.5rem; }
+    .ar-section { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 1rem; }
+    .ar-section-title { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; color: var(--cork); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--warm-tan); }
+    .ar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 1rem; }
+    .ar-card { background: var(--parchment); border: 1px solid var(--warm-tan); border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; display: block; transition: transform 0.2s, box-shadow 0.2s; }
+    .ar-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(58,46,40,0.1); }
+    .ar-img-wrap { position: relative; aspect-ratio: 4/3; overflow: hidden; background: var(--warm-tan); }
+    .ar-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ar-fallback { display: none; width: 100%; height: 100%; align-items: center; justify-content: center; font-size: 2.5rem; background: var(--warm-tan); }
+    .ar-body { padding: 0.9rem 1rem 1rem; }
+    .ar-tag { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.3rem; }
+    .ar-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--blue); line-height: 1.25; }
+    footer { background: #5a3e32; color: #fde9c8; padding: 2rem; text-align: center; font-size: 0.8rem; margin-top: 4rem; }
+    footer a { color: var(--pink); text-decoration: none; }
+    .footer-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; color: var(--pink); display: block; margin-bottom: 0.5rem; }
+    @media (max-width: 600px) { .ar-grid { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">How About Saturday</a>
+  <ul class="nav-links">
+    <li class="nav-item">
+      <a href="index.html#recipes">Recipes <span class="nav-arrow">&#9660;</span></a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-link" href="all-recipes.html">View All Recipes</a>
+        <div class="nav-sub-item">
+          <a href="#">Beverage <span class="sub-arrow">&#9664;</span></a>
+          <div class="nav-sub-dropdown">
+            <div class="nav-sub-item"><a href="#">Matcha <span class="sub-arrow">&#9664;</span></a><div class="nav-sub-dropdown"><a href="jasmine-matcha-latte.html">Jasmine Matcha Latte</a><a href="matcha-brown-butter-blondie.html">Matcha Brown Butter Blondie</a><a href="matcha-latte-coffee-cake.html">Matcha Latte Coffee Cake</a><a href="lychee-matcha-latte.html">Lychee Matcha Latte</a><a href="maple-pumpkin-matcha-latte.html">Maple Pumpkin Matcha Latte</a><a href="tofu-pudding-matcha-latte.html">Tofu Pudding Matcha Latte</a></div></div>
+            <div class="nav-sub-item"><a href="#">Cozy Sips <span class="sub-arrow">&#9664;</span></a><div class="nav-sub-dropdown"><a href="guava-oolong-milk-tea.html">Guava Oolong Milk Tea</a><a href="grape-tea-fizz.html">Grape Tea Fizz</a><a href="ube-hojicha-latte.html">Ube Hojicha Latte</a><a href="earl-grey-orange-latte.html">Earl Grey Orange Latte</a><a href="almond-hot-chocolate.html">Almond Hot Chocolate</a><a href="earl-grey-creme-brulee-latte.html">Earl Grey Creme Brulee Latte</a><a href="london-fog-hojicha.html">London Fog Hojicha</a></div></div>
+          </div>
+        </div>
+        <div class="nav-dropdown-divider"></div>
+        <div class="nav-sub-item">
+          <a href="#">Baking <span class="sub-arrow">&#9664;</span></a>
+          <div class="nav-sub-dropdown">
+            <div class="nav-sub-item"><a href="#">Cake <span class="sub-arrow">&#9664;</span></a><div class="nav-sub-dropdown"><a href="orange-earl-grey-chocolate-cake.html">Orange Earl Grey Chocolate Cake</a><a href="strawberry-hojicha-cheesecake.html">Strawberry Hojicha Cheesecake</a><a href="jasmine-chiffon-cake.html">Jasmine Chiffon Cake</a><a href="hojicha-jasmine-longan-cake.html">Hojicha Jasmine Longan Cake</a><a href="tofu-hua-chiffon-cake.html">Tofu Hua Chiffon Cake</a><a href="london-fog-cake.html">London Fog Cake</a><a href="thai-green-tea-burnt-cheesecake.html">Thai Green Tea Burnt Cheesecake</a><a href="salted-caramel-oolong-cake.html">Salted Caramel Oolong Cake</a><a href="carrot-cake.html">Carrot Cake</a></div></div>
+            <div class="nav-sub-item"><a href="#">Muffin <span class="sub-arrow">&#9664;</span></a><div class="nav-sub-dropdown"><a href="almond-poppy-berries-muffin.html">Almond Poppy Berries Muffin</a></div></div>
+            <div class="nav-sub-item"><a href="#">Cookies <span class="sub-arrow">&#9664;</span></a><div class="nav-sub-dropdown"><a href="peppermint-chocolate-brownie.html">Peppermint Chocolate Brownie</a><a href="matcha-brown-butter-blondie.html">Matcha Brown Butter Blondie</a><a href="blueberry-muffin-tea-matcha-snowballs.html">Blueberry Muffin Tea Matcha Snowballs</a><a href="jasmine-creme-brulee-shortbread.html">Jasmine Creme Brulee Shortbread</a><a href="saigon-chai-gingerbread-cookies.html">Saigon Chai Gingerbread Cookies</a><a href="vanilla-cappuccino-choc-chip-cookies.html">Vanilla Cappuccino Choc Chip Cookies</a><a href="peanut-butter-thumbprint-cookies.html">Peanut Butter Thumbprint Cookies</a></div></div>
+            <div class="nav-sub-item"><a href="#">Loaf <span class="sub-arrow">&#9664;</span></a><div class="nav-sub-dropdown"><a href="lemon-iced-tea-cake.html">Lemon Iced Tea Cake</a><a href="earl-grey-orange-loaf.html">Earl Grey Orange Loaf</a><a href="orange-spice-tea-loaf.html">Orange Spice Tea Loaf</a></div></div>
+            <div class="nav-sub-item"><a href="#">Tiramisu <span class="sub-arrow">&#9664;</span></a><div class="nav-sub-dropdown"><a href="hojicha-tiramisu.html">Hojicha Tiramisu</a></div></div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="all-series.html">Series <span class="nav-arrow">&#9660;</span></a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-link" href="all-series.html">View All Series</a>
+        <div class="nav-sub-item"><a href="#">Flavours of My Childhood <span class="sub-arrow">&#9664;</span></a><div class="nav-sub-dropdown"><a href="lemon-iced-tea-cake.html">Lemon Iced Tea Cake</a><a href="tofu-hua-chiffon-cake.html">Tofu Hua Chiffon Cake</a></div></div>
+        <div class="nav-sub-item"><a href="#">Matcha Series <span class="sub-arrow">&#9664;</span></a><div class="nav-sub-dropdown"><a href="jasmine-matcha-latte.html">Jasmine Matcha Latte</a><a href="matcha-brown-butter-blondie.html">Matcha Brown Butter Blondie</a><a href="matcha-latte-coffee-cake.html">Matcha Latte Coffee Cake</a><a href="lychee-matcha-latte.html">Lychee Matcha Latte</a></div></div>
+        <div class="nav-sub-item"><a href="#">Hojicha Series <span class="sub-arrow">&#9664;</span></a><div class="nav-sub-dropdown"><a href="hojicha-tiramisu.html">Hojicha Tiramisu</a><a href="ube-hojicha-latte.html">Ube Hojicha Latte</a><a href="strawberry-hojicha-cheesecake.html">Strawberry Hojicha Cheesecake</a><a href="hojicha-jasmine-longan-cake.html">Hojicha Jasmine Longan Cake</a></div></div>
+        <div class="nav-sub-item"><a href="#">Holiday Cookies <span class="sub-arrow">&#9664;</span></a><div class="nav-sub-dropdown"><a href="blueberry-muffin-tea-matcha-snowballs.html">Blueberry Muffin Tea Matcha Snowballs</a><a href="jasmine-creme-brulee-shortbread.html">Jasmine Creme Brulee Shortbread</a><a href="saigon-chai-gingerbread-cookies.html">Saigon Chai Gingerbread Cookies</a><a href="vanilla-cappuccino-choc-chip-cookies.html">Vanilla Cappuccino Choc Chip Cookies</a><a href="peanut-butter-thumbprint-cookies.html">Peanut Butter Thumbprint Cookies</a></div></div>
+      </div>
+    </li>
+    <li class="nav-item"><a href="index.html#about">About</a></li>
+    <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <p class="page-eyebrow">Baking · Slow Living · Cozy Drinks</p>
+  <h1 class="page-title">All Recipes</h1>
+</div>
+
+
+  <div class="ar-section">
+    <h2 class="ar-section-title">Matcha</h2>
+    <div class="ar-grid">
+        <a class="ar-card" href="jasmine-matcha-latte.html">
+          <div class="ar-img-wrap">
+            <img src="images/jasmine-matcha-latte.jpg" alt="Jasmine Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Drinks</p>
+            <h3 class="ar-title">Jasmine Matcha Latte</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="lychee-matcha-latte.html">
+          <div class="ar-img-wrap">
+            <img src="images/lychee-matcha-latte.jpg" alt="Lychee Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Drinks</p>
+            <h3 class="ar-title">Lychee Matcha Latte</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="maple-pumpkin-matcha-latte.html">
+          <div class="ar-img-wrap">
+            <img src="images/maple-pumpkin-matcha-latte.jpg" alt="Maple Pumpkin Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Drinks</p>
+            <h3 class="ar-title">Maple Pumpkin Matcha Latte</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="tofu-pudding-matcha-latte.html">
+          <div class="ar-img-wrap">
+            <img src="images/tofu-pudding-matcha-latte.jpg" alt="Tofu Pudding Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Drinks</p>
+            <h3 class="ar-title">Tofu Pudding Matcha Latte</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="pickle-matcha-latte.html">
+          <div class="ar-img-wrap">
+            <img src="images/pickle-matcha-latte.jpg" alt="Pickle Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Drinks</p>
+            <h3 class="ar-title">Pickle Matcha Latte</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="matcha-latte-coffee-cake.html">
+          <div class="ar-img-wrap">
+            <img src="images/matcha-latte-coffee-cake.jpg" alt="Matcha Latte Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Baking</p>
+            <h3 class="ar-title">Matcha Latte Coffee Cake</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="matcha-brown-butter-blondie.html">
+          <div class="ar-img-wrap">
+            <img src="images/matcha-brown-butter-blondie.jpg" alt="Matcha Brown Butter Blondie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Baking</p>
+            <h3 class="ar-title">Matcha Brown Butter Blondie</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="blueberry-muffin-tea-matcha-snowballs.html">
+          <div class="ar-img-wrap">
+            <img src="images/blueberry-muffin-tea-matcha-snowballs.jpg" alt="Blueberry Muffin Tea Matcha Snowballs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cookies</p>
+            <h3 class="ar-title">Blueberry Muffin Tea Matcha Snowballs</h3>
+          </div>
+        </a>
+    </div>
+  </div>
+  <div class="ar-section">
+    <h2 class="ar-section-title">Cozy Sips</h2>
+    <div class="ar-grid">
+        <a class="ar-card" href="guava-oolong-milk-tea.html">
+          <div class="ar-img-wrap">
+            <img src="images/guava-oolong-milk-tea.jpg" alt="Guava Oolong Cream Cheese Milk Tea" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Drink</p>
+            <h3 class="ar-title">Guava Oolong Cream Cheese Milk Tea</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="grape-tea-fizz.html">
+          <div class="ar-img-wrap">
+            <img src="images/grape-tea-fizz.jpg" alt="Grape Tea Fizz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Drink</p>
+            <h3 class="ar-title">Grape Tea Fizz</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="ube-hojicha-latte.html">
+          <div class="ar-img-wrap">
+            <img src="images/ube-hojicha-latte.jpg" alt="Ube Hojicha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Drink</p>
+            <h3 class="ar-title">Ube Hojicha Latte</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="earl-grey-orange-latte.html">
+          <div class="ar-img-wrap">
+            <img src="images/earl-grey-orange-latte.jpg" alt="Earl Grey Orange Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Drink</p>
+            <h3 class="ar-title">Earl Grey Orange Latte</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="almond-hot-chocolate.html">
+          <div class="ar-img-wrap">
+            <img src="images/almond-hot-chocolate.jpg" alt="Almond Hot Chocolate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Drink</p>
+            <h3 class="ar-title">Almond Hot Chocolate</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="earl-grey-creme-brulee-latte.html">
+          <div class="ar-img-wrap">
+            <img src="images/earl-grey-creme-brulee-latte.jpg" alt="Earl Grey Creme Brulee Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Drink</p>
+            <h3 class="ar-title">Earl Grey Creme Brulee Latte</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="london-fog-hojicha.html">
+          <div class="ar-img-wrap">
+            <img src="images/london-fog-hojicha.jpg" alt="London Fog Hojicha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Drink</p>
+            <h3 class="ar-title">London Fog Hojicha</h3>
+          </div>
+        </a>
+    </div>
+  </div>
+  <div class="ar-section">
+    <h2 class="ar-section-title">Cake</h2>
+    <div class="ar-grid">
+        <a class="ar-card" href="orange-earl-grey-chocolate-cake.html">
+          <div class="ar-img-wrap">
+            <img src="images/orange-earl-grey-chocolate-cake.jpg" alt="Orange Earl Grey Chocolate Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cake</p>
+            <h3 class="ar-title">Orange Earl Grey Chocolate Cake</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="strawberry-hojicha-cheesecake.html">
+          <div class="ar-img-wrap">
+            <img src="images/strawberry-hojicha-cheesecake.jpg" alt="Strawberry Hojicha Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cake</p>
+            <h3 class="ar-title">Strawberry Hojicha Cheesecake</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="jasmine-chiffon-cake.html">
+          <div class="ar-img-wrap">
+            <img src="images/jasmine-chiffon-cake.jpg" alt="Jasmine Chiffon Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cake</p>
+            <h3 class="ar-title">Jasmine Chiffon Cake</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="hojicha-jasmine-longan-cake.html">
+          <div class="ar-img-wrap">
+            <img src="images/hojicha-jasmine-longan-cake.jpg" alt="Hojicha Jasmine Longan Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cake</p>
+            <h3 class="ar-title">Hojicha Jasmine Longan Cake</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="tofu-hua-chiffon-cake.html">
+          <div class="ar-img-wrap">
+            <img src="images/tofu-hua-chiffon-cake.jpg" alt="Tofu Hua Chiffon Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cake</p>
+            <h3 class="ar-title">Tofu Hua Chiffon Cake</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="london-fog-cake.html">
+          <div class="ar-img-wrap">
+            <img src="images/london-fog-cake.jpg" alt="London Fog Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cake</p>
+            <h3 class="ar-title">London Fog Cake</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="thai-green-tea-burnt-cheesecake.html">
+          <div class="ar-img-wrap">
+            <img src="images/thai-green-tea-burnt-cheesecake.jpg" alt="Thai Green Tea Burnt Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cake</p>
+            <h3 class="ar-title">Thai Green Tea Burnt Cheesecake</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="salted-caramel-oolong-cake.html">
+          <div class="ar-img-wrap">
+            <img src="images/salted-caramel-oolong-cake.jpg" alt="Salted Caramel Oolong Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cake</p>
+            <h3 class="ar-title">Salted Caramel Oolong Cake</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="carrot-cake.html">
+          <div class="ar-img-wrap">
+            <img src="images/carrot-cake.jpg" alt="Carrot Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cake</p>
+            <h3 class="ar-title">Carrot Cake</h3>
+          </div>
+        </a>
+    </div>
+  </div>
+  <div class="ar-section">
+    <h2 class="ar-section-title">Cookies</h2>
+    <div class="ar-grid">
+        <a class="ar-card" href="peppermint-chocolate-brownie.html">
+          <div class="ar-img-wrap">
+            <img src="images/peppermint-chocolate-brownie.jpg" alt="Peppermint Chocolate Brownie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cookies</p>
+            <h3 class="ar-title">Peppermint Chocolate Brownie</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="blueberry-muffin-tea-matcha-snowballs.html">
+          <div class="ar-img-wrap">
+            <img src="images/blueberry-muffin-tea-matcha-snowballs.jpg" alt="Blueberry Muffin Tea Matcha Snowballs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cookies</p>
+            <h3 class="ar-title">Blueberry Muffin Tea Matcha Snowballs</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="jasmine-creme-brulee-shortbread.html">
+          <div class="ar-img-wrap">
+            <img src="images/jasmine-creme-brulee-shortbread.jpg" alt="Jasmine Creme Brulee Shortbread" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cookies</p>
+            <h3 class="ar-title">Jasmine Creme Brulee Shortbread</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="saigon-chai-gingerbread-cookies.html">
+          <div class="ar-img-wrap">
+            <img src="images/saigon-chai-gingerbread-cookies.jpg" alt="Saigon Chai Gingerbread Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cookies</p>
+            <h3 class="ar-title">Saigon Chai Gingerbread Cookies</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="vanilla-cappuccino-choc-chip-cookies.html">
+          <div class="ar-img-wrap">
+            <img src="images/vanilla-cappuccino-choc-chip-cookies.jpg" alt="Vanilla Cappuccino Choc Chip Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cookies</p>
+            <h3 class="ar-title">Vanilla Cappuccino Choc Chip Cookies</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="peanut-butter-thumbprint-cookies.html">
+          <div class="ar-img-wrap">
+            <img src="images/peanut-butter-thumbprint-cookies.jpg" alt="Peanut Butter Thumbprint Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Cookies</p>
+            <h3 class="ar-title">Peanut Butter Thumbprint Cookies</h3>
+          </div>
+        </a>
+    </div>
+  </div>
+  <div class="ar-section">
+    <h2 class="ar-section-title">Loaf</h2>
+    <div class="ar-grid">
+        <a class="ar-card" href="lemon-iced-tea-cake.html">
+          <div class="ar-img-wrap">
+            <img src="images/lemon-iced-tea-cake.jpg" alt="Lemon Iced Tea Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Loaf</p>
+            <h3 class="ar-title">Lemon Iced Tea Cake</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="earl-grey-orange-loaf.html">
+          <div class="ar-img-wrap">
+            <img src="images/earl-grey-orange-loaf.jpg" alt="Earl Grey Orange Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Loaf</p>
+            <h3 class="ar-title">Earl Grey Orange Loaf</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="orange-spice-tea-loaf.html">
+          <div class="ar-img-wrap">
+            <img src="images/orange-spice-tea-loaf.jpg" alt="Orange Spice Tea Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Loaf</p>
+            <h3 class="ar-title">Orange Spice Tea Loaf</h3>
+          </div>
+        </a>
+    </div>
+  </div>
+  <div class="ar-section">
+    <h2 class="ar-section-title">Muffin & Tiramisu</h2>
+    <div class="ar-grid">
+        <a class="ar-card" href="almond-poppy-berries-muffin.html">
+          <div class="ar-img-wrap">
+            <img src="images/almond-poppy-berries-muffin.jpg" alt="Almond Poppy Berries Muffin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Muffin</p>
+            <h3 class="ar-title">Almond Poppy Berries Muffin</h3>
+          </div>
+        </a>
+        <a class="ar-card" href="hojicha-tiramisu.html">
+          <div class="ar-img-wrap">
+            <img src="images/hojicha-tiramisu.jpg" alt="Hojicha Tiramisu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="ar-fallback">🍵</div>
+          </div>
+          <div class="ar-body">
+            <p class="ar-tag">Tiramisu</p>
+            <h3 class="ar-title">Hojicha Tiramisu</h3>
+          </div>
+        </a>
+    </div>
+  </div>
+
+<footer>
+  <span class="footer-logo">How About Saturday</span>
+  <p>Baking, slow living &amp; cozy drinks from Canada.</p>
+  <p style="margin-top:0.75rem;"><a href="https://instagram.com/howaboutsaturday" target="_blank">Instagram</a></p>
+</footer>
+</body>
+</html>
