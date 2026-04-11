@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Matcha — How About Saturday</title>
+  <title>Flavours of My Childhood — How About Saturday</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -23,7 +23,7 @@
     .nav-item > a .nav-arrow { font-size: 0.55rem; transition: transform 0.2s; }
     .nav-item:hover > a .nav-arrow { transform: rotate(180deg); }
     .nav-item::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 14px; }
-    .nav-dropdown { display: none; position: absolute; top: calc(100% + 2px); right: 0; background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 180px; z-index: 300; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
+    .nav-dropdown { display: none; position: absolute; top: calc(100% + 2px); right: 0; background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 200px; z-index: 300; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
     .nav-item:hover > .nav-dropdown { display: block; }
     .nav-dropdown-link { display: block; padding: 0.55rem 1.1rem; font-size: 0.8rem; font-weight: 600; color: #5383c6; text-decoration: none; transition: background 0.15s; border-bottom: 1px solid #f0d4a8; }
     .nav-dropdown-link:hover { background: #faebd8; }
@@ -43,19 +43,20 @@
     .page-header{max-width:1100px;margin:0 auto;padding:3rem 2rem 1.5rem;}
     .page-eyebrow{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--pink);margin-bottom:0.5rem;}
     .page-title{font-family:var(--serif);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--blue);margin-bottom:0.5rem;}
-    .page-intro{font-size:0.9rem;color:var(--cork);max-width:500px;}
-    .cat-grid{max-width:1100px;margin:0 auto;padding:1.5rem 2rem 4rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;}
-    .cat-card{background:var(--parchment);border:1px solid var(--warm-tan);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:transform 0.2s,box-shadow 0.2s;}
-    .cat-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(58,46,40,0.1);}
-    .cat-img{aspect-ratio:4/3;overflow:hidden;background:var(--warm-tan);}
-    .cat-img img{width:100%;height:100%;object-fit:cover;display:block;}
-    .cat-fallback{display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:2.5rem;background:var(--warm-tan);}
-    .cat-body{padding:0.8rem 1rem;}
-    .cat-title{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--blue);line-height:1.25;}
+    .page-intro{font-size:0.9rem;color:var(--cork);max-width:560px;}
+    .sr-grid{max-width:1100px;margin:0 auto;padding:1.5rem 2rem 4rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.25rem;}
+    .sr-card{background:var(--parchment);border:1px solid var(--warm-tan);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:transform 0.2s,box-shadow 0.2s;}
+    .sr-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(58,46,40,0.1);}
+    .sr-img{aspect-ratio:4/3;overflow:hidden;background:var(--warm-tan);}
+    .sr-img img{width:100%;height:100%;object-fit:cover;display:block;}
+    .sr-fallback{display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:2.5rem;background:var(--warm-tan);}
+    .sr-body{padding:0.8rem 1rem;}
+    .sr-tag{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--pink);margin-bottom:0.3rem;}
+    .sr-title{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--blue);line-height:1.25;}
     footer{background:#5a3e32;color:#fde9c8;padding:2rem;text-align:center;font-size:0.8rem;}
     footer a{color:var(--pink);text-decoration:none;}
     .footer-logo{font-family:var(--serif);font-size:1.3rem;font-weight:300;color:var(--pink);display:block;margin-bottom:0.5rem;}
-    @media(max-width:600px){.cat-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:600px){.sr-grid{grid-template-columns:repeat(2,1fr);}}
   </style>
 </head>
 <body>
@@ -102,30 +103,18 @@
   </ul>
 </nav>
 <div class="page-header">
-  <p class="page-eyebrow">Beverage · Matcha</p>
-  <h1 class="page-title">Matcha</h1>
-  <p class="page-intro">Every way to enjoy matcha. From lattes to blondies, these are the recipes that started an obsession.</p>
+  <p class="page-eyebrow">Series · Childhood</p>
+  <h1 class="page-title">Flavours of My Childhood</h1>
+  <p class="page-intro">Recipes rooted in nostalgia. Childhood flavours recreated with love in a Canadian kitchen.</p>
 </div>
-<div class="cat-grid">
-    <a class="cat-card" href="Recipe/jasmine-matcha-latte.html">
-      <div class="cat-img"><img src="images/jasmine-matcha-latte.jpg" alt="Jasmine Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-      <div class="cat-body"><h3 class="cat-title">Jasmine Matcha Latte</h3></div>
+<div class="sr-grid">
+    <a class="sr-card" href="Recipe/lemon-iced-tea-cake.html">
+      <div class="sr-img"><img src="images/lemon-iced-tea-cake.jpg" alt="Lemon Iced Tea Cake with Chatruemae Black Tea" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="sr-fallback">🍵</div></div>
+      <div class="sr-body"><p class="sr-tag">Loaf · Baking</p><h3 class="sr-title">Lemon Iced Tea Cake with Chatruemae Black Tea</h3></div>
     </a>
-    <a class="cat-card" href="Recipe/lychee-matcha-latte.html">
-      <div class="cat-img"><img src="images/lychee-matcha-latte.jpg" alt="Lychee Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-      <div class="cat-body"><h3 class="cat-title">Lychee Matcha Latte</h3></div>
-    </a>
-    <a class="cat-card" href="Recipe/maple-pumpkin-matcha-latte.html">
-      <div class="cat-img"><img src="images/maple-pumpkin-matcha-latte.jpg" alt="Maple Pumpkin Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-      <div class="cat-body"><h3 class="cat-title">Maple Pumpkin Matcha Latte</h3></div>
-    </a>
-    <a class="cat-card" href="Recipe/tofu-pudding-matcha-latte.html">
-      <div class="cat-img"><img src="images/tofu-pudding-matcha-latte.jpg" alt="Tofu Pudding Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-      <div class="cat-body"><h3 class="cat-title">Tofu Pudding Matcha Latte</h3></div>
-    </a>
-    <a class="cat-card" href="Recipe/pickle-matcha-latte.html">
-      <div class="cat-img"><img src="images/pickle-matcha-latte.jpg" alt="Pickle Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-      <div class="cat-body"><h3 class="cat-title">Pickle Matcha Latte</h3></div>
+    <a class="sr-card" href="Recipe/tofu-hua-chiffon-cake.html">
+      <div class="sr-img"><img src="images/tofu-hua-chiffon-cake.jpg" alt="Tofu Hua Chiffon Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="sr-fallback">🍵</div></div>
+      <div class="sr-body"><p class="sr-tag">Cake · Baking</p><h3 class="sr-title">Tofu Hua Chiffon Cake</h3></div>
     </a>
 </div>
 <footer>
