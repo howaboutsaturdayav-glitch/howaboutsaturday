@@ -23,12 +23,15 @@
     .nav-item > a .nav-arrow { font-size: 0.55rem; transition: transform 0.2s; }
     .nav-item:hover > a .nav-arrow { transform: rotate(180deg); }
     .nav-item::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 14px; }
-    .nav-dropdown { display: none; position: absolute; top: calc(100% + 2px); right: 0; background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 180px; z-index: 300; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
+    .nav-dropdown { display: none; position: absolute; top: calc(100% + 2px); right: 0; background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 260px; z-index: 300; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
     .nav-item:hover > .nav-dropdown { display: block; }
-    .nav-dropdown-link { display: block; padding: 0.55rem 1.1rem; font-size: 0.8rem; font-weight: 600; color: #5383c6; text-decoration: none; transition: background 0.15s; border-bottom: 1px solid #f0d4a8; }
+    .nav-dropdown-link { display: block; padding: 0.6rem 1.1rem; font-size: 0.82rem; font-weight: 700; color: #5383c6; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.15s; border-bottom: 1px solid #f0d4a8; margin-bottom: 0.3rem; }
     .nav-dropdown-link:hover { background: #faebd8; }
+    .nav-dropdown-item { display: block !important; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 500; color: #5a3e32; text-decoration: none; text-transform: none; letter-spacing: 0; transition: background 0.15s, color 0.15s; white-space: nowrap; }
+    .nav-dropdown-item:hover { background: #faebd8; color: #5383c6; }
+    .nav-dropdown-divider { height: 1px; background: #f0d4a8; margin: 0.2rem 0 0.3rem; }
     .nav-dropdown > .nav-sub-item { position: relative; }
-    .nav-dropdown > .nav-sub-item > a { display: flex; align-items: center; justify-content: space-between; padding: 0.55rem 1.1rem; font-size: 0.8rem; font-weight: 500; color: #5a3e32; text-decoration: none; text-transform: none; transition: background 0.15s, color 0.15s; white-space: nowrap; }
+    .nav-dropdown > .nav-sub-item > a { display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 500; color: #5a3e32; text-decoration: none; text-transform: none; letter-spacing: 0; transition: background 0.15s, color 0.15s; white-space: nowrap; }
     .nav-dropdown > .nav-sub-item > a:hover { background: #faebd8; color: #5383c6; }
     .nav-dropdown > .nav-sub-item > a .sub-arrow { font-size: 0.55rem; opacity: 0.5; }
     .nav-sub-dropdown { display: none; position: absolute; top: -0.4rem; right: calc(100% + 4px); background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 180px; z-index: 400; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
@@ -36,7 +39,6 @@
     .nav-sub-item::after { content: ''; position: absolute; top: 0; right: -10px; width: 14px; height: 100%; }
     .nav-sub-dropdown a { display: block; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 400; color: #5a3e32; text-decoration: none; transition: background 0.15s, color 0.15s; }
     .nav-sub-dropdown a:hover { background: #faebd8; color: #5383c6; }
-    .nav-dropdown-divider { height: 1px; background: #f0d4a8; margin: 0.3rem 0; }
 
     .page-header{max-width:1100px;margin:0 auto;padding:3rem 2rem 0.5rem;}
     .page-eyebrow{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--pink);margin-bottom:0.5rem;}
@@ -97,7 +99,7 @@
         <a class="nav-dropdown-item" href="series-holiday-cookies.html">Holiday Cookies</a>
       </div>
     </li>
-    <li class="nav-item"><a href="index.html#about">About</a></li>
+    <li class="nav-item"><a href="about.html">About</a></li>
     <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a></li>
   </ul>
 </nav>
@@ -146,10 +148,6 @@
       <a class="cat-card" href="Recipe/ube-hojicha-latte.html">
         <div class="cat-img"><img src="images/ube-hojicha-latte.jpg" alt="Ube Hojicha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
         <div class="cat-body"><h3 class="cat-title">Ube Hojicha Latte</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/earl-grey-orange-latte.html">
-        <div class="cat-img"><img src="images/earl-grey-orange-latte.jpg" alt="Earl Grey Orange Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Earl Grey Orange Latte</h3></div>
       </a>
       <a class="cat-card" href="Recipe/almond-hot-chocolate.html">
         <div class="cat-img"><img src="images/almond-hot-chocolate.jpg" alt="Almond Hot Chocolate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
