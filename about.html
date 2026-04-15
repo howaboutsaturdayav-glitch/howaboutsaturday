@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>About — How About Saturday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281955985735338" crossorigin="anonymous"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--cream:#fde9c8;--parchment:#faebd8;--warm-tan:#f0d4a8;--blue:#5383c6;--pink:#d4847a;--cork:#5a3e32;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--cream);color:var(--cork);font-family:var(--sans);font-size:16px;line-height:1.7;overflow-x:hidden;}
+
+    /* ── NAV ── */
+    nav{background:var(--cream);border-bottom:1px solid var(--warm-tan);position:sticky;top:0;z-index:100;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+    .nav-logo{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--blue);text-decoration:none;letter-spacing:0.08em;}
+    .nav-links{display:flex;gap:2rem;list-style:none;}
+    .nav-item{position:relative;list-style:none;}
+    .nav-item>a{font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#5a3e32;text-decoration:none;display:flex;align-items:center;gap:0.3rem;transition:color 0.2s;}
+    .nav-item>a:hover{color:#5383c6;}
+    .nav-item>a .nav-arrow{font-size:0.55rem;transition:transform 0.2s;}
+    .nav-item:hover>a .nav-arrow{transform:rotate(180deg);}
+    .nav-item::after{content:'';position:absolute;top:100%;left:0;width:100%;height:14px;}
+    .nav-dropdown{display:none;position:absolute;top:calc(100% + 2px);right:0;background:#fde9c8;border:1px solid #f0d4a8;border-radius:12px;padding:0.4rem 0;min-width:220px;z-index:300;box-shadow:0 8px 32px rgba(58,46,40,0.1);}
+    .nav-item:hover>.nav-dropdown{display:block;}
+    .nav-dropdown-link{display:block;padding:0.6rem 1.1rem;font-size:0.82rem;font-weight:700;color:#5383c6;text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;transition:background 0.15s;border-bottom:1px solid #f0d4a8;margin-bottom:0.3rem;}
+    .nav-dropdown-link:hover{background:#faebd8;}
+    .nav-dropdown-item{display:block;padding:0.5rem 1.1rem;font-size:0.82rem;font-weight:500;color:#5a3e32;text-decoration:none;text-transform:none;letter-spacing:0;transition:background 0.15s,color 0.15s;white-space:nowrap;}
+    .nav-dropdown-item:hover{background:#faebd8;color:#5383c6;}
+    .nav-dropdown-divider{height:1px;background:#f0d4a8;margin:0.2rem 0 0.3rem;}
+    .nav-dropdown>.nav-sub-item{position:relative;}
+    .nav-dropdown>.nav-sub-item>a{display:flex;align-items:center;justify-content:space-between;padding:0.5rem 1.1rem;font-size:0.82rem;font-weight:500;color:#5a3e32;text-decoration:none;text-transform:none;letter-spacing:0;transition:background 0.15s,color 0.15s;white-space:nowrap;}
+    .nav-dropdown>.nav-sub-item>a:hover{background:#faebd8;color:#5383c6;}
+    .nav-dropdown>.nav-sub-item>a .sub-arrow{font-size:0.55rem;opacity:0.5;}
+    .nav-sub-dropdown{display:none;position:absolute;top:-0.4rem;right:calc(100% + 4px);background:#fde9c8;border:1px solid #f0d4a8;border-radius:12px;padding:0.4rem 0;min-width:180px;z-index:400;box-shadow:0 8px 32px rgba(58,46,40,0.1);}
+    .nav-sub-item:hover>.nav-sub-dropdown{display:block;}
+    .nav-sub-item::after{content:'';position:absolute;top:0;right:-10px;width:14px;height:100%;}
+    .nav-sub-dropdown a{display:block;padding:0.5rem 1.1rem;font-size:0.82rem;font-weight:400;color:#5a3e32;text-decoration:none;transition:background 0.15s,color 0.15s;}
+    .nav-sub-dropdown a:hover{background:#faebd8;color:#5383c6;}
+
+    /* ── ABOUT HERO ── */
+    .about-hero {
+      padding: 4rem 3rem 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .meet-line {
+      font-family: var(--serif);
+      font-size: clamp(4rem, 12vw, 9rem);
+      font-weight: 700;
+      line-height: 0.95;
+      color: var(--cork);
+      letter-spacing: -0.02em;
+      margin-bottom: 0;
+    }
+
+    .meet-line .meet-word { color: var(--cork); }
+    .meet-line .name-word { color: var(--blue); }
+
+    /* ── LOWER SECTION ── */
+    .about-lower {
+      max-width: 1200px;
+      margin: -5rem auto 0;
+      padding: 0 3rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* LEFT — photo */
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+      background: var(--parchment);
+    }
+    .about-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--parchment);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.75rem;
+      border: 2px dashed var(--warm-tan);
+    }
+    .about-photo-placeholder span { font-size: 3rem; }
+    .about-photo-placeholder p { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-tan); text-align: center; padding: 0 1rem; }
+
+    /* RIGHT — text */
+    .about-text-block {
+      padding-top: 0.5rem;
+      text-align: left;
+    }
+    .about-tagline {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.75rem;
+      color: var(--cork);
+    }
+    .about-divider {
+      width: 50px;
+      height: 2px;
+      background: var(--warm-tan);
+      margin: 0 0 1.75rem;
+    }
+    .about-body {
+      font-size: 0.95rem;
+      color: var(--cork);
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+    .about-social {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.7rem 1.6rem;
+      border-radius: 2px;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary{background:var(--blue);color:#fff;}
+    .btn-primary:hover{background:#3a6aab;}
+    .btn-outline{background:transparent;color:var(--cork);border:1px solid var(--warm-tan);}
+    .btn-outline:hover{border-color:var(--blue);color:var(--blue);}
+
+    /* Ad */
+    .ad-slot{max-width:1200px;margin:0 auto 3rem;padding:0 3rem;text-align:center;}
+
+    footer{background:#5a3e32;color:#fde9c8;padding:2rem;text-align:center;font-size:0.8rem;}
+    footer a{color:var(--pink);text-decoration:none;}
+    .footer-logo{font-family:var(--serif);font-size:1.3rem;font-weight:300;color:var(--pink);display:block;margin-bottom:0.5rem;}
+
+    @media(max-width:760px){
+      .about-hero { padding: 2.5rem 1.5rem 0; }
+      .about-lower { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem 1.5rem 4rem; }
+      .meet-line { font-size: clamp(3.5rem, 15vw, 6rem); }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">How About Saturday</a>
+  <ul class="nav-links">
+    <li class="nav-item">
+      <a href="index.html#recipes">Recipes <span class="nav-arrow">&#9660;</span></a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-link" href="all-recipes.html">View All Recipes</a>
+        <div class="nav-dropdown-divider"></div>
+        <div class="nav-sub-item">
+          <a href="beverage.html">Beverage <span class="sub-arrow">&#9664;</span></a>
+          <div class="nav-sub-dropdown">
+            <a href="matcha.html">Matcha</a>
+            <a href="cozy-sips.html">Cozy Sips</a>
+          </div>
+        </div>
+        <div class="nav-sub-item">
+          <a href="baking.html">Baking <span class="sub-arrow">&#9664;</span></a>
+          <div class="nav-sub-dropdown">
+            <a href="baking.html#cake">Cake</a>
+            <a href="baking.html#muffin">Muffin</a>
+            <a href="baking.html#cookies">Cookies</a>
+            <a href="baking.html#loaf">Loaf</a>
+            <a href="baking.html#tiramisu">Tiramisu</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="all-series.html">Series <span class="nav-arrow">&#9660;</span></a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-link" href="all-series.html">View All Series</a>
+        <div class="nav-dropdown-divider"></div>
+        <a class="nav-dropdown-item" href="series-flavours.html">Flavours of My Childhood</a>
+        <a class="nav-dropdown-item" href="series-matcha.html">Matcha Series</a>
+        <a class="nav-dropdown-item" href="series-hojicha.html">Hojicha Series</a>
+        <a class="nav-dropdown-item" href="series-holiday-cookies.html">Holiday Cookies</a>
+      </div>
+    </li>
+    <li class="nav-item"><a href="about.html" style="color:#5383c6;">About</a></li>
+    <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a></li>
+  </ul>
+</nav>
+
+<!-- BIG HEADING -->
+<div class="about-hero">
+  <h1 class="meet-line">
+    <span class="meet-word">meet,</span>
+    <span class="name-word"> Amy</span>
+  </h1>
+</div>
+
+<!-- LOWER: PHOTO LEFT + TEXT RIGHT -->
+<div class="about-lower">
+
+  <!-- LEFT — photo -->
+  <div class="about-photo-wrap">
+    <img class="about-photo" src="images/amy-about.jpg" alt="Amy"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+    <div class="about-photo-placeholder" style="display:none;">
+      <span>🌸</span>
+      <p>Add your photo as<br>images/amy-about.jpg</p>
+    </div>
+  </div>
+
+  <!-- RIGHT — text -->
+  <div class="about-text-block">
+
+    <p class="about-tagline" style="text-align:center;">
+      Made for <em style="font-style:italic;color:#d4847a;">slow</em>
+      <span style="color:#5383c6;">Saturdays</span>
+    </p>
+
+    <div class="about-divider"></div>
+
+    <p class="about-body">
+      I started How About Saturday in 2020 as a little space to slow down and celebrate the simple joy of making something from scratch. What began as a love for cozy bakes and seasonal drinks has grown into a community of people who appreciate the beauty of spending a Saturday in the kitchen, flour on the counter and something warm in the oven.
+    </p>
+
+    <p class="about-body">
+      Here you will find tea infused cakes, matcha drinks, and everything in between. My recipes are not about perfection. They are about the process, the ritual, and the quiet pleasure of making something with your own hands. Whether you are here for the baking or just the cozy vibes, I am really glad you found your way to this little corner of the internet.
+    </p>
+
+    <div class="about-social">
+      <a class="btn btn-primary" href="all-recipes.html">Browse Recipes</a>
+      <a class="btn btn-outline" href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">@howaboutsaturday</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- AD SLOT -->
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1281955985735338" data-ad-slot="YOUR_SLOT_ID" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<footer>
+  <span class="footer-logo">How About Saturday</span>
+  <p>Baking, slow living &amp; cozy drinks from Canada.</p>
+  <p style="margin-top:0.75rem;"><a href="https://instagram.com/howaboutsaturday" target="_blank">Instagram</a></p>
+</footer>
+
+</body>
+</html>
