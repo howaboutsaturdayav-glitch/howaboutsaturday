@@ -118,13 +118,13 @@
     .ad-placeholder { display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.25rem;background:var(--parchment);border:1px dashed var(--warm-tan);border-radius:4px;color:var(--warm-tan);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase; }
 
     /* ── HERO ── */
-    .hero { display:grid;grid-template-columns:1fr 1fr;min-height:520px;max-width:1200px;margin:0 auto;padding:3rem 2rem 4rem;gap:3rem;align-items:center; }
+    .hero { display:grid;grid-template-columns:1fr 1fr;max-width:1200px;margin:0 auto;padding:3rem 2rem 4rem;gap:3rem;align-items:center; }
     .hero-left { display:flex;flex-direction:column;gap:1.5rem; }
     .hero-eyebrow { font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-mid); }
     .hero-left h1 { font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.5rem);font-weight:700;line-height:1.1;color:var(--terracotta); }
     .hero-sub { font-size:0.95rem;line-height:1.75;color:#5a3e32;max-width:460px; }
     .hero-actions { display:flex;gap:1rem;flex-wrap:wrap; }
-    .hero-right { position:relative;border-radius:12px;overflow:hidden;display:block;text-decoration:none;aspect-ratio:4/5;background:var(--parchment); }
+    .hero-right { position:relative;border-radius:12px;overflow:hidden;display:block;text-decoration:none;height:420px;background:var(--parchment); }
     .hero-right img { width:100%;height:100%;object-fit:cover;display:block; }
     .hero-right-placeholder { display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:5rem;background:var(--warm-tan); }
     .hero-card-info { position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(58,46,40,0.85) 0%,transparent 100%);color:#fff; }
@@ -168,9 +168,10 @@
     /* ── GRAM GRID ── */
     .gram-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:3px; }
     .gram-tile { position:relative;aspect-ratio:1;overflow:hidden;display:block;text-decoration:none;background:var(--warm-tan); }
-    .gram-tile img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease; }
+    .gram-tile img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease; }
     .gram-tile:hover img { transform:scale(1.04); }
-    .gram-fallback { display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:3rem; }
+    .gram-fallback { position:absolute;inset:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;z-index:0; }
+    .gram-tile img { z-index:1; }
     .gram-hover { position:absolute;inset:0;background:linear-gradient(to top,rgba(58,46,40,0.78) 0%,transparent 60%);opacity:0;transition:opacity 0.3s;display:flex;flex-direction:column;justify-content:flex-end;padding:1rem; }
     .gram-tile:hover .gram-hover { opacity:1; }
     .gram-hover-tag { font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(253,233,200,0.75);margin-bottom:0.2rem; }
@@ -350,7 +351,8 @@
   </div>
 
   <div class="gram-grid" id="gram-grid">
-    <a class="gram-tile" href="Recipe/pandan-coconut-custard-cake.html" data-category="cake"><img src="images/pandan-coconut-custard-cake.jpg" alt="Pandan Coconut Custard Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🍊</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Orange Earl Grey Chocolate Cake</p></div></a>
+    <a class="gram-tile" href="Recipe/pandan-coconut-custard-cake.html" data-category="cake"><img src="images/pandan-coconut-custard-cake.jpg" alt="Pandan Coconut Custard Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🌿</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Pandan Coconut Custard Cake</p></div></a>
+    <a class="gram-tile" href="Recipe/orange-earl-grey-chocolate-cake.html" data-category="cake"><img src="images/orange-earl-grey-chocolate-cake.jpg" alt="Orange Earl Grey Chocolate Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🍊</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Orange Earl Grey Chocolate Cake</p></div></a>
     <a class="gram-tile" href="Recipe/jasmine-matcha-latte.html" data-category="matcha"><img src="images/jasmine-matcha-latte.jpg" alt="Jasmine Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Jasmine Matcha Latte</p></div></a>
     <a class="gram-tile" href="Recipe/hojicha-tiramisu.html" data-category="tiramisu"><img src="images/hojicha-tiramisu.jpg" alt="Hojicha Tiramisu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;color:#fde9c8;">🍮</div><div class="gram-hover"><p class="gram-hover-tag">Tiramisu</p><p class="gram-hover-title">Hojicha Tiramisu</p></div></a>
     <a class="gram-tile" href="Recipe/strawberry-hojicha-cheesecake.html" data-category="cake"><img src="images/strawberry-hojicha-cheesecake.jpg" alt="Strawberry Hojicha Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🍓</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Strawberry Hojicha Cheesecake</p></div></a>
@@ -358,35 +360,6 @@
     <a class="gram-tile" href="Recipe/grape-tea-fizz.html" data-category="cozy-sips"><img src="images/grape-tea-fizz.jpg" alt="Grape Tea Fizz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍇</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Grape Tea Fizz</p></div></a>
     <a class="gram-tile" href="Recipe/almond-poppy-berries-muffin.html" data-category="muffin"><img src="images/almond-poppy-berries-muffin.jpg" alt="Almond Poppy Berries Muffin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🫐</div><div class="gram-hover"><p class="gram-hover-tag">Muffin</p><p class="gram-hover-title">Almond Poppy Berries Muffin</p></div></a>
     <a class="gram-tile" href="Recipe/lemon-iced-tea-cake.html" data-category="loaf"><img src="images/lemon-iced-tea-cake.jpg" alt="Lemon Iced Tea Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;">🍋</div><div class="gram-hover"><p class="gram-hover-tag">Loaf</p><p class="gram-hover-title">Lemon Iced Tea Cake</p></div></a>
-    <a class="gram-tile" href="Recipe/peppermint-chocolate-brownie.html" data-category="cookies"><img src="images/peppermint-chocolate-brownie.jpg" alt="Peppermint Chocolate Brownie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍫</div><div class="gram-hover"><p class="gram-hover-tag">Cookies</p><p class="gram-hover-title">Peppermint Chocolate Brownie</p></div></a>
-    <!-- Extra recipes — hidden by default, shown when filtering -->
-    <a class="gram-tile gram-extra" href="Recipe/lychee-matcha-latte.html" data-category="matcha"><img src="images/lychee-matcha-latte.jpg" alt="Lychee Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Lychee Matcha Latte</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/maple-pumpkin-matcha-latte.html" data-category="matcha"><img src="images/maple-pumpkin-matcha-latte.jpg" alt="Maple Pumpkin Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Maple Pumpkin Matcha Latte</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/tofu-pudding-matcha-latte.html" data-category="matcha"><img src="images/tofu-pudding-matcha-latte.jpg" alt="Tofu Pudding Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Tofu Pudding Matcha Latte</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/pickle-matcha-latte.html" data-category="matcha"><img src="images/pickle-matcha-latte.jpg" alt="Pickle Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🥒</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Pickle Matcha Latte</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/matcha-brown-butter-blondie.html" data-category="matcha"><img src="images/matcha-brown-butter-blondie.jpg" alt="Matcha Brown Butter Blondie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Matcha Brown Butter Blondie</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/matcha-latte-coffee-cake.html" data-category="matcha"><img src="images/matcha-latte-coffee-cake.jpg" alt="Matcha Latte Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Matcha Latte Coffee Cake</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/blueberry-muffin-tea-matcha-snowballs.html" data-category="matcha"><img src="images/blueberry-muffin-tea-matcha-snowballs.jpg" alt="Blueberry Muffin Tea Matcha Snowballs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🫐</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Blueberry Muffin Tea Matcha Snowballs</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/ube-hojicha-latte.html" data-category="cozy-sips"><img src="images/ube-hojicha-latte.jpg" alt="Ube Hojicha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Ube Hojicha Latte</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/earl-grey-orange-latte.html" data-category="cozy-sips"><img src="images/earl-grey-orange-latte.jpg" alt="Earl Grey Orange Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;">🍊</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Earl Grey Orange Latte</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/almond-hot-chocolate.html" data-category="cozy-sips"><img src="images/almond-hot-chocolate.jpg" alt="Almond Hot Chocolate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;">☕</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Almond Hot Chocolate</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/earl-grey-creme-brulee-latte.html" data-category="cozy-sips"><img src="images/earl-grey-creme-brulee-latte.jpg" alt="Earl Grey Creme Brulee Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;">☕</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Earl Grey Creme Brulee Latte</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/london-fog-hojicha.html" data-category="cozy-sips"><img src="images/london-fog-hojicha.jpg" alt="London Fog Hojicha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">London Fog Hojicha</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/jasmine-chiffon-cake.html" data-category="cake"><img src="images/jasmine-chiffon-cake.jpg" alt="Jasmine Chiffon Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🎂</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Jasmine Chiffon Cake</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/hojicha-jasmine-longan-cake.html" data-category="cake"><img src="images/hojicha-jasmine-longan-cake.jpg" alt="Hojicha Jasmine Longan Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🎂</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Hojicha Jasmine Longan Cake</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/tofu-hua-chiffon-cake.html" data-category="cake"><img src="images/tofu-hua-chiffon-cake.jpg" alt="Tofu Hua Chiffon Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🎂</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Tofu Hua Chiffon Cake</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/london-fog-cake.html" data-category="cake"><img src="images/london-fog-cake.jpg" alt="London Fog Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🎂</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">London Fog Cake</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/thai-green-tea-burnt-cheesecake.html" data-category="cake"><img src="images/thai-green-tea-burnt-cheesecake.jpg" alt="Thai Green Tea Burnt Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🎂</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Thai Green Tea Burnt Cheesecake</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/salted-caramel-oolong-cake.html" data-category="cake"><img src="images/salted-caramel-oolong-cake.jpg" alt="Salted Caramel Oolong Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🎂</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Salted Caramel Oolong Cake</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/carrot-cake.html" data-category="cake"><img src="images/carrot-cake.jpg" alt="Carrot Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🥕</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Carrot Cake</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/matcha-latte-coffee-cake.html" data-category="cake"><img src="images/matcha-latte-coffee-cake.jpg" alt="Matcha Latte Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🎂</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Matcha Latte Coffee Cake</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/matcha-brown-butter-blondie.html" data-category="cookies"><img src="images/matcha-brown-butter-blondie.jpg" alt="Matcha Brown Butter Blondie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍪</div><div class="gram-hover"><p class="gram-hover-tag">Cookies</p><p class="gram-hover-title">Matcha Brown Butter Blondie</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/jasmine-creme-brulee-shortbread.html" data-category="cookies"><img src="images/jasmine-creme-brulee-shortbread.jpg" alt="Jasmine Creme Brulee Shortbread" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍪</div><div class="gram-hover"><p class="gram-hover-tag">Cookies</p><p class="gram-hover-title">Jasmine Creme Brulee Shortbread</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/saigon-chai-gingerbread-cookies.html" data-category="cookies"><img src="images/saigon-chai-gingerbread-cookies.jpg" alt="Saigon Chai Gingerbread Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍪</div><div class="gram-hover"><p class="gram-hover-tag">Cookies</p><p class="gram-hover-title">Saigon Chai Gingerbread Cookies</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/vanilla-cappuccino-choc-chip-cookies.html" data-category="cookies"><img src="images/vanilla-cappuccino-choc-chip-cookies.jpg" alt="Vanilla Cappuccino Choc Chip Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍪</div><div class="gram-hover"><p class="gram-hover-tag">Cookies</p><p class="gram-hover-title">Vanilla Cappuccino Choc Chip Cookies</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/peanut-butter-thumbprint-cookies.html" data-category="cookies"><img src="images/peanut-butter-thumbprint-cookies.jpg" alt="Peanut Butter Thumbprint Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍪</div><div class="gram-hover"><p class="gram-hover-tag">Cookies</p><p class="gram-hover-title">Peanut Butter Thumbprint Cookies</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/earl-grey-orange-loaf.html" data-category="loaf"><img src="images/earl-grey-orange-loaf.jpg" alt="Earl Grey Orange Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;">🍊</div><div class="gram-hover"><p class="gram-hover-tag">Loaf</p><p class="gram-hover-title">Earl Grey Orange Loaf</p></div></a>
-    <a class="gram-tile gram-extra" href="Recipe/orange-spice-tea-loaf.html" data-category="loaf"><img src="images/orange-spice-tea-loaf.jpg" alt="Orange Spice Tea Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;">🍊</div><div class="gram-hover"><p class="gram-hover-tag">Loaf</p><p class="gram-hover-title">Orange Spice Tea Loaf</p></div></a>
     <div class="gram-no-results">No recipes found in this category yet. Check back soon!</div>
   </div>
 
@@ -441,9 +414,6 @@
 </footer>
 
 <script>
-  // Hide extra tiles on load — only show first 9
-  document.querySelectorAll('.gram-extra').forEach(t => t.style.display = 'none');
-
   let activeCategory = null;
 
   function toggleDropdown(name) {
@@ -460,15 +430,8 @@
 
   function filterRecipes(category, label, parent) {
     activeCategory = category;
-    // Show ALL tiles (including extras), then hide non-matching
     document.querySelectorAll('.gram-tile').forEach(tile => {
-      if (tile.dataset.category === category) {
-        tile.style.display = 'block';
-        tile.classList.remove('hidden');
-      } else {
-        tile.style.display = 'none';
-        tile.classList.add('hidden');
-      }
+      tile.classList.toggle('hidden', tile.dataset.category !== category);
     });
     document.getElementById('btn-' + parent).textContent = label + ' ▼';
     document.getElementById('btn-' + parent).classList.add('active');
@@ -480,11 +443,7 @@
 
   function clearFilter() {
     activeCategory = null;
-    // Hide extras, show first 9 again
-    document.querySelectorAll('.gram-tile').forEach(tile => {
-      tile.classList.remove('hidden');
-      tile.style.display = tile.classList.contains('gram-extra') ? 'none' : 'block';
-    });
+    document.querySelectorAll('.gram-tile').forEach(t => t.classList.remove('hidden'));
     document.getElementById('btn-beverage').textContent = 'Beverage ▼';
     document.getElementById('btn-baking').textContent = 'Baking ▼';
     document.getElementById('btn-beverage').classList.remove('active');
