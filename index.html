@@ -106,6 +106,95 @@
       .nav-links li:not(:last-child) { display: none; }
     }
 
+    /* ── BUTTONS ── */
+    .btn { display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.75rem;border-radius:2px;font-family:var(--sans);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:all 0.2s;cursor:pointer;border:none; }
+    .btn-primary { background:var(--terracotta);color:#fff; }
+    .btn-primary:hover { background:var(--burnt); }
+    .btn-outline { background:transparent;color:#5a3e32;border:1.5px solid var(--warm-tan); }
+    .btn-outline:hover { border-color:var(--terracotta);color:var(--terracotta); }
+
+    /* ── AD BANNER ── */
+    .ad-banner { display:flex;justify-content:center;align-items:center;padding:1rem 2rem;background:var(--cream); }
+    .ad-placeholder { display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.25rem;background:var(--parchment);border:1px dashed var(--warm-tan);border-radius:4px;color:var(--warm-tan);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase; }
+
+    /* ── HERO ── */
+    .hero { display:grid;grid-template-columns:1fr 1fr;min-height:520px;max-width:1200px;margin:0 auto;padding:3rem 2rem 4rem;gap:3rem;align-items:center; }
+    .hero-left { display:flex;flex-direction:column;gap:1.5rem; }
+    .hero-eyebrow { font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-mid); }
+    .hero-left h1 { font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.5rem);font-weight:700;line-height:1.1;color:var(--terracotta); }
+    .hero-sub { font-size:0.95rem;line-height:1.75;color:#5a3e32;max-width:460px; }
+    .hero-actions { display:flex;gap:1rem;flex-wrap:wrap; }
+    .hero-right { position:relative;border-radius:12px;overflow:hidden;display:block;text-decoration:none;aspect-ratio:4/5;background:var(--parchment); }
+    .hero-right img { width:100%;height:100%;object-fit:cover;display:block; }
+    .hero-right-placeholder { display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:5rem;background:var(--warm-tan); }
+    .hero-card-info { position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(58,46,40,0.85) 0%,transparent 100%);color:#fff; }
+    .hero-card-tag { font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;opacity:0.8;margin-bottom:0.3rem; }
+    .hero-card-title { font-family:var(--serif);font-size:1.4rem;font-weight:700;line-height:1.2;margin-bottom:0.4rem; }
+    .hero-card-desc { font-size:0.8rem;line-height:1.6;opacity:0.85;margin-bottom:0.75rem; }
+    .hero-card-meta { display:flex;gap:1rem;font-size:0.75rem;opacity:0.7; }
+    @media(max-width:700px){ .hero{grid-template-columns:1fr;} .hero-right{aspect-ratio:4/3;} }
+
+    /* ── SECTION LABELS ── */
+    .section-label { font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-mid);margin-bottom:0.3rem; }
+    .section-title { font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:var(--terracotta);margin-bottom:2rem; }
+
+    /* ── FILTER BAR ── */
+    .filter-bar { display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap; }
+    .filter-dropdown { position:relative; }
+    .filter-btn { background:var(--parchment);border:1px solid var(--warm-tan);border-radius:20px;padding:0.4rem 1rem;font-size:0.78rem;font-family:var(--sans);color:#5a3e32;cursor:pointer;display:flex;align-items:center;gap:0.4rem;transition:all 0.2s; }
+    .filter-btn:hover,.filter-btn.active { background:var(--terracotta);color:#fff;border-color:var(--terracotta); }
+    .filter-btn .arrow { font-size:0.5rem;transition:transform 0.2s; }
+    .filter-btn.open .arrow { transform:rotate(180deg); }
+    .dropdown-menu { display:none;position:absolute;top:calc(100% + 6px);left:0;background:var(--cream);border:1px solid var(--warm-tan);border-radius:10px;padding:0.4rem 0;min-width:140px;z-index:200;box-shadow:0 8px 24px rgba(58,46,40,0.1); }
+    .dropdown-menu.open { display:block; }
+    .dropdown-item { display:block;width:100%;background:none;border:none;text-align:left;padding:0.5rem 1rem;font-size:0.8rem;font-family:var(--sans);color:#5a3e32;cursor:pointer;transition:background 0.15s; }
+    .dropdown-item:hover { background:var(--parchment);color:var(--terracotta); }
+    .filter-clear { background:none;border:1px solid var(--warm-tan);border-radius:20px;padding:0.4rem 0.8rem;font-size:0.75rem;font-family:var(--sans);color:#5a3e32;cursor:pointer;transition:all 0.2s; }
+    .filter-clear:hover { border-color:var(--terracotta);color:var(--terracotta); }
+
+    /* ── RECIPE GRID ── */
+    .recipe-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:3px; }
+    .recipe-card { position:relative;aspect-ratio:1;overflow:hidden;display:block;text-decoration:none;background:var(--warm-tan); }
+    .recipe-card img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease; }
+    .recipe-card:hover img { transform:scale(1.04); }
+    .recipe-card-placeholder { width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;background:var(--warm-tan); }
+    .recipe-card-overlay { position:absolute;inset:0;background:linear-gradient(to top,rgba(58,46,40,0.75) 0%,transparent 55%);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:1rem; }
+    .recipe-card:hover .recipe-card-overlay { opacity:1; }
+    .recipe-card-label { color:#fff; }
+    .recipe-card-label p { font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;opacity:0.75;margin-bottom:0.2rem; }
+    .recipe-card-label h3 { font-family:var(--serif);font-size:1rem;font-weight:700;line-height:1.2; }
+    .recipe-card.hidden { display:none; }
+
+    /* ── GRAM GRID ── */
+    .gram-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:3px; }
+    .gram-tile { position:relative;aspect-ratio:1;overflow:hidden;display:block;text-decoration:none;background:var(--warm-tan); }
+    .gram-tile img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease; }
+    .gram-tile:hover img { transform:scale(1.04); }
+    .gram-fallback { display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:3rem; }
+    .gram-hover { position:absolute;inset:0;background:linear-gradient(to top,rgba(58,46,40,0.78) 0%,transparent 60%);opacity:0;transition:opacity 0.3s;display:flex;flex-direction:column;justify-content:flex-end;padding:1rem; }
+    .gram-tile:hover .gram-hover { opacity:1; }
+    .gram-hover-tag { font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(253,233,200,0.75);margin-bottom:0.2rem; }
+    .gram-hover-title { font-family:var(--serif);font-size:1rem;font-weight:700;color:#fde9c8;line-height:1.2; }
+    .gram-tile.hidden { display:none; }
+    .gram-no-results { display:none;grid-column:1/-1;text-align:center;padding:3rem;font-size:0.9rem;color:#5a3e32;opacity:0.6; }
+    @media(max-width:600px){ .gram-grid{grid-template-columns:repeat(2,1fr);} }
+
+    /* ── ABOUT SECTION (homepage) ── */
+    .about-section { max-width:900px;margin:0 auto;padding:5rem 2rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.75rem; }
+    .about-avatar { font-size:3rem; }
+    .about-name { font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--terracotta); }
+    .about-handle { font-size:0.8rem;letter-spacing:0.1em;color:var(--light-mid); }
+    .about-text { font-size:0.92rem;line-height:1.8;color:#5a3e32;max-width:520px; }
+
+    /* ── SERIES SECTION ── */
+
+    /* ── FOOTER ── */
+    footer { background:#5a3e32;color:var(--cream);padding:3rem 2rem;text-align:center; }
+    .footer-logo { font-family:var(--serif);font-size:1.5rem;font-weight:300;letter-spacing:0.1em;color:var(--light-mid);display:block;margin-bottom:0.75rem; }
+    footer p { font-size:0.82rem;opacity:0.7;margin-bottom:0.5rem; }
+    footer a { color:var(--light-mid);text-decoration:none; }
+    footer a:hover { text-decoration:underline; }
+
   </style>
 </head>
 <body>
@@ -278,7 +367,7 @@
 <!-- ══════════════════════════════════════════════════════════
      ABOUT
 ════════════════════════════════════════════════════════════ -->
-<section class="about-section" id="about">
+<section class="about-section" id="about-section">
   <div class="about-avatar">🌿</div>
   <p class="about-name">Amy</p>
   <p class="about-handle">@howaboutsaturday</p>
