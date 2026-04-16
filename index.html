@@ -186,12 +186,13 @@
     .about-name { font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--terracotta); }
     .about-handle { font-size:0.8rem;letter-spacing:0.1em;color:var(--light-mid); }
     .about-text { font-size:0.92rem;line-height:1.8;color:#5a3e32;max-width:520px; }
+    .about-btns { display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:0.5rem; }
 
     /* ── SERIES SECTION ── */
 
     /* ── FOOTER ── */
     footer { background:#5a3e32;color:var(--cream);padding:3rem 2rem;text-align:center; }
-    .footer-logo { font-family:var(--serif);font-size:1.5rem;font-weight:300;letter-spacing:0.1em;color:var(--light-mid);display:block;margin-bottom:0.75rem; }
+    .footer-logo { font-family:var(--serif);font-size:1.5rem;font-weight:700;letter-spacing:0.1em;color:var(--light-mid);display:block;margin-bottom:0.75rem; }
     footer p { font-size:0.82rem;opacity:0.7;margin-bottom:0.5rem; }
     footer a { color:var(--light-mid);text-decoration:none; }
     footer a:hover { text-decoration:underline; }
@@ -277,7 +278,7 @@
     <h1>Recipes for a <em style="font-style:italic;color:#d4847a;font-weight:600;">slower</em> kind of Saturday</h1>
     <p class="hero-sub">
       Flour on the counter, matcha going cold on the bench, and something
-      already in the oven. Just a girl who loves slow weekends and homemade everything.
+      already in the oven. Just a girl who loves slow weekends and sipping on matcha.
     </p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="#recipes">Browse Recipes</a>
@@ -371,17 +372,17 @@
      ABOUT
 ════════════════════════════════════════════════════════════ -->
 <section class="about-section" id="about-section">
-  <div class="about-avatar">🌿</div>
+  <img src="images/amy-about.jpg" alt="Amy" style="width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:top;display:block;margin:0 auto;" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+  <div style="display:none;font-size:3rem;text-align:center;">🌿</div>
   <p class="about-name">Amy</p>
   <p class="about-handle">@howaboutsaturday</p>
   <p class="about-text">
-    I'm a recipe developer and content creator based in Canada, baking my way through
-    slow-living rituals and nostalgic food memories. Here you'll find
-    recipes I actually make on repeat. Cakes that take all afternoon, drinks worth
-    sipping slowly, and flavours that feel like home.
+    Based in Toronto, I bake from memory and make things from scratch. How About Saturday is my little corner of the internet for cozy recipes, seasonal drinks, and the kind of slow weekend energy that makes everything feel a little better. So glad you are here.
   </p>
   <br />
-  <a class="btn btn-outline" href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Follow on Instagram</a>
+  <div class="about-btns">
+  <a class="btn btn-outline" href="mailto:howaboutsaturday.av@gmail.com">Work With Me</a>
+  </div>
 </section>
 
 <!-- ══════════════════════════════════════════════════════════
