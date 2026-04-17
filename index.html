@@ -456,29 +456,7 @@
     }
   });
 </script>
-<script>
-  // Hamburger menu
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
 
-  function isMobile() { return window.innerWidth <= 860; }
-
-  function updateNav() {
-    if (isMobile()) {
-      hamburger.style.display = 'flex';
-    } else {
-      hamburger.style.display = 'none';
-      navLinks.classList.remove('open');
-    }
-  }
-
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-
-  window.addEventListener('resize', updateNav);
-  updateNav();
-</script>
 
 <script>
   var hamburger = document.getElementById('hamburger');
@@ -492,6 +470,15 @@
     window.addEventListener('resize', updateNav);
     updateNav();
   }
+</script>
+<script>
+  (function(){
+    var h=document.getElementById('hamburger'),n=document.getElementById('nav-links');
+    if(!h||!n)return;
+    function u(){h.style.display=window.innerWidth<=860?'flex':'none';if(window.innerWidth>860)n.classList.remove('open');}
+    h.addEventListener('click',function(){n.classList.toggle('open');});
+    window.addEventListener('resize',u);u();
+  })();
 </script>
 </body>
 </html>
