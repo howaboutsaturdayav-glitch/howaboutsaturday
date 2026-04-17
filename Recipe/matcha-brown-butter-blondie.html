@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Matcha Brown Butter Blondie — How About Saturday</title>
+  <title>Matcha Brown Butter Brookie — How About Saturday</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -57,25 +57,28 @@
     footer { background: #5a3e32; color: #fde9c8; padding: 2rem; text-align: center; font-size: 0.8rem; }
     footer a { color: var(--pink); text-decoration: none; }
     .footer-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; color: var(--pink); display: block; margin-bottom: 0.5rem; }
-  
-    
-    }
-  
-    @media (max-width: 860px) {
-      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 1rem 0; z-index: 500; }
-      .nav-links.open { display: flex !important; }
+      .nav-links.open { display: flex; }
       .nav-links li { padding: 0; }
       .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; }
       .nav-dropdown { display: none !important; }
-      .nav-hamburger { display: flex !important; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+      .nav-hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
       .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; }
     }
-    .nav-hamburger { display: none; background: none; border: none; }
+      .video-wrap { margin: 0.75rem auto; min-height: unset; }
+      .video-wrap blockquote { min-width: unset !important; }
+      .video-wrap iframe { max-height: 400px !important; }
+      .divider { margin: 1rem 0; }
+      .recipe-section-title { font-size: 1.2rem; }
+    }
   
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; }
     @media (max-width: 860px) {
-      .page { padding: 2rem 1.25rem 3rem; }
-      .video-wrap { margin: 1rem auto; }
-      .divider { margin: 1.5rem 0; }
+      .nav-hamburger { display: flex; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 1rem 0; z-index: 500; }
+      .nav-links.open { display: flex; }
+      .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; }
+      .nav-dropdown { display: none !important; }
     }
   </style>
 </head>
@@ -130,12 +133,11 @@
 
 <div class="page">
   <p class="recipe-eyebrow">Baking · Matcha</p>
-  <h1 class="recipe-heading">Matcha Brown Butter Blondie</h1>
+  <h1 class="recipe-heading">Matcha Brown Butter Brookie</h1>
   <p class="recipe-desc">Nutty brown butter meets earthy matcha in a chewy, golden blondie. Simple to make, impossible to stop eating.</p>
 
-  <div class="video-wrap">
+  <div class="video-wrap" style="margin:1.5rem auto;max-width:540px;">
     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DTy9V4dETCR/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px);"></blockquote>
-    <script async src="//www.instagram.com/embed.js"></script>
   </div>
 
   <!-- AD SLOT 1 -->
@@ -226,23 +228,21 @@
 
 <footer>
   <span class="footer-logo">How About Saturday</span>
-  <p>Baking, slow living &amp; cozy drinks from Canada.</p>
-  <p style="margin-top:0.75rem;"><a href="https://instagram.com/howaboutsaturday" target="_blank">Instagram</a></p>
-  <p style="margin-top:0.5rem;opacity:0.5;font-size:0.75rem;">© 2025 How About Saturday · All rights reserved.</p>
+  <p>Baking, slow living &amp; cozy drinks.</p>
+  <p style="margin-top:0.75rem;"><a href="https://instagram.com/howaboutsaturday" target="_blank">Instagram</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/@howaboutsaturday" target="_blank">YouTube</a> &nbsp;·&nbsp; <a href="https://www.tiktok.com/@howaboutsaturday_" target="_blank">TikTok</a></p>
 </footer>
 
 <script>
-  var hamburger = document.getElementById('hamburger');
-  var navLinks = document.getElementById('nav-links');
-  if (hamburger && navLinks) {
-    function updateNav() {
-      hamburger.style.display = window.innerWidth <= 860 ? 'flex' : 'none';
-      if (window.innerWidth > 860) navLinks.classList.remove('open');
-    }
-    hamburger.addEventListener('click', function() { navLinks.classList.toggle('open'); });
-    window.addEventListener('resize', updateNav);
-    updateNav();
-  }
+  (function(){
+    var h = document.getElementById('hamburger');
+    var n = document.getElementById('nav-links');
+    if (!h || !n) return;
+    function upd(){ h.style.display = window.innerWidth <= 860 ? 'flex' : 'none'; if(window.innerWidth > 860) n.classList.remove('open'); }
+    h.addEventListener('click', function(){ n.classList.toggle('open'); });
+    window.addEventListener('resize', upd);
+    upd();
+  })();
 </script>
+<script async defer src="https://www.instagram.com/embed.js" onload="if(window.instgrm)window.instgrm.Embeds.process();"></script>
 </body>
 </html>
