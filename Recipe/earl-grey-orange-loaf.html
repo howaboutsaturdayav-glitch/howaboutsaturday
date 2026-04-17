@@ -57,12 +57,25 @@
     footer { background: #5a3e32; color: #fde9c8; padding: 2rem; text-align: center; font-size: 0.8rem; }
     footer a { color: var(--pink); text-decoration: none; }
     .footer-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; color: var(--pink); display: block; margin-bottom: 0.5rem; }
+  
+    @media (max-width: 860px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 1rem 0; z-index: 500; }
+      .nav-links.open { display: flex; }
+      .nav-links li { padding: 0; }
+      .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; }
+      .nav-dropdown { display: none !important; }
+      .nav-hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+      .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; }
+    }
   </style>
 </head>
 <body>
 <nav>
   <a class="nav-logo" href="../index.html">How About Saturday</a>
-  <ul class="nav-links">
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu" style="background:none;border:none;">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
     <li class="nav-item">
       <a href="../index.html#recipes">Recipes <span class="nav-arrow">&#9660;</span></a>
       <div class="nav-dropdown">
@@ -196,5 +209,16 @@
   <p style="margin-top:0.75rem;"><a href="https://instagram.com/howaboutsaturday" target="_blank">Instagram</a></p>
   <p style="margin-top:0.5rem;opacity:0.5;font-size:0.75rem;">© 2025 How About Saturday · All rights reserved.</p>
 </footer>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  function updateNav() {
+    hamburger.style.display = window.innerWidth <= 860 ? 'flex' : 'none';
+    if (window.innerWidth > 860) navLinks.classList.remove('open');
+  }
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  window.addEventListener('resize', updateNav);
+  updateNav();
+</script>
 </body>
 </html>
