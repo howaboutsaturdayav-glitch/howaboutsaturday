@@ -85,7 +85,6 @@
     .nav-item > a .nav-arrow { font-size: 0.55rem; transition: transform 0.2s; }
     .nav-item:hover > a .nav-arrow { transform: rotate(180deg); }
     .nav-item::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 14px; }
-    .nav-dropdown { display: none; position: absolute; top: calc(100% + 2px); right: 0; background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 260px; z-index: 300; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
     .nav-item:hover > .nav-dropdown { display: block; }
     .nav-dropdown-link { display: block; padding: 0.6rem 1.1rem; font-size: 0.82rem; font-weight: 700; color: #5383c6; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.15s; border-bottom: 1px solid #f0d4a8; margin-bottom: 0.3rem; }
     .nav-dropdown-link:hover { background: #faebd8; }
@@ -103,22 +102,6 @@
     .nav-sub-dropdown a:hover { background: #faebd8; color: #5383c6; }
 
     
-
-      /* ── HERO ── */
-      .hero { grid-template-columns: 1fr; padding: 2rem 1.5rem 2rem; gap: 1.5rem; overflow: hidden; }
-      .hero-right { height: 75vw; max-height: 380px; width: 100%; margin: 0; border-radius: 8px; }
-
-      /* ── BUTTONS ── */
-      .hero-actions { flex-direction: row; flex-wrap: wrap; gap: 0.75rem; }
-      .hero-actions .btn { flex: 0 1 auto; padding: 0.6rem 1.25rem; font-size: 0.75rem; }
-
-      /* ── SECTIONS ── */
-      #recipes { padding: 2rem 1.25rem 3rem !important; }
-      .about-section { padding: 3rem 1.5rem !important; }
-
-      /* ── GRAM GRID ── */
-      .gram-grid { grid-template-columns: repeat(2, 1fr); }
-    }
 
     /* ── BUTTONS ── */
     .btn { display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.75rem;border-radius:2px;font-family:var(--sans);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:all 0.2s;cursor:pointer;border:none; }
@@ -147,7 +130,7 @@
     .hero-card-desc { font-size:0.8rem;line-height:1.6;opacity:0.85;margin-bottom:0.75rem; }
     .hero-card-meta { display:flex;gap:1rem;font-size:0.75rem;opacity:0.7; }
     @media(min-width:861px){ .hero-right { height: 520px; } }
-    @media(max-width:700px){ .hero{grid-template-columns:1fr;overflow:hidden;} .hero-right{aspect-ratio:4/3;} }
+    @media(max-width:700px){ .hero{grid-template-columns:1fr;overflow:hidden;} }
 
     /* ── SECTION LABELS ── */
     .section-label { font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-mid);margin-bottom:0.3rem; }
@@ -212,20 +195,22 @@
     footer a { color:var(--light-mid);text-decoration:none; }
     footer a:hover { text-decoration:underline; }
 
-  
-    
-    .nav-hamburger { display: none; background: none; border: none; }
-  
-    
-  
-    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+      .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
     .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; margin-bottom: 4px; }
-    @media (max-width: 860px) {
-      .nav-hamburger { display: flex; flex-direction: column; }
+    @media (max-width: 860px) {      .nav-hamburger { display: flex; flex-direction: column; }
       .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 1rem 0; z-index: 500; }
       .nav-links.open { display: flex !important; }
       .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; }
       .nav-dropdown { display: none !important; }
+      .hero { grid-template-columns: 1fr; padding: 2rem 1.5rem; gap: 1.5rem; overflow: hidden; }
+      .hero-right { height: 75vw; max-height: 380px; width: 100%; border-radius: 8px; }
+      .hero-actions { justify-content: center; flex-direction: row; flex-wrap: wrap; gap: 0.75rem; }
+      .hero-actions .btn { flex: 0 1 auto; padding: 0.6rem 1.25rem; font-size: 0.75rem; }
+      .about-text { max-width: 100%; padding: 0 0.5rem; }
+      #recipes { padding: 2rem 1.25rem 3rem !important; }
+      .about-section { padding: 2rem 1.5rem !important; }
+      .gram-grid { grid-template-columns: repeat(2, 1fr); }
+    }
   </style>
 </head>
 <body>
@@ -385,7 +370,8 @@
   <p class="about-name">Amy</p>
   <a class="about-handle" href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener" style="text-decoration:none;">@howaboutsaturday</a>
   <p class="about-text">
-    Based in Toronto, I bake from memory and make things from scratch.<br>How About Saturday is my little corner of the internet for cozy recipes, seasonal drinks, and slow weekend energy. So glad you are here.
+    Based in Toronto, I bake from memory and make things from scratch. How About Saturday is my little corner of the internet for cozy recipes, seasonal drinks, and slow weekend energy. So glad you are here.
+  </p>
   </p>
   <br />
   <div class="about-btns">
@@ -461,19 +447,6 @@
 </script>
 
 
-<script>
-  var hamburger = document.getElementById('hamburger');
-  var navLinks = document.getElementById('nav-links');
-  if (hamburger && navLinks) {
-    function updateNav() {
-      hamburger.style.display = window.innerWidth <= 860 ? 'flex' : 'none';
-      if (window.innerWidth > 860) navLinks.classList.remove('open');
-    }
-    hamburger.addEventListener('click', function() { navLinks.classList.toggle('open'); });
-    window.addEventListener('resize', updateNav);
-    updateNav();
-  }
-</script>
 <script>
   (function(){
     var h=document.getElementById('hamburger'),n=document.getElementById('nav-links');

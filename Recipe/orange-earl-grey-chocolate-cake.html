@@ -76,7 +76,6 @@
     .nav-item > a .nav-arrow { font-size: 0.55rem; transition: transform 0.2s; }
     .nav-item:hover > a .nav-arrow { transform: rotate(180deg); }
     .nav-item::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 14px; }
-    .nav-dropdown { display: none; position: absolute; top: calc(100% + 2px); right: 0; background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 260px; z-index: 300; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
     .nav-item:hover > .nav-dropdown { display: block; }
     .nav-dropdown-link { display: block; padding: 0.6rem 1.1rem; font-size: 0.82rem; font-weight: 700; color: #5383c6; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.15s; border-bottom: 1px solid #f0d4a8; margin-bottom: 0.3rem; }
     .nav-dropdown-link:hover { background: #faebd8; }
@@ -92,9 +91,8 @@
     .nav-sub-item::after { content: ''; position: absolute; top: 0; right: -10px; width: 14px; height: 100%; }
     .nav-sub-dropdown a { display: block; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 400; color: #5a3e32; text-decoration: none; transition: background 0.15s, color 0.15s; }
     .nav-sub-dropdown a:hover { background: #faebd8; color: #5383c6; }
-
-  
-    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    
+      .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
     .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; margin-bottom: 4px; }
     @media (max-width: 860px) {
       .nav-hamburger { display: flex; flex-direction: column; }
@@ -102,7 +100,7 @@
       .nav-links.open { display: flex !important; }
       .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; }
       .nav-dropdown { display: none !important; }
-      }
+    }
   </style>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281955985735338" crossorigin="anonymous"></script>
 </head>
@@ -311,17 +309,18 @@
 </footer>
 
 
+
+
+
+<script async defer src="https://www.instagram.com/embed.js" onload="if(window.instgrm)window.instgrm.Embeds.process();"></script>
 <script>
   (function(){
-    var h = document.getElementById('hamburger');
-    var n = document.getElementById('nav-links');
-    if (!h || !n) return;
-    function upd(){ h.style.display = window.innerWidth <= 860 ? 'flex' : 'none'; if(window.innerWidth > 860) n.classList.remove('open'); }
-    h.addEventListener('click', function(){ n.classList.toggle('open'); });
-    window.addEventListener('resize', upd);
-    upd();
+    var h=document.getElementById('hamburger'),n=document.getElementById('nav-links');
+    if(!h||!n)return;
+    function u(){h.style.display=window.innerWidth<=860?'flex':'none';if(window.innerWidth>860)n.classList.remove('open');}
+    h.addEventListener('click',function(){n.classList.toggle('open');});
+    window.addEventListener('resize',u);u();
   })();
 </script>
-<script async defer src="https://www.instagram.com/embed.js" onload="if(window.instgrm)window.instgrm.Embeds.process();"></script>
 </body>
 </html>
