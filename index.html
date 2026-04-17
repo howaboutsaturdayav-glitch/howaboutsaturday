@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How About Saturday | Baking, Slow Living & Cozy Drinks</title>
+  <title>Home — How About Saturday</title>
   <meta name="description" content="Recipes, baking, and slow living by Amy. @howaboutsaturday" />
 
   <!-- Google Fonts -->
@@ -103,7 +103,29 @@
     .nav-sub-dropdown a:hover { background: #faebd8; color: #5383c6; }
 
     @media (max-width: 860px) {
-      .nav-links li:not(:last-child) { display: none; }
+      /* ── HAMBURGER ── */
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 1rem 0; z-index: 500; }
+      .nav-links.open { display: flex; }
+      .nav-links li { padding: 0; }
+      .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; }
+      .nav-dropdown { display: none !important; }
+      .nav-hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+      .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; transition: all 0.3s; }
+
+      /* ── HERO ── */
+      .hero { grid-template-columns: 1fr; padding: 2rem 1.5rem 2rem; gap: 1.5rem; }
+      .hero-right { height: 320px; }
+
+      /* ── BUTTONS ── */
+      .hero-actions { flex-direction: row; flex-wrap: wrap; }
+      .hero-actions .btn { flex: 0 1 auto; }
+
+      /* ── SECTIONS ── */
+      #recipes { padding: 2rem 1.25rem 3rem !important; }
+      .about-section { padding: 3rem 1.5rem !important; }
+
+      /* ── GRAM GRID ── */
+      .gram-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     /* ── BUTTONS ── */
@@ -206,7 +228,10 @@
 ════════════════════════════════════════════════════════════ -->
 <nav>
   <a class="nav-logo" href="#">How About Saturday</a>
-  <ul class="nav-links">
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu" style="background:none;border:none;">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
     <li class="nav-item">
       <a href="index.html#recipes">Recipes <span class="nav-arrow">&#9660;</span></a>
       <div class="nav-dropdown">
@@ -426,6 +451,29 @@
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('open'));
     }
   });
+</script>
+<script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  function isMobile() { return window.innerWidth <= 860; }
+
+  function updateNav() {
+    if (isMobile()) {
+      hamburger.style.display = 'flex';
+    } else {
+      hamburger.style.display = 'none';
+      navLinks.classList.remove('open');
+    }
+  }
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  window.addEventListener('resize', updateNav);
+  updateNav();
 </script>
 
 </body>
