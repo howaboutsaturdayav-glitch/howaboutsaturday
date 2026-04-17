@@ -58,15 +58,19 @@
     footer a { color: var(--pink); text-decoration: none; }
     .footer-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; color: var(--pink); display: block; margin-bottom: 0.5rem; }
   
+    
+    }
+  
     @media (max-width: 860px) {
-      .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 1rem 0; z-index: 500; }
-      .nav-links.open { display: flex; }
+      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 1rem 0; z-index: 500; }
+      .nav-links.open { display: flex !important; }
       .nav-links li { padding: 0; }
       .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; }
       .nav-dropdown { display: none !important; }
-      .nav-hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+      .nav-hamburger { display: flex !important; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
       .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; }
     }
+    .nav-hamburger { display: none; background: none; border: none; }
   </style>
 </head>
 <body>
@@ -169,16 +173,19 @@
   <p>Baking, slow living &amp; cozy drinks.</p>
   <p style="margin-top:0.75rem;"><a href="https://instagram.com/howaboutsaturday" target="_blank">Instagram</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/@howaboutsaturday" target="_blank">YouTube</a> &nbsp;·&nbsp; <a href="https://www.tiktok.com/@howaboutsaturday_" target="_blank">TikTok</a></p>
 </footer>
+
 <script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-  function updateNav() {
-    hamburger.style.display = window.innerWidth <= 860 ? 'flex' : 'none';
-    if (window.innerWidth > 860) navLinks.classList.remove('open');
+  var hamburger = document.getElementById('hamburger');
+  var navLinks = document.getElementById('nav-links');
+  if (hamburger && navLinks) {
+    function updateNav() {
+      hamburger.style.display = window.innerWidth <= 860 ? 'flex' : 'none';
+      if (window.innerWidth > 860) navLinks.classList.remove('open');
+    }
+    hamburger.addEventListener('click', function() { navLinks.classList.toggle('open'); });
+    window.addEventListener('resize', updateNav);
+    updateNav();
   }
-  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-  window.addEventListener('resize', updateNav);
-  updateNav();
 </script>
 </body>
 </html>
