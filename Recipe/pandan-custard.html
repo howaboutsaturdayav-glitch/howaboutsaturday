@@ -100,6 +100,25 @@
       .recipe-section-title { font-size: 1.2rem; margin-bottom: 0.5rem; }
       .recipe-heading { font-size: 2rem; }
     }
+        .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; margin-bottom: 4px; }
+    .mobile-section { display: none; }
+    .mobile-section-title { padding: 0.6rem 1.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #5383c6; background: #faebd8; border-bottom: 1px solid #f0d4a8; display: block; }
+    .mobile-section-link { padding: 0.65rem 2rem !important; font-size: 0.82rem !important; color: #5a3e32 !important; display: block; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
+    @media (max-width: 860px) {
+      .nav-hamburger { display: flex; flex-direction: column; }
+      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 0.5rem 0; z-index: 500; max-height: 85vh; overflow-y: auto; }
+      .nav-links.open { display: flex !important; }
+      .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; border-bottom: 1px solid #f0d4a8; }
+      .nav-dropdown { display: none !important; }
+      .mobile-section { display: block; }
+      .page { padding: 1.5rem 1.25rem 3rem; }
+      .video-wrap { margin: 0.25rem auto !important; }
+      .video-wrap blockquote { min-width: unset !important; min-height: unset !important; }
+      .divider { margin: 0.5rem 0; }
+      .recipe-section-title { font-size: 1.2rem; margin-bottom: 0.5rem; }
+      .recipe-heading { font-size: 2rem; }
+    }
   </style>
 </head>
 <body>
