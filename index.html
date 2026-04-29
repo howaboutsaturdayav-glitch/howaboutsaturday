@@ -116,22 +116,21 @@
     .ad-placeholder { display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.25rem;background:var(--parchment);border:1px dashed var(--warm-tan);border-radius:4px;color:var(--warm-tan);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase; }
 
     /* ── HERO ── */
-    .hero { display:grid;grid-template-columns:1fr 1fr;max-width:1200px;margin:0 auto;padding:3rem 2rem 3rem;gap:3rem;align-items:center; }
-    .hero-left { display:flex;flex-direction:column;gap:1.5rem; }
+    .hero { display:grid;grid-template-columns:1fr 1fr;max-width:1200px;margin:0 auto;padding:3rem 2rem 3rem;gap:3rem;align-items:stretch;min-height:75vh; }
+    .hero-left { display:flex;flex-direction:column;gap:1.5rem;justify-content:center; }
     .hero-eyebrow { font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-mid); }
     .hero-left h1 { font-family:var(--serif);font-size:clamp(2rem,4.5vw,3.5rem);font-weight:700;line-height:1.1;color:var(--terracotta); }
     .hero-sub { font-size:0.95rem;line-height:1.75;color:#5a3e32;max-width:460px; }
     .hero-actions { display:flex;gap:1rem;flex-wrap:wrap; }
-    .hero-right { position:relative;border-radius:12px;overflow:hidden;display:block;text-decoration:none;background:var(--parchment); }
-    .hero-right img { width:100%;height:100%;object-fit:cover;display:block; }
+    .hero-right { position:relative;border-radius:12px;overflow:hidden;display:block;text-decoration:none;background:var(--parchment);min-height:300px; }
+    .hero-right img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block; }
     .hero-right-placeholder { display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:5rem;background:var(--warm-tan); }
     .hero-card-info { position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(58,46,40,0.85) 0%,transparent 100%);color:#fde9c8; }
     .hero-card-tag { font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;opacity:0.8;margin-bottom:0.3rem; }
     .hero-card-title { font-family:var(--serif);font-size:1.4rem;font-weight:700;line-height:1.2;margin-bottom:0.4rem; }
     .hero-card-desc { font-size:0.8rem;line-height:1.6;opacity:0.85;margin-bottom:0.75rem; }
     .hero-card-meta { display:flex;gap:1rem;font-size:0.75rem;opacity:0.7; }
-    @media(min-width:861px){ .hero-right { height: 520px; } }
-    @media(max-width:700px){ .hero{grid-template-columns:1fr;overflow:hidden;} }
+    @media(max-width:700px){ .hero{grid-template-columns:1fr;} .hero-right{aspect-ratio:4/3;} }
 
     /* ── SECTION LABELS ── */
     .section-label { font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-mid);margin-bottom:0.3rem; }
@@ -208,12 +207,8 @@
       .mobile-section-title { padding: 0.6rem 1.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #5383c6; background: #faebd8; border-bottom: 1px solid #f0d4a8; }
       .mobile-section-link { padding: 0.65rem 2rem !important; font-size: 0.82rem !important; color: #5a3e32; display: block; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
       .mobile-section-link:hover { color: #5383c6; background: #f5e5ce; }
-    }
-    .mobile-section { display: none; }
-      .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; }
-      .nav-dropdown { display: none !important; }
-      .hero { grid-template-columns: 1fr; padding: 2rem 1.5rem; gap: 1.5rem; overflow: hidden; }
-      .hero-right { height: 75vw; max-height: 380px; width: 100%; border-radius: 8px; }
+      .hero { grid-template-columns: 1fr; padding: 2rem 1.5rem; gap: 1.5rem; }
+      .hero-right { height: auto; width: 100%; border-radius: 8px; }
       .hero-actions { justify-content: center; flex-direction: row; flex-wrap: wrap; gap: 0.75rem; }
       .hero-actions .btn { flex: 0 1 auto; padding: 0.6rem 1.25rem; font-size: 0.75rem; }
       .about-text { max-width: 100%; padding: 0 0.5rem; }
@@ -221,6 +216,7 @@
       .about-section { padding: 2rem 1.5rem !important; }
       .gram-grid { grid-template-columns: repeat(2, 1fr); }
     }
+    .mobile-section { display: none; }
   </style>
 </head>
 <body>
@@ -365,6 +361,7 @@
     <a class="gram-tile" href="Recipe/strawberry-hojicha-cheesecake.html" data-category="cake"><img src="images/strawberry-hojicha-cheesecake.jpg" alt="Strawberry Hojicha Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🍓</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Strawberry Hojicha Cheesecake</p></div></a>
     <a class="gram-tile" href="Recipe/guava-oolong-milk-tea.html" data-category="cozy-sips"><img src="images/guava-oolong-milk-tea.jpg" alt="Guava Oolong Milk Tea" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;">🧋</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Guava Oolong Cream Cheese Milk Tea</p></div></a>
     <a class="gram-tile" href="Recipe/grape-tea-fizz.html" data-category="cozy-sips"><img src="images/grape-tea-fizz.jpg" alt="Grape Tea Fizz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍇</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Grape Tea Fizz</p></div></a>
+    <a class="gram-tile" href="Recipe/lemon-iced-tea-cake.html" data-category="loaf"><img src="images/lemon-iced-tea-cake.jpg" alt="Lemon Iced Tea Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;">🍋</div><div class="gram-hover"><p class="gram-hover-tag">Loaf</p><p class="gram-hover-title">Lemon Iced Tea Cake</p></div></a>
     <div class="gram-no-results">No recipes found in this category yet. Check back soon!</div>
   </div>
 
