@@ -64,17 +64,18 @@
     .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; margin-bottom: 4px; }
     @media (max-width: 860px) {
       .nav-hamburger { display: flex; flex-direction: column; }
-      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 1rem 0; z-index: 500; }
+      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 0.5rem 0; z-index: 500; max-height: 85vh; overflow-y: auto; }
       .nav-links.open { display: flex !important; }
+      .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; border-bottom: 1px solid #f0d4a8; }
+      .nav-dropdown { display: none !important; }
+      .mobile-section { display: block; }
+      .mobile-section-title { padding: 0.6rem 1.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #5383c6; background: #faebd8; border-bottom: 1px solid #f0d4a8; }
+      .mobile-section-link { padding: 0.65rem 2rem !important; font-size: 0.82rem !important; color: #5a3e32; display: block; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
+      .mobile-section-link:hover { color: #5383c6; background: #f5e5ce; }
+    }
+    .mobile-section { display: none; }
       .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; }
       .nav-dropdown { display: none !important; }
-    }
-  
-    .mobile-section { display: none; }
-    .mobile-section-title { padding: 0.6rem 1.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #5383c6; background: #faebd8; border-bottom: 1px solid #f0d4a8; display: block; }
-    .mobile-section-link { padding: 0.65rem 2rem !important; font-size: 0.82rem !important; color: #5a3e32 !important; display: block; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
-    @media (max-width: 860px) {
-      .mobile-section { display: block; }
     }
   </style>
 </head>
@@ -119,26 +120,6 @@
         <a class="nav-dropdown-item" href="series-hojicha.html">Hojicha Series</a>
         <a class="nav-dropdown-item" href="series-holiday-cookies.html">Holiday Cookies</a>
       </div>
-    </li>
-        <li class="mobile-section">
-      <span class="mobile-section-title">Recipes</span>
-      <a class="mobile-section-link" href="all-recipes.html">View All Recipes</a>
-      <a class="mobile-section-link" href="beverage.html">Beverage</a>
-      <a class="mobile-section-link" href="matcha.html">&nbsp;&nbsp;&#8627; Matcha</a>
-      <a class="mobile-section-link" href="cozy-sips.html">&nbsp;&nbsp;&#8627; Cozy Sips</a>
-      <a class="mobile-section-link" href="baking.html">Baking</a>
-      <a class="mobile-section-link" href="baking.html#cake">&nbsp;&nbsp;&#8627; Cake</a>
-      <a class="mobile-section-link" href="baking.html#muffin">&nbsp;&nbsp;&#8627; Muffin</a>
-      <a class="mobile-section-link" href="baking.html#cookies">&nbsp;&nbsp;&#8627; Cookies</a>
-      <a class="mobile-section-link" href="baking.html#loaf">&nbsp;&nbsp;&#8627; Loaf</a>
-    </li>
-    <li class="mobile-section">
-      <span class="mobile-section-title">Series</span>
-      <a class="mobile-section-link" href="all-series.html">View All Series</a>
-      <a class="mobile-section-link" href="series-flavours.html">Flavours of My Childhood</a>
-      <a class="mobile-section-link" href="series-matcha.html">Matcha Series</a>
-      <a class="mobile-section-link" href="series-hojicha.html">Hojicha Series</a>
-      <a class="mobile-section-link" href="series-holiday-cookies.html">Holiday Cookies</a>
     </li>
     <li class="nav-item"><a href="about.html">About</a></li>
     <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a></li>
@@ -582,7 +563,17 @@
   <div class="ar-section">
     <h2 class="ar-section-title">Muffin, Tiramisu & Others</h2>
     <div class="ar-grid">
-        <a class="ar-card" href="Recipe/apple-crisp.html">
+                    <a class="ar-card" href="Recipe/pandan-custard.html">
+              <div class="ar-img-wrap">
+                <img src="images/pandan-custard.jpg" alt="Pandan Custard" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                <div class="ar-fallback">🌿</div>
+              </div>
+              <div class="ar-body">
+                <p class="ar-tag">Others</p>
+                <h3 class="ar-title">Pandan Custard</h3>
+              </div>
+            </a>
+<a class="ar-card" href="Recipe/apple-crisp.html">
           <div class="ar-img-wrap">
             <img src="images/apple-crisp.jpg" alt="Apple Crisp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
             <div class="ar-fallback">🍎</div>

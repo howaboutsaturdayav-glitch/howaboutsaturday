@@ -198,9 +198,18 @@
 
       .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
     .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; margin-bottom: 4px; }
-    @media (max-width: 860px) {      .nav-hamburger { display: flex; flex-direction: column; }
-      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 1rem 0; z-index: 500; }
+    @media (max-width: 860px) {
+      .nav-hamburger { display: flex; flex-direction: column; }
+      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 0.5rem 0; z-index: 500; max-height: 85vh; overflow-y: auto; }
       .nav-links.open { display: flex !important; }
+      .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; border-bottom: 1px solid #f0d4a8; }
+      .nav-dropdown { display: none !important; }
+      .mobile-section { display: block; }
+      .mobile-section-title { padding: 0.6rem 1.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #5383c6; background: #faebd8; border-bottom: 1px solid #f0d4a8; }
+      .mobile-section-link { padding: 0.65rem 2rem !important; font-size: 0.82rem !important; color: #5a3e32; display: block; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
+      .mobile-section-link:hover { color: #5383c6; background: #f5e5ce; }
+    }
+    .mobile-section { display: none; }
       .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; }
       .nav-dropdown { display: none !important; }
       .hero { grid-template-columns: 1fr; padding: 2rem 1.5rem; gap: 1.5rem; overflow: hidden; }
@@ -211,13 +220,6 @@
       #recipes { padding: 2rem 1.25rem 3rem !important; }
       .about-section { padding: 2rem 1.5rem !important; }
       .gram-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-  
-    .mobile-section { display: none; }
-    .mobile-section-title { padding: 0.6rem 1.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #5383c6; background: #faebd8; border-bottom: 1px solid #f0d4a8; display: block; }
-    .mobile-section-link { padding: 0.65rem 2rem !important; font-size: 0.82rem !important; color: #5a3e32 !important; display: block; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
-    @media (max-width: 860px) {
-      .mobile-section { display: block; }
     }
   </style>
 </head>
@@ -267,26 +269,6 @@
         <a class="nav-dropdown-item" href="series-holiday-cookies.html">Holiday Cookies</a>
       </div>
     </li>
-        <li class="mobile-section">
-      <span class="mobile-section-title">Recipes</span>
-      <a class="mobile-section-link" href="all-recipes.html">View All Recipes</a>
-      <a class="mobile-section-link" href="beverage.html">Beverage</a>
-      <a class="mobile-section-link" href="matcha.html">&nbsp;&nbsp;&#8627; Matcha</a>
-      <a class="mobile-section-link" href="cozy-sips.html">&nbsp;&nbsp;&#8627; Cozy Sips</a>
-      <a class="mobile-section-link" href="baking.html">Baking</a>
-      <a class="mobile-section-link" href="baking.html#cake">&nbsp;&nbsp;&#8627; Cake</a>
-      <a class="mobile-section-link" href="baking.html#muffin">&nbsp;&nbsp;&#8627; Muffin</a>
-      <a class="mobile-section-link" href="baking.html#cookies">&nbsp;&nbsp;&#8627; Cookies</a>
-      <a class="mobile-section-link" href="baking.html#loaf">&nbsp;&nbsp;&#8627; Loaf</a>
-    </li>
-    <li class="mobile-section">
-      <span class="mobile-section-title">Series</span>
-      <a class="mobile-section-link" href="all-series.html">View All Series</a>
-      <a class="mobile-section-link" href="series-flavours.html">Flavours of My Childhood</a>
-      <a class="mobile-section-link" href="series-matcha.html">Matcha Series</a>
-      <a class="mobile-section-link" href="series-hojicha.html">Hojicha Series</a>
-      <a class="mobile-section-link" href="series-holiday-cookies.html">Holiday Cookies</a>
-    </li>
     <li class="nav-item"><a href="about.html">About</a></li>
     <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a></li>
     <li class="nav-item"><a href="https://www.youtube.com/@howaboutsaturday" target="_blank" rel="noopener">YouTube &#8599;</a></li>
@@ -320,14 +302,14 @@
   </div>
 
   <!-- RIGHT — featured recipe card -->
-  <a class="hero-right" href="Recipe/pandan-coconut-custard-cake.html">
-    <img src="images/pandan-coconut-custard-cake.jpg" alt="Pandan Coconut Custard Cake"
+  <a class="hero-right" href="Recipe/pandan-custard.html">
+    <img src="images/pandan-custard.jpg" alt="Pandan Custard"
          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
     <div class="hero-right-placeholder" style="display:none;">🍊</div>
     <div class="hero-card-info">
-      <p class="hero-card-tag">Featured · Cake · Flavours of My Childhood</p>
-      <h2 class="hero-card-title">Pandan Coconut Custard Cake</h2>
-      <p class="hero-card-desc">Fragrant pandan layered with silky coconut custard. A cake that tastes like home.</p>
+      <p class="hero-card-tag">Featured · Others</p>
+      <h2 class="hero-card-title">Pandan Custard</h2>
+      <p class="hero-card-desc">Silky smooth pandan custard made with fresh pandan leaves. Fragrant, creamy, and utterly comforting.</p>
       <div class="hero-card-meta">
         <span>90 min</span>
         <span>Serves 10</span>
@@ -349,7 +331,7 @@
 
   <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
     <div>
-      <p class="section-label">All Recipes</p>
+      <a href="all-recipes.html" class="section-label" style="text-decoration:none;color:inherit;">All Recipes</a>
       <h2 class="section-title" style="text-align:left;margin-bottom:0;">From the kitchen</h2>
     </div>
     <div class="filter-bar" style="margin-bottom:0;">
@@ -375,6 +357,7 @@
   </div>
 
   <div class="gram-grid" id="gram-grid">
+    <a class="gram-tile" href="Recipe/pandan-custard.html" data-category="cake"><img src="images/pandan-custard.jpg" alt="Pandan Custard" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🌿</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Pandan Custard</p></div></a>
     <a class="gram-tile" href="Recipe/pandan-coconut-custard-cake.html" data-category="cake"><img src="images/pandan-coconut-custard-cake.jpg" alt="Pandan Coconut Custard Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🌿</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Pandan Coconut Custard Cake</p></div></a>
     <a class="gram-tile" href="Recipe/orange-earl-grey-chocolate-cake.html" data-category="cake"><img src="images/orange-earl-grey-chocolate-cake.jpg" alt="Orange Earl Grey Chocolate Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🍊</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Orange Earl Grey Chocolate Cake</p></div></a>
     <a class="gram-tile" href="Recipe/jasmine-matcha-latte.html" data-category="matcha"><img src="images/jasmine-matcha-latte.jpg" alt="Jasmine Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Jasmine Matcha Latte</p></div></a>
@@ -382,7 +365,6 @@
     <a class="gram-tile" href="Recipe/strawberry-hojicha-cheesecake.html" data-category="cake"><img src="images/strawberry-hojicha-cheesecake.jpg" alt="Strawberry Hojicha Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🍓</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Strawberry Hojicha Cheesecake</p></div></a>
     <a class="gram-tile" href="Recipe/guava-oolong-milk-tea.html" data-category="cozy-sips"><img src="images/guava-oolong-milk-tea.jpg" alt="Guava Oolong Milk Tea" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;">🧋</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Guava Oolong Cream Cheese Milk Tea</p></div></a>
     <a class="gram-tile" href="Recipe/grape-tea-fizz.html" data-category="cozy-sips"><img src="images/grape-tea-fizz.jpg" alt="Grape Tea Fizz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#5383c6;color:#fde9c8;">🍇</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Grape Tea Fizz</p></div></a>
-    <a class="gram-tile" href="Recipe/almond-poppy-berries-muffin.html" data-category="muffin"><img src="images/almond-poppy-berries-muffin.jpg" alt="Almond Poppy Berries Muffin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#998513;color:#fde9c8;">🫐</div><div class="gram-hover"><p class="gram-hover-tag">Muffin</p><p class="gram-hover-title">Almond Poppy Berries Muffin</p></div></a>
     <a class="gram-tile" href="Recipe/lemon-iced-tea-cake.html" data-category="loaf"><img src="images/lemon-iced-tea-cake.jpg" alt="Lemon Iced Tea Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback" style="background:#d4847a;">🍋</div><div class="gram-hover"><p class="gram-hover-tag">Loaf</p><p class="gram-hover-title">Lemon Iced Tea Cake</p></div></a>
     <div class="gram-no-results">No recipes found in this category yet. Check back soon!</div>
   </div>
