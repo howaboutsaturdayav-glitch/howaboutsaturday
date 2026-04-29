@@ -15,7 +15,6 @@
     body { background: var(--cream); color: var(--cork); font-family: var(--sans); font-size: 16px; line-height: 1.7; }
     nav { background: var(--cream); border-bottom: 1px solid var(--warm-tan); position: sticky; top: 0; z-index: 100; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
     .nav-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--blue); text-decoration: none; letter-spacing: 0.08em; }
-    
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-item { position: relative; list-style: none; }
     .nav-item > a { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5a3e32; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; }
@@ -39,12 +38,11 @@
     .nav-sub-item::after { content: ''; position: absolute; top: 0; right: -10px; width: 14px; height: 100%; }
     .nav-sub-dropdown a { display: block; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 400; color: #5a3e32; text-decoration: none; transition: background 0.15s, color 0.15s; }
     .nav-sub-dropdown a:hover { background: #faebd8; color: #5383c6; }
-
-    .page-header { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 1rem; }
+    .page-header { max-width: 1000px; margin: 0 auto; padding: 2rem 2rem 0.5rem; }
     .page-eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.5rem; }
     .page-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; color: var(--blue); margin-bottom: 0.5rem; }
-    .ar-section { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 1rem; }
-    .ar-section-title { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; color: var(--cork); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--warm-tan); }
+    .ar-section { max-width: 1000px; margin: 0 auto; padding: 2rem 2rem 1rem; }
+    .ar-section-title { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; color: var(--blue); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--warm-tan); }
     .ar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 1rem; }
     .ar-card { background: var(--parchment); border: 1px solid var(--warm-tan); border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit; display: block; transition: transform 0.2s, box-shadow 0.2s; }
     .ar-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(58,46,40,0.1); }
@@ -58,10 +56,11 @@
     footer a { color: var(--pink); text-decoration: none; }
     .footer-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; color: var(--pink); display: block; margin-bottom: 0.5rem; }
     @media (max-width: 600px) { .ar-grid { grid-template-columns: repeat(2, 1fr); } }
-  
-    
-      .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
     .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; margin-bottom: 4px; }
+    .mobile-section { display: none; }
+    .mobile-section-title { padding: 0.6rem 1.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #5383c6; background: #faebd8; border-bottom: 1px solid #f0d4a8; display: block; }
+    .mobile-section-link { padding: 0.65rem 2rem !important; font-size: 0.82rem !important; color: #5a3e32 !important; display: block; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
     @media (max-width: 860px) {
       .nav-hamburger { display: flex; flex-direction: column; }
       .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 0.5rem 0; z-index: 500; max-height: 85vh; overflow-y: auto; }
@@ -69,13 +68,6 @@
       .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; border-bottom: 1px solid #f0d4a8; }
       .nav-dropdown { display: none !important; }
       .mobile-section { display: block; }
-      .mobile-section-title { padding: 0.6rem 1.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #5383c6; background: #faebd8; border-bottom: 1px solid #f0d4a8; }
-      .mobile-section-link { padding: 0.65rem 2rem !important; font-size: 0.82rem !important; color: #5a3e32; display: block; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
-      .mobile-section-link:hover { color: #5383c6; background: #f5e5ce; }
-    }
-    .mobile-section { display: none; }
-      .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; }
-      .nav-dropdown { display: none !important; }
     }
   </style>
 </head>
@@ -121,6 +113,26 @@
         <a class="nav-dropdown-item" href="series-holiday-cookies.html">Holiday Cookies</a>
       </div>
     </li>
+    <li class="mobile-section">
+      <span class="mobile-section-title">Recipes</span>
+      <a class="mobile-section-link" href="all-recipes.html">View All Recipes</a>
+      <a class="mobile-section-link" href="beverage.html">Beverage</a>
+      <a class="mobile-section-link" href="matcha.html">&nbsp;&nbsp;&#8627; Matcha</a>
+      <a class="mobile-section-link" href="cozy-sips.html">&nbsp;&nbsp;&#8627; Cozy Sips</a>
+      <a class="mobile-section-link" href="baking.html">Baking</a>
+      <a class="mobile-section-link" href="baking.html#cake">&nbsp;&nbsp;&#8627; Cake</a>
+      <a class="mobile-section-link" href="baking.html#muffin">&nbsp;&nbsp;&#8627; Muffin</a>
+      <a class="mobile-section-link" href="baking.html#cookies">&nbsp;&nbsp;&#8627; Cookies</a>
+      <a class="mobile-section-link" href="baking.html#loaf">&nbsp;&nbsp;&#8627; Loaf</a>
+    </li>
+    <li class="mobile-section">
+      <span class="mobile-section-title">Series</span>
+      <a class="mobile-section-link" href="all-series.html">View All Series</a>
+      <a class="mobile-section-link" href="series-flavours.html">Flavours of My Childhood</a>
+      <a class="mobile-section-link" href="series-matcha.html">Matcha Series</a>
+      <a class="mobile-section-link" href="series-hojicha.html">Hojicha Series</a>
+      <a class="mobile-section-link" href="series-holiday-cookies.html">Holiday Cookies</a>
+    </li>
     <li class="nav-item"><a href="about.html">About</a></li>
     <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a></li>
     <li class="nav-item"><a href="https://www.youtube.com/@howaboutsaturday" target="_blank" rel="noopener">YouTube &#8599;</a></li>
@@ -133,310 +145,134 @@
   <h1 class="page-title">All Recipes</h1>
 </div>
 
-
   <div class="ar-section">
     <h2 class="ar-section-title">Matcha</h2>
     <div class="ar-grid">
             <a class="ar-card" href="Recipe/caramel-matcha-latte.html">
-              <div class="ar-img-wrap">
-                <img src="images/caramel-matcha-latte.jpg" alt="Caramel Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                <div class="ar-fallback">🍵</div>
-              </div>
-              <div class="ar-body">
-                <p class="ar-tag">Drinks</p>
-                <h3 class="ar-title">Caramel Matcha Latte</h3>
-              </div>
+              <div class="ar-img-wrap"><img src="images/caramel-matcha-latte.jpg" alt="Caramel Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+              <div class="ar-body"><p class="ar-tag">Drinks</p><h3 class="ar-title">Caramel Matcha Latte</h3></div>
             </a>
             <a class="ar-card" href="Recipe/apple-pie-matcha-latte.html">
-              <div class="ar-img-wrap">
-                <img src="images/apple-pie-matcha-latte.jpg" alt="Apple Pie Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                <div class="ar-fallback">🍵</div>
-              </div>
-              <div class="ar-body">
-                <p class="ar-tag">Drinks</p>
-                <h3 class="ar-title">Apple Pie Matcha Latte</h3>
-              </div>
+              <div class="ar-img-wrap"><img src="images/apple-pie-matcha-latte.jpg" alt="Apple Pie Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+              <div class="ar-body"><p class="ar-tag">Drinks</p><h3 class="ar-title">Apple Pie Matcha Latte</h3></div>
             </a>
         <a class="ar-card" href="Recipe/jasmine-matcha-latte.html">
-          <div class="ar-img-wrap">
-            <img src="images/jasmine-matcha-latte.jpg" alt="Jasmine Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Drinks</p>
-            <h3 class="ar-title">Jasmine Matcha Latte</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/jasmine-matcha-latte.jpg" alt="Jasmine Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Drinks</p><h3 class="ar-title">Jasmine Matcha Latte</h3></div>
         </a>
         <a class="ar-card" href="Recipe/lychee-matcha-latte.html">
-          <div class="ar-img-wrap">
-            <img src="images/lychee-matcha-latte.jpg" alt="Lychee Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Drinks</p>
-            <h3 class="ar-title">Lychee Matcha Latte</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/lychee-matcha-latte.jpg" alt="Lychee Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Drinks</p><h3 class="ar-title">Lychee Matcha Latte</h3></div>
         </a>
         <a class="ar-card" href="Recipe/maple-pumpkin-matcha-latte.html">
-          <div class="ar-img-wrap">
-            <img src="images/maple-pumpkin-matcha-latte.jpg" alt="Maple Pumpkin Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Drinks</p>
-            <h3 class="ar-title">Maple Pumpkin Matcha Latte</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/maple-pumpkin-matcha-latte.jpg" alt="Maple Pumpkin Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Drinks</p><h3 class="ar-title">Maple Pumpkin Matcha Latte</h3></div>
         </a>
         <a class="ar-card" href="Recipe/tofu-pudding-matcha-latte.html">
-          <div class="ar-img-wrap">
-            <img src="images/tofu-pudding-matcha-latte.jpg" alt="Tofu Pudding Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Drinks</p>
-            <h3 class="ar-title">Tofu Pudding Matcha Latte</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/tofu-pudding-matcha-latte.jpg" alt="Tofu Pudding Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Drinks</p><h3 class="ar-title">Tofu Pudding Matcha Latte</h3></div>
         </a>
         <a class="ar-card" href="Recipe/pickle-matcha-latte.html">
-          <div class="ar-img-wrap">
-            <img src="images/pickle-matcha-latte.jpg" alt="Pickle Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Drinks</p>
-            <h3 class="ar-title">Pickle Matcha Latte</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/pickle-matcha-latte.jpg" alt="Pickle Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Drinks</p><h3 class="ar-title">Pickle Matcha Latte</h3></div>
         </a>
         <a class="ar-card" href="Recipe/matcha-latte-coffee-cake.html">
-          <div class="ar-img-wrap">
-            <img src="images/matcha-latte-coffee-cake.jpg" alt="Matcha Latte Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Baking</p>
-            <h3 class="ar-title">Matcha Latte Coffee Cake</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/matcha-latte-coffee-cake.jpg" alt="Matcha Latte Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Baking</p><h3 class="ar-title">Matcha Latte Coffee Cake</h3></div>
         </a>
         <a class="ar-card" href="Recipe/matcha-brown-butter-blondie.html">
-          <div class="ar-img-wrap">
-            <img src="images/matcha-brown-butter-blondie.jpg" alt="Matcha Brown Butter Brookie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Baking</p>
-            <h3 class="ar-title">Matcha Brown Butter Brookie</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/matcha-brown-butter-blondie.jpg" alt="Matcha Brown Butter Brookie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Baking</p><h3 class="ar-title">Matcha Brown Butter Brookie</h3></div>
         </a>
         <a class="ar-card" href="Recipe/blueberry-muffin-tea-matcha-snowballs.html">
-          <div class="ar-img-wrap">
-            <img src="images/blueberry-muffin-tea-matcha-snowballs.jpg" alt="Blueberry Muffin Tea Matcha Snowballs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cookies</p>
-            <h3 class="ar-title">Blueberry Muffin Tea Matcha Snowballs</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/blueberry-muffin-tea-matcha-snowballs.jpg" alt="Blueberry Muffin Tea Matcha Snowballs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Cookies</p><h3 class="ar-title">Blueberry Muffin Tea Matcha Snowballs</h3></div>
         </a>
     </div>
   </div>
   <div class="ar-section">
     <h2 class="ar-section-title">Cozy Sips</h2>
     <div class="ar-grid">
-            <a class="ar-card" href="Recipe/black-sesame-hojicha-latte.html">
-              <div class="ar-img-wrap">
-                <img src="images/black-sesame-hojicha-latte.jpg" alt="Black Sesame Hojicha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                <div class="ar-fallback">🍵</div>
-              </div>
-              <div class="ar-body">
-                <p class="ar-tag">Drink</p>
-                <h3 class="ar-title">Black Sesame Hojicha Latte</h3>
-              </div>
-            </a>
+        <a class="ar-card" href="Recipe/black-sesame-hojicha-latte.html">
+          <div class="ar-img-wrap"><img src="images/black-sesame-hojicha-latte.jpg" alt="Black Sesame Hojicha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Drink</p><h3 class="ar-title">Black Sesame Hojicha Latte</h3></div>
+        </a>
         <a class="ar-card" href="Recipe/guava-oolong-milk-tea.html">
-          <div class="ar-img-wrap">
-            <img src="images/guava-oolong-milk-tea.jpg" alt="Guava Oolong Cream Cheese Milk Tea" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Drink</p>
-            <h3 class="ar-title">Guava Oolong Cream Cheese Milk Tea</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/guava-oolong-milk-tea.jpg" alt="Guava Oolong Cream Cheese Milk Tea" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Drink</p><h3 class="ar-title">Guava Oolong Cream Cheese Milk Tea</h3></div>
         </a>
         <a class="ar-card" href="Recipe/grape-tea-fizz.html">
-          <div class="ar-img-wrap">
-            <img src="images/grape-tea-fizz.jpg" alt="Grape Tea Fizz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Drink</p>
-            <h3 class="ar-title">Grape Tea Fizz</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/grape-tea-fizz.jpg" alt="Grape Tea Fizz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Drink</p><h3 class="ar-title">Grape Tea Fizz</h3></div>
         </a>
         <a class="ar-card" href="Recipe/ube-hojicha-latte.html">
-          <div class="ar-img-wrap">
-            <img src="images/ube-hojicha-latte.jpg" alt="Ube Hojicha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Drink</p>
-            <h3 class="ar-title">Ube Hojicha Latte</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/ube-hojicha-latte.jpg" alt="Ube Hojicha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Drink</p><h3 class="ar-title">Ube Hojicha Latte</h3></div>
         </a>
         <a class="ar-card" href="Recipe/almond-hot-chocolate.html">
-          <div class="ar-img-wrap">
-            <img src="images/almond-hot-chocolate.jpg" alt="Almond Hot Chocolate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Drink</p>
-            <h3 class="ar-title">Almond Hot Chocolate</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/almond-hot-chocolate.jpg" alt="Almond Hot Chocolate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Drink</p><h3 class="ar-title">Almond Hot Chocolate</h3></div>
         </a>
         <a class="ar-card" href="Recipe/earl-grey-creme-brulee-latte.html">
-          <div class="ar-img-wrap">
-            <img src="images/earl-grey-creme-brulee-latte.jpg" alt="Earl Grey Creme Brulee Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Drink</p>
-            <h3 class="ar-title">Earl Grey Creme Brulee Latte</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/earl-grey-creme-brulee-latte.jpg" alt="Earl Grey Creme Brulee Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Drink</p><h3 class="ar-title">Earl Grey Creme Brulee Latte</h3></div>
         </a>
         <a class="ar-card" href="Recipe/london-fog-hojicha.html">
-          <div class="ar-img-wrap">
-            <img src="images/london-fog-hojicha.jpg" alt="London Fog Hojicha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Drink</p>
-            <h3 class="ar-title">London Fog Hojicha</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/london-fog-hojicha.jpg" alt="London Fog Hojicha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Drink</p><h3 class="ar-title">London Fog Hojicha</h3></div>
         </a>
     </div>
   </div>
   <div class="ar-section">
     <h2 class="ar-section-title">Cake</h2>
     <div class="ar-grid">
-            <a class="ar-card" href="Recipe/caramel-pumpkin-spiced-latte-cake.html">
-              <div class="ar-img-wrap">
-                <img src="images/caramel-pumpkin-spiced-latte-cake.jpg" alt="Caramel Pumpkin Spiced Latte Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                <div class="ar-fallback">🎃</div>
-              </div>
-              <div class="ar-body">
-                <p class="ar-tag">Cake</p>
-                <h3 class="ar-title">Caramel Pumpkin Spiced Latte Cake</h3>
-              </div>
-            </a>
-            <a class="ar-card" href="Recipe/cinnamon-plum-coffee-cake.html">
-              <div class="ar-img-wrap">
-                <img src="images/cinnamon-plum-coffee-cake.jpg" alt="Cinnamon Plum Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                <div class="ar-fallback">🍑</div>
-              </div>
-              <div class="ar-body">
-                <p class="ar-tag">Cake</p>
-                <h3 class="ar-title">Cinnamon Plum Coffee Cake</h3>
-              </div>
-            </a>
-
+        <a class="ar-card" href="Recipe/caramel-pumpkin-spiced-latte-cake.html">
+          <div class="ar-img-wrap"><img src="images/caramel-pumpkin-spiced-latte-cake.jpg" alt="Caramel Pumpkin Spiced Latte Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🎃</div></div>
+          <div class="ar-body"><p class="ar-tag">Cake</p><h3 class="ar-title">Caramel Pumpkin Spiced Latte Cake</h3></div>
+        </a>
+        <a class="ar-card" href="Recipe/cinnamon-plum-coffee-cake.html">
+          <div class="ar-img-wrap"><img src="images/cinnamon-plum-coffee-cake.jpg" alt="Cinnamon Plum Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍑</div></div>
+          <div class="ar-body"><p class="ar-tag">Cake</p><h3 class="ar-title">Cinnamon Plum Coffee Cake</h3></div>
+        </a>
         <a class="ar-card" href="Recipe/pandan-coconut-custard-cake.html">
-          <div class="ar-img-wrap">
-            <img src="images/pandan-coconut-custard-cake.jpg" alt="Pandan Coconut Custard Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🌿</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cake</p>
-            <h3 class="ar-title">Pandan Coconut Custard Cake</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/pandan-coconut-custard-cake.jpg" alt="Pandan Coconut Custard Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🌿</div></div>
+          <div class="ar-body"><p class="ar-tag">Cake</p><h3 class="ar-title">Pandan Coconut Custard Cake</h3></div>
         </a>
         <a class="ar-card" href="Recipe/orange-earl-grey-chocolate-cake.html">
-          <div class="ar-img-wrap">
-            <img src="images/orange-earl-grey-chocolate-cake.jpg" alt="Orange Earl Grey Chocolate Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cake</p>
-            <h3 class="ar-title">Orange Earl Grey Chocolate Cake</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/orange-earl-grey-chocolate-cake.jpg" alt="Orange Earl Grey Chocolate Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍊</div></div>
+          <div class="ar-body"><p class="ar-tag">Cake</p><h3 class="ar-title">Orange Earl Grey Chocolate Cake</h3></div>
         </a>
         <a class="ar-card" href="Recipe/strawberry-hojicha-cheesecake.html">
-          <div class="ar-img-wrap">
-            <img src="images/strawberry-hojicha-cheesecake.jpg" alt="Strawberry Hojicha Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cake</p>
-            <h3 class="ar-title">Strawberry Hojicha Cheesecake</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/strawberry-hojicha-cheesecake.jpg" alt="Strawberry Hojicha Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍓</div></div>
+          <div class="ar-body"><p class="ar-tag">Cake</p><h3 class="ar-title">Strawberry Hojicha Cheesecake</h3></div>
         </a>
         <a class="ar-card" href="Recipe/jasmine-chiffon-cake.html">
-          <div class="ar-img-wrap">
-            <img src="images/jasmine-chiffon-cake.jpg" alt="Jasmine Chiffon Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cake</p>
-            <h3 class="ar-title">Jasmine Chiffon Cake</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/jasmine-chiffon-cake.jpg" alt="Jasmine Chiffon Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Cake</p><h3 class="ar-title">Jasmine Chiffon Cake</h3></div>
         </a>
         <a class="ar-card" href="Recipe/hojicha-jasmine-longan-cake.html">
-          <div class="ar-img-wrap">
-            <img src="images/hojicha-jasmine-longan-cake.jpg" alt="Hojicha Jasmine Longan Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cake</p>
-            <h3 class="ar-title">Hojicha Jasmine Longan Cake</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/hojicha-jasmine-longan-cake.jpg" alt="Hojicha Jasmine Longan Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Cake</p><h3 class="ar-title">Hojicha Jasmine Longan Cake</h3></div>
         </a>
         <a class="ar-card" href="Recipe/tofu-hua-chiffon-cake.html">
-          <div class="ar-img-wrap">
-            <img src="images/tofu-hua-chiffon-cake.jpg" alt="Tofu Hua Chiffon Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cake</p>
-            <h3 class="ar-title">Tofu Hua Chiffon Cake</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/tofu-hua-chiffon-cake.jpg" alt="Tofu Hua Chiffon Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Cake</p><h3 class="ar-title">Tofu Hua Chiffon Cake</h3></div>
         </a>
         <a class="ar-card" href="Recipe/london-fog-cake.html">
-          <div class="ar-img-wrap">
-            <img src="images/london-fog-cake.jpg" alt="London Fog Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cake</p>
-            <h3 class="ar-title">London Fog Cake</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/london-fog-cake.jpg" alt="London Fog Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Cake</p><h3 class="ar-title">London Fog Cake</h3></div>
         </a>
         <a class="ar-card" href="Recipe/thai-green-tea-burnt-cheesecake.html">
-          <div class="ar-img-wrap">
-            <img src="images/thai-green-tea-burnt-cheesecake.jpg" alt="Thai Green Tea Burnt Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cake</p>
-            <h3 class="ar-title">Thai Green Tea Burnt Cheesecake</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/thai-green-tea-burnt-cheesecake.jpg" alt="Thai Green Tea Burnt Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Cake</p><h3 class="ar-title">Thai Green Tea Burnt Cheesecake</h3></div>
         </a>
         <a class="ar-card" href="Recipe/salted-caramel-oolong-cake.html">
-          <div class="ar-img-wrap">
-            <img src="images/salted-caramel-oolong-cake.jpg" alt="Salted Caramel Oolong Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cake</p>
-            <h3 class="ar-title">Salted Caramel Oolong Cake</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/salted-caramel-oolong-cake.jpg" alt="Salted Caramel Oolong Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Cake</p><h3 class="ar-title">Salted Caramel Oolong Cake</h3></div>
         </a>
         <a class="ar-card" href="Recipe/carrot-cake.html">
-          <div class="ar-img-wrap">
-            <img src="images/carrot-cake.jpg" alt="Carrot Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cake</p>
-            <h3 class="ar-title">Carrot Cake</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/carrot-cake.jpg" alt="Carrot Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🥕</div></div>
+          <div class="ar-body"><p class="ar-tag">Cake</p><h3 class="ar-title">Carrot Cake</h3></div>
         </a>
     </div>
   </div>
@@ -444,194 +280,86 @@
     <h2 class="ar-section-title">Cookies</h2>
     <div class="ar-grid">
         <a class="ar-card" href="Recipe/peppermint-chocolate-brownie.html">
-          <div class="ar-img-wrap">
-            <img src="images/peppermint-chocolate-brownie.jpg" alt="Peppermint Chocolate Brownie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cookies</p>
-            <h3 class="ar-title">Peppermint Chocolate Brownie</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/peppermint-chocolate-brownie.jpg" alt="Peppermint Chocolate Brownie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍫</div></div>
+          <div class="ar-body"><p class="ar-tag">Cookies</p><h3 class="ar-title">Peppermint Chocolate Brownie</h3></div>
         </a>
         <a class="ar-card" href="Recipe/blueberry-muffin-tea-matcha-snowballs.html">
-          <div class="ar-img-wrap">
-            <img src="images/blueberry-muffin-tea-matcha-snowballs.jpg" alt="Blueberry Muffin Tea Matcha Snowballs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cookies</p>
-            <h3 class="ar-title">Blueberry Muffin Tea Matcha Snowballs</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/blueberry-muffin-tea-matcha-snowballs.jpg" alt="Blueberry Muffin Tea Matcha Snowballs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Cookies</p><h3 class="ar-title">Blueberry Muffin Tea Matcha Snowballs</h3></div>
         </a>
         <a class="ar-card" href="Recipe/jasmine-creme-brulee-shortbread.html">
-          <div class="ar-img-wrap">
-            <img src="images/jasmine-creme-brulee-shortbread.jpg" alt="Jasmine Creme Brulee Shortbread" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cookies</p>
-            <h3 class="ar-title">Jasmine Creme Brulee Shortbread</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/jasmine-creme-brulee-shortbread.jpg" alt="Jasmine Creme Brulee Shortbread" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍵</div></div>
+          <div class="ar-body"><p class="ar-tag">Cookies</p><h3 class="ar-title">Jasmine Creme Brulee Shortbread</h3></div>
         </a>
         <a class="ar-card" href="Recipe/saigon-chai-gingerbread-cookies.html">
-          <div class="ar-img-wrap">
-            <img src="images/saigon-chai-gingerbread-cookies.jpg" alt="Saigon Chai Gingerbread Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cookies</p>
-            <h3 class="ar-title">Saigon Chai Gingerbread Cookies</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/saigon-chai-gingerbread-cookies.jpg" alt="Saigon Chai Gingerbread Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍪</div></div>
+          <div class="ar-body"><p class="ar-tag">Cookies</p><h3 class="ar-title">Saigon Chai Gingerbread Cookies</h3></div>
         </a>
         <a class="ar-card" href="Recipe/vanilla-cappuccino-choc-chip-cookies.html">
-          <div class="ar-img-wrap">
-            <img src="images/vanilla-cappuccino-choc-chip-cookies.jpg" alt="Vanilla Cappuccino Choc Chip Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cookies</p>
-            <h3 class="ar-title">Vanilla Cappuccino Choc Chip Cookies</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/vanilla-cappuccino-choc-chip-cookies.jpg" alt="Vanilla Cappuccino Choc Chip Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍪</div></div>
+          <div class="ar-body"><p class="ar-tag">Cookies</p><h3 class="ar-title">Vanilla Cappuccino Choc Chip Cookies</h3></div>
         </a>
         <a class="ar-card" href="Recipe/peanut-butter-thumbprint-cookies.html">
-          <div class="ar-img-wrap">
-            <img src="images/peanut-butter-thumbprint-cookies.jpg" alt="Peanut Butter Thumbprint Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Cookies</p>
-            <h3 class="ar-title">Peanut Butter Thumbprint Cookies</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/peanut-butter-thumbprint-cookies.jpg" alt="Peanut Butter Thumbprint Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🥜</div></div>
+          <div class="ar-body"><p class="ar-tag">Cookies</p><h3 class="ar-title">Peanut Butter Thumbprint Cookies</h3></div>
         </a>
     </div>
   </div>
   <div class="ar-section">
     <h2 class="ar-section-title">Loaf</h2>
     <div class="ar-grid">
-            <a class="ar-card" href="Recipe/black-sesame-pumpkin-loaf.html">
-              <div class="ar-img-wrap">
-                <img src="images/black-sesame-pumpkin-loaf.jpg" alt="Black Sesame Pumpkin Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                <div class="ar-fallback">🖤</div>
-              </div>
-              <div class="ar-body">
-                <p class="ar-tag">Loaf</p>
-                <h3 class="ar-title">Black Sesame Pumpkin Loaf</h3>
-              </div>
-            </a>
-            <a class="ar-card" href="Recipe/apple-crumble-loaf.html">
-              <div class="ar-img-wrap">
-                <img src="images/apple-crumble-loaf.jpg" alt="Apple Crumble Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                <div class="ar-fallback">🍏</div>
-              </div>
-              <div class="ar-body">
-                <p class="ar-tag">Loaf</p>
-                <h3 class="ar-title">Apple Crumble Loaf</h3>
-              </div>
-            </a>
+        <a class="ar-card" href="Recipe/black-sesame-pumpkin-loaf.html">
+          <div class="ar-img-wrap"><img src="images/black-sesame-pumpkin-loaf.jpg" alt="Black Sesame Pumpkin Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🖤</div></div>
+          <div class="ar-body"><p class="ar-tag">Loaf</p><h3 class="ar-title">Black Sesame Pumpkin Loaf</h3></div>
+        </a>
+        <a class="ar-card" href="Recipe/apple-crumble-loaf.html">
+          <div class="ar-img-wrap"><img src="images/apple-crumble-loaf.jpg" alt="Apple Crumble Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍏</div></div>
+          <div class="ar-body"><p class="ar-tag">Loaf</p><h3 class="ar-title">Apple Crumble Loaf</h3></div>
+        </a>
         <a class="ar-card" href="Recipe/lemon-iced-tea-cake.html">
-          <div class="ar-img-wrap">
-            <img src="images/lemon-iced-tea-cake.jpg" alt="Lemon Iced Tea Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Loaf</p>
-            <h3 class="ar-title">Lemon Iced Tea Cake</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/lemon-iced-tea-cake.jpg" alt="Lemon Iced Tea Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍋</div></div>
+          <div class="ar-body"><p class="ar-tag">Loaf</p><h3 class="ar-title">Lemon Iced Tea Cake</h3></div>
         </a>
         <a class="ar-card" href="Recipe/earl-grey-orange-loaf.html">
-          <div class="ar-img-wrap">
-            <img src="images/earl-grey-orange-loaf.jpg" alt="Earl Grey Orange Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Loaf</p>
-            <h3 class="ar-title">Earl Grey Orange Loaf</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/earl-grey-orange-loaf.jpg" alt="Earl Grey Orange Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍊</div></div>
+          <div class="ar-body"><p class="ar-tag">Loaf</p><h3 class="ar-title">Earl Grey Orange Loaf</h3></div>
         </a>
         <a class="ar-card" href="Recipe/orange-spice-tea-loaf.html">
-          <div class="ar-img-wrap">
-            <img src="images/orange-spice-tea-loaf.jpg" alt="Orange Spice Tea Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Loaf</p>
-            <h3 class="ar-title">Orange Spice Tea Loaf</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/orange-spice-tea-loaf.jpg" alt="Orange Spice Tea Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍊</div></div>
+          <div class="ar-body"><p class="ar-tag">Loaf</p><h3 class="ar-title">Orange Spice Tea Loaf</h3></div>
         </a>
     </div>
   </div>
   <div class="ar-section">
     <h2 class="ar-section-title">Muffin, Tiramisu & Others</h2>
     <div class="ar-grid">
-                    <a class="ar-card" href="Recipe/pandan-custard.html">
-              <div class="ar-img-wrap">
-                <img src="images/pandan-custard.jpg" alt="Pandan Custard" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-                <div class="ar-fallback">🌿</div>
-              </div>
-              <div class="ar-body">
-                <p class="ar-tag">Others</p>
-                <h3 class="ar-title">Pandan Custard</h3>
-              </div>
-            </a>
-<a class="ar-card" href="Recipe/apple-crisp.html">
-          <div class="ar-img-wrap">
-            <img src="images/apple-crisp.jpg" alt="Apple Crisp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍎</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Others</p>
-            <h3 class="ar-title">Apple Crisp</h3>
-          </div>
+        <a class="ar-card" href="Recipe/pandan-custard.html">
+          <div class="ar-img-wrap"><img src="images/pandan-custard.jpg" alt="Pandan Custard" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🌿</div></div>
+          <div class="ar-body"><p class="ar-tag">Others</p><h3 class="ar-title">Pandan Custard</h3></div>
+        </a>
+        <a class="ar-card" href="Recipe/apple-crisp.html">
+          <div class="ar-img-wrap"><img src="images/apple-crisp.jpg" alt="Apple Crisp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍎</div></div>
+          <div class="ar-body"><p class="ar-tag">Others</p><h3 class="ar-title">Apple Crisp</h3></div>
         </a>
         <a class="ar-card" href="Recipe/apple-cider-donut.html">
-          <div class="ar-img-wrap">
-            <img src="images/apple-cider-donut.jpg" alt="Apple Cider Donut" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍩</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Muffin</p>
-            <h3 class="ar-title">Apple Cider Donut</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/apple-cider-donut.jpg" alt="Apple Cider Donut" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍩</div></div>
+          <div class="ar-body"><p class="ar-tag">Muffin</p><h3 class="ar-title">Apple Cider Donut</h3></div>
         </a>
         <a class="ar-card" href="Recipe/apple-custard-donut.html">
-          <div class="ar-img-wrap">
-            <img src="images/apple-custard-donut.jpg" alt="Apple Custard Donut" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍩</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Muffin</p>
-            <h3 class="ar-title">Apple Custard Donut</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/apple-custard-donut.jpg" alt="Apple Custard Donut" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍩</div></div>
+          <div class="ar-body"><p class="ar-tag">Muffin</p><h3 class="ar-title">Apple Custard Donut</h3></div>
         </a>
         <a class="ar-card" href="Recipe/zucchini-muffin.html">
-          <div class="ar-img-wrap">
-            <img src="images/zucchini-muffin.jpg" alt="Zucchini Chai Muffin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🥒</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Muffin</p>
-            <h3 class="ar-title">Zucchini Chai Muffin</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/zucchini-muffin.jpg" alt="Zucchini Chai Muffin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🥒</div></div>
+          <div class="ar-body"><p class="ar-tag">Muffin</p><h3 class="ar-title">Zucchini Chai Muffin</h3></div>
         </a>
         <a class="ar-card" href="Recipe/almond-poppy-berries-muffin.html">
-          <div class="ar-img-wrap">
-            <img src="images/almond-poppy-berries-muffin.jpg" alt="Almond Poppy Berries Muffin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Muffin</p>
-            <h3 class="ar-title">Almond Poppy Berries Muffin</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/almond-poppy-berries-muffin.jpg" alt="Almond Poppy Berries Muffin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🫐</div></div>
+          <div class="ar-body"><p class="ar-tag">Muffin</p><h3 class="ar-title">Almond Poppy Berries Muffin</h3></div>
         </a>
         <a class="ar-card" href="Recipe/hojicha-tiramisu.html">
-          <div class="ar-img-wrap">
-            <img src="images/hojicha-tiramisu.jpg" alt="Hojicha Tiramisu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="ar-fallback">🍵</div>
-          </div>
-          <div class="ar-body">
-            <p class="ar-tag">Tiramisu</p>
-            <h3 class="ar-title">Hojicha Tiramisu</h3>
-          </div>
+          <div class="ar-img-wrap"><img src="images/hojicha-tiramisu.jpg" alt="Hojicha Tiramisu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="ar-fallback">🍮</div></div>
+          <div class="ar-body"><p class="ar-tag">Tiramisu</p><h3 class="ar-title">Hojicha Tiramisu</h3></div>
         </a>
     </div>
   </div>
