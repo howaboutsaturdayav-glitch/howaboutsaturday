@@ -63,37 +63,18 @@
     footer { background: #5a3e32; color: #fde9c8; padding: 2rem; text-align: center; font-size: 0.8rem; }
     footer a { color: var(--pink); text-decoration: none; }
     .footer-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; color: var(--pink); display: block; margin-bottom: 0.5rem; }
-    
-      .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; margin-bottom: 4px; }
-    @media (max-width: 860px) {
-      .nav-hamburger { display: flex; flex-direction: column; }
-      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 0.5rem 0; z-index: 500; max-height: 85vh; overflow-y: auto; }
-      .nav-links.open { display: flex !important; }
-      .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; border-bottom: 1px solid #f0d4a8; }
-      .nav-dropdown { display: none !important; }
-      .mobile-section { display: block; }
-      .mobile-section-title { padding: 0.6rem 1.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #5383c6; background: #faebd8; border-bottom: 1px solid #f0d4a8; }
-      .mobile-section-link { padding: 0.65rem 2rem !important; font-size: 0.82rem !important; color: #5a3e32; display: block; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
-      .mobile-section-link:hover { color: #5383c6; background: #f5e5ce; }
-      .page { padding: 1.5rem 1.25rem 3rem; }
-      .video-wrap { margin: 0.25rem auto !important; }
-      .video-wrap blockquote { min-width: unset !important; min-height: unset !important; }
-      .divider { margin: 0.5rem 0; }
-      .recipe-section-title { font-size: 1.2rem; margin-bottom: 0.5rem; }
-      .recipe-heading { font-size: 2rem; }
-    }
-    .mobile-section { display: none; }
       .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; }
       .nav-dropdown { display: none !important; }
     }
-      .recipe-heading { font-size: 2rem; }
-    }
-        .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+  
+    @media (max-width: 860px) {
+      .page { padding: 1.5rem 1.25rem 3rem; }
+      .video-wrap { margin: 0.25rem auto !important; }
+      .video-wrap blockquote { min-width: unset !important; min-height: unset !important; }
+      .divider { margin: 1rem 0; }
+      .recipe-section-title { font-size: 1.2rem; margin-bottom: 0.75rem; }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
     .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; margin-bottom: 4px; }
-    .mobile-section { display: none; }
-    .mobile-section-title { padding: 0.6rem 1.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #5383c6; background: #faebd8; border-bottom: 1px solid #f0d4a8; display: block; }
-    .mobile-section-link { padding: 0.65rem 2rem !important; font-size: 0.82rem !important; color: #5a3e32 !important; display: block; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
     @media (max-width: 860px) {
       .nav-hamburger { display: flex; flex-direction: column; }
       .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 0.5rem 0; z-index: 500; max-height: 85vh; overflow-y: auto; }
@@ -108,25 +89,10 @@
       .recipe-section-title { font-size: 1.2rem; margin-bottom: 0.5rem; }
       .recipe-heading { font-size: 2rem; }
     }
-        .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; margin-bottom: 4px; }
     .mobile-section { display: none; }
     .mobile-section-title { padding: 0.6rem 1.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #5383c6; background: #faebd8; border-bottom: 1px solid #f0d4a8; display: block; }
     .mobile-section-link { padding: 0.65rem 2rem !important; font-size: 0.82rem !important; color: #5a3e32 !important; display: block; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
-    @media (max-width: 860px) {
-      .nav-hamburger { display: flex; flex-direction: column; }
-      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 0.5rem 0; z-index: 500; max-height: 85vh; overflow-y: auto; }
-      .nav-links.open { display: flex !important; }
-      .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; border-bottom: 1px solid #f0d4a8; }
-      .nav-dropdown { display: none !important; }
-      .mobile-section { display: block; }
-      .page { padding: 1.5rem 1.25rem 3rem; }
-      .video-wrap { margin: 0.25rem auto !important; }
-      .video-wrap blockquote { min-width: unset !important; min-height: unset !important; }
-      .divider { margin: 0.5rem 0; }
-      .recipe-section-title { font-size: 1.2rem; margin-bottom: 0.5rem; }
-      .recipe-heading { font-size: 2rem; }
-    }
+
   </style>
 </head>
 <body>
@@ -161,7 +127,7 @@
       </div>
     </li>
     <li class="nav-item">
-            <a href="../all-series.html">Series <span class="nav-arrow">&#9660;</span></a>
+      <a href="../all-series.html">Series <span class="nav-arrow">&#9660;</span></a>
       <div class="nav-dropdown">
         <a class="nav-dropdown-link" href="../all-series.html">View All Series</a>
         <div class="nav-dropdown-divider"></div>
@@ -170,6 +136,26 @@
         <a class="nav-dropdown-item" href="../series-hojicha.html">Hojicha Series</a>
         <a class="nav-dropdown-item" href="../series-holiday-cookies.html">Holiday Cookies</a>
       </div>
+    </li>
+    <li class="mobile-section">
+      <span class="mobile-section-title">Recipes</span>
+      <a class="mobile-section-link" href="../all-recipes.html">View All Recipes</a>
+      <a class="mobile-section-link" href="../beverage.html">Beverage</a>
+      <a class="mobile-section-link" href="../matcha.html">&nbsp;&nbsp;&#8627; Matcha</a>
+      <a class="mobile-section-link" href="../cozy-sips.html">&nbsp;&nbsp;&#8627; Cozy Sips</a>
+      <a class="mobile-section-link" href="../baking.html">Baking</a>
+      <a class="mobile-section-link" href="../baking.html#cake">&nbsp;&nbsp;&#8627; Cake</a>
+      <a class="mobile-section-link" href="../baking.html#muffin">&nbsp;&nbsp;&#8627; Muffin</a>
+      <a class="mobile-section-link" href="../baking.html#cookies">&nbsp;&nbsp;&#8627; Cookies</a>
+      <a class="mobile-section-link" href="../baking.html#loaf">&nbsp;&nbsp;&#8627; Loaf</a>
+    </li>
+    <li class="mobile-section">
+      <span class="mobile-section-title">Series</span>
+      <a class="mobile-section-link" href="../all-series.html">View All Series</a>
+      <a class="mobile-section-link" href="../series-flavours.html">Flavours of My Childhood</a>
+      <a class="mobile-section-link" href="../series-matcha.html">Matcha Series</a>
+      <a class="mobile-section-link" href="../series-hojicha.html">Hojicha Series</a>
+      <a class="mobile-section-link" href="../series-holiday-cookies.html">Holiday Cookies</a>
     </li>
     <li class="nav-item"><a href="../about.html">About</a></li>
     <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a></li>
@@ -236,6 +222,7 @@
     h.addEventListener('click',function(){n.classList.toggle('open');});
     window.addEventListener('resize',u);u();
   })();
+</script>
 </script>
 </body>
 </html>
