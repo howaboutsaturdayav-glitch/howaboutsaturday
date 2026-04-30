@@ -63,16 +63,24 @@
     footer { background: #5a3e32; color: #fde9c8; padding: 2rem; text-align: center; font-size: 0.8rem; }
     footer a { color: var(--pink); text-decoration: none; }
     .footer-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; color: var(--pink); display: block; margin-bottom: 0.5rem; }
-    
     .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
     .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; margin-bottom: 4px; }
+    .mob-section { display: none; }
+    .mob-header { width: 100%; padding: 0.75rem 1.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a3e32; background: none; border: none; border-bottom: 1px solid #f0d4a8; cursor: pointer; text-align: left; }
+    .mob-header .mob-arrow { font-size: 0.6rem; transition: transform 0.2s; }
+    .mob-header.open .mob-arrow { transform: rotate(180deg); }
+    .mob-links { display: none; background: #faebd8; }
+    .mob-links.open { display: block; }
+    .mob-link { display: block; padding: 0.65rem 2rem; font-size: 0.82rem; color: #5a3e32; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
+    .mob-link:hover { color: #5383c6; }
+    .mob-plain { display: block; padding: 0.75rem 1.5rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a3e32; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
     @media (max-width: 860px) {
       .nav-hamburger { display: flex; flex-direction: column; }
-      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 0.5rem 0; z-index: 500; max-height: 85vh; overflow-y: auto; }
+      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 0; z-index: 500; max-height: 85vh; overflow-y: auto; }
       .nav-links.open { display: flex !important; }
-      .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; border-bottom: 1px solid #f0d4a8; }
+      .nav-item > a { display: none; }
       .nav-dropdown { display: none !important; }
-      .mobile-section { display: block; }
+      .mob-section { display: block; }
       .page { padding: 1.5rem 1.25rem 3rem; }
       .video-wrap { margin: 0.25rem auto !important; }
       .video-wrap blockquote { min-width: unset !important; min-height: unset !important; }
@@ -80,9 +88,6 @@
       .recipe-section-title { font-size: 1.2rem; margin-bottom: 0.5rem; }
       .recipe-heading { font-size: 2rem; }
     }
-    .mobile-section { display: none; }
-    .mobile-section-title { padding: 0.6rem 1.5rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #5383c6; background: #faebd8; border-bottom: 1px solid #f0d4a8; display: block; }
-    .mobile-section-link { padding: 0.65rem 2rem !important; font-size: 0.82rem !important; color: #5a3e32 !important; display: block; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
   </style>
 </head>
 <body>
@@ -127,26 +132,29 @@
         <a class="nav-dropdown-item" href="../series-holiday-cookies.html">Holiday Cookies</a>
       </div>
     </li>
-    <li class="mobile-section">
-      <span class="mobile-section-title">Recipes</span>
-      <a class="mobile-section-link" href="../all-recipes.html">View All Recipes</a>
-      <a class="mobile-section-link" href="../beverage.html">Beverage</a>
-      <a class="mobile-section-link" href="../matcha.html">&nbsp;&nbsp;&#8627; Matcha</a>
-      <a class="mobile-section-link" href="../cozy-sips.html">&nbsp;&nbsp;&#8627; Cozy Sips</a>
-      <a class="mobile-section-link" href="../baking.html">Baking</a>
-      <a class="mobile-section-link" href="../baking.html#cake">&nbsp;&nbsp;&#8627; Cake</a>
-      <a class="mobile-section-link" href="../baking.html#muffin">&nbsp;&nbsp;&#8627; Muffin</a>
-      <a class="mobile-section-link" href="../baking.html#cookies">&nbsp;&nbsp;&#8627; Cookies</a>
-      <a class="mobile-section-link" href="../baking.html#loaf">&nbsp;&nbsp;&#8627; Loaf</a>
+
+    <li class="mob-section">
+      <button class="mob-header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Recipes <span class="mob-arrow">&#9660;</span></button>
+      <div class="mob-links">
+        <a class="mob-link" href="../all-recipes.html">View All Recipes</a>
+        <a class="mob-link" href="../beverage.html">Beverage</a>
+        <a class="mob-link" href="../baking.html">Baking</a>
+      </div>
     </li>
-    <li class="mobile-section">
-      <span class="mobile-section-title">Series</span>
-      <a class="mobile-section-link" href="../all-series.html">View All Series</a>
-      <a class="mobile-section-link" href="../series-flavours.html">Flavours of My Childhood</a>
-      <a class="mobile-section-link" href="../series-matcha.html">Matcha Series</a>
-      <a class="mobile-section-link" href="../series-hojicha.html">Hojicha Series</a>
-      <a class="mobile-section-link" href="../series-holiday-cookies.html">Holiday Cookies</a>
+    <li class="mob-section">
+      <button class="mob-header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Series <span class="mob-arrow">&#9660;</span></button>
+      <div class="mob-links">
+        <a class="mob-link" href="../all-series.html">View All Series</a>
+        <a class="mob-link" href="../series-flavours.html">Flavours of My Childhood</a>
+        <a class="mob-link" href="../series-matcha.html">Matcha Series</a>
+        <a class="mob-link" href="../series-hojicha.html">Hojicha Series</a>
+        <a class="mob-link" href="../series-holiday-cookies.html">Holiday Cookies</a>
+      </div>
     </li>
+    <li class="mob-section"><a class="mob-plain" href="../about.html">About</a></li>
+    <li class="mob-section"><a class="mob-plain" href="https://instagram.com/howaboutsaturday" target="_blank">Instagram &#8599;</a></li>
+    <li class="mob-section"><a class="mob-plain" href="https://www.youtube.com/@howaboutsaturday" target="_blank">YouTube &#8599;</a></li>
+    <li class="mob-section"><a class="mob-plain" href="https://www.tiktok.com/@howaboutsaturday_" target="_blank">TikTok &#8599;</a></li>
     <li class="nav-item"><a href="../about.html">About</a></li>
     <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a></li>
     <li class="nav-item"><a href="https://www.youtube.com/@howaboutsaturday" target="_blank" rel="noopener">YouTube &#8599;</a></li>
@@ -160,7 +168,7 @@
   <p class="recipe-desc">A soft, fragrant loaf infused with orange spice tea, sliced and filled with orange marmalade and whipped cream. Afternoon tea in a pan.</p>
 
   <div class="video-wrap">
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQugUWVkV-1/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px);"></blockquote>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DQugUWVkV-1/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;padding:0;width:calc(100% - 2px);"></blockquote>
   </div>
 
   <div class="divider"></div>
@@ -191,31 +199,31 @@
   <h2 class="recipe-section-title">Method</h2>
   <ol style="list-style:none;margin-bottom:2rem;">
 <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;">
-      <span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">1</span>
+      <span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;">1</span>
       <span>Preheat oven to 350°F. Grease and line a 9x5 inch loaf pan.</span>
     </li>
 <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;">
-      <span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">2</span>
+      <span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;">2</span>
       <span>Mix sugar, eggs, oil, butter, yogurt, vanilla, and ground tea. Fold in flour, baking powder, and salt until smooth.</span>
     </li>
 <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;">
-      <span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">3</span>
+      <span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;">3</span>
       <span>Pour into pan and bake 55–60 minutes. Cool completely.</span>
     </li>
 <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;">
-      <span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">4</span>
+      <span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;">4</span>
       <span>Whip heavy cream, yogurt, icing sugar, and vanilla until soft peaks form.</span>
     </li>
 <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;">
-      <span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">5</span>
+      <span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;">5</span>
       <span>Slice the cooled loaf in half lengthways.</span>
     </li>
 <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;">
-      <span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">6</span>
+      <span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;">6</span>
       <span>Spread orange marmalade on the bottom half, top with whipped cream mixture, then place the second half on top.</span>
     </li>
 <li style="display:flex;gap:1.25rem;padding:1rem 0;font-size:0.9rem;line-height:1.75;">
-      <span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">7</span>
+      <span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;">7</span>
       <span>Dust with icing sugar before serving.</span>
     </li>
 </ol>
