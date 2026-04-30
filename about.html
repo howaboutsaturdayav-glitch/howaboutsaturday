@@ -9,185 +9,76 @@
     gtag('js', new Date());
     gtag('config', 'G-QW7E93V2XR');
   </script>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — How About Saturday</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281955985735338" crossorigin="anonymous"></script>
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    :root{--cream:#fde9c8;--parchment:#faebd8;--warm-tan:#f0d4a8;--blue:#5383c6;--pink:#d4847a;--cork:#5a3e32;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;}
-    html{scroll-behavior:smooth;}
-    body{background:var(--cream);color:var(--cork);font-family:var(--sans);font-size:16px;line-height:1.7;overflow-x:hidden;}
-
-    /* ── NAV ── */
-    nav{background:var(--cream);border-bottom:1px solid var(--warm-tan);position:sticky;top:0;z-index:100;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
-    .nav-logo{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--blue);text-decoration:none;letter-spacing:0.08em;}
-    .nav-links{display:flex;gap:2rem;list-style:none;}
-    .nav-item{position:relative;list-style:none;}
-    .nav-item>a{font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#5a3e32;text-decoration:none;display:flex;align-items:center;gap:0.3rem;transition:color 0.2s;}
-    .nav-item>a:hover{color:#5383c6;}
-    .nav-item>a .nav-arrow{font-size:0.55rem;transition:transform 0.2s;}
-    .nav-item:hover>a .nav-arrow{transform:rotate(180deg);}
-    .nav-item::after{content:'';position:absolute;top:100%;left:0;width:100%;height:14px;}
-    .nav-dropdown{display:none;position:absolute;top:calc(100% + 2px);right:0;background:#fde9c8;border:1px solid #f0d4a8;border-radius:12px;padding:0.4rem 0;min-width:260px;z-index:300;box-shadow:0 8px 32px rgba(58,46,40,0.1);}
-    .nav-item:hover>.nav-dropdown{display:block;}
-    .nav-dropdown-link{display:block;padding:0.6rem 1.1rem;font-size:0.82rem;font-weight:700;color:#5383c6;text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;transition:background 0.15s;border-bottom:1px solid #f0d4a8;margin-bottom:0.3rem;}
-    .nav-dropdown-link:hover{background:#faebd8;}
-    .nav-dropdown-item{display:block;padding:0.5rem 1.1rem;font-size:0.82rem;font-weight:500;color:#5a3e32;text-decoration:none;text-transform:none;letter-spacing:0;transition:background 0.15s,color 0.15s;white-space:nowrap;}
-    .nav-dropdown-item:hover{background:#faebd8;color:#5383c6;}
-    .nav-dropdown-divider{height:1px;background:#f0d4a8;margin:0.2rem 0 0.3rem;}
-    .nav-dropdown>.nav-sub-item{position:relative;}
-    .nav-dropdown>.nav-sub-item>a{display:flex;align-items:center;justify-content:space-between;padding:0.5rem 1.1rem;font-size:0.82rem;font-weight:500;color:#5a3e32;text-decoration:none;text-transform:none;letter-spacing:0;transition:background 0.15s,color 0.15s;white-space:nowrap;}
-    .nav-dropdown>.nav-sub-item>a:hover{background:#faebd8;color:#5383c6;}
-    .nav-dropdown>.nav-sub-item>a .sub-arrow{font-size:0.55rem;opacity:0.5;}
-    .nav-sub-dropdown{display:none;position:absolute;top:-0.4rem;right:calc(100% + 4px);background:#fde9c8;border:1px solid #f0d4a8;border-radius:12px;padding:0.4rem 0;min-width:180px;z-index:400;box-shadow:0 8px 32px rgba(58,46,40,0.1);}
-    .nav-sub-item:hover>.nav-sub-dropdown{display:block;}
-    .nav-sub-item::after{content:'';position:absolute;top:0;right:-10px;width:14px;height:100%;}
-    .nav-sub-dropdown a{display:block;padding:0.5rem 1.1rem;font-size:0.82rem;font-weight:400;color:#5a3e32;text-decoration:none;transition:background 0.15s,color 0.15s;}
-    .nav-sub-dropdown a:hover{background:#faebd8;color:#5383c6;}
-
-    /* ── ABOUT HERO ── */
-    .about-hero {
-      padding: 1.5rem 3rem 0;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .meet-line {
-      font-family: var(--serif);
-      font-size: clamp(4rem, 12vw, 9rem);
-      font-weight: 700;
-      line-height: 0.95;
-      color: var(--cork);
-      letter-spacing: -0.02em;
-      margin-bottom: 0;
-    }
-
-    .meet-line .meet-word { color: var(--cork); }
-    .meet-line .name-word { color: var(--blue); }
-
-    /* ── LOWER SECTION ── */
-    .about-lower {
-      max-width: 1200px;
-      margin: 2rem auto 0;
-      padding: 0 3rem 5rem;
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    /* LEFT — photo */
-    .about-photo-wrap {
-      position: relative;
-    }
-    .about-photo {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-      object-position: top;
-      border-radius: 12px;
-      display: block;
-      background: var(--parchment);
-    }
-    .about-photo-placeholder {
-      width: 100%;
-      height: 420px;
-      background: var(--parchment);
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      border: 2px dashed var(--warm-tan);
-    }
-    .about-photo-placeholder span { font-size: 3rem; }
-    .about-photo-placeholder p { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-tan); text-align: center; padding: 0 1rem; }
-
-    /* RIGHT — text */
-    .about-text-block {
-      padding-top: 0.5rem;
-      text-align: left;
-    }
-    .about-tagline {
-      font-family: var(--serif);
-      font-size: clamp(2.2rem, 4.5vw, 3.5rem);
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 1.75rem;
-      color: var(--cork);
-    }
-    .about-divider {
-      width: 50px;
-      height: 2px;
-      background: var(--warm-tan);
-      margin: 0 0 1.75rem;
-    }
-    .about-body {
-      font-size: 0.95rem;
-      color: var(--cork);
-      line-height: 1.85;
-      margin-bottom: 1.25rem;
-    }
-    .about-social {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-      justify-content: center;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.7rem 1.6rem;
-      border-radius: 2px;
-      font-family: var(--sans);
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.2s;
-      border: none;
-      cursor: pointer;
-    }
-    .btn-primary{background:var(--blue);color:#fff;}
-    .btn-primary:hover{background:#3a6aab;}
-    .btn-outline{background:transparent;color:var(--cork);border:1px solid var(--warm-tan);}
-    .btn-outline:hover{border-color:var(--blue);color:var(--blue);}
-
-    /* Ad */
-    .ad-slot{max-width:1200px;margin:0 auto 3rem;padding:0 3rem;text-align:center;}
-
-    footer{background:#5a3e32;color:#fde9c8;padding:1.25rem 2rem;text-align:center;font-size:0.8rem;}
-    footer a{color:var(--pink);text-decoration:none;}
-    .footer-logo{font-family:var(--serif);font-size:1.3rem;font-weight:300;color:var(--pink);display:block;margin-bottom:0.2rem;}
-
-    @media(max-width:760px){
-      .about-hero { padding: 2.5rem 1.5rem 0; }
-      .about-lower { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem 1.5rem 4rem; }
-      .meet-line { font-size: clamp(3.5rem, 15vw, 6rem); }
-    }
-
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream: #fde9c8; --parchment: #faebd8; --warm-tan: #f0d4a8; --blue: #5383c6; --pink: #d4847a; --cork: #5a3e32; --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'Jost', system-ui, sans-serif; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--cork); font-family: var(--sans); font-size: 16px; line-height: 1.7; }
+    nav { background: var(--cream); border-bottom: 1px solid var(--warm-tan); position: sticky; top: 0; z-index: 100; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--blue); text-decoration: none; letter-spacing: 0.08em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-item { position: relative; list-style: none; }
+    .nav-item > a { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5a3e32; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; }
+    .nav-item > a:hover { color: #5383c6; }
+    .nav-item > a .nav-arrow { font-size: 0.55rem; transition: transform 0.2s; }
+    .nav-item:hover > a .nav-arrow { transform: rotate(180deg); }
+    .nav-item::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 14px; }
+    .nav-dropdown { display: none; position: absolute; top: calc(100% + 2px); right: 0; background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 260px; z-index: 300; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
+    .nav-item:hover > .nav-dropdown { display: block; }
+    .nav-dropdown-link { display: block; padding: 0.6rem 1.1rem; font-size: 0.82rem; font-weight: 700; color: #5383c6; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.15s; border-bottom: 1px solid #f0d4a8; margin-bottom: 0.3rem; }
+    .nav-dropdown-link:hover { background: #faebd8; }
+    .nav-dropdown-item { display: block !important; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 500; color: #5a3e32; text-decoration: none; text-transform: none; letter-spacing: 0; transition: background 0.15s, color 0.15s; white-space: nowrap; }
+    .nav-dropdown-item:hover { background: #faebd8; color: #5383c6; }
+    .nav-dropdown-divider { height: 1px; background: #f0d4a8; margin: 0.2rem 0 0.3rem; }
+    .nav-dropdown > .nav-sub-item { position: relative; }
+    .nav-dropdown > .nav-sub-item > a { display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 500; color: #5a3e32; text-decoration: none; text-transform: none; letter-spacing: 0; transition: background 0.15s, color 0.15s; white-space: nowrap; }
+    .nav-dropdown > .nav-sub-item > a:hover { background: #faebd8; color: #5383c6; }
+    .nav-dropdown > .nav-sub-item > a .sub-arrow { font-size: 0.55rem; opacity: 0.5; }
+    .nav-sub-dropdown { display: none; position: absolute; top: -0.4rem; right: calc(100% + 4px); background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 180px; z-index: 400; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
+    .nav-sub-item:hover > .nav-sub-dropdown { display: block; }
+    .nav-sub-item::after { content: ''; position: absolute; top: 0; right: -10px; width: 14px; height: 100%; }
+    .nav-sub-dropdown a { display: block; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 400; color: #5a3e32; text-decoration: none; transition: background 0.15s, color 0.15s; }
+    .nav-sub-dropdown a:hover { background: #faebd8; color: #5383c6; }
+    .about-wrap { max-width: 720px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+    .about-eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.75rem; }
+    .about-title { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; color: var(--blue); line-height: 1.15; margin-bottom: 1.5rem; }
+    .about-body { font-size: 0.95rem; line-height: 1.85; color: var(--cork); }
+    .about-body p { margin-bottom: 1.25rem; }
+    .about-body a { color: var(--blue); text-decoration: underline; }
+    .divider { width: 50px; height: 2px; background: var(--warm-tan); margin: 2rem 0; }
+    footer { background: #5a3e32; color: #fde9c8; padding: 2rem; text-align: center; font-size: 0.8rem; margin-top: 4rem; }
+    footer a { color: var(--pink); text-decoration: none; }
+    .footer-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; color: var(--pink); display: block; margin-bottom: 0.5rem; }
     .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
     .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; margin-bottom: 4px; }
+    .mob-section { display: none; }
+    .mob-header { width: 100%; padding: 0.75rem 1.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a3e32; background: none; border: none; border-bottom: 1px solid #f0d4a8; cursor: pointer; text-align: left; }
+    .mob-header .mob-arrow { font-size: 0.6rem; transition: transform 0.2s; }
+    .mob-header.open .mob-arrow { transform: rotate(180deg); }
+    .mob-links { display: none; background: #faebd8; }
+    .mob-links.open { display: block; }
+    .mob-link { display: block; padding: 0.65rem 2rem; font-size: 0.82rem; color: #5a3e32; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
+    .mob-link:hover { color: #5383c6; }
+    .mob-plain { display: block; padding: 0.75rem 1.5rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a3e32; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
     @media (max-width: 860px) {
       .nav-hamburger { display: flex; flex-direction: column; }
-      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 1rem 0; z-index: 500; }
+      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 0; z-index: 500; max-height: 85vh; overflow-y: auto; }
       .nav-links.open { display: flex !important; }
-      .nav-links li a { padding: 0.75rem 1.5rem; display: block; font-size: 0.85rem; }
+      .nav-item { display: none; }
       .nav-dropdown { display: none !important; }
+      .mob-section { display: block; }
+      .about-wrap { padding: 2rem 1.25rem 4rem; }
     }
   </style>
 </head>
 <body>
-
 <nav>
   <a class="nav-logo" href="index.html">How About Saturday</a>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu" style="background:none;border:none;">
@@ -229,59 +120,45 @@
         <a class="nav-dropdown-item" href="series-holiday-cookies.html">Holiday Cookies</a>
       </div>
     </li>
-    <li class="nav-item"><a href="about.html" style="color:#5383c6;">About</a></li>
+    <li class="mob-section">
+      <button class="mob-header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Recipes <span class="mob-arrow">&#9660;</span></button>
+      <div class="mob-links">
+        <a class="mob-link" href="all-recipes.html">View All Recipes</a>
+        <a class="mob-link" href="beverage.html">Beverage</a>
+        <a class="mob-link" href="baking.html">Baking</a>
+      </div>
+    </li>
+    <li class="mob-section">
+      <button class="mob-header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Series <span class="mob-arrow">&#9660;</span></button>
+      <div class="mob-links">
+        <a class="mob-link" href="all-series.html">View All Series</a>
+        <a class="mob-link" href="series-flavours.html">Flavours of My Childhood</a>
+        <a class="mob-link" href="series-matcha.html">Matcha Series</a>
+        <a class="mob-link" href="series-hojicha.html">Hojicha Series</a>
+        <a class="mob-link" href="series-holiday-cookies.html">Holiday Cookies</a>
+      </div>
+    </li>
+    <li class="nav-item"><a href="about.html">About</a></li>
+    <li class="mob-section"><a class="mob-plain" href="about.html">About</a></li>
+    <li class="mob-section"><a class="mob-plain" href="https://instagram.com/howaboutsaturday" target="_blank">Instagram &#8599;</a></li>
+    <li class="mob-section"><a class="mob-plain" href="https://www.youtube.com/@howaboutsaturday" target="_blank">YouTube &#8599;</a></li>
+    <li class="mob-section"><a class="mob-plain" href="https://www.tiktok.com/@howaboutsaturday_" target="_blank">TikTok &#8599;</a></li>
     <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a></li>
     <li class="nav-item"><a href="https://www.youtube.com/@howaboutsaturday" target="_blank" rel="noopener">YouTube &#8599;</a></li>
     <li class="nav-item"><a href="https://www.tiktok.com/@howaboutsaturday_" target="_blank" rel="noopener">TikTok &#8599;</a></li>
   </ul>
 </nav>
 
-<!-- BIG HEADING -->
-<div class="about-hero">
-  <h1 class="meet-line">
-    <span class="meet-word">meet,</span>
-    <span class="name-word"> Amy</span>
-  </h1>
-  <a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener" style="font-family:var(--sans);font-size:0.85rem;letter-spacing:0.15em;color:var(--pink);text-decoration:none;display:block;margin-top:0.5rem;">@howaboutsaturday</a>
-</div>
-
-<!-- LOWER: PHOTO LEFT + TEXT RIGHT -->
-<div class="about-lower">
-
-  <!-- LEFT — photo -->
-  <div class="about-photo-wrap">
-    <img class="about-photo" src="images/amy-about.jpg" alt="Amy"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-    <div class="about-photo-placeholder" style="display:none;">
-      <span>🌸</span>
-      <p>Add your photo as<br>images/amy-about.jpg</p>
-    </div>
-  </div>
-
-  <!-- RIGHT — text -->
-  <div class="about-text-block">
-
-    <p class="about-tagline" style="text-align:center;">
-      Made for <em style="font-style:italic;color:#d4847a;">slow</em>
-      <span style="color:#5383c6;">Saturdays</span>
-    </p>
-
-    <div class="about-divider"></div>
-
-    <p class="about-body">
-      I started How About Saturday in 2020 as a little space to slow down and celebrate the simple joy of making something from scratch. What began as a love for cozy bakes and seasonal drinks has grown into a community of people who appreciate the beauty of spending a Saturday in the kitchen, flour on the counter and something warm in the oven.
-    </p>
-
-    <p class="about-body">
-      Here you will find tea infused cakes, matcha drinks, and everything in between. My recipes are not about perfection. They are about the process, the ritual, and the quiet pleasure of making something with your own hands. Whether you are here for the baking or just the cozy vibes, I am really glad you found your way to this little corner of the internet.
-    </p>
-
-    <div class="about-social">
-      <a class="btn" style="background:#5383c6;color:#fde9c8;" href="all-recipes.html">Browse Recipes</a>
-      <a class="btn" style="background:#5a3e32;color:#fde9c8;" href="mailto:howaboutsaturday.av@gmail.com">Work With Me</a>
-      <a class="btn" style="background:#d4847a;color:#fde9c8;" href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">@howaboutsaturday</a>
-    </div>
-
+<div class="about-wrap">
+  <p class="about-eyebrow">About</p>
+  <h1 class="about-title">Hi, I'm Amy — and weekends were made for this.</h1>
+  <div class="divider"></div>
+  <div class="about-body">
+    <p>I'm a home baker, matcha enthusiast, and slow living advocate based in Toronto. How About Saturday started as a little corner of the internet where I could share the recipes I actually make on weekends — the ones that fill your kitchen with good smells and don't require a culinary degree.</p>
+    <p>I grew up in Malaysia, and so much of what I bake is quietly shaped by the flavours I grew up with — pandan, lychee, jasmine, longan. You'll find them woven into everything I do, sometimes obviously, sometimes as a whisper in the background.</p>
+    <p>When I'm not baking, I'm working as a Registered Behaviour Analyst, tending to my balcony garden, or making yet another matcha latte that I forgot was already going cold on the counter.</p>
+    <p>This space is for anyone who believes a good Saturday involves flour on the counter, something in the oven, and absolutely nowhere to be.</p>
+    <p>For collaborations and partnerships, reach me at <a href="mailto:howaboutsaturday.av@gmail.com">howaboutsaturday.av@gmail.com</a>.</p>
   </div>
 </div>
 
@@ -291,7 +168,6 @@
   <p style="margin-top:0.75rem;"><a href="https://instagram.com/howaboutsaturday" target="_blank">Instagram</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/@howaboutsaturday" target="_blank">YouTube</a> &nbsp;·&nbsp; <a href="https://www.tiktok.com/@howaboutsaturday_" target="_blank">TikTok</a></p>
   <p style="margin-top:0.5rem;opacity:0.5;font-size:0.75rem;">© 2025 How About Saturday · All rights reserved.</p>
 </footer>
-
 
 <script>
   (function(){
