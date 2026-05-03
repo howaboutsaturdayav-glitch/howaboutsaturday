@@ -184,7 +184,7 @@
     .gram-hover-title { font-family:var(--serif);font-size:1rem;font-weight:700;color:#fde9c8;line-height:1.2; }
     .gram-tile.hidden { display:none; }
     .gram-no-results { display:none;grid-column:1/-1;text-align:center;padding:3rem;font-size:0.9rem;color:#5a3e32;opacity:0.6; }
-    @media(max-width:600px){ .gram-grid{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:700px){ .gram-grid{grid-template-columns:repeat(2,1fr);} }
 
     /* ── ABOUT SECTION (homepage) ── */
     .about-section { max-width:900px;margin:0 auto;padding:3rem 2rem 3rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.4rem; }
@@ -494,7 +494,7 @@
   function clearFilter() {
     activeCategory = null;
     const tiles = document.querySelectorAll('.gram-tile');
-    tiles.forEach((t, i) => { t.style.display = i < 9 ? '' : 'none'; });
+    var isMobile = window.innerWidth <= 700; tiles.forEach((t, i) => { t.style.display = i < (isMobile ? 10 : 9) ? '' : 'none'; });
     document.getElementById('btn-beverage').textContent = 'Beverage ▼';
     document.getElementById('btn-baking').textContent = 'Baking ▼';
     document.getElementById('btn-beverage').classList.remove('active');
@@ -525,6 +525,20 @@
     function u(){h.style.display=window.innerWidth<=860?'flex':'none';if(window.innerWidth>860)n.classList.remove('open');}
     h.addEventListener('click',function(){n.classList.toggle('open');});
     window.addEventListener('resize',u);u();
+  })();
+</script>
+<script>
+  (function(){
+    var tiles = document.querySelectorAll('.gram-tile');
+    var isMobile = window.innerWidth <= 700;
+    var show = isMobile ? 10 : 9;
+    tiles.forEach(function(t, i){ t.style.display = i < show ? '' : 'none'; });
+    window.addEventListener('resize', function(){
+      if(document.querySelector('.filter-btn.active') && document.querySelector('.filter-btn.active').dataset.filter !== 'all') return;
+      var mob = window.innerWidth <= 700;
+      var s = mob ? 10 : 9;
+      tiles.forEach(function(t, i){ t.style.display = i < s ? '' : 'none'; });
+    });
   })();
 </script>
 </body>
