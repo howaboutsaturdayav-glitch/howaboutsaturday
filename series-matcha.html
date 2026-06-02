@@ -11,7 +11,7 @@
   </script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Baking How About Saturday</title>
+  <title>Matcha Series How About Saturday</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -48,24 +48,23 @@
     .nav-sub-dropdown a { display: block; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 400; color: #5a3e32; text-decoration: none; transition: background 0.15s, color 0.15s; }
     .nav-sub-dropdown a:hover { background: #faebd8; color: #5383c6; }
 
-    .page-header{max-width:1000px;margin:0 auto;padding:3rem 2rem 0.5rem;}
+    .page-header{max-width:1000px;margin:0 auto;padding:3rem 2rem 1.5rem;}
     .page-eyebrow{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--pink);margin-bottom:0.5rem;}
     .page-title{font-family:var(--serif);font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:var(--blue);margin-bottom:0.5rem;}
-    .page-intro{font-size:0.9rem;color:var(--cork);max-width:500px;margin-bottom:1rem;}
-    .cat-section{max-width:1000px;margin:0 auto;padding:2.5rem 2rem 0.5rem;}
-    .cat-section-title{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--cork);margin-bottom:1.5rem;padding:0.75rem 1.25rem;background:var(--parchment);border-radius:0 8px 8px 0;}
-    .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;}
-    .cat-card{background:var(--parchment);border:1px solid var(--warm-tan);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:transform 0.2s,box-shadow 0.2s;}
-    .cat-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(58,46,40,0.1);}
-    .cat-img{aspect-ratio:4/3;overflow:hidden;background:var(--warm-tan);position:relative;}
-    .cat-img img{width:100%;height:100%;object-fit:cover;display:block;}
-    .cat-fallback{display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:2.5rem;background:var(--warm-tan);}
-    .cat-body{padding:0.8rem 1rem;}
-    .cat-title{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--blue);line-height:1.25;}
-    footer{background:#5a3e32;color:#fde9c8;padding:2rem;text-align:center;font-size:0.8rem;margin-top:4rem;}
+    .page-intro{font-size:0.9rem;color:var(--cork);max-width:560px;}
+    .sr-grid{max-width:1000px;margin:0 auto;padding:1.5rem 2rem 4rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.25rem;}
+    .sr-card{background:var(--parchment);border:1px solid var(--warm-tan);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:transform 0.2s,box-shadow 0.2s;}
+    .sr-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(58,46,40,0.1);}
+    .sr-img{aspect-ratio:4/3;overflow:hidden;background:var(--warm-tan);}
+    .sr-img img{width:100%;height:100%;object-fit:cover;display:block;}
+    .sr-fallback{display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:2.5rem;background:var(--warm-tan);}
+    .sr-body{padding:0.8rem 1rem;}
+    .sr-tag{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--pink);margin-bottom:0.3rem;}
+    .sr-title{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--blue);line-height:1.25;}
+    footer{background:#5a3e32;color:#fde9c8;padding:1.25rem 2rem;text-align:center;font-size:0.8rem;}
     footer a{color:var(--pink);text-decoration:none;}
     .footer-logo{font-family:var(--serif);font-size:1.3rem;font-weight:300;color:var(--pink);display:block;margin-bottom:0.2rem;}
-    @media(max-width:600px){.cat-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:600px){.sr-grid{grid-template-columns:repeat(2,1fr);}}
     
     .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
     .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; margin-bottom: 4px; }
@@ -124,6 +123,7 @@
       <div class="nav-dropdown">
         <a class="nav-dropdown-link" href="all-series.html">View All Series</a>
         <div class="nav-dropdown-divider"></div>
+        <a class="nav-dropdown-item" href="series-world-cup.html">2026 World Cup Series</a>
         <a class="nav-dropdown-item" href="series-flavours.html">Flavours of My Childhood</a>
         <a class="nav-dropdown-item" href="series-matcha.html">Matcha Series</a>
         <a class="nav-dropdown-item" href="series-hojicha.html">Hojicha Series</a>
@@ -147,6 +147,7 @@
       <button class="mob-header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Series <span class="mob-arrow">&#9660;</span></button>
       <div class="mob-links">
         <a class="mob-link" href="all-series.html">View All Series</a>
+        <a class="mob-link" href="series-world-cup.html">2026 World Cup Series</a>
         <a class="mob-link" href="series-flavours.html">Flavours of My Childhood</a>
         <a class="mob-link" href="series-matcha.html">Matcha Series</a>
         <a class="mob-link" href="series-hojicha.html">Hojicha Series</a>
@@ -164,177 +165,64 @@
   </ul>
 </nav>
 <div class="page-header">
-  <p class="page-eyebrow">From the Oven</p>
-  <h1 class="page-title">Baking</h1>
-  <p class="page-intro">Cakes, cookies, loaves and more. The recipes worth spending a Saturday on.</p>
+  <p class="page-eyebrow">Series · Matcha</p>
+  <h1 class="page-title">Matcha Series</h1>
+  <p class="page-intro">Every way to enjoy matcha. From lattes to blondies the recipes that started the obsession.</p>
 </div>
-
-  <div class="cat-section" id="cake">
-    <h2 class="cat-section-title" style="border-left:5px solid #5383c6;">Cake</h2>
-    <div class="cat-grid">
-              <a class="cat-card" href="Recipe/matcha-butter-mochi-tang-yuan.html">
-      <div class="cat-img"><img src="images/matcha-butter-mochi-tang-yuan.jpg" alt="Matcha Butter Mochi Tang Yuan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-      <div class="cat-body"><h3 class="cat-title">Matcha Butter Mochi Tang Yuan</h3></div>
+<div class="sr-grid">
+        <a class="sr-card" href="Recipe/matcha-red-bean-coffee-cake.html">
+      <div class="sr-img"><img src="images/matcha-red-bean-coffee-cake.jpg" alt="Matcha Red Bean Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="sr-fallback">🍵</div></div>
+      <div class="sr-body"><p class="sr-tag">Baking</p><h3 class="sr-title">Matcha Red Bean Coffee Cake</h3></div>
     </a>
-        <a class="cat-card" href="Recipe/jasmine-honey-cake.html">
-      <div class="cat-img"><img src="images/jasmine-honey-cake.jpg" alt="Jasmine Honey Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍯</div></div>
-      <div class="cat-body"><h3 class="cat-title">Jasmine Honey Cake</h3></div>
+        <a class="sr-card" href="Recipe/matcha-butter-mochi-tang-yuan.html">
+      <div class="sr-img"><img src="images/matcha-butter-mochi-tang-yuan.jpg" alt="Matcha Butter Mochi Tang Yuan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="sr-fallback">🍵</div></div>
+      <div class="sr-body"><p class="sr-tag">Baking</p><h3 class="sr-title">Matcha Butter Mochi Tang Yuan</h3></div>
     </a>
-        <a class="cat-card" href="Recipe/pandan-coconut-custard-cake.html">
-      <div class="cat-img"><img src="images/pandan-coconut-custard-cake.jpg" alt="Pandan Coconut Custard Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🌿</div></div>
-      <div class="cat-body"><h3 class="cat-title">Pandan Coconut Custard Cake</h3></div>
+        <a class="sr-card" href="Recipe/pandan-custard-matcha-latte.html">
+      <div class="sr-img"><img src="images/pandan-custard-matcha-latte.jpg" alt="Pandan Custard Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="sr-fallback">🌿</div></div>
+      <div class="sr-body"><p class="sr-tag">Drink</p><h3 class="sr-title">Pandan Custard Matcha Latte</h3></div>
     </a>
-    <a class="cat-card" href="Recipe/orange-earl-grey-chocolate-cake.html">
-        <div class="cat-img"><img src="images/orange-earl-grey-chocolate-cake.jpg" alt="Orange Earl Grey Chocolate Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Orange Earl Grey Chocolate Cake</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/strawberry-hojicha-cheesecake.html">
-        <div class="cat-img"><img src="images/strawberry-hojicha-cheesecake.jpg" alt="Strawberry Hojicha Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Strawberry Hojicha Cheesecake</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/jasmine-chiffon-cake.html">
-        <div class="cat-img"><img src="images/jasmine-chiffon-cake.jpg" alt="Jasmine Chiffon Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Jasmine Chiffon Cake</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/hojicha-jasmine-longan-cake.html">
-        <div class="cat-img"><img src="images/hojicha-jasmine-longan-cake.jpg" alt="Hojicha Jasmine Longan Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Hojicha Jasmine Longan Cake</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/tofu-hua-chiffon-cake.html">
-        <div class="cat-img"><img src="images/tofu-hua-chiffon-cake.jpg" alt="Tofu Hua Chiffon Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Tofu Hua Chiffon Cake</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/london-fog-cake.html">
-        <div class="cat-img"><img src="images/london-fog-cake.jpg" alt="London Fog Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">London Fog Cake</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/thai-green-tea-burnt-cheesecake.html">
-        <div class="cat-img"><img src="images/thai-green-tea-burnt-cheesecake.jpg" alt="Thai Green Tea Burnt Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Thai Green Tea Burnt Cheesecake</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/salted-caramel-oolong-cake.html">
-        <div class="cat-img"><img src="images/salted-caramel-oolong-cake.jpg" alt="Salted Caramel Oolong Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Salted Caramel Oolong Cake</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/carrot-cake.html">
-        <div class="cat-img"><img src="images/carrot-cake.jpg" alt="Carrot Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Carrot Cake</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/matcha-latte-coffee-cake.html">
-        <div class="cat-img"><img src="images/matcha-latte-coffee-cake.jpg" alt="Matcha Latte Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Matcha Latte Coffee Cake</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/cinnamon-plum-coffee-cake.html">
-        <div class="cat-img"><img src="images/cinnamon-plum-coffee-cake.jpg" alt="Cinnamon Plum Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍑</div></div>
-        <div class="cat-body"><h3 class="cat-title">Cinnamon Plum Coffee Cake</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/caramel-pumpkin-spiced-latte-cake.html">
-        <div class="cat-img"><img src="images/caramel-pumpkin-spiced-latte-cake.jpg" alt="Caramel Pumpkin Spiced Latte Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🎃</div></div>
-        <div class="cat-body"><h3 class="cat-title">Caramel Pumpkin Spiced Latte Cake</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/apple-crisp.html">
-        <div class="cat-img"><img src="images/apple-crisp.jpg" alt="Apple Crisp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍎</div></div>
-        <div class="cat-body"><h3 class="cat-title">Apple Crisp</h3></div>
-      </a>
-    </div>
-  </div>
-  <div class="cat-section" id="muffin">
-    <h2 class="cat-section-title" style="border-left:5px solid #998513;">Muffin</h2>
-    <div class="cat-grid">
-      <a class="cat-card" href="Recipe/almond-poppy-berries-muffin.html">
-        <div class="cat-img"><img src="images/almond-poppy-berries-muffin.jpg" alt="Almond Poppy Berries Muffin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Almond Poppy Berries Muffin</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/apple-cider-donut.html">
-        <div class="cat-img"><img src="images/apple-cider-donut.jpg" alt="Apple Cider Donut" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍩</div></div>
-        <div class="cat-body"><h3 class="cat-title">Apple Cider Donut</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/apple-custard-donut.html">
-        <div class="cat-img"><img src="images/apple-custard-donut.jpg" alt="Apple Custard Donut" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍩</div></div>
-        <div class="cat-body"><h3 class="cat-title">Apple Custard Donut</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/zucchini-muffin.html">
-        <div class="cat-img"><img src="images/zucchini-muffin.jpg" alt="Zucchini Chai Muffin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🥒</div></div>
-        <div class="cat-body"><h3 class="cat-title">Zucchini Chai Muffin</h3></div>
-      </a>
-    </div>
-  </div>
-  <div class="cat-section" id="cookies">
-    <h2 class="cat-section-title" style="border-left:5px solid #d4847a;">Cookies</h2>
-    <div class="cat-grid">
-      <a class="cat-card" href="Recipe/peppermint-chocolate-brownie.html">
-        <div class="cat-img"><img src="images/peppermint-chocolate-brownie.jpg" alt="Peppermint Chocolate Brownie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Peppermint Chocolate Brownie</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/matcha-brown-butter-blondie.html">
-        <div class="cat-img"><img src="images/matcha-brown-butter-blondie.jpg" alt="Matcha Brown Butter Brookie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Matcha Brown Butter Brookie</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/blueberry-muffin-tea-matcha-snowballs.html">
-        <div class="cat-img"><img src="images/blueberry-muffin-tea-matcha-snowballs.jpg" alt="Blueberry Muffin Tea Matcha Snowballs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Blueberry Muffin Tea Matcha Snowballs</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/jasmine-creme-brulee-shortbread.html">
-        <div class="cat-img"><img src="images/jasmine-creme-brulee-shortbread.jpg" alt="Jasmine Creme Brulee Shortbread" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Jasmine Creme Brulee Shortbread</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/saigon-chai-gingerbread-cookies.html">
-        <div class="cat-img"><img src="images/saigon-chai-gingerbread-cookies.jpg" alt="Saigon Chai Gingerbread Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Saigon Chai Gingerbread Cookies</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/vanilla-cappuccino-choc-chip-cookies.html">
-        <div class="cat-img"><img src="images/vanilla-cappuccino-choc-chip-cookies.jpg" alt="Vanilla Cappuccino Choc Chip Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Vanilla Cappuccino Choc Chip Cookies</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/peanut-butter-thumbprint-cookies.html">
-        <div class="cat-img"><img src="images/peanut-butter-thumbprint-cookies.jpg" alt="Peanut Butter Thumbprint Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Peanut Butter Thumbprint Cookies</h3></div>
-      </a>
-    </div>
-  </div>
-  <div class="cat-section" id="loaf">
-    <h2 class="cat-section-title" style="border-left:5px solid #5383c6;">Loaf</h2>
-    <div class="cat-grid">
-      <a class="cat-card" href="Recipe/lemon-iced-tea-cake.html">
-        <div class="cat-img"><img src="images/lemon-iced-tea-cake.jpg" alt="Lemon Iced Tea Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Lemon Iced Tea Cake</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/earl-grey-orange-loaf.html">
-        <div class="cat-img"><img src="images/earl-grey-orange-loaf.jpg" alt="Earl Grey Orange Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Earl Grey Orange Loaf</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/orange-spice-tea-loaf.html">
-        <div class="cat-img"><img src="images/orange-spice-tea-loaf.jpg" alt="Orange Spice Tea Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Orange Spice Tea Loaf</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/apple-crumble-loaf.html">
-        <div class="cat-img"><img src="images/apple-crumble-loaf.jpg" alt="Apple Crumble Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍏</div></div>
-        <div class="cat-body"><h3 class="cat-title">Apple Crumble Loaf</h3></div>
-      </a>
-      <a class="cat-card" href="Recipe/black-sesame-pumpkin-loaf.html">
-        <div class="cat-img"><img src="images/black-sesame-pumpkin-loaf.jpg" alt="Black Sesame Pumpkin Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🖤</div></div>
-        <div class="cat-body"><h3 class="cat-title">Black Sesame Pumpkin Loaf</h3></div>
-      </a>
-    </div>
-  </div>
-  <div class="cat-section" id="tiramisu">
-    <h2 class="cat-section-title" style="border-left:5px solid #d4847a;">Tiramisu</h2>
-    <div class="cat-grid">
-      <a class="cat-card" href="Recipe/hojicha-tiramisu.html">
-        <div class="cat-img"><img src="images/hojicha-tiramisu.jpg" alt="Hojicha Tiramisu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🍵</div></div>
-        <div class="cat-body"><h3 class="cat-title">Hojicha Tiramisu</h3></div>
-      </a>
-    </div>
-  </div>
-  <div class="cat-section" id="others">
-    <h2 class="cat-section-title" style="border-left:5px solid #5a3e32;">Others</h2>
-    <div class="cat-grid">
-      <a class="cat-card" href="Recipe/pandan-custard.html">
-        <div class="cat-img"><img src="images/pandan-custard.jpg" alt="Pandan Custard" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="cat-fallback">🌿</div></div>
-        <div class="cat-body"><h3 class="cat-title">Pandan Custard</h3></div>
-      </a>
-    </div>
-  </div>
+        <a class="sr-card" href="Recipe/jasmine-matcha-latte.html">
+      <div class="sr-img"><img src="images/jasmine-matcha-latte.jpg" alt="Jasmine Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="sr-fallback">🍵</div></div>
+      <div class="sr-body"><p class="sr-tag">Drink</p><h3 class="sr-title">Jasmine Matcha Latte</h3></div>
+    </a>
+    <a class="sr-card" href="Recipe/lychee-matcha-latte.html">
+      <div class="sr-img"><img src="images/lychee-matcha-latte.jpg" alt="Lychee Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="sr-fallback">🍵</div></div>
+      <div class="sr-body"><p class="sr-tag">Drink</p><h3 class="sr-title">Lychee Matcha Latte</h3></div>
+    </a>
+    <a class="sr-card" href="Recipe/maple-pumpkin-matcha-latte.html">
+      <div class="sr-img"><img src="images/maple-pumpkin-matcha-latte.jpg" alt="Maple Pumpkin Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="sr-fallback">🍵</div></div>
+      <div class="sr-body"><p class="sr-tag">Drink</p><h3 class="sr-title">Maple Pumpkin Matcha Latte</h3></div>
+    </a>
+    <a class="sr-card" href="Recipe/tofu-pudding-matcha-latte.html">
+      <div class="sr-img"><img src="images/tofu-pudding-matcha-latte.jpg" alt="Tofu Pudding Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="sr-fallback">🍵</div></div>
+      <div class="sr-body"><p class="sr-tag">Drink</p><h3 class="sr-title">Tofu Pudding Matcha Latte</h3></div>
+    </a>
+    <a class="sr-card" href="Recipe/pickle-matcha-latte.html">
+      <div class="sr-img"><img src="images/pickle-matcha-latte.jpg" alt="Pickle Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="sr-fallback">🍵</div></div>
+      <div class="sr-body"><p class="sr-tag">Drink</p><h3 class="sr-title">Pickle Matcha Latte</h3></div>
+    </a>
+    <a class="sr-card" href="Recipe/matcha-brown-butter-blondie.html">
+      <div class="sr-img"><img src="images/matcha-brown-butter-blondie.jpg" alt="Matcha Brown Butter Brookie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="sr-fallback">🍵</div></div>
+      <div class="sr-body"><p class="sr-tag">Cookies · Baking</p><h3 class="sr-title">Matcha Brown Butter Brookie</h3></div>
+    </a>
+    <a class="sr-card" href="Recipe/matcha-latte-coffee-cake.html">
+      <div class="sr-img"><img src="images/matcha-latte-coffee-cake.jpg" alt="Matcha Latte Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="sr-fallback">🍵</div></div>
+      <div class="sr-body"><p class="sr-tag">Cake · Baking</p><h3 class="sr-title">Matcha Latte Coffee Cake</h3></div>
+    </a>
+    <a class="sr-card" href="Recipe/blueberry-muffin-tea-matcha-snowballs.html">
+      <div class="sr-img"><img src="images/blueberry-muffin-tea-matcha-snowballs.jpg" alt="Blueberry Muffin Tea Matcha Snowballs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="sr-fallback">🍵</div></div>
+      <div class="sr-body"><p class="sr-tag">Cookies · Baking</p><h3 class="sr-title">Blueberry Muffin Tea Matcha Snowballs</h3></div>
+    </a>
+    <a class="sr-card" href="Recipe/apple-pie-matcha-latte.html">
+      <div class="sr-img"><img src="images/apple-pie-matcha-latte.jpg" alt="Apple Pie Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="sr-fallback">🍎</div></div>
+      <div class="sr-body"><p class="sr-tag">Drink</p><h3 class="sr-title">Apple Pie Matcha Latte</h3></div>
+    </a>
+    <a class="sr-card" href="Recipe/caramel-matcha-latte.html">
+      <div class="sr-img"><img src="images/caramel-matcha-latte.jpg" alt="Caramel Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="sr-fallback">🍵</div></div>
+      <div class="sr-body"><p class="sr-tag">Drink</p><h3 class="sr-title">Caramel Matcha Latte</h3></div>
+    </a>
+</div>
 <footer>
   <span class="footer-logo">How About Saturday</span>
   <p>Baking, slow living &amp; cozy drinks.</p>
