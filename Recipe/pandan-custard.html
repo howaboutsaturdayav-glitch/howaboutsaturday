@@ -10,6 +10,7 @@
     gtag('config', 'G-QW7E93V2XR');
   </script>
   <meta charset="UTF-8" />
+  <meta name="description" content="Pandan Custard — a recipe from How About Saturday. Tea-infused baking and drinks made for slow Saturdays in Toronto.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pandan Custard How About Saturday</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -88,11 +89,30 @@
       .recipe-section-title { font-size: 1.2rem; margin-bottom: 0.5rem; }
       .recipe-heading { font-size: 2rem; }
     }
+  
+    .search-wrap { position: relative; display: flex; align-items: center; }
+    .search-input { border: 1.5px solid var(--warm-tan); background: var(--parchment); border-radius: 20px; padding: 0.35rem 2.2rem 0.35rem 0.9rem; font-size: 0.78rem; font-family: var(--sans); color: var(--cork); outline: none; width: 160px; transition: width 0.3s, border-color 0.2s; }
+    .search-input:focus { width: 220px; border-color: var(--blue); }
+    .search-input::placeholder { color: #b89a80; }
+    .search-icon { position: absolute; right: 0.6rem; color: var(--cork); font-size: 0.8rem; pointer-events: none; opacity: 0.5; }
+    .search-results { display: none; position: absolute; top: calc(100% + 8px); right: 0; background: var(--cream); border: 1px solid var(--warm-tan); border-radius: 12px; min-width: 260px; max-width: 320px; z-index: 600; box-shadow: 0 8px 32px rgba(58,46,40,0.12); overflow: hidden; }
+    .search-results.open { display: block; }
+    .search-result-item { display: block; padding: 0.6rem 1rem; font-size: 0.82rem; color: var(--cork); text-decoration: none; border-bottom: 1px solid var(--warm-tan); transition: background 0.15s; }
+    .search-result-item:last-child { border-bottom: none; }
+    .search-result-item:hover { background: var(--parchment); color: var(--blue); }
+    .search-result-item span { display: block; font-size: 0.7rem; color: var(--pink); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.1rem; }
+    .search-no-results { padding: 0.75rem 1rem; font-size: 0.82rem; color: #b89a80; font-style: italic; }
+    @media (max-width: 860px) { .search-wrap { display: none; } }
   </style>
 </head>
 <body>
 <nav>
   <a class="nav-logo" href="../index.html">How About Saturday</a>
+    <div class="search-wrap" id="search-wrap">
+    <input class="search-input" id="search-input" type="text" placeholder="Search recipes..." autocomplete="off" />
+    <span class="search-icon">&#9906;</span>
+    <div class="search-results" id="search-results"></div>
+  </div>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu" style="background:none;border:none;">
     <span></span><span></span><span></span>
   </button>
@@ -126,6 +146,7 @@
       <div class="nav-dropdown">
         <a class="nav-dropdown-link" href="../all-series.html">View All Series</a>
         <div class="nav-dropdown-divider"></div>
+        <a class="nav-dropdown-item" href="../series-world-cup.html">2026 World Cup Series</a>
         <a class="nav-dropdown-item" href="../series-flavours.html">Flavours of My Childhood</a>
         <a class="nav-dropdown-item" href="../series-matcha.html">Matcha Series</a>
         <a class="nav-dropdown-item" href="../series-hojicha.html">Hojicha Series</a>
@@ -147,7 +168,7 @@
 <div class="page">
   <p class="recipe-eyebrow">Others</p>
   <h1 class="recipe-heading">Pandan Custard</h1>
-  <p class="recipe-desc">Pandan custard is one of those foundational recipes that opens up a whole world of possibilities once you have it in your fridge. The pandan leaves give the custard an almost impossibly vibrant green colour and an aroma that is floral, grassy, and deeply comforting all at once. The texture is smooth and silky, rich without being heavy. It is wonderful eaten on its own, spooned over rice or bread, or used as a filling in cakes and pastries. Once you make it from scratch, nothing else quite compares.</p>
+  <p class="recipe-desc">This is the recipe that started my Flavours of My Childhood series. Pandan custard was something I ate at every family gathering growing up and recreating it in Toronto took more attempts than I expected because the flavour is so specific in my memory. Too sweet and it is wrong. Not green enough and it feels wrong. This version is the one I finally felt was close. It is soft and just set enough to hold its shape when cut. Use it as a filling, spoon it over cake, or eat it straight from the bowl, which is what I usually end up doing.</p>
 
   <div class="video-wrap">
     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DXsHobeCYap/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;padding:0;width:calc(100% - 2px);"></blockquote>
@@ -207,6 +228,104 @@
     h.addEventListener('click',function(){n.classList.toggle('open');});
     window.addEventListener('resize',u);u();
   })();
+</script>
+
+<script>
+(function(){
+  var recipes = [
+    {title:"Milky Oolong Matcha Latte",tag:"Matcha",url:"Recipe/milky-oolong-matcha-latte.html"},
+    {title:"Butter Tart Cake",tag:"Cake",url:"Recipe/butter-tart-cake.html"},
+    {title:"Guayaba (Guava) Tres Leches",tag:"Cake",url:"Recipe/guayaba-tres-leches.html"},
+    {title:"Chamomile Orange Blossom Basque Cheesecake",tag:"Cake",url:"Recipe/chamomile-orange-blossom-basque-cheesecake.html"},
+    {title:"Fraisier",tag:"Cake",url:"Recipe/fraisier.html"},
+    {title:"Matcha Red Bean Coffee Cake",tag:"Baking",url:"Recipe/matcha-red-bean-coffee-cake.html"},
+    {title:"Upside Down Rhubarb Pistachio Cake",tag:"Cake",url:"Recipe/rhubarb-pistachio-cake.html"},
+    {title:"Matcha Butter Mochi Tang Yuan",tag:"Baking",url:"Recipe/matcha-butter-mochi-tang-yuan.html"},
+    {title:"Jasmine Honey Cake",tag:"Cake",url:"Recipe/jasmine-honey-cake.html"},
+    {title:"Pandan Custard Matcha Latte",tag:"Matcha",url:"Recipe/pandan-custard-matcha-latte.html"},
+    {title:"Pandan Custard",tag:"Baking",url:"Recipe/pandan-custard.html"},
+    {title:"Pandan Coconut Custard Cake",tag:"Cake",url:"Recipe/pandan-coconut-custard-cake.html"},
+    {title:"Orange Earl Grey Chocolate Cake",tag:"Cake",url:"Recipe/orange-earl-grey-chocolate-cake.html"},
+    {title:"Jasmine Matcha Latte",tag:"Matcha",url:"Recipe/jasmine-matcha-latte.html"},
+    {title:"Hojicha Tiramisu",tag:"Baking",url:"Recipe/hojicha-tiramisu.html"},
+    {title:"Strawberry Hojicha Cheesecake",tag:"Cake",url:"Recipe/strawberry-hojicha-cheesecake.html"},
+    {title:"Hojicha Jasmine Longan Cake",tag:"Cake",url:"Recipe/hojicha-jasmine-longan-cake.html"},
+    {title:"Jasmine Chiffon Cake",tag:"Cake",url:"Recipe/jasmine-chiffon-cake.html"},
+    {title:"Jasmine Creme Brulee Shortbread",tag:"Cookies",url:"Recipe/jasmine-creme-brulee-shortbread.html"},
+    {title:"Lychee Matcha Latte",tag:"Matcha",url:"Recipe/lychee-matcha-latte.html"},
+    {title:"Maple Pumpkin Matcha Latte",tag:"Matcha",url:"Recipe/maple-pumpkin-matcha-latte.html"},
+    {title:"Caramel Matcha Latte",tag:"Matcha",url:"Recipe/caramel-matcha-latte.html"},
+    {title:"Apple Pie Matcha Latte",tag:"Matcha",url:"Recipe/apple-pie-matcha-latte.html"},
+    {title:"Pickle Matcha Latte",tag:"Matcha",url:"Recipe/pickle-matcha-latte.html"},
+    {title:"Tofu Pudding Matcha Latte",tag:"Matcha",url:"Recipe/tofu-pudding-matcha-latte.html"},
+    {title:"Blueberry Muffin Tea Matcha Snowballs",tag:"Baking",url:"Recipe/blueberry-muffin-tea-matcha-snowballs.html"},
+    {title:"Matcha Brown Butter Blondie",tag:"Baking",url:"Recipe/matcha-brown-butter-blondie.html"},
+    {title:"Matcha Latte Coffee Cake",tag:"Baking",url:"Recipe/matcha-latte-coffee-cake.html"},
+    {title:"Black Sesame Hojicha Latte",tag:"Hojicha",url:"Recipe/black-sesame-hojicha-latte.html"},
+    {title:"London Fog Hojicha",tag:"Hojicha",url:"Recipe/london-fog-hojicha.html"},
+    {title:"Ube Hojicha Latte",tag:"Hojicha",url:"Recipe/ube-hojicha-latte.html"},
+    {title:"Black Sesame Pumpkin Loaf",tag:"Loaf",url:"Recipe/black-sesame-pumpkin-loaf.html"},
+    {title:"Earl Grey Orange Loaf",tag:"Loaf",url:"Recipe/earl-grey-orange-loaf.html"},
+    {title:"Orange Spice Tea Loaf",tag:"Loaf",url:"Recipe/orange-spice-tea-loaf.html"},
+    {title:"Apple Crumble Loaf",tag:"Loaf",url:"Recipe/apple-crumble-loaf.html"},
+    {title:"London Fog Cake",tag:"Cake",url:"Recipe/london-fog-cake.html"},
+    {title:"Salted Caramel Oolong Cake",tag:"Cake",url:"Recipe/salted-caramel-oolong-cake.html"},
+    {title:"Caramel Pumpkin Spiced Latte Cake",tag:"Cake",url:"Recipe/caramel-pumpkin-spiced-latte-cake.html"},
+    {title:"Lemon Iced Tea Cake",tag:"Cake",url:"Recipe/lemon-iced-tea-cake.html"},
+    {title:"Carrot Cake",tag:"Cake",url:"Recipe/carrot-cake.html"},
+    {title:"Cinnamon Plum Coffee Cake",tag:"Cake",url:"Recipe/cinnamon-plum-coffee-cake.html"},
+    {title:"Thai Green Tea Burnt Cheesecake",tag:"Cake",url:"Recipe/thai-green-tea-burnt-cheesecake.html"},
+    {title:"Tofu Hua Chiffon Cake",tag:"Cake",url:"Recipe/tofu-hua-chiffon-cake.html"},
+    {title:"Apple Cider Donut",tag:"Baking",url:"Recipe/apple-cider-donut.html"},
+    {title:"Apple Custard Donut",tag:"Baking",url:"Recipe/apple-custard-donut.html"},
+    {title:"Apple Crisp",tag:"Baking",url:"Recipe/apple-crisp.html"},
+    {title:"Peppermint Chocolate Brownie",tag:"Baking",url:"Recipe/peppermint-chocolate-brownie.html"},
+    {title:"Saigon Chai Gingerbread Cookies",tag:"Cookies",url:"Recipe/saigon-chai-gingerbread-cookies.html"},
+    {title:"Peanut Butter Thumbprint Cookies",tag:"Cookies",url:"Recipe/peanut-butter-thumbprint-cookies.html"},
+    {title:"Vanilla Cappuccino Choc Chip Cookies",tag:"Cookies",url:"Recipe/vanilla-cappuccino-choc-chip-cookies.html"},
+    {title:"Almond Poppy Berries Muffin",tag:"Muffin",url:"Recipe/almond-poppy-berries-muffin.html"},
+    {title:"Zucchini Muffin",tag:"Muffin",url:"Recipe/zucchini-muffin.html"},
+    {title:"Earl Grey Creme Brulee Latte",tag:"Drinks",url:"Recipe/earl-grey-creme-brulee-latte.html"},
+    {title:"Grape Tea Fizz",tag:"Drinks",url:"Recipe/grape-tea-fizz.html"},
+    {title:"Guava Oolong Milk Tea",tag:"Drinks",url:"Recipe/guava-oolong-milk-tea.html"},
+    {title:"Almond Hot Chocolate",tag:"Drinks",url:"Recipe/almond-hot-chocolate.html"},
+  ];
+
+  var input = document.getElementById('search-input');
+  var results = document.getElementById('search-results');
+  if(!input || !results) return;
+
+  function getBase() {
+    var path = window.location.pathname;
+    return path.indexOf('/Recipe/') !== -1 ? '../' : '';
+  }
+
+  input.addEventListener('input', function() {
+    var q = this.value.trim().toLowerCase();
+    results.innerHTML = '';
+    if(q.length < 2) { results.classList.remove('open'); return; }
+    var matches = recipes.filter(function(r){ return r.title.toLowerCase().indexOf(q) !== -1 || r.tag.toLowerCase().indexOf(q) !== -1; }).slice(0, 6);
+    if(matches.length === 0) {
+      results.innerHTML = '<p class="search-no-results">No recipes found</p>';
+    } else {
+      matches.forEach(function(r) {
+        var a = document.createElement('a');
+        a.className = 'search-result-item';
+        a.href = getBase() + r.url;
+        a.innerHTML = '<span>' + r.tag + '</span>' + r.title;
+        results.appendChild(a);
+      });
+    }
+    results.classList.add('open');
+  });
+
+  document.addEventListener('click', function(e) {
+    if(!document.getElementById('search-wrap').contains(e.target)) {
+      results.classList.remove('open');
+      input.value = '';
+    }
+  });
+})();
 </script>
 </body>
 </html>
