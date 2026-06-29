@@ -159,9 +159,17 @@
 
 
 <li class="nav-item"><a href="../about.html">About</a></li>
+    <li class="nav-item"><a href="../contact.html">Contact</a></li>
     <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a></li>
     <li class="nav-item"><a href="https://www.youtube.com/@howaboutsaturday" target="_blank" rel="noopener">YouTube &#8599;</a></li>
     <li class="nav-item"><a href="https://www.tiktok.com/@howaboutsaturday_" target="_blank" rel="noopener">TikTok &#8599;</a></li>
+      <li style="padding:0.75rem 1.5rem;border-bottom:1px solid #f0d4a8;display:none;" class="mob-search-li">
+      <div style="position:relative;display:flex;align-items:center;">
+        <input id="mob-search-input" type="text" placeholder="Search recipes..." autocomplete="off" style="width:100%;border:1.5px solid #f0d4a8;background:#faebd8;border-radius:20px;padding:0.4rem 2.2rem 0.4rem 0.9rem;font-size:0.82rem;font-family:'Jost',sans-serif;color:#5a3e32;outline:none;" />
+        <span style="position:absolute;right:0.7rem;opacity:0.4;font-size:0.8rem;">&#9906;</span>
+      </div>
+      <div id="mob-search-results" style="display:none;background:#fde9c8;border:1px solid #f0d4a8;border-radius:12px;margin-top:0.5rem;overflow:hidden;"></div>
+    </li>
   </ul>
 </nav>
 
@@ -214,7 +222,7 @@
   <span class="footer-logo">How About Saturday</span>
   <p>Baking, slow living &amp; cozy drinks.</p>
   <p style="margin-top:0.75rem;"><a href="https://instagram.com/howaboutsaturday" target="_blank">Instagram</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/@howaboutsaturday" target="_blank">YouTube</a> &nbsp;·&nbsp; <a href="https://www.tiktok.com/@howaboutsaturday_" target="_blank">TikTok</a></p>
-  <p style="margin-top:0.5rem;opacity:0.5;font-size:0.75rem;">© 2025 How About Saturday · All rights reserved. · <a href="../privacy-policy.html" style="color:#fde9c8;text-decoration:underline;">Privacy Policy</a></p>
+  <p style="margin-top:0.5rem;opacity:0.5;font-size:0.75rem;">© 2025 How About Saturday · All rights reserved. · <a href="../contact.html" style="color:#fde9c8;text-decoration:underline;">Contact</a> · <a href="../privacy-policy.html" style="color:#fde9c8;text-decoration:underline;">Privacy Policy</a></p>
 </footer>
 
 
@@ -335,6 +343,63 @@
       results.classList.remove('open');
       input.value = '';
     }
+  });
+})();
+</script>
+<script>
+(function(){
+  // Show mob search li on mobile
+  var searchLi = document.querySelector('.mob-search-li');
+  if(searchLi) searchLi.style.display = 'block';
+  var input=document.getElementById('mob-search-input');
+  var results=document.getElementById('mob-search-results');
+  if(!input||!results)return;
+  var recipes=[
+    {title:"Milky Oolong Matcha Latte",tag:"Matcha",url:"Recipe/milky-oolong-matcha-latte.html"},
+    {title:"Butter Tart Cake",tag:"Cake",url:"Recipe/butter-tart-cake.html"},
+    {title:"Guayaba (Guava) Tres Leches",tag:"Cake",url:"Recipe/guayaba-tres-leches.html"},
+    {title:"Fraisier",tag:"Cake",url:"Recipe/fraisier.html"},
+    {title:"Matcha Red Bean Coffee Cake",tag:"Baking",url:"Recipe/matcha-red-bean-coffee-cake.html"},
+    {title:"Matcha Butter Mochi Tang Yuan",tag:"Baking",url:"Recipe/matcha-butter-mochi-tang-yuan.html"},
+    {title:"Jasmine Honey Cake",tag:"Cake",url:"Recipe/jasmine-honey-cake.html"},
+    {title:"Pandan Leche Flan Cake",tag:"Cake",url:"Recipe/pandan-leche-flan-cake.html"},
+    {title:"Pandan Custard Matcha Latte",tag:"Matcha",url:"Recipe/pandan-custard-matcha-latte.html"},
+    {title:"Pandan Custard",tag:"Baking",url:"Recipe/pandan-custard.html"},
+    {title:"Pandan Coconut Custard Cake",tag:"Cake",url:"Recipe/pandan-coconut-custard-cake.html"},
+    {title:"Jasmine Matcha Latte",tag:"Matcha",url:"Recipe/jasmine-matcha-latte.html"},
+    {title:"Lychee Matcha Latte",tag:"Matcha",url:"Recipe/lychee-matcha-latte.html"},
+    {title:"Maple Pumpkin Matcha Latte",tag:"Matcha",url:"Recipe/maple-pumpkin-matcha-latte.html"},
+    {title:"Caramel Matcha Latte",tag:"Matcha",url:"Recipe/caramel-matcha-latte.html"},
+    {title:"Apple Pie Matcha Latte",tag:"Matcha",url:"Recipe/apple-pie-matcha-latte.html"},
+    {title:"Black Sesame Hojicha Latte",tag:"Hojicha",url:"Recipe/black-sesame-hojicha-latte.html"},
+    {title:"Hojicha Tiramisu",tag:"Baking",url:"Recipe/hojicha-tiramisu.html"},
+    {title:"Strawberry Hojicha Cheesecake",tag:"Cake",url:"Recipe/strawberry-hojicha-cheesecake.html"},
+    {title:"Matcha Brown Butter Blondie",tag:"Baking",url:"Recipe/matcha-brown-butter-blondie.html"},
+    {title:"Earl Grey Orange Loaf",tag:"Loaf",url:"Recipe/earl-grey-orange-loaf.html"},
+    {title:"Saigon Chai Gingerbread Cookies",tag:"Cookies",url:"Recipe/saigon-chai-gingerbread-cookies.html"},
+    {title:"Carrot Cake",tag:"Cake",url:"Recipe/carrot-cake.html"},
+    {title:"London Fog Cake",tag:"Cake",url:"Recipe/london-fog-cake.html"},
+    {title:"Grape Tea Fizz",tag:"Drinks",url:"Recipe/grape-tea-fizz.html"},
+    {title:"Almond Hot Chocolate",tag:"Drinks",url:"Recipe/almond-hot-chocolate.html"},
+  ];
+  function getBase(){return window.location.pathname.indexOf('/Recipe/')!==-1?'../':'';}
+  input.addEventListener('input',function(){
+    var q=this.value.trim().toLowerCase();
+    results.innerHTML='';
+    if(q.length<2){results.style.display='none';return;}
+    var matches=recipes.filter(function(r){return r.title.toLowerCase().indexOf(q)!==-1||r.tag.toLowerCase().indexOf(q)!==-1;}).slice(0,5);
+    if(matches.length===0){
+      results.innerHTML='<p style="padding:0.6rem 1rem;font-size:0.82rem;color:#b89a80;font-style:italic;">No recipes found</p>';
+    }else{
+      matches.forEach(function(r){
+        var a=document.createElement('a');
+        a.href=getBase()+r.url;
+        a.style.cssText='display:block;padding:0.55rem 1rem;font-size:0.82rem;color:#5a3e32;text-decoration:none;border-bottom:1px solid #f0d4a8;';
+        a.innerHTML='<span style="display:block;font-size:0.68rem;color:#d4847a;text-transform:uppercase;letter-spacing:0.1em;">'+r.tag+'</span>'+r.title;
+        results.appendChild(a);
+      });
+    }
+    results.style.display='block';
   });
 })();
 </script>
