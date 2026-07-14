@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QW7E93V2XR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QW7E93V2XR');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Jasmine Honey Cake  a recipe from How About Saturday. Tea-infused baking and drinks made for slow Saturdays in Toronto.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Perfect Banana Bread  How About Saturday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281955985735338" crossorigin="anonymous"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #fde9c8; --parchment: #faebd8; --warm-tan: #f0d4a8;
+      --blue: #5383c6; --pink: #d4847a; --cork: #5a3e32;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--cork); font-family: var(--sans); font-size: 16px; line-height: 1.7; }
+    nav { background: var(--cream); border-bottom: 1px solid var(--warm-tan); position: sticky; top: 0; z-index: 100; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 700; color: var(--blue); text-decoration: none; letter-spacing: 0.08em; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-item { position: relative; list-style: none; }
+    .nav-item > a { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5a3e32; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; }
+    .nav-item > a:hover { color: #5383c6; }
+    .nav-item > a .nav-arrow { font-size: 0.55rem; transition: transform 0.2s; }
+    .nav-item:hover > a .nav-arrow { transform: rotate(180deg); }
+    .nav-item::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 14px; }
+    .nav-dropdown { display: none; position: absolute; top: calc(100% + 2px); right: 0; background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 260px; z-index: 300; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
+    .nav-item:hover > .nav-dropdown { display: block; }
+    .nav-dropdown-link { display: block; padding: 0.6rem 1.1rem; font-size: 0.82rem; font-weight: 700; color: #5383c6; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.15s; border-bottom: 1px solid #f0d4a8; margin-bottom: 0.3rem; }
+    .nav-dropdown-link:hover { background: #faebd8; }
+    .nav-dropdown-item { display: block !important; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 500; color: #5a3e32; text-decoration: none; text-transform: none; letter-spacing: 0; transition: background 0.15s, color 0.15s; white-space: nowrap; }
+    .nav-dropdown-item:hover { background: #faebd8; color: #5383c6; }
+    .nav-dropdown-divider { height: 1px; background: #f0d4a8; margin: 0.2rem 0 0.3rem; }
+    .nav-dropdown > .nav-sub-item { position: relative; }
+    .nav-dropdown > .nav-sub-item > a { display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 500; color: #5a3e32; text-decoration: none; text-transform: none; letter-spacing: 0; transition: background 0.15s, color 0.15s; white-space: nowrap; }
+    .nav-dropdown > .nav-sub-item > a:hover { background: #faebd8; color: #5383c6; }
+    .nav-dropdown > .nav-sub-item > a .sub-arrow { font-size: 0.55rem; opacity: 0.5; }
+    .nav-sub-dropdown { display: none; position: absolute; top: -0.4rem; right: calc(100% + 4px); background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 180px; z-index: 400; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
+    .nav-sub-item:hover > .nav-sub-dropdown { display: block; }
+    .nav-sub-item::after { content: ''; position: absolute; top: 0; right: -10px; width: 14px; height: 100%; }
+    .nav-sub-dropdown a { display: block; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 400; color: #5a3e32; text-decoration: none; transition: background 0.15s, color 0.15s; }
+    .nav-sub-dropdown a:hover { background: #faebd8; color: #5383c6; }
+    .page { max-width: 820px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .recipe-eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.75rem; font-family: var(--sans); }
+    .recipe-heading { font-family: var(--serif); font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 700; color: var(--blue); line-height: 1.1; margin-bottom: 1rem; }
+    .recipe-desc { font-size: 0.95rem; color: var(--cork); max-width: 600px; margin-bottom: 2rem; line-height: 1.75; }
+    .divider { width: 50px; height: 2px; background: var(--warm-tan); margin: 2.5rem 0; }
+    .recipe-section-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--blue); margin-bottom: 1rem; }
+    .video-wrap { margin: 2rem auto; display: flex; justify-content: center; }
+    .video-wrap blockquote { width: 100% !important; max-width: 540px; }
+    .ad-slot { margin: 2rem auto; text-align: center; max-width: 728px; }
+    footer { background: #5a3e32; color: #fde9c8; padding: 2rem; text-align: center; font-size: 0.8rem; }
+    footer a { color: var(--pink); text-decoration: none; }
+    .footer-logo { font-family: var(--serif); font-size: 1.3rem; font-weight: 300; color: var(--pink); display: block; margin-bottom: 0.5rem; }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; margin-bottom: 4px; }
+    .mob-section { display: none; }
+    .mob-header { width: 100%; padding: 0.75rem 1.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a3e32; background: none; border: none; border-bottom: 1px solid #f0d4a8; cursor: pointer; text-align: left; }
+    .mob-header .mob-arrow { font-size: 0.6rem; transition: transform 0.2s; }
+    .mob-header.open .mob-arrow { transform: rotate(180deg); }
+    .mob-links { display: none; background: #faebd8; }
+    .mob-links.open { display: block; }
+    .mob-link { display: block; padding: 0.65rem 2rem; font-size: 0.82rem; color: #5a3e32; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
+    .mob-link:hover { color: #5383c6; }
+    .mob-plain { display: block; padding: 0.75rem 1.5rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a3e32; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
+    @media (max-width: 860px) {
+      .nav-hamburger { display: flex; flex-direction: column; }
+      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 0; z-index: 500; max-height: 85vh; overflow-y: auto; }
+      .nav-links.open { display: flex !important; }
+      .nav-item { display: none; }
+      .nav-dropdown { display: none !important; }
+      .mob-section { display: block; }
+      .page { padding: 1.5rem 1.25rem 3rem; }
+      .video-wrap { margin: 0.25rem auto !important; }
+      .video-wrap blockquote { min-width: unset !important; min-height: unset !important; }
+      .divider { margin: 0.5rem 0; }
+      .recipe-section-title { font-size: 1.2rem; margin-bottom: 0.5rem; }
+      .recipe-heading { font-size: 2rem; }
+    }
+  
+    .search-wrap { position: relative; display: flex; align-items: center; }
+    .search-input { border: 1.5px solid var(--warm-tan); background: var(--parchment); border-radius: 20px; padding: 0.35rem 2.2rem 0.35rem 0.9rem; font-size: 0.78rem; font-family: var(--sans); color: var(--cork); outline: none; width: 160px; transition: width 0.3s, border-color 0.2s; }
+    .search-input:focus { width: 220px; border-color: var(--blue); }
+    .search-input::placeholder { color: #b89a80; }
+    .search-icon { position: absolute; right: 0.6rem; color: var(--cork); font-size: 0.8rem; pointer-events: none; opacity: 0.5; }
+    .search-results { display: none; position: absolute; top: calc(100% + 8px); right: 0; background: var(--cream); border: 1px solid var(--warm-tan); border-radius: 12px; min-width: 260px; max-width: 320px; z-index: 600; box-shadow: 0 8px 32px rgba(58,46,40,0.12); overflow: hidden; }
+    .search-results.open { display: block; }
+    .search-result-item { display: block; padding: 0.6rem 1rem; font-size: 0.82rem; color: var(--cork); text-decoration: none; border-bottom: 1px solid var(--warm-tan); transition: background 0.15s; }
+    .search-result-item:last-child { border-bottom: none; }
+    .search-result-item:hover { background: var(--parchment); color: var(--blue); }
+    .search-result-item span { display: block; font-size: 0.7rem; color: var(--pink); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.1rem; }
+    .search-no-results { padding: 0.75rem 1rem; font-size: 0.82rem; color: #b89a80; font-style: italic; }
+    @media (max-width: 860px) { .search-wrap { display: none; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../index.html">How About Saturday</a>
+    <div class="search-wrap" id="search-wrap">
+    <input class="search-input" id="search-input" type="text" placeholder="Search recipes..." autocomplete="off" />
+    <span class="search-icon">&#9906;</span>
+    <div class="search-results" id="search-results"></div>
+  </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu" style="background:none;border:none;">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li class="nav-item">
+      <a href="../all-recipes.html">Recipes <span class="nav-arrow">&#9660;</span></a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-link" href="../all-recipes.html">View All Recipes</a>
+        <div class="nav-dropdown-divider"></div>
+        <div class="nav-sub-item">
+          <a href="../beverage.html">Beverage <span class="sub-arrow">&#9664;</span></a>
+          <div class="nav-sub-dropdown">
+            <a href="../matcha.html">Matcha</a>
+            <a href="../cozy-sips.html">Cozy Sips</a>
+          </div>
+        </div>
+        <div class="nav-sub-item">
+          <a href="../baking.html">Baking <span class="sub-arrow">&#9664;</span></a>
+          <div class="nav-sub-dropdown">
+            <a href="../baking.html#cake">Cake</a>
+            <a href="../baking.html#muffin">Muffin</a>
+            <a href="../baking.html#cookies">Cookies</a>
+            <a href="../baking.html#loaf">Loaf</a>
+            <a href="../baking.html#tiramisu">Tiramisu</a>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="../all-series.html">Series <span class="nav-arrow">&#9660;</span></a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-link" href="../all-series.html">View All Series</a>
+        <div class="nav-dropdown-divider"></div>
+        <a class="nav-dropdown-item" href="../series-world-cup.html">2026 World Cup Series</a>
+        <a class="nav-dropdown-item" href="../series-flavours.html">Flavours of My Childhood</a>
+        <a class="nav-dropdown-item" href="../series-matcha.html">Matcha Series</a>
+        <a class="nav-dropdown-item" href="../series-hojicha.html">Hojicha Series</a>
+        <a class="nav-dropdown-item" href="../series-holiday-cookies.html">Holiday Cookies</a>
+      </div>
+    </li>
+
+
+
+
+
+    <li class="mob-section">
+      <button class="mob-header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Recipes <span class="mob-arrow">&#9660;</span></button>
+      <div class="mob-links">
+        <a class="mob-link" href="../all-recipes.html">View All Recipes</a>
+        <a class="mob-link" href="../beverage.html">Beverage</a>
+        <a class="mob-link" href="../baking.html">Baking</a>
+      </div>
+    </li>
+    <li class="mob-section">
+      <button class="mob-header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Series <span class="mob-arrow">&#9660;</span></button>
+      <div class="mob-links">
+        <a class="mob-link" href="../all-series.html">View All Series</a>
+        <a class="mob-link" href="../series-world-cup.html">2026 World Cup Series</a>
+        <a class="mob-link" href="../series-flavours.html">Flavours of My Childhood</a>
+        <a class="mob-link" href="../series-matcha.html">Matcha Series</a>
+        <a class="mob-link" href="../series-hojicha.html">Hojicha Series</a>
+        <a class="mob-link" href="../series-holiday-cookies.html">Holiday Cookies</a>
+      </div>
+    </li>
+    <li class="mob-section"><a class="mob-plain" href="../about.html">About</a></li>
+    <li class="mob-section"><a class="mob-plain" href="../contact.html">Contact</a></li>
+    <li class="mob-section"><a class="mob-plain" href="https://instagram.com/howaboutsaturday" target="_blank">Instagram &#8599;</a></li>
+    <li class="mob-section"><a class="mob-plain" href="https://www.youtube.com/@howaboutsaturday" target="_blank">YouTube &#8599;</a></li>
+    <li class="mob-section"><a class="mob-plain" href="https://www.tiktok.com/@howaboutsaturday_" target="_blank">TikTok &#8599;</a></li>
+<li class="nav-item"><a href="../about.html">About</a></li>
+    <li class="nav-item"><a href="../contact.html">Contact</a></li>
+    <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a></li>
+    <li class="nav-item"><a href="https://www.youtube.com/@howaboutsaturday" target="_blank" rel="noopener">YouTube &#8599;</a></li>
+    <li class="nav-item"><a href="https://www.tiktok.com/@howaboutsaturday_" target="_blank" rel="noopener">TikTok &#8599;</a></li>
+      <li style="padding:0.75rem 1.5rem;border-bottom:1px solid #f0d4a8;display:none;" class="mob-search-li">
+      <div style="position:relative;display:flex;align-items:center;">
+        <input id="mob-search-input" type="text" placeholder="Search recipes..." autocomplete="off" style="width:100%;border:1.5px solid #f0d4a8;background:#faebd8;border-radius:20px;padding:0.4rem 2.2rem 0.4rem 0.9rem;font-size:0.82rem;font-family:'Jost',sans-serif;color:#5a3e32;outline:none;" />
+        <span style="position:absolute;right:0.7rem;opacity:0.4;font-size:0.8rem;">&#9906;</span>
+      </div>
+      <div id="mob-search-results" style="display:none;background:#fde9c8;border:1px solid #f0d4a8;border-radius:12px;margin-top:0.5rem;overflow:hidden;"></div>
+    </li>
+  </ul>
+</nav>
+
+<div class="page">
+  <p class="recipe-eyebrow" style="font-family:var(--sans);">Baking · Loaf</p>
+  <h1 class="recipe-heading">The Perfect Banana Bread</h1>
+  <p class="recipe-desc">I have made a lot of banana bread over the years and this is the version I keep coming back to. The miso was the thing that changed everything. Blended smoothly into the bananas it disappears completely into the batter and just adds this depth and slight saltiness that makes the whole loaf taste more complex than a standard banana bread has any right to. The espresso powder does the same thing in a different direction, darkening the crumb and amplifying the chocolate chips without making it taste like coffee. The crackly sugar top is non-negotiable. Once you have it you cannot go back.</p>
+
+  <div class="divider"></div>
+  <h2 class="recipe-section-title">Ingredients</h2>
+  <p style="font-size:0.85rem;color:var(--cork);opacity:0.75;margin-bottom:1.5rem;">8.5 x 4.5 inch metal loaf pan</p>
+  <ul style="list-style:none;margin-bottom:1.5rem;">
+    <li style="padding:0.5rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;">3 ripe bananas, peeled (about 325g)</li>
+    <li style="padding:0.5rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;">20g miso paste</li>
+    <li style="padding:0.5rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;">60g vegetable oil (or any neutral oil)</li>
+    <li style="padding:0.5rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;">45g unsalted butter, softened</li>
+    <li style="padding:0.5rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;">75g dark brown sugar</li>
+    <li style="padding:0.5rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;">75g white granulated sugar</li>
+    <li style="padding:0.5rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;">100g sour cream</li>
+    <li style="padding:0.5rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;">1 tsp vanilla bean paste</li>
+    <li style="padding:0.5rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;">2 large eggs</li>
+    <li style="padding:0.5rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;">200g all-purpose flour</li>
+    <li style="padding:0.5rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;">1 tsp baking soda</li>
+    <li style="padding:0.5rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;">2 tsp ground cinnamon</li>
+    <li style="padding:0.5rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;">1 tbsp espresso powder</li>
+    <li style="padding:0.5rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;">180g chocolate chips</li>
+    <li style="padding:0.5rem 0;font-size:0.9rem;">2 tbsp granulated sugar, for topping</li>
+  </ul>
+
+  <div class="divider"></div>
+  <h2 class="recipe-section-title">Method</h2>
+  <ol style="list-style:none;margin-bottom:2rem;">
+    <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;"><span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">1</span><span>Set your oven to 325°F with a rack positioned in the center.</span></li>
+    <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;"><span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">2</span><span>Add the bananas and miso paste to a blender and blend until completely smooth with no streaks of miso remaining. Set this banana-miso mixture aside.</span></li>
+    <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;"><span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">3</span><span>In a large bowl, beat the oil, softened butter, brown sugar, and white sugar together until the mixture looks pale and slightly fluffy, about 1 to 2 minutes. Scrape down the sides of the bowl as needed. Add the sour cream and vanilla bean paste and mix until smooth and fully combined.</span></li>
+    <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;"><span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">4</span><span>Add the eggs one at a time, beating well after each addition and scraping down the bowl in between, until the batter looks light and well emulsified. Pour in the banana-miso mixture and mix just until it disappears into the batter.</span></li>
+    <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;"><span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">5</span><span>In a separate bowl, combine the flour, baking soda, cinnamon, and espresso powder, breaking up any clumps of espresso powder with the back of a spoon.</span></li>
+    <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;"><span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">6</span><span>Add the dry mix to the wet ingredients along with the chocolate chips. Using a spatula, fold everything together with a gentle scoop-and-turn motion just until no dry streaks remain. A few small lumps are fine. Overmixing here is what leads to a tough, dense loaf, so stop as soon as it comes together.</span></li>
+    <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;"><span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">7</span><span>Line the bottom of your loaf pan with a strip of parchment paper, leaving overhang on the two long sides for easy lifting. Grease the exposed sides with butter or neutral oil.</span></li>
+    <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;"><span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">8</span><span>Pour the batter into the prepared pan and smooth the top with a spatula. Sprinkle the granulated sugar evenly over the surface for that crackly, crunchy top once baked.</span></li>
+    <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;"><span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">9</span><span>Bake for 60 to 70 minutes at 325°F. You are looking for a deeply golden brown top, edges that have pulled slightly away from the sides of the pan, and a toothpick inserted into the center that comes out clean or with a few moist crumbs, not wet batter.</span></li>
+    <li style="display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--warm-tan);font-size:0.9rem;line-height:1.75;"><span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">10</span><span>Remove from the oven and let the loaf rest in the pan for 45 minutes to an hour before attempting to remove it. It is very fragile and can break apart while warm.</span></li>
+    <li style="display:flex;gap:1.25rem;padding:1rem 0;font-size:0.9rem;line-height:1.75;"><span style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:#d4847a;min-width:28px;">11</span><span>Once cooled enough to handle, use the parchment overhang to lift the loaf out and transfer it to a wire rack. Let it cool for another 10 minutes before slicing.</span></li>
+  </ol>
+
+  <div class="divider"></div>
+  <h2 class="recipe-section-title">Tips &amp; Notes</h2>
+  <p style="font-size:0.92rem;line-height:1.85;color:var(--cork);margin-bottom:2rem;">Weigh your bananas as too much can make the loaf wet, and use ripe, spotty ones for the best flavour. Keep all ingredients at room temperature before you begin. Do not overmix once the dry ingredients go in. Watch the top as it bakes as the espresso and miso darken the crust quickly, so tent with foil if it is browning before the center is set. Check doneness with a toothpick and a gentle shake for wobble, not just the toothpick alone. Let the loaf cool fully before slicing for the best texture.</p>
+
+</div>
+
+<footer>
+  <span class="footer-logo">How About Saturday</span>
+  <p>Baking, slow living &amp; cozy drinks.</p>
+  <p style="margin-top:0.75rem;"><a href="https://instagram.com/howaboutsaturday" target="_blank">Instagram</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/@howaboutsaturday" target="_blank">YouTube</a> &nbsp;·&nbsp; <a href="https://www.tiktok.com/@howaboutsaturday_" target="_blank">TikTok</a></p>
+  <p style="margin-top:0.5rem;opacity:0.5;font-size:0.75rem;">© 2025 How About Saturday · All rights reserved. · <a href="../contact.html" style="color:#fde9c8;text-decoration:underline;">Contact</a> · <a href="../privacy-policy.html" style="color:#fde9c8;text-decoration:underline;">Privacy Policy</a></p>
+</footer>
+
+
+
+
+<script>
+  (function(){
+    var h=document.getElementById('hamburger'),n=document.getElementById('nav-links');
+    if(!h||!n)return;
+    function u(){h.style.display=window.innerWidth<=860?'flex':'none';if(window.innerWidth>860)n.classList.remove('open');}
+    h.addEventListener('click',function(){n.classList.toggle('open');});
+    window.addEventListener('resize',u);u();
+  })();
+</script>
+
+<script>
+(function(){
+  var recipes = [
+    {title:"Milky Oolong Matcha Latte",tag:"Matcha",url:"Recipe/milky-oolong-matcha-latte.html"},
+    {title:"Butter Tart Cake",tag:"Cake",url:"Recipe/butter-tart-cake.html"},
+    {title:"Guayaba (Guava) Tres Leches",tag:"Cake",url:"Recipe/guayaba-tres-leches.html"},
+    {title:"Chamomile Orange Blossom Basque Cheesecake",tag:"Cake",url:"Recipe/chamomile-orange-blossom-basque-cheesecake.html"},
+    {title:"Fraisier",tag:"Cake",url:"Recipe/fraisier.html"},
+    {title:"Matcha Red Bean Coffee Cake",tag:"Baking",url:"Recipe/matcha-red-bean-coffee-cake.html"},
+    {title:"Upside Down Rhubarb Pistachio Cake",tag:"Cake",url:"Recipe/rhubarb-pistachio-cake.html"},
+    {title:"Matcha Butter Mochi Tang Yuan",tag:"Baking",url:"Recipe/matcha-butter-mochi-tang-yuan.html"},
+    {title:"Jasmine Honey Cake",tag:"Cake",url:"Recipe/jasmine-honey-cake.html"},
+    {title:"Pandan Custard Matcha Latte",tag:"Matcha",url:"Recipe/pandan-custard-matcha-latte.html"},
+    {title:"Pandan Custard",tag:"Baking",url:"Recipe/pandan-custard.html"},
+    {title:"Pandan Coconut Custard Cake",tag:"Cake",url:"Recipe/pandan-coconut-custard-cake.html"},
+    {title:"Orange Earl Grey Chocolate Cake",tag:"Cake",url:"Recipe/orange-earl-grey-chocolate-cake.html"},
+    {title:"Jasmine Matcha Latte",tag:"Matcha",url:"Recipe/jasmine-matcha-latte.html"},
+    {title:"Hojicha Tiramisu",tag:"Baking",url:"Recipe/hojicha-tiramisu.html"},
+    {title:"Strawberry Hojicha Cheesecake",tag:"Cake",url:"Recipe/strawberry-hojicha-cheesecake.html"},
+    {title:"Hojicha Jasmine Longan Cake",tag:"Cake",url:"Recipe/hojicha-jasmine-longan-cake.html"},
+    {title:"Jasmine Chiffon Cake",tag:"Cake",url:"Recipe/jasmine-chiffon-cake.html"},
+    {title:"Jasmine Creme Brulee Shortbread",tag:"Cookies",url:"Recipe/jasmine-creme-brulee-shortbread.html"},
+    {title:"Lychee Matcha Latte",tag:"Matcha",url:"Recipe/lychee-matcha-latte.html"},
+    {title:"Maple Pumpkin Matcha Latte",tag:"Matcha",url:"Recipe/maple-pumpkin-matcha-latte.html"},
+    {title:"Caramel Matcha Latte",tag:"Matcha",url:"Recipe/caramel-matcha-latte.html"},
+    {title:"Apple Pie Matcha Latte",tag:"Matcha",url:"Recipe/apple-pie-matcha-latte.html"},
+    {title:"Pickle Matcha Latte",tag:"Matcha",url:"Recipe/pickle-matcha-latte.html"},
+    {title:"Tofu Pudding Matcha Latte",tag:"Matcha",url:"Recipe/tofu-pudding-matcha-latte.html"},
+    {title:"Blueberry Muffin Tea Matcha Snowballs",tag:"Baking",url:"Recipe/blueberry-muffin-tea-matcha-snowballs.html"},
+    {title:"Matcha Brown Butter Blondie",tag:"Baking",url:"Recipe/matcha-brown-butter-blondie.html"},
+    {title:"Matcha Latte Coffee Cake",tag:"Baking",url:"Recipe/matcha-latte-coffee-cake.html"},
+    {title:"Black Sesame Hojicha Latte",tag:"Hojicha",url:"Recipe/black-sesame-hojicha-latte.html"},
+    {title:"London Fog Hojicha",tag:"Hojicha",url:"Recipe/london-fog-hojicha.html"},
+    {title:"Ube Hojicha Latte",tag:"Hojicha",url:"Recipe/ube-hojicha-latte.html"},
+    {title:"Black Sesame Pumpkin Loaf",tag:"Loaf",url:"Recipe/black-sesame-pumpkin-loaf.html"},
+    {title:"Earl Grey Orange Loaf",tag:"Loaf",url:"Recipe/earl-grey-orange-loaf.html"},
+    {title:"Orange Spice Tea Loaf",tag:"Loaf",url:"Recipe/orange-spice-tea-loaf.html"},
+    {title:"Apple Crumble Loaf",tag:"Loaf",url:"Recipe/apple-crumble-loaf.html"},
+    {title:"London Fog Cake",tag:"Cake",url:"Recipe/london-fog-cake.html"},
+    {title:"Salted Caramel Oolong Cake",tag:"Cake",url:"Recipe/salted-caramel-oolong-cake.html"},
+    {title:"Caramel Pumpkin Spiced Latte Cake",tag:"Cake",url:"Recipe/caramel-pumpkin-spiced-latte-cake.html"},
+    {title:"Lemon Iced Tea Cake",tag:"Cake",url:"Recipe/lemon-iced-tea-cake.html"},
+    {title:"Carrot Cake",tag:"Cake",url:"Recipe/carrot-cake.html"},
+    {title:"Cinnamon Plum Coffee Cake",tag:"Cake",url:"Recipe/cinnamon-plum-coffee-cake.html"},
+    {title:"Thai Green Tea Burnt Cheesecake",tag:"Cake",url:"Recipe/thai-green-tea-burnt-cheesecake.html"},
+    {title:"Tofu Hua Chiffon Cake",tag:"Cake",url:"Recipe/tofu-hua-chiffon-cake.html"},
+    {title:"Apple Cider Donut",tag:"Baking",url:"Recipe/apple-cider-donut.html"},
+    {title:"Apple Custard Donut",tag:"Baking",url:"Recipe/apple-custard-donut.html"},
+    {title:"Apple Crisp",tag:"Baking",url:"Recipe/apple-crisp.html"},
+    {title:"Peppermint Chocolate Brownie",tag:"Baking",url:"Recipe/peppermint-chocolate-brownie.html"},
+    {title:"Saigon Chai Gingerbread Cookies",tag:"Cookies",url:"Recipe/saigon-chai-gingerbread-cookies.html"},
+    {title:"Peanut Butter Thumbprint Cookies",tag:"Cookies",url:"Recipe/peanut-butter-thumbprint-cookies.html"},
+    {title:"Vanilla Cappuccino Choc Chip Cookies",tag:"Cookies",url:"Recipe/vanilla-cappuccino-choc-chip-cookies.html"},
+    {title:"Almond Poppy Berries Muffin",tag:"Muffin",url:"Recipe/almond-poppy-berries-muffin.html"},
+    {title:"Zucchini Muffin",tag:"Muffin",url:"Recipe/zucchini-muffin.html"},
+    {title:"Earl Grey Creme Brulee Latte",tag:"Drinks",url:"Recipe/earl-grey-creme-brulee-latte.html"},
+    {title:"Grape Tea Fizz",tag:"Drinks",url:"Recipe/grape-tea-fizz.html"},
+    {title:"Guava Oolong Milk Tea",tag:"Drinks",url:"Recipe/guava-oolong-milk-tea.html"},
+    {title:"Almond Hot Chocolate",tag:"Drinks",url:"Recipe/almond-hot-chocolate.html"},
+  ];
+
+  var input = document.getElementById('search-input');
+  var results = document.getElementById('search-results');
+  if(!input || !results) return;
+
+  function getBase() {
+    var path = window.location.pathname;
+    return path.indexOf('/Recipe/') !== -1 ? '../' : '';
+  }
+
+  input.addEventListener('input', function() {
+    var q = this.value.trim().toLowerCase();
+    results.innerHTML = '';
+    if(q.length < 2) { results.classList.remove('open'); return; }
+    var matches = recipes.filter(function(r){ return r.title.toLowerCase().indexOf(q) !== -1 || r.tag.toLowerCase().indexOf(q) !== -1; }).slice(0, 6);
+    if(matches.length === 0) {
+      results.innerHTML = '<p class="search-no-results">No recipes found</p>';
+    } else {
+      matches.forEach(function(r) {
+        var a = document.createElement('a');
+        a.className = 'search-result-item';
+        a.href = getBase() + r.url;
+        a.innerHTML = '<span>' + r.tag + '</span>' + r.title;
+        results.appendChild(a);
+      });
+    }
+    results.classList.add('open');
+  });
+
+  document.addEventListener('click', function(e) {
+    if(!document.getElementById('search-wrap').contains(e.target)) {
+      results.classList.remove('open');
+      input.value = '';
+    }
+  });
+})();
+</script>
+<script>
+(function(){
+  // Show mob search li on mobile
+  var searchLi = document.querySelector('.mob-search-li');
+  if(searchLi) searchLi.style.display = 'block';
+  var input=document.getElementById('mob-search-input');
+  var results=document.getElementById('mob-search-results');
+  if(!input||!results)return;
+  var recipes=[
+    {title:"Milky Oolong Matcha Latte",tag:"Matcha",url:"Recipe/milky-oolong-matcha-latte.html"},
+    {title:"Butter Tart Cake",tag:"Cake",url:"Recipe/butter-tart-cake.html"},
+    {title:"Guayaba (Guava) Tres Leches",tag:"Cake",url:"Recipe/guayaba-tres-leches.html"},
+    {title:"Fraisier",tag:"Cake",url:"Recipe/fraisier.html"},
+    {title:"Matcha Red Bean Coffee Cake",tag:"Baking",url:"Recipe/matcha-red-bean-coffee-cake.html"},
+    {title:"Matcha Butter Mochi Tang Yuan",tag:"Baking",url:"Recipe/matcha-butter-mochi-tang-yuan.html"},
+    {title:"Jasmine Honey Cake",tag:"Cake",url:"Recipe/jasmine-honey-cake.html"},
+    {title:"Pandan Leche Flan Cake",tag:"Cake",url:"Recipe/pandan-leche-flan-cake.html"},
+    {title:"Pandan Custard Matcha Latte",tag:"Matcha",url:"Recipe/pandan-custard-matcha-latte.html"},
+    {title:"Pandan Custard",tag:"Baking",url:"Recipe/pandan-custard.html"},
+    {title:"Pandan Coconut Custard Cake",tag:"Cake",url:"Recipe/pandan-coconut-custard-cake.html"},
+    {title:"Jasmine Matcha Latte",tag:"Matcha",url:"Recipe/jasmine-matcha-latte.html"},
+    {title:"Lychee Matcha Latte",tag:"Matcha",url:"Recipe/lychee-matcha-latte.html"},
+    {title:"Maple Pumpkin Matcha Latte",tag:"Matcha",url:"Recipe/maple-pumpkin-matcha-latte.html"},
+    {title:"Caramel Matcha Latte",tag:"Matcha",url:"Recipe/caramel-matcha-latte.html"},
+    {title:"Apple Pie Matcha Latte",tag:"Matcha",url:"Recipe/apple-pie-matcha-latte.html"},
+    {title:"Black Sesame Hojicha Latte",tag:"Hojicha",url:"Recipe/black-sesame-hojicha-latte.html"},
+    {title:"Hojicha Tiramisu",tag:"Baking",url:"Recipe/hojicha-tiramisu.html"},
+    {title:"Strawberry Hojicha Cheesecake",tag:"Cake",url:"Recipe/strawberry-hojicha-cheesecake.html"},
+    {title:"Matcha Brown Butter Blondie",tag:"Baking",url:"Recipe/matcha-brown-butter-blondie.html"},
+    {title:"Earl Grey Orange Loaf",tag:"Loaf",url:"Recipe/earl-grey-orange-loaf.html"},
+    {title:"Saigon Chai Gingerbread Cookies",tag:"Cookies",url:"Recipe/saigon-chai-gingerbread-cookies.html"},
+    {title:"Carrot Cake",tag:"Cake",url:"Recipe/carrot-cake.html"},
+    {title:"London Fog Cake",tag:"Cake",url:"Recipe/london-fog-cake.html"},
+    {title:"Grape Tea Fizz",tag:"Drinks",url:"Recipe/grape-tea-fizz.html"},
+    {title:"Almond Hot Chocolate",tag:"Drinks",url:"Recipe/almond-hot-chocolate.html"},
+  ];
+  function getBase(){return window.location.pathname.indexOf('/Recipe/')!==-1?'../':'';}
+  input.addEventListener('input',function(){
+    var q=this.value.trim().toLowerCase();
+    results.innerHTML='';
+    if(q.length<2){results.style.display='none';return;}
+    var matches=recipes.filter(function(r){return r.title.toLowerCase().indexOf(q)!==-1||r.tag.toLowerCase().indexOf(q)!==-1;}).slice(0,5);
+    if(matches.length===0){
+      results.innerHTML='<p style="padding:0.6rem 1rem;font-size:0.82rem;color:#b89a80;font-style:italic;">No recipes found</p>';
+    }else{
+      matches.forEach(function(r){
+        var a=document.createElement('a');
+        a.href=getBase()+r.url;
+        a.style.cssText='display:block;padding:0.55rem 1rem;font-size:0.82rem;color:#5a3e32;text-decoration:none;border-bottom:1px solid #f0d4a8;';
+        a.innerHTML='<span style="display:block;font-size:0.68rem;color:#d4847a;text-transform:uppercase;letter-spacing:0.1em;">'+r.tag+'</span>'+r.title;
+        results.appendChild(a);
+      });
+    }
+    results.style.display='block';
+  });
+})();
+</script>
+</body>
+</html>
