@@ -443,12 +443,20 @@
 
 <!-- Newsletter Popup -->
 <div id="newsletter-popup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;align-items:center;justify-content:center;background:rgba(90,62,50,0.4);">
-  <div style="background:#fde9c8;border:2px solid #d4847a;border-radius:16px;padding:2.5rem 2rem;max-width:440px;width:90%;position:relative;box-shadow:0 16px 48px rgba(90,62,50,0.2);">
+  <div style="background:#fde9c8;border-radius:16px;padding:2.5rem 2rem;max-width:440px;width:90%;position:relative;box-shadow:0 16px 48px rgba(90,62,50,0.2);">
     <button onclick="closePopup()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.2rem;cursor:pointer;color:#5a3e32;opacity:0.5;line-height:1;">&#10005;</button>
     <p style="font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#d4847a;margin-bottom:0.5rem;">Newsletter</p>
-    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.8rem;font-weight:700;color:#5383c6;margin-bottom:0.75rem;line-height:1.2;">Slow Saturdays in your inbox</h2>
-    <p style="font-size:0.85rem;color:#5a3e32;line-height:1.75;margin-bottom:1.5rem;">New recipes, seasonal drinks, and the occasional behind the scenes from my Toronto kitchen.</p>
-    <script async data-uid="381e3be29b" src="https://howaboutsaturday.kit.com/381e3be29b/index.js"></script>
+    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-weight:700;color:#5383c6;margin-bottom:0.75rem;line-height:1.2;white-space:nowrap;text-align:center;">A little something for your Saturday</h2>
+    <p style="font-size:0.85rem;color:#5a3e32;line-height:1.75;margin-bottom:1.5rem;">Be the first to know about new recipes, exclusive baking tips, and what goes on at How About Saturday.</p>
+    <form action="https://app.kit.com/forms/9698796/subscriptions" method="post" style="margin:0;">
+      <input type="email" name="email_address" placeholder="Your email address" required
+        style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
+      <button type="submit"
+        style="width:100%;background:#5383c6;color:#fde9c8;border:none;border-radius:20px;padding:0.65rem 1.5rem;font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">
+        Subscribe
+      </button>
+      <p style="font-size:0.75rem;color:#5a3e32;opacity:0.6;text-align:center;margin-top:0.75rem;">No spam. Unsubscribe at any time.</p>
+    </form>
   </div>
 </div>
 <script>
