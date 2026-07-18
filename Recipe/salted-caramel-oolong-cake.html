@@ -445,7 +445,7 @@
     <p style="font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#d4847a;margin-bottom:0.5rem;">Newsletter</p>
     <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-weight:700;color:#5383c6;margin-bottom:0.75rem;line-height:1.2;white-space:nowrap;text-align:center;">A little something for your Saturday</h2>
     <p style="font-size:0.85rem;color:#5a3e32;line-height:1.75;margin-bottom:1.5rem;">Be the first to know about new recipes, exclusive baking tips, and what goes on at How About Saturday.</p>
-    <form action="https://app.kit.com/forms/9698796/subscriptions" method="post" style="margin:0;">
+    <form id="popup-kit-form" style="margin:0;">
       <input type="email" name="email_address" placeholder="Your email address" required
         style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
       <button type="submit"
@@ -454,6 +454,34 @@
       </button>
       <p style="font-size:0.75rem;color:#5a3e32;opacity:0.6;text-align:center;margin-top:0.75rem;">No spam. Unsubscribe at any time.</p>
     </form>
+    <div id="popup-kit-success" style="display:none;text-align:center;padding:1rem 0;">
+      <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.3rem;font-weight:700;color:#5383c6;margin-bottom:0.5rem;">You are in!</p>
+      <p style="font-size:0.88rem;color:#5a3e32;">Check your email to confirm your subscription.</p>
+    </div>
+    <script>
+    (function(){
+      var form = document.getElementById('popup-kit-form');
+      if(!form) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = form.querySelector('[name="email_address"]');
+        if(!email || !email.value) return;
+        var data = new FormData();
+        data.append('email_address', email.value);
+        fetch('https://app.kit.com/forms/9698796/subscriptions', {
+          method: 'POST', body: data, mode: 'no-cors'
+        }).then(function() {
+          form.style.display = 'none';
+          document.getElementById('popup-kit-success').style.display = 'block';
+          setTimeout(function(){ closePopup(); }, 2500);
+        }).catch(function() {
+          form.style.display = 'none';
+          document.getElementById('popup-kit-success').style.display = 'block';
+          setTimeout(function(){ closePopup(); }, 2500);
+        });
+      });
+    })();
+    </script>
   </div>
 </div>
 <script>
@@ -466,7 +494,7 @@ function closePopup() {
   setTimeout(function() {
     var popup = document.getElementById('newsletter-popup');
     if(popup) popup.style.display = 'flex';
-  }, 8000);
+  }, 3000);
   document.getElementById('newsletter-popup').addEventListener('click', function(e) {
     if(e.target === this) closePopup();
   });
