@@ -445,17 +445,19 @@
         if(!email || !email.value) return;
         var data = new FormData();
         data.append('email_address', email.value);
-        fetch('https://app.kit.com/forms/9698796/subscriptions', {
-          method: 'POST', body: data, mode: 'no-cors'
-        }).then(function() {
-          form.style.display = 'none';
-          document.getElementById('popup-kit-success').style.display = 'block';
-          setTimeout(function(){ closePopup(); }, 2500);
-        }).catch(function() {
-          form.style.display = 'none';
-          document.getElementById('popup-kit-success').style.display = 'block';
-          setTimeout(function(){ closePopup(); }, 2500);
-        });
+        var iframe = document.createElement('iframe');
+          iframe.name = 'kit_popup_iframe';
+          iframe.style.display = 'none';
+          document.body.appendChild(iframe);
+          form.setAttribute('target', 'kit_popup_iframe');
+          form.setAttribute('action', 'https://app.kit.com/forms/9698796/subscriptions');
+          form.setAttribute('method', 'post');
+          form.submit();
+          setTimeout(function() {
+            form.style.display = 'none';
+            document.getElementById('popup-kit-success').style.display = 'block';
+            setTimeout(function(){ closePopup(); }, 2500);
+          }, 1000);
       });
     })();
     </script>
