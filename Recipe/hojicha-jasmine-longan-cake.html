@@ -159,10 +159,8 @@
 
 
 <li class="nav-item"><a href="../about.html">About</a></li>
-    <li class="nav-item"><a href="../contact.html">Contact</a></li>
+    <li class="nav-item"><a href="../work-with-me.html">Work with Me</a></li>
     <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a></li>
-    <li class="nav-item"><a href="https://www.youtube.com/@howaboutsaturday" target="_blank" rel="noopener">YouTube &#8599;</a></li>
-    <li class="nav-item"><a href="https://www.tiktok.com/@howaboutsaturday_" target="_blank" rel="noopener">TikTok &#8599;</a></li>
       <li style="padding:0.75rem 1.5rem;border-bottom:1px solid #f0d4a8;display:none;" class="mob-search-li">
       <div style="position:relative;display:flex;align-items:center;">
         <input id="mob-search-input" type="text" placeholder="Search recipes..." autocomplete="off" style="width:100%;border:1.5px solid #f0d4a8;background:#faebd8;border-radius:20px;padding:0.4rem 2.2rem 0.4rem 0.9rem;font-size:0.82rem;font-family:'Jost',sans-serif;color:#5a3e32;outline:none;" />
@@ -266,7 +264,7 @@
   <span class="footer-logo">How About Saturday</span>
   <p>Baking, slow living &amp; cozy drinks.</p>
   <p style="margin-top:0.75rem;"><a href="https://instagram.com/howaboutsaturday" target="_blank">Instagram</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/@howaboutsaturday" target="_blank">YouTube</a> &nbsp;·&nbsp; <a href="https://www.tiktok.com/@howaboutsaturday_" target="_blank">TikTok</a></p>
-  <p style="margin-top:0.5rem;opacity:0.5;font-size:0.75rem;">© 2025 How About Saturday · All rights reserved. · <a href="../contact.html" style="color:#fde9c8;text-decoration:underline;">Contact</a> · <a href="../privacy-policy.html" style="color:#fde9c8;text-decoration:underline;">Privacy Policy</a></p>
+  <p style="margin-top:0.5rem;opacity:0.5;font-size:0.75rem;">© 2025 How About Saturday · All rights reserved. · <a href="../work-with-me.html" style="color:#fde9c8;text-decoration:underline;">Work with Me</a> · <a href="../privacy-policy.html" style="color:#fde9c8;text-decoration:underline;">Privacy Policy</a></p>
 </footer>
 
 
@@ -456,6 +454,8 @@
     <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-weight:700;color:#5383c6;margin-bottom:0.75rem;line-height:1.2;white-space:nowrap;text-align:center;">A little something for your Saturday</h2>
     <p style="font-size:0.85rem;color:#5a3e32;line-height:1.75;margin-bottom:1.5rem;">Be the first to know about new recipes, exclusive baking tips, and what goes on at How About Saturday.</p>
     <form id="popup-kit-form" style="margin:0;">
+      <input type="text" name="fields[first_name]" placeholder="First name" required
+        style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
       <input type="email" name="email_address" placeholder="Your email address" required
         style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
       <button type="submit"
@@ -475,9 +475,11 @@
       form.addEventListener('submit', function(e) {
         e.preventDefault();
         var email = form.querySelector('[name="email_address"]');
+        var firstName = form.querySelector('[name="fields[first_name]"]');
         if(!email || !email.value) return;
         var data = new FormData();
         data.append('email_address', email.value);
+        if(firstName && firstName.value) data.append('fields[first_name]', firstName.value);
         var iframe = document.createElement('iframe');
           iframe.name = 'kit_popup_iframe';
           iframe.style.display = 'none';
