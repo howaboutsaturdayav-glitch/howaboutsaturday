@@ -432,5 +432,32 @@
   });
 })();
 </script>
+
+<!-- Newsletter Popup -->
+<div id="newsletter-popup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;align-items:center;justify-content:center;background:rgba(90,62,50,0.4);">
+  <div style="background:#fde9c8;border:2px solid #d4847a;border-radius:16px;padding:2.5rem 2rem;max-width:440px;width:90%;position:relative;box-shadow:0 16px 48px rgba(90,62,50,0.2);">
+    <button onclick="closePopup()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.2rem;cursor:pointer;color:#5a3e32;opacity:0.5;line-height:1;">&#10005;</button>
+    <p style="font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#d4847a;margin-bottom:0.5rem;">Newsletter</p>
+    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.8rem;font-weight:700;color:#5383c6;margin-bottom:0.75rem;line-height:1.2;">Slow Saturdays in your inbox</h2>
+    <p style="font-size:0.85rem;color:#5a3e32;line-height:1.75;margin-bottom:1.5rem;">New recipes, seasonal drinks, and the occasional behind the scenes from my Toronto kitchen.</p>
+    <script async data-uid="381e3be29b" src="https://howaboutsaturday.kit.com/381e3be29b/index.js"></script>
+  </div>
+</div>
+<script>
+function closePopup() {
+  document.getElementById('newsletter-popup').style.display = 'none';
+  localStorage.setItem('newsletter_closed', '1');
+}
+(function() {
+  if(localStorage.getItem('newsletter_closed')) return;
+  setTimeout(function() {
+    var popup = document.getElementById('newsletter-popup');
+    if(popup) popup.style.display = 'flex';
+  }, 8000);
+  document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+    if(e.target === this) closePopup();
+  });
+})();
+</script>
 </body>
 </html>
