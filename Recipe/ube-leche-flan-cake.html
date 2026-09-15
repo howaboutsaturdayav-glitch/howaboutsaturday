@@ -543,5 +543,15 @@ function closePopup() {
   });
 })();
 </script>
+<script>
+  (function(){
+    var s = document.createElement('script');
+    s.src = 'https://www.instagram.com/embed.js';
+    s.async = true;
+    s.onload = function(){ if(window.instgrm) window.instgrm.Embeds.process(); };
+    document.body.appendChild(s);
+    setTimeout(function(){ if(window.instgrm) window.instgrm.Embeds.process(); }, 2000);
+  })();
+</script>
 </body>
 </html>
