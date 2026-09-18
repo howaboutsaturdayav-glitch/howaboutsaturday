@@ -1,283 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QW7E93V2XR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QW7E93V2XR');
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QW7E93V2XR');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>How About Saturday</title>
   <meta name="description" content="Recipes, baking, and slow living by Amy. @howaboutsaturday" />
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-
-  <!-- =========================================================
-       GOOGLE ADSENSE replace with your publisher ID
-       ========================================================= -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1281955985735338" crossorigin="anonymous"></script>
-
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --cream:     #fde9c8;
-      --parchment: #faebd8;
-      --warm-tan:  #f0d4a8;
-      --terracotta:#5383c6;
-      --burnt:     #3a6aab;
-      --sage:      #998513;
-      --deep:      #5383c6;
-      --mid:       #5a3e32;
-      --light-mid: #d4847a;
-
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --display: 'Cormorant Garamond', Georgia, serif;
-      --sans:  'Jost', system-ui, sans-serif;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--cream:#fde9c8;--parchment:#faebd8;--warm-tan:#f0d4a8;--terracotta:#5383c6;--burnt:#3a6aab;--mid:#5a3e32;--light-mid:#d4847a;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--cream);color:var(--mid);font-family:var(--sans);font-size:16px;line-height:1.7;}
+    a{color:inherit;text-decoration:none;}
+    header.site-header{background:var(--cream);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--warm-tan);}
+    .nav-top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:1.4rem 2rem;gap:1rem;}
+    .search-wrap-top{position:relative;display:flex;align-items:center;justify-self:start;}
+    .search-wrap-top .search-input{border:1.5px solid var(--warm-tan);background:var(--parchment);border-radius:20px;padding:0.5rem 1rem 0.5rem 2.1rem;font-size:0.85rem;font-family:var(--sans);color:var(--mid);outline:none;width:190px;transition:width 0.3s,border-color 0.2s;}
+    .search-wrap-top .search-input:focus{width:240px;border-color:var(--terracotta);}
+    .search-wrap-top .search-glyph{position:absolute;left:0.85rem;color:var(--mid);font-size:0.85rem;pointer-events:none;opacity:0.5;}
+    .search-wrap-top .search-results{display:none;position:absolute;top:calc(100% + 8px);left:0;background:var(--cream);border:1px solid var(--warm-tan);border-radius:12px;min-width:260px;max-width:320px;z-index:600;box-shadow:0 8px 32px rgba(58,46,40,0.12);overflow:hidden;}
+    .search-wrap-top .search-results.open{display:block;}
+    .search-wrap-top .search-result-item{display:block;padding:0.6rem 1rem;font-size:0.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--warm-tan);}
+    .search-wrap-top .search-result-item:last-child{border-bottom:none;}
+    .search-wrap-top .search-result-item:hover{background:var(--parchment);color:var(--terracotta);}
+    .search-wrap-top .search-result-item span{display:block;font-size:0.68rem;color:var(--light-mid);text-transform:uppercase;letter-spacing:0.1em;}
+    .search-wrap-top .search-no-results{padding:0.7rem 1rem;font-size:0.82rem;color:#b89a80;font-style:italic;}
+    @media(max-width:860px){.search-wrap-top{display:none;}}
+    .site-logo{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:var(--terracotta);text-decoration:none;text-align:center;justify-self:center;}
+    .nav-top-icons{display:flex;align-items:center;justify-content:flex-end;gap:1.25rem;}
+    .icon-btn{font-size:1.1rem;color:var(--mid);opacity:0.75;cursor:pointer;background:none;border:none;}
+    .icon-btn:hover{opacity:1;color:var(--terracotta);}
+    .nav-links-row{border-top:1px solid var(--warm-tan);padding:0.9rem 2rem;display:flex;align-items:center;justify-content:center;gap:2rem;}
+    .nav-link{font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--mid);text-decoration:none;padding-bottom:4px;}
+    .nav-link:hover{color:var(--terracotta);}
+    .nav-link.current{font-weight:700;border-bottom:2px solid var(--mid);}
+    .nav-item-dd{position:relative;}
+    .nav-item-dd>a{font-family:var(--sans);font-size:0.95rem;font-weight:500;color:var(--mid);text-decoration:none;display:flex;align-items:center;gap:0.3rem;padding-bottom:4px;}
+    .nav-item-dd>a:hover{color:var(--terracotta);}
+    .nav-item-dd .nav-arrow{font-size:0.55rem;transition:transform 0.2s;}
+    .nav-item-dd:hover>a .nav-arrow{transform:rotate(180deg);}
+    .nav-item-dd::after{content:'';position:absolute;top:100%;left:0;width:100%;height:14px;}
+    .nav-item-dd .nav-dropdown{display:none;position:absolute;top:calc(100% + 10px);left:0;background:var(--cream);border:1px solid var(--warm-tan);border-radius:12px;padding:0.4rem 0;min-width:220px;z-index:300;box-shadow:0 8px 32px rgba(58,46,40,0.1);}
+    .nav-item-dd:hover .nav-dropdown{display:block;}
+    .nav-dropdown-link{display:block;padding:0.6rem 1.1rem;font-size:0.82rem;font-weight:700;color:var(--terracotta);text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;border-bottom:1px solid var(--warm-tan);margin-bottom:0.3rem;}
+    .nav-dropdown-link:hover{background:var(--parchment);}
+    .nav-dropdown-item{display:block!important;padding:0.5rem 1.1rem;font-size:0.82rem;font-weight:500;color:var(--mid);text-decoration:none;text-transform:none;letter-spacing:0;white-space:nowrap;}
+    .nav-dropdown-item:hover{background:var(--parchment);color:var(--terracotta);}
+    .nav-dropdown-divider{height:1px;background:var(--warm-tan);margin:0.2rem 0 0.3rem;}
+    .nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+    .nav-hamburger span{display:block;width:22px;height:2px;background:var(--mid);border-radius:2px;margin-bottom:4px;}
+    .mob-plain{display:block;padding:0.75rem 1.5rem;font-size:0.85rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);border-bottom:1px solid var(--warm-tan);text-decoration:none;}
+    .mob-section{display:none;}
+    @media(max-width:860px){
+      .nav-hamburger{display:flex;flex-direction:column;}
+      .nav-links-row{display:none!important;flex-direction:column;align-items:flex-start;position:absolute;top:100%;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--warm-tan);padding:0;z-index:500;max-height:85vh;overflow-y:auto;}
+      .nav-links-row.open{display:flex!important;}
+      .nav-link,.nav-item-dd{display:none;}
+      .nav-item-dd .nav-dropdown{display:none!important;}
+      .mob-section{display:block;width:100%;}
+      .nav-top{grid-template-columns:auto 1fr auto;}
     }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--cream);
-      color: #5a3e32;
-      font-family: var(--sans);
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    /* ── NAV ── */
-    nav {
-      background: var(--cream);
-      border-bottom: 1px solid var(--warm-tan);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 60px;
-    }
-
-    .nav-logo {
-      font-family: var(--display);
-      font-size: 1.3rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--deep);
-      text-decoration: none;
-    }
-
-    .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #5a3e32;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-item { position: relative; list-style: none; }
-    .nav-item > a { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #5a3e32; text-decoration: none; display: flex; align-items: center; gap: 0.3rem; transition: color 0.2s; }
-    .nav-item > a:hover { color: #5383c6; }
-    .nav-item > a .nav-arrow { font-size: 0.55rem; transition: transform 0.2s; }
-    .nav-item:hover > a .nav-arrow { transform: rotate(180deg); }
-    .nav-item::after { content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 14px; }
-    .nav-dropdown { display: none; position: absolute; top: calc(100% + 2px); right: 0; background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 260px; z-index: 300; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
-    .nav-item:hover > .nav-dropdown { display: block; }
-    .nav-dropdown-link { display: block; padding: 0.6rem 1.1rem; font-size: 0.82rem; font-weight: 700; color: #5383c6; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: background 0.15s; border-bottom: 1px solid #f0d4a8; margin-bottom: 0.3rem; }
-    .nav-dropdown-link:hover { background: #faebd8; }
-    .nav-dropdown-item { display: block !important; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 500; color: #5a3e32; text-decoration: none; text-transform: none; letter-spacing: 0; transition: background 0.15s, color 0.15s; white-space: nowrap; }
-    .nav-dropdown-item:hover { background: #faebd8; color: #5383c6; }
-    .nav-dropdown-divider { height: 1px; background: #f0d4a8; margin: 0.2rem 0 0.3rem; }
-    .nav-dropdown > .nav-sub-item { position: relative; }
-    .nav-dropdown > .nav-sub-item > a { display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 500; color: #5a3e32; text-decoration: none; text-transform: none; letter-spacing: 0; transition: background 0.15s, color 0.15s; white-space: nowrap; }
-    .nav-dropdown > .nav-sub-item > a:hover { background: #faebd8; color: #5383c6; }
-    .nav-dropdown > .nav-sub-item > a .sub-arrow { font-size: 0.55rem; opacity: 0.5; }
-    .nav-sub-dropdown { display: none; position: absolute; top: -0.4rem; right: calc(100% + 4px); background: #fde9c8; border: 1px solid #f0d4a8; border-radius: 12px; padding: 0.4rem 0; min-width: 180px; z-index: 400; box-shadow: 0 8px 32px rgba(58,46,40,0.1); }
-    .nav-sub-item:hover > .nav-sub-dropdown { display: block; }
-    .nav-sub-item::after { content: ''; position: absolute; top: 0; right: -10px; width: 14px; height: 100%; }
-    .nav-sub-dropdown a { display: block; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 400; color: #5a3e32; text-decoration: none; transition: background 0.15s, color 0.15s; }
-    .nav-sub-dropdown a:hover { background: #faebd8; color: #5383c6; }
-
-    
-
-    /* ── BUTTONS ── */
-    .btn { display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.75rem;border-radius:2px;font-family:var(--sans);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:all 0.2s;cursor:pointer;border:none; }
-    .btn-primary { background:var(--terracotta);color:#fde9c8; }
-    .btn-primary:hover { background:var(--burnt); }
-    .btn-outline { background:transparent;color:#5a3e32;border:1.5px solid var(--warm-tan); }
-    .btn-outline:hover { border-color:var(--terracotta);color:var(--terracotta); }
-
-    /* ── AD BANNER ── */
-    .ad-banner { display:flex;justify-content:center;align-items:center;padding:1rem 2rem;background:var(--cream); }
-    .ad-placeholder { display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.25rem;background:var(--parchment);border:1px dashed var(--warm-tan);border-radius:4px;color:var(--warm-tan);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase; }
-
-    /* ── HERO ── */
-    .hero { display:grid;grid-template-columns:1fr 1fr;max-width:1400px;margin:0 auto;padding:3rem 3rem 3rem;gap:3rem;align-items:stretch;min-height:80vh; }
-    .hero-left { display:flex;flex-direction:column;gap:1.5rem;justify-content:center; }
-    .hero-eyebrow { font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-mid); }
-    .hero-left h1 { font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:700;line-height:1.1;color:var(--terracotta); }
-    .hero-sub { font-size:1rem;line-height:1.75;color:#5a3e32;max-width:460px; }
-    .hero-actions { display:flex;gap:1rem;flex-wrap:nowrap; }
-    .hero-right { position:relative;border-radius:12px;overflow:hidden;display:block;text-decoration:none;min-height:300px;background:var(--parchment); }
-    .hero-right img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block; }
-    .hero-right-placeholder { display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:5rem;background:var(--warm-tan); }
-    .hero-card-info { position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(58,46,40,0.85) 0%,transparent 100%);color:#fde9c8; }
-    .hero-card-tag { font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;opacity:0.8;margin-bottom:0.3rem; }
-    .hero-card-title { font-family:var(--serif);font-size:1.4rem;font-weight:700;line-height:1.2;margin-bottom:0.4rem; }
-    .hero-card-desc { font-size:0.8rem;line-height:1.6;opacity:0.85;margin-bottom:0.75rem; }
-    .hero-card-meta { display:flex;gap:1rem;font-size:0.75rem;opacity:0.7; }
-    @media(max-width:700px){ .hero{grid-template-columns:1fr;padding:1.5rem 1.25rem;gap:1.25rem;min-height:unset;text-align:center;} .hero-left{align-items:center;} .hero-sub{max-width:100%;} .hero-actions{justify-content:center;flex-wrap:nowrap;} .hero-right{aspect-ratio:4/3;width:90%;margin:0 auto;border-radius:12px;} .hero-sub{width:90%;margin-left:auto;margin-right:auto;} .hero-eyebrow{width:90%;margin-left:auto;margin-right:auto;} .hero-left h1{width:90%;margin-left:auto;margin-right:auto;} .hero-actions{width:90%;margin-left:auto;margin-right:auto;} .btn{padding:0.6rem 1rem;font-size:0.75rem;white-space:nowrap;} }
-
-    /* ── SECTION LABELS ── */
-    .section-label { font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-mid);margin-bottom:0.3rem; }
-    .section-title { font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:var(--terracotta);margin-bottom:2rem; }
-
-    /* ── FILTER BAR ── */
-    .filter-bar { display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap; }
-    .filter-dropdown { position:relative; }
-    .filter-btn { background:var(--parchment);border:1px solid var(--warm-tan);border-radius:20px;padding:0.4rem 1rem;font-size:0.78rem;font-family:var(--sans);color:#5a3e32;cursor:pointer;display:flex;align-items:center;gap:0.4rem;transition:all 0.2s; }
-    .filter-btn:hover,.filter-btn.active { background:var(--terracotta);color:#fde9c8;border-color:var(--terracotta); }
-    .filter-btn .arrow { font-size:0.5rem;transition:transform 0.2s; }
-    .filter-btn.open .arrow { transform:rotate(180deg); }
-    .dropdown-menu { display:none;position:absolute;top:calc(100% + 6px);left:0;background:var(--cream);border:1px solid var(--warm-tan);border-radius:10px;padding:0.4rem 0;min-width:140px;z-index:200;box-shadow:0 8px 24px rgba(58,46,40,0.1); }
-    .dropdown-menu.open { display:block; }
-    .dropdown-item { display:block;width:100%;background:none;border:none;text-align:left;padding:0.5rem 1rem;font-size:0.8rem;font-family:var(--sans);color:#5a3e32;cursor:pointer;transition:background 0.15s; }
-    .dropdown-item:hover { background:var(--parchment);color:var(--terracotta); }
-    .filter-clear { background:none;border:1px solid var(--warm-tan);border-radius:20px;padding:0.4rem 0.8rem;font-size:0.75rem;font-family:var(--sans);color:#5a3e32;cursor:pointer;transition:all 0.2s; }
-    .filter-clear:hover { border-color:var(--terracotta);color:var(--terracotta); }
-
-    /* ── RECIPE GRID ── */
-    .recipe-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:3px; }
-    .recipe-card { position:relative;aspect-ratio:1;overflow:hidden;display:block;text-decoration:none;background:var(--warm-tan); }
-    .recipe-card img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease; }
-    .recipe-card:hover img { transform:scale(1.04); }
-    .recipe-card-placeholder { width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;background:var(--warm-tan); }
-    .recipe-card-overlay { position:absolute;inset:0;background:linear-gradient(to top,rgba(58,46,40,0.75) 0%,transparent 55%);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:1rem; }
-    .recipe-card:hover .recipe-card-overlay { opacity:1; }
-    .recipe-card-label { color:#fde9c8; }
-    .recipe-card-label p { font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;opacity:0.75;margin-bottom:0.2rem; }
-    .recipe-card-label h3 { font-family:var(--serif);font-size:1rem;font-weight:700;line-height:1.2; }
-    .recipe-card.hidden { display:none; }
-
-    /* ── GRAM GRID ── */
-    .gram-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:3px; }
-    .gram-tile { position:relative;aspect-ratio:1;overflow:hidden;display:block;text-decoration:none;background:var(--warm-tan); }
-    .gram-tile img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease; }
-    .gram-tile:hover img { transform:scale(1.04); }
-    .gram-fallback { position:absolute;inset:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;z-index:0; }
-    .gram-tile img { z-index:1; }
-    .gram-hover { position:absolute;inset:0;background:linear-gradient(to top,rgba(58,46,40,0.78) 0%,transparent 60%);opacity:0;transition:opacity 0.3s;display:flex;flex-direction:column;justify-content:flex-end;padding:1rem; }
-    .gram-tile:hover .gram-hover { opacity:1; }
-    .gram-hover-tag { font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(253,233,200,0.75);margin-bottom:0.2rem; }
-    .gram-hover-title { font-family:var(--serif);font-size:1rem;font-weight:700;color:#fde9c8;line-height:1.2; }
-    .gram-tile.hidden { display:none; }
-    .gram-no-results { display:none;grid-column:1/-1;text-align:center;padding:3rem;font-size:0.9rem;color:#5a3e32;opacity:0.6; }
-    @media(max-width:700px){ .gram-grid{grid-template-columns:repeat(2,1fr);} }
-
-    /* ── ABOUT SECTION (homepage) ── */
-    .about-section { max-width:900px;margin:0 auto;padding:3rem 2rem 3rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.4rem; }
-    .about-avatar { font-size:3rem; }
-    .about-name { font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--terracotta); }
-    .about-handle { font-size:0.8rem;letter-spacing:0.1em;color:var(--light-mid); }
-    .about-text { font-size:0.92rem;line-height:1.8;color:#5a3e32;max-width:520px; }
-    .about-btns { display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:0; }
-
-    /* ── SERIES SECTION ── */
-
-    /* ── FOOTER ── */
-    footer { background:#5a3e32;color:var(--cream);padding:1.5rem 2rem;text-align:center; }
-    .footer-logo { font-family:var(--serif);font-size:1.5rem;font-weight:700;letter-spacing:0.1em;color:var(--light-mid);display:block;margin-bottom:0.2rem; }
-    footer p { font-size:0.82rem;opacity:0.7;margin-bottom:0.2rem; }
-    footer a { color:var(--light-mid);text-decoration:none; }
-    footer a:hover { text-decoration:underline; }
-    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: #5a3e32; border-radius: 2px; margin-bottom: 4px; }
-    .mob-section { display: none; }
-    .mob-header { width: 100%; padding: 0.75rem 1.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a3e32; background: none; border: none; border-bottom: 1px solid #f0d4a8; cursor: pointer; text-align: left; }
-    .mob-header .mob-arrow { font-size: 0.6rem; transition: transform 0.2s; }
-    .mob-header.open .mob-arrow { transform: rotate(180deg); }
-    .mob-links { display: none; background: #faebd8; }
-    .mob-links.open { display: block; }
-    .mob-link { display: block; padding: 0.65rem 2rem; font-size: 0.82rem; color: #5a3e32; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
-    .mob-link:hover { color: #5383c6; }
-    .mob-plain { display: block; padding: 0.75rem 1.5rem; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5a3e32; border-bottom: 1px solid #f0d4a8; text-decoration: none; }
-    @media (max-width: 860px) {
-      .nav-hamburger { display: flex; flex-direction: column; }
-      .nav-links { display: none !important; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #fde9c8; border-bottom: 1px solid #f0d4a8; padding: 0; z-index: 500; max-height: 85vh; overflow-y: auto; }
-      .nav-links.open { display: flex !important; }
-      .nav-item { display: none; }
-      .nav-dropdown { display: none !important; }
-      .mob-section { display: block; }
-    }
-  
-    .search-wrap { position: relative; display: flex; align-items: center; }
-    .search-input { border: 1.5px solid var(--warm-tan); background: var(--parchment); border-radius: 20px; padding: 0.35rem 2.2rem 0.35rem 0.9rem; font-size: 0.78rem; font-family: var(--sans); color: var(--cork); outline: none; width: 160px; transition: width 0.3s, border-color 0.2s; }
-    .search-input:focus { width: 220px; border-color: var(--blue); }
-    .search-input::placeholder { color: #b89a80; }
-    .search-icon { position: absolute; right: 0.6rem; color: var(--cork); font-size: 0.8rem; pointer-events: none; opacity: 0.5; }
-    .search-results { display: none; position: absolute; top: calc(100% + 8px); right: 0; background: var(--cream); border: 1px solid var(--warm-tan); border-radius: 12px; min-width: 260px; max-width: 320px; z-index: 600; box-shadow: 0 8px 32px rgba(58,46,40,0.12); overflow: hidden; }
-    .search-results.open { display: block; }
-    .search-result-item { display: block; padding: 0.6rem 1rem; font-size: 0.82rem; color: var(--cork); text-decoration: none; border-bottom: 1px solid var(--warm-tan); transition: background 0.15s; }
-    .search-result-item:last-child { border-bottom: none; }
-    .search-result-item:hover { background: var(--parchment); color: var(--blue); }
-    .search-result-item span { display: block; font-size: 0.7rem; color: var(--pink); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.1rem; }
-    .search-no-results { padding: 0.75rem 1rem; font-size: 0.82rem; color: #b89a80; font-style: italic; }
-    @media (max-width: 860px) { .search-wrap { display: none; } }
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.75rem;border-radius:20px;font-family:var(--sans);font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;font-weight:500;transition:all 0.2s;cursor:pointer;border:none;}
+    .btn-primary{background:var(--mid);color:var(--cream);}
+    .btn-primary:hover{background:var(--terracotta);}
+    .tagline-row{max-width:1240px;margin:0 auto;padding:28px 2rem 0;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-mid);}
+    .hero3{max-width:1320px;margin:0 auto;padding:1.6rem 2rem 4.5rem;display:grid;grid-template-columns:230px 1fr 280px;gap:2.5rem;align-items:start;}
+    .lifestyle-col{display:flex;flex-direction:column;gap:2rem;}
+    .lifestyle-card-photo{aspect-ratio:4/3;border-radius:10px;margin-bottom:0.8rem;overflow:hidden;position:relative;}
+    .lifestyle-card h3{font-family:var(--serif);font-weight:700;font-size:1.15rem;line-height:1.25;color:var(--mid);margin-bottom:0.3rem;}
+    .lifestyle-card:hover h3{color:var(--terracotta);}
+    .lifestyle-card .dek{font-size:0.8rem;color:var(--mid);opacity:0.75;margin-bottom:0.4rem;}
+    .lifestyle-meta{font-size:0.72rem;color:var(--mid);opacity:0.55;display:flex;align-items:center;gap:5px;}
+    .l1{background:linear-gradient(150deg,#d4847a,#f0d4a8);}
+    .l2{background:linear-gradient(150deg,#5383c6,#8fa8c6);}
+    .featured-center{text-decoration:none;display:block;}
+    .featured-photo{aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--warm-tan);position:relative;margin-bottom:1.5rem;}
+    .featured-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+    .featured-photo .fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-size:4.5rem;background:var(--warm-tan);}
+    .featured-center h2{font-family:var(--serif);font-weight:700;font-size:clamp(1.6rem,2.6vw,2.1rem);line-height:1.15;color:var(--mid);text-align:center;margin-bottom:0.6rem;}
+    .featured-center .dek{font-size:0.92rem;color:var(--mid);opacity:0.85;text-align:center;margin-bottom:0.9rem;}
+    .featured-meta{font-size:0.78rem;color:var(--mid);opacity:0.6;display:flex;justify-content:center;gap:1.1rem;}
+    .allposts-col .side-block-title{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--mid);display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.1rem;}
+    .allposts-col .side-block-title a{font-size:0.68rem;font-family:var(--sans);font-weight:400;letter-spacing:0.05em;text-transform:uppercase;color:var(--terracotta);}
+    .ap-item{display:flex;align-items:center;gap:0.8rem;text-decoration:none;margin-bottom:1.1rem;}
+    .ap-thumb{width:52px;height:52px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.3rem;background:var(--warm-tan);overflow:hidden;}
+    .ap-thumb img{width:100%;height:100%;object-fit:cover;}
+    .ap-item .apname{font-size:0.88rem;font-weight:500;color:var(--mid);line-height:1.3;}
+    .ap-item:hover .apname{color:var(--terracotta);}
+    .ap-item .apdate{font-size:0.72rem;color:var(--mid);opacity:0.55;margin-top:0.15rem;}
+    @media(max-width:980px){.hero3{grid-template-columns:1fr;}.lifestyle-col{flex-direction:row;}.lifestyle-col>*{flex:1;}}
+    @media(max-width:700px){.lifestyle-col,.allposts-col{display:none;}}
+    @media(max-width:620px){.lifestyle-col{flex-direction:column;}}
+    .life-section{max-width:1240px;margin:0 auto;padding:0 2rem 4.5rem;}
+    .life-heading-wrap{margin-bottom:1.75rem;}
+    .life-eyebrow{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--light-mid);margin-bottom:0.3rem;}
+    .life-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:var(--terracotta);}
+    .life-sub{font-size:0.9rem;color:var(--mid);opacity:0.8;margin-top:0.4rem;max-width:46ch;}
+    .life-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem 1.75rem;margin-bottom:2rem;}
+    .ls1{background:linear-gradient(150deg,#d4847a,#f0d4a8);}
+    .ls2{background:linear-gradient(150deg,#5383c6,#8fa8c6);}
+    .ls3{background:linear-gradient(150deg,#f0d4a8,#5a3e32);}
+    @media(max-width:900px){.life-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:560px){.life-grid{grid-template-columns:1fr;}}
+    .layout{max-width:1240px;margin:0 auto;padding:0 2rem 5rem;display:grid;grid-template-columns:1fr 300px;gap:3.5rem;align-items:start;}
+    .tabs{display:flex;gap:0.5rem;margin-bottom:1.75rem;}
+    .tab{padding:0.55rem 1.2rem;border-radius:20px;font-size:0.85rem;font-family:var(--sans);color:var(--mid);background:transparent;border:1px solid transparent;cursor:pointer;transition:all 0.2s;}
+    .tab.active{background:var(--parchment);border-color:var(--warm-tan);font-weight:500;}
+    .tab:not(.active):hover{color:var(--terracotta);}
+    .post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem 1.75rem;margin-bottom:2.5rem;}
+    .post-card-photo{aspect-ratio:4/3;border-radius:8px;margin-bottom:0.9rem;position:relative;overflow:hidden;background:var(--warm-tan);}
+    .post-card-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+    .post-card-photo .fallback{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font-size:2.5rem;}
+    .post-card h3{font-family:var(--serif);font-weight:700;font-size:1.2rem;line-height:1.25;color:var(--mid);margin-bottom:0.3rem;}
+    .post-card:hover h3{color:var(--terracotta);}
+    .post-card .dek{font-size:0.82rem;color:var(--mid);opacity:0.75;margin-bottom:0.45rem;}
+    .post-meta{font-size:0.75rem;color:var(--mid);opacity:0.55;letter-spacing:0.03em;}
+    .view-more{text-align:center;}
+    .sidebar{position:sticky;top:90px;display:flex;flex-direction:column;gap:2rem;}
+    .side-avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;display:block;}
+    .side-avatar-fallback{width:64px;height:64px;border-radius:50%;display:none;align-items:center;justify-content:center;font-size:1.8rem;background:var(--warm-tan);}
+    .side-name{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--mid);margin-top:0.7rem;}
+    .side-handle{font-size:0.78rem;color:var(--terracotta);margin-top:0.15rem;display:block;}
+    .side-tag{font-size:0.85rem;color:var(--mid);opacity:0.8;line-height:1.6;margin-top:0.6rem;}
+    .side-form{display:flex;margin-top:1rem;border-radius:20px;overflow:hidden;border:1px solid var(--warm-tan);}
+    .side-form input{flex:1;min-width:0;border:none;background:var(--parchment);padding:0.6rem 1rem;font-family:var(--sans);font-size:0.82rem;color:var(--mid);outline:none;}
+    .side-form button{border:none;background:var(--mid);color:var(--cream);padding:0.6rem 1.1rem;font-family:var(--sans);font-size:0.82rem;font-weight:500;cursor:pointer;}
+    .side-block-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--mid);display:flex;justify-content:space-between;align-items:baseline;}
+    .side-block-title a{font-size:0.68rem;font-family:var(--sans);font-weight:400;letter-spacing:0.05em;text-transform:uppercase;color:var(--terracotta);}
+    .rec-item{display:flex;align-items:center;gap:0.7rem;margin-top:0.9rem;text-decoration:none;}
+    .rec-thumb{width:42px;height:42px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.2rem;background:var(--warm-tan);}
+    .rec-item .rname{font-size:0.85rem;font-weight:500;color:var(--mid);}
+    .rec-item:hover .rname{color:var(--terracotta);}
+    .rec-item .rsub{font-size:0.74rem;color:var(--mid);opacity:0.6;}
+    @media(max-width:900px){.layout{grid-template-columns:1fr;}.post-grid{grid-template-columns:repeat(2,1fr);}.sidebar{position:static;}}
+    @media(max-width:560px){.post-grid{grid-template-columns:1fr;}}
+    footer{background:var(--mid);color:var(--cream);padding:1.5rem 2rem;text-align:center;}
+    .footer-logo{font-family:var(--serif);font-size:1.5rem;font-weight:700;letter-spacing:0.1em;color:var(--light-mid);display:block;margin-bottom:0.2rem;}
+    footer p{font-size:0.82rem;opacity:0.7;margin-bottom:0.2rem;}
+    footer a{color:var(--light-mid);text-decoration:none;}
+    footer a:hover{text-decoration:underline;}
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════════════════════
-     NAV
-════════════════════════════════════════════════════════════ -->
-<nav>
-  <a class="nav-logo" href="index.html">How About Saturday</a>
-    <div class="search-wrap" id="search-wrap">
-    <input class="search-input" id="search-input" type="text" placeholder="Search recipes..." autocomplete="off" />
-    <span class="search-icon">&#9906;</span>
-    <div class="search-results" id="search-results"></div>
+<header class="site-header">
+  <div class="nav-top">
+    <div class="search-wrap-top" id="search-wrap">
+      <span class="search-glyph">&#9906;</span>
+      <input class="search-input" id="search-input" type="text" placeholder="Search" autocomplete="off" />
+      <div class="search-results" id="search-results"></div>
+    </div>
+    <a class="site-logo" href="index.html">How About Saturday</a>
+    <div class="nav-top-icons">
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu" style="background:none;border:none;">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links" id="nav-links">
-    <li class="nav-item">
+  <nav class="nav-links-row" id="nav-links">
+    <a class="nav-link current" href="index.html">Home</a>
+    <div class="nav-item-dd">
       <a href="all-recipes.html">Recipes <span class="nav-arrow">&#9660;</span></a>
       <div class="nav-dropdown">
         <a class="nav-dropdown-link" href="all-recipes.html">View All Recipes</a>
         <div class="nav-dropdown-divider"></div>
-        <div class="nav-sub-item">
-          <a href="beverage.html">Beverage <span class="sub-arrow">&#9664;</span></a>
-          <div class="nav-sub-dropdown">
-            <a href="matcha.html">Matcha</a>
-            <a href="cozy-sips.html">Cozy Sips</a>
-          </div>
-        </div>
-        <div class="nav-sub-item">
-          <a href="baking.html">Baking <span class="sub-arrow">&#9664;</span></a>
-          <div class="nav-sub-dropdown">
-            <a href="baking.html#cake">Cake</a>
-            <a href="baking.html#muffin">Muffin</a>
-            <a href="baking.html#cookies">Cookies</a>
-            <a href="baking.html#loaf">Loaf</a>
-            <a href="baking.html#tiramisu">Tiramisu</a>
-          </div>
-        </div>
+        <a class="nav-dropdown-item" href="beverage.html">Beverage</a>
+        <a class="nav-dropdown-item" href="baking.html">Baking</a>
       </div>
-    </li>
-    <li class="nav-item">
+    </div>
+    <div class="nav-item-dd">
       <a href="all-series.html">Series <span class="nav-arrow">&#9660;</span></a>
       <div class="nav-dropdown">
         <a class="nav-dropdown-link" href="all-series.html">View All Series</a>
@@ -288,243 +182,178 @@
         <a class="nav-dropdown-item" href="series-hojicha.html">Hojicha Series</a>
         <a class="nav-dropdown-item" href="series-holiday-cookies.html">Holiday Cookies</a>
       </div>
-    </li>
-        <li class="mob-section">
-      <button class="mob-header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Recipes <span class="mob-arrow">&#9660;</span></button>
-      <div class="mob-links">
-        <a class="mob-link" href="all-recipes.html">View All Recipes</a>
-        <a class="mob-link" href="beverage.html">Beverage</a>
-        <a class="mob-link" href="baking.html">Baking</a>
-      </div>
-    </li>
-    <li class="mob-section" style="padding:0.75rem 1.5rem;border-bottom:1px solid #f0d4a8;">
-      <div style="position:relative;display:flex;align-items:center;">
-        <input id="mob-search-input" type="text" placeholder="Search recipes..." autocomplete="off" style="width:100%;border:1.5px solid #f0d4a8;background:#faebd8;border-radius:20px;padding:0.4rem 2.2rem 0.4rem 0.9rem;font-size:0.82rem;font-family:'Jost',sans-serif;color:#5a3e32;outline:none;" />
-        <span style="position:absolute;right:0.7rem;opacity:0.4;font-size:0.8rem;">&#9906;</span>
-      </div>
-      <div id="mob-search-results" style="display:none;background:#fde9c8;border:1px solid #f0d4a8;border-radius:12px;margin-top:0.5rem;overflow:hidden;"></div>
-    </li>
-    <li class="mob-section">
-      <button class="mob-header" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')">Series <span class="mob-arrow">&#9660;</span></button>
-      <div class="mob-links">
-        <a class="mob-link" href="all-series.html">View All Series</a>
-        <a class="mob-link" href="series-world-cup.html">2026 World Cup Series</a>
-        <a class="mob-link" href="series-flavours.html">Flavours of My Childhood</a>
-        <a class="mob-link" href="series-matcha.html">Matcha Series</a>
-        <a class="mob-link" href="series-hojicha.html">Hojicha Series</a>
-        <a class="mob-link" href="series-holiday-cookies.html">Holiday Cookies</a>
-      </div>
-    </li>
-    <li class="mob-section"><a class="mob-plain" href="about.html">About</a></li>
-    <li class="mob-section"><a class="mob-plain" href="work-with-me.html">Work with Me</a></li>
-    <li class="mob-section"><a class="mob-plain" href="https://instagram.com/howaboutsaturday" target="_blank">Instagram &#8599;</a></li>
-    <li class="mob-section"><a class="mob-plain" href="https://www.youtube.com/@howaboutsaturday" target="_blank">YouTube &#8599;</a></li>
-    <li class="mob-section"><a class="mob-plain" href="https://www.tiktok.com/@howaboutsaturday_" target="_blank">TikTok &#8599;</a></li>
-    <li class="nav-item"><a href="about.html">About</a></li>
-    <li class="nav-item"><a href="work-with-me.html">Work with Me</a></li>
-    <li class="nav-item"><a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a></li>
-  </ul>
-</nav>
-
-<!-- ══════════════════════════════════════════════════════════
-     TOP BANNER AD 728×90 leaderboard
-     Replace the placeholder div below with your AdSense code
-════════════════════════════════════════════════════════════ -->
-
-
-<!-- ══════════════════════════════════════════════════════════
-     HERO SPLIT PAGE WITH FEATURED RECIPE
-════════════════════════════════════════════════════════════ -->
-<section class="hero">
-
-  <!-- LEFT text -->
-  <div class="hero-left">
-    <p class="hero-eyebrow">Baking · Slow Living · Cozy Drinks</p>
-    <h1>Recipes for a <em style="font-style:italic;color:#d4847a;font-weight:600;">slower</em> kind of Saturday</h1>
-    <p class="hero-sub">
-      Flour on the counter, matcha going cold on the bench, and something
-      already in the oven. Just a girl who loves slow weekends and sipping on matcha.
-    </p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="all-recipes.html">Browse Recipes</a>
-      <a class="btn btn-outline" href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">@howaboutsaturday</a>
     </div>
+    <a class="nav-link" href="about.html">About</a>
+    <a class="nav-link" href="work-with-me.html">Work with Me</a>
+    <a class="nav-link" href="lifestyle.html">Life Outside the Kitchen</a>
+    <a class="nav-link" href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a>
+    <div class="mob-section"><a class="mob-plain" href="all-recipes.html">Recipes</a></div>
+    <div class="mob-section"><a class="mob-plain" href="all-series.html">Series</a></div>
+    <div class="mob-section"><a class="mob-plain" href="about.html">About</a></div>
+    <div class="mob-section"><a class="mob-plain" href="work-with-me.html">Work with Me</a></div>
+    <div class="mob-section"><a class="mob-plain" href="lifestyle.html">Life Outside the Kitchen</a></div>
+    <div class="mob-section"><a class="mob-plain" href="https://instagram.com/howaboutsaturday" target="_blank">Instagram &#8599;</a></div>
+  </nav>
+</header>
+
+<div class="tagline-row">Baking · Slow Living · Cozy Drinks</div>
+
+<!-- THREE-COLUMN HERO -->
+<div class="hero3">
+  <div class="lifestyle-col">
+    <a class="lifestyle-card" href="lifestyle.html">
+      <div class="lifestyle-card-photo l1"></div>
+      <h3>Everything We Packed for a Week in Prince Edward County</h3>
+      <p class="dek">What made it into one shared carry-on</p>
+      <div class="lifestyle-meta">SEP 15 · AMY</div>
+    </a>
+    <a class="lifestyle-card" href="lifestyle.html">
+      <div class="lifestyle-card-photo l2"></div>
+      <h3>A Weekend in Muskoka, No Plans</h3>
+      <p class="dek">What happens when we leave the itinerary home</p>
+      <div class="lifestyle-meta">SEP 8 · AMY</div>
+    </a>
   </div>
 
-  <!-- RIGHT featured recipe card -->
-  <a class="hero-right" href="Recipe/honey-apple-coffee-cake.html">
-    <img src="images/honey-apple-coffee-cake.jpg" alt="Honey Apple Coffee Cake"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-    <div class="hero-right-placeholder" style="display:none;">🍊</div>
-    <div class="hero-card-info">
-      <p class="hero-card-tag">Featured · Cake</p>
-      <h2 class="hero-card-title">Honey Apple Coffee Cake</h2>
-      <p class="hero-card-desc">Apple butter layered inside, honey apple filling on top, streusel crust, and a BeeMaid Honey batter. Autumn in a pan.</p>
-      <div class="hero-card-meta">
-        <span>70 min</span>
-        <span>Serves 9</span>
-      </div>
+  <a class="featured-center" href="Recipe/pumpkin-matcha-latte-cake.html">
+    <div class="featured-photo">
+      <img src="images/pumpkin-matcha-latte-cake.jpg" alt="Pumpkin Matcha Latte Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="fallback">&#127803;</div>
     </div>
+    <h2>Pumpkin Matcha Latte Cake</h2>
+    <p class="dek">A spiced one-bowl pumpkin cake with a matcha mascarpone whipped cream on top. Autumn meets matcha.</p>
+    <div class="featured-meta"><span>70 min</span><span>Serves 9</span></div>
   </a>
 
+  <div class="allposts-col">
+    <div class="side-block-title">Recent Recipes <a href="all-recipes.html">View All</a></div>
+    <a class="ap-item" href="Recipe/honey-apple-coffee-cake.html">
+      <div class="ap-thumb"><img src="images/honey-apple-coffee-cake.jpg" alt="" onerror="this.parentElement.textContent='&#127822;';"></div>
+      <div><div class="apname">Honey Apple Coffee Cake</div><div class="apdate">SEP 13 · AMY</div></div>
+    </a>
+    <a class="ap-item" href="Recipe/ube-leche-flan-cake.html">
+      <div class="ap-thumb"><img src="images/ube-leche-flan-cake.jpg" alt="" onerror="this.parentElement.textContent='&#127815;';"></div>
+      <div><div class="apname">Ube Leche Flan Cake</div><div class="apdate">SEP 3 · AMY</div></div>
+    </a>
+    <a class="ap-item" href="Recipe/peach-earl-grey-matcha-latte.html">
+      <div class="ap-thumb"><img src="images/peach-earl-grey-matcha-latte.jpg" alt="" onerror="this.parentElement.textContent='&#127825;';"></div>
+      <div><div class="apname">Peach Earl Grey Matcha Latte</div><div class="apdate">AUG 29 · AMY</div></div>
+    </a>
+    <a class="ap-item" href="Recipe/peach-jasmine-upside-down-cake.html">
+      <div class="ap-thumb"><img src="images/peach-jasmine-upside-down-cake.jpg" alt="" onerror="this.parentElement.textContent='&#127825;';"></div>
+      <div><div class="apname">Peach Jasmine Upside Down Cake</div><div class="apdate">AUG 22 · AMY</div></div>
+    </a>
+    <a class="ap-item" href="Recipe/birthday-matcha.html">
+      <div class="ap-thumb"><img src="images/birthday-matcha.jpg" alt="" onerror="this.parentElement.textContent='&#127874;';"></div>
+      <div><div class="apname">Birthday Matcha</div><div class="apdate">AUG 15 · AMY</div></div>
+    </a>
+    <a class="ap-item" href="Recipe/pandan-coconut-burnt-cheesecake.html">
+      <div class="ap-thumb"><img src="images/pandan-coconut-burnt-cheesecake.jpg" alt="" onerror="this.parentElement.textContent='&#127807;';"></div>
+      <div><div class="apname">Pandan Coconut Burnt Cheesecake</div><div class="apdate">AUG 8 · AMY</div></div>
+    </a>
+  </div>
+</div>
+
+<!-- LIFE OUTSIDE THE KITCHEN -->
+<section class="life-section" id="life-section">
+  <div class="life-heading-wrap">
+    <div class="life-eyebrow">Travel · Slow Living · Everyday Life</div>
+    <h2 class="life-title">Life Outside the Kitchen</h2>
+    <p class="life-sub">Where we have been, what we packed, and the ordinary Saturdays in between.</p>
+  </div>
+  <div class="life-grid">
+    <a class="post-card" href="lifestyle.html">
+      <div class="post-card-photo ls1"><div class="fallback" style="display:flex;"></div></div>
+      <h3>Everything We Packed for a Week in Prince Edward County</h3>
+      <p class="dek">What made it into one shared carry-on</p>
+      <div class="post-meta">SEP 15 · AMY</div>
+    </a>
+    <a class="post-card" href="lifestyle.html">
+      <div class="post-card-photo ls2"><div class="fallback" style="display:flex;"></div></div>
+      <h3>A Weekend in Muskoka, No Plans</h3>
+      <p class="dek">What happens when we leave the itinerary home</p>
+      <div class="post-meta">SEP 8 · AMY</div>
+    </a>
+    <a class="post-card" href="lifestyle.html">
+      <div class="post-card-photo ls3"><div class="fallback" style="display:flex;"></div></div>
+      <h3>Our Apartment, Before and After</h3>
+      <p class="dek">Two years in, and what we would do again</p>
+      <div class="post-meta">SEP 1 · AMY</div>
+    </a>
+  </div>
+  <div class="view-more"><a class="btn btn-primary" href="lifestyle.html">Browse Lifestyle Posts</a></div>
 </section>
 
-<!-- ══════════════════════════════════════════════════════════
-     AD BETWEEN FEATURED & RECIPES (728×90 leaderboard)
-════════════════════════════════════════════════════════════ -->
+<!-- TABS + GRID + SIDEBAR -->
+<div class="layout">
+  <div>
+    <div class="tabs">
+      <span class="tab active" data-tab="latest">Latest</span>
+      <span class="tab" data-tab="cake">Cake</span>
+      <span class="tab" data-tab="matcha">Matcha</span>
+      <span class="tab" data-tab="cozy-sips">Cozy Sips</span>
+    </div>
+    <div class="post-grid" id="post-grid">
+      <a class="post-card" data-cat="cake" href="Recipe/honey-apple-coffee-cake.html">
+        <div class="post-card-photo"><img src="images/honey-apple-coffee-cake.jpg" alt="Honey Apple Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="fallback">&#127822;</div></div>
+        <h3>Honey Apple Coffee Cake</h3><p class="dek">Cake</p><div class="post-meta">SEP 13 · AMY</div>
+      </a>
+      <a class="post-card" data-cat="cake" href="Recipe/ube-leche-flan-cake.html">
+        <div class="post-card-photo"><img src="images/ube-leche-flan-cake.jpg" alt="Ube Leche Flan Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="fallback">&#127815;</div></div>
+        <h3>Ube Leche Flan Cake</h3><p class="dek">Cake</p><div class="post-meta">SEP 3 · AMY</div>
+      </a>
+      <a class="post-card" data-cat="matcha" href="Recipe/peach-earl-grey-matcha-latte.html">
+        <div class="post-card-photo"><img src="images/peach-earl-grey-matcha-latte.jpg" alt="Peach Earl Grey Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="fallback">&#127825;</div></div>
+        <h3>Peach Earl Grey Matcha Latte</h3><p class="dek">Matcha</p><div class="post-meta">AUG 29 · AMY</div>
+      </a>
+      <a class="post-card" data-cat="cake" href="Recipe/peach-jasmine-upside-down-cake.html">
+        <div class="post-card-photo"><img src="images/peach-jasmine-upside-down-cake.jpg" alt="Peach Jasmine Upside Down Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="fallback">&#127825;</div></div>
+        <h3>Peach Jasmine Upside Down Cake</h3><p class="dek">Cake</p><div class="post-meta">AUG 22 · AMY</div>
+      </a>
+      <a class="post-card" data-cat="matcha" href="Recipe/birthday-matcha.html">
+        <div class="post-card-photo"><img src="images/birthday-matcha.jpg" alt="Birthday Matcha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="fallback">&#127874;</div></div>
+        <h3>Birthday Matcha</h3><p class="dek">Matcha</p><div class="post-meta">AUG 15 · AMY</div>
+      </a>
+      <a class="post-card" data-cat="cozy-sips" href="Recipe/brown-sugar-bourbon-milk-tea.html">
+        <div class="post-card-photo"><img src="images/brown-sugar-bourbon-milk-tea.jpg" alt="Roasted Brown Sugar Bourbon Milk Tea" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="fallback">&#127867;</div></div>
+        <h3>Roasted Brown Sugar Bourbon Milk Tea</h3><p class="dek">Cozy Sips</p><div class="post-meta">AUG 1 · AMY</div>
+      </a>
+    </div>
+    <div class="view-more"><a class="btn btn-primary" href="all-recipes.html">Browse All Recipes</a></div>
+  </div>
 
-
-<!-- ══════════════════════════════════════════════════════════
-     RECIPES INSTAGRAM GRID
-════════════════════════════════════════════════════════════ -->
-<section id="recipes" style="max-width:1000px;margin:0 auto;padding:2rem 2rem 3rem;">
-
-  <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
+  <aside class="sidebar">
     <div>
-      <a href="all-recipes.html" class="section-label" style="text-decoration:none;color:inherit;">All Recipes</a>
-      <h2 class="section-title" style="text-align:left;margin-bottom:0;">From the kitchen</h2>
+      <img class="side-avatar" src="images/amy-about.jpg" alt="Amy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="side-avatar-fallback">&#127807;</div>
+      <div class="side-name">Amy</div>
+      <a class="side-handle" href="https://instagram.com/howaboutsaturday">@howaboutsaturday</a>
+      <p class="side-tag">Based in Toronto, I bake from memory and make things from scratch. Cozy recipes, seasonal drinks, and slow weekend energy.</p>
+      <form class="side-form" id="side-kit-form">
+        <input type="email" name="email_address" placeholder="Your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
     </div>
-    <div class="filter-bar" style="margin-bottom:0;">
-      <div class="filter-dropdown">
-        <button class="filter-btn" id="btn-beverage" onclick="toggleDropdown('beverage')">Beverage <span class="arrow">▼</span></button>
-        <div class="dropdown-menu" id="menu-beverage">
-          <button class="dropdown-item" onclick="filterRecipes('matcha','Matcha','beverage')">Matcha</button>
-          <button class="dropdown-item" onclick="filterRecipes('cozy-sips','Cozy Sips','beverage')">Cozy Sips</button>
-        </div>
-      </div>
-      <div class="filter-dropdown">
-        <button class="filter-btn" id="btn-baking" onclick="toggleDropdown('baking')">Baking <span class="arrow">▼</span></button>
-        <div class="dropdown-menu" id="menu-baking">
-          <button class="dropdown-item" onclick="filterRecipes('cake','Cake','baking')">Cake</button>
-          <button class="dropdown-item" onclick="filterRecipes('muffin','Muffin','baking')">Muffin</button>
-          <button class="dropdown-item" onclick="filterRecipes('cookies','Cookies','baking')">Cookies</button>
-          <button class="dropdown-item" onclick="filterRecipes('loaf','Loaf','baking')">Loaf</button>
-          <button class="dropdown-item" onclick="filterRecipes('tiramisu','Tiramisu','baking')">Tiramisu</button>
-        </div>
-      </div>
-      <button class="filter-clear" id="clear-filter" onclick="clearFilter()" style="display:none;">✕ Clear</button>
+    <div>
+      <div class="side-block-title">Series <a href="all-series.html">View All</a></div>
+      <a class="rec-item" href="series-world-cup.html"><div class="rec-thumb">&#9917;</div><div><div class="rname">2026 World Cup Series</div><div class="rsub">Series</div></div></a>
+      <a class="rec-item" href="series-flavours.html"><div class="rec-thumb">&#127834;</div><div><div class="rname">Flavours of My Childhood</div><div class="rsub">Series</div></div></a>
+      <a class="rec-item" href="series-matcha.html"><div class="rec-thumb">&#127861;</div><div><div class="rname">Matcha Series</div><div class="rsub">Series</div></div></a>
     </div>
-  </div>
+  </aside>
+</div>
 
-  <div class="gram-grid" id="gram-grid">
-    <a class="gram-tile" href="Recipe/honey-apple-coffee-cake.html" data-category="cake" data-index="0"><img src="images/honey-apple-coffee-cake.jpg" alt="Honey Apple Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍎</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Honey Apple Coffee Cake</p></div></a>
-    <a class="gram-tile" href="Recipe/ube-leche-flan-cake.html" data-category="cake" data-index="1"><img src="images/ube-leche-flan-cake.jpg" alt="Ube Leche Flan Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍇</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Ube Leche Flan Cake</p></div></a>
-    <a class="gram-tile" href="Recipe/peach-earl-grey-matcha-latte.html" data-category="matcha" data-index="2"><img src="images/peach-earl-grey-matcha-latte.jpg" alt="Peach Earl Grey Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍑</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Peach Earl Grey Matcha Latte</p></div></a>
-    <a class="gram-tile" href="Recipe/peach-jasmine-upside-down-cake.html" data-category="cake" data-index="3"><img src="images/peach-jasmine-upside-down-cake.jpg" alt="Peach Jasmine Upside Down Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍑</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Peach Jasmine Upside Down Cake</p></div></a>
-    <a class="gram-tile" href="Recipe/birthday-matcha.html" data-category="matcha" data-index="4"><img src="images/birthday-matcha.jpg" alt="Birthday Matcha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🎂</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Birthday Matcha</p></div></a>
-    <a class="gram-tile" href="Recipe/pandan-coconut-burnt-cheesecake.html" data-category="cake" data-index="5"><img src="images/pandan-coconut-burnt-cheesecake.jpg" alt="Pandan Coconut Burnt Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍃</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Pandan Coconut Burnt Cheesecake</p></div></a>
-    <a class="gram-tile" href="Recipe/lemon-poppy-seed-rolls.html" data-category="baking" data-index="6"><img src="images/lemon-poppy-seed-rolls.jpg" alt="Lemon Poppy Seed Rolls" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍋</div><div class="gram-hover"><p class="gram-hover-tag">Baking</p><p class="gram-hover-title">Lemon Poppy Seed Rolls</p></div></a>
-    <a class="gram-tile" href="Recipe/honey-butter-matcha-latte.html" data-category="matcha" data-index="7"><img src="images/honey-butter-matcha-latte.jpg" alt="Honey Butter Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Honey Butter Matcha Latte</p></div></a>
-    <a class="gram-tile" href="Recipe/strawberry-osmanthus-shortcake.html" data-category="cake" data-index="8"><img src="images/strawberry-osmanthus-shortcake.jpg" alt="Strawberry Osmanthus Shortcake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍓</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Strawberry Osmanthus Shortcake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/mango-matcha-latte.html" data-category="matcha" data-index="9"><img src="images/mango-matcha-latte.jpg" alt="Mango Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🥭</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Mango Matcha Latte</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/mango-sago-mochi-pudding.html" data-category="cake" data-index="10"><img src="images/mango-sago-mochi-pudding.jpg" alt="Mango Sago Butter Mochi Pudding" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🥭</div><div class="gram-hover"><p class="gram-hover-tag">Baking</p><p class="gram-hover-title">Mango Sago Butter Mochi Pudding</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/brown-sugar-bourbon-milk-tea.html" data-category="drinks" data-index="11"><img src="images/brown-sugar-bourbon-milk-tea.jpg" alt="Roasted Brown Sugar Bourbon Milk Tea" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🧋</div><div class="gram-hover"><p class="gram-hover-tag">Drinks</p><p class="gram-hover-title">Roasted Brown Sugar Bourbon Milk Tea</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/banana-bread.html" data-category="baking" data-index="12"><img src="images/banana-bread.jpg" alt="The Perfect Banana Bread" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍌</div><div class="gram-hover"><p class="gram-hover-tag">Loaf</p><p class="gram-hover-title">The Perfect Banana Bread</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/coconut-matcha-lychee-cloud.html" data-category="matcha" data-index="13"><img src="images/coconut-matcha-lychee-cloud.jpg" alt="Coconut Matcha Lychee Cloud" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Coconut Matcha Lychee Cloud</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/pandan-leche-flan-cake.html" data-category="cake" data-index="14"><img src="images/pandan-leche-flan-cake.jpg" alt="Pandan Leche Flan Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍮</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Pandan Leche Flan Cake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/milky-oolong-matcha-latte.html" data-category="matcha" data-index="15"><img src="images/milky-oolong-matcha-latte.jpg" alt="Milky Oolong Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Milky Oolong Matcha Latte</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/butter-tart-cake.html" data-category="cake" data-index="16"><img src="images/butter-tart-cake.jpg" alt="Butter Tart Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🥧</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Butter Tart Cake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/guayaba-tres-leches.html" data-category="cake" data-index="17"><img src="images/guayaba-tres-leches.jpg" alt="Guayaba Tres Leches" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍓</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Guayaba (Guava) Tres Leches</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/chamomile-orange-blossom-basque-cheesecake.html" data-category="cake" data-index="18"><img src="images/chamomile-orange-blossom-basque-cheesecake.jpg" alt="Chamomile Orange Blossom Basque Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🌼</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Chamomile Orange Blossom Basque Cheesecake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/fraisier.html" data-category="cake" data-index="19"><img src="images/fraisier.jpg" alt="Fraisier" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍓</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Fraisier</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/matcha-red-bean-coffee-cake.html" data-category="matcha" data-index="20"><img src="images/matcha-red-bean-coffee-cake.jpg" alt="Matcha Red Bean Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Matcha Red Bean Coffee Cake</p></div></a>
-
-    <a class="gram-tile" style="display:none;" href="Recipe/rhubarb-pistachio-cake.html" data-category="cake" data-index="21"><img src="images/rhubarb-pistachio-cake.jpg" alt="Upside Down Rhubarb Pistachio Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🌸</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Upside Down Rhubarb Pistachio Cake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/matcha-butter-mochi-tang-yuan.html" data-category="matcha" data-index="22"><img src="images/matcha-butter-mochi-tang-yuan.jpg" alt="Matcha Butter Mochi Tang Yuan" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Matcha Butter Mochi Tang Yuan</p></div></a>
-
-    <a class="gram-tile" style="display:none;" href="Recipe/jasmine-honey-cake.html" data-category="cake" data-index="23"><img src="images/jasmine-honey-cake.jpg" alt="Jasmine Honey Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍯</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Jasmine Honey Cake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/pandan-custard-matcha-latte.html" data-category="matcha" data-index="24"><img src="images/pandan-custard-matcha-latte.jpg" alt="Pandan Custard Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🌿</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Pandan Custard Matcha Latte</p></div></a>
-<a class="gram-tile" style="display:none;" href="Recipe/pandan-custard.html" data-category="others" data-index="25"><img src="images/pandan-custard.jpg" alt="Pandan Custard" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🌿</div><div class="gram-hover"><p class="gram-hover-tag">Others</p><p class="gram-hover-title">Pandan Custard</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/pandan-coconut-custard-cake.html" data-category="cake" data-index="26"><img src="images/pandan-coconut-custard-cake.jpg" alt="Pandan Coconut Custard Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🌿</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Pandan Coconut Custard Cake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/orange-earl-grey-chocolate-cake.html" data-category="cake" data-index="27"><img src="images/orange-earl-grey-chocolate-cake.jpg" alt="Orange Earl Grey Chocolate Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍊</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Orange Earl Grey Chocolate Cake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/jasmine-matcha-latte.html" data-category="matcha" data-index="28"><img src="images/jasmine-matcha-latte.jpg" alt="Jasmine Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Jasmine Matcha Latte</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/hojicha-tiramisu.html" data-category="tiramisu" data-index="29"><img src="images/hojicha-tiramisu.jpg" alt="Hojicha Tiramisu" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍮</div><div class="gram-hover"><p class="gram-hover-tag">Tiramisu</p><p class="gram-hover-title">Hojicha Tiramisu</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/strawberry-hojicha-cheesecake.html" data-category="cake" data-index="30"><img src="images/strawberry-hojicha-cheesecake.jpg" alt="Strawberry Hojicha Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍓</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Strawberry Hojicha Cheesecake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/guava-oolong-milk-tea.html" data-category="cozy-sips" data-index="31"><img src="images/guava-oolong-milk-tea.jpg" alt="Guava Oolong Cream Cheese Milk Tea" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🧋</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Guava Oolong Cream Cheese Milk Tea</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/grape-tea-fizz.html" data-category="cozy-sips" data-index="32"><img src="images/grape-tea-fizz.jpg" alt="Grape Tea Fizz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍇</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Grape Tea Fizz</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/lemon-iced-tea-cake.html" data-category="loaf" data-index="33"><img src="images/lemon-iced-tea-cake.jpg" alt="Lemon Iced Tea Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍋</div><div class="gram-hover"><p class="gram-hover-tag">Loaf</p><p class="gram-hover-title">Lemon Iced Tea Cake</p></div></a>
-
-    <a class="gram-tile" style="display:none;" href="Recipe/almond-hot-chocolate.html" data-category="cozy-sips" data-index="34"><img src="images/almond-hot-chocolate.jpg" alt="Almond Hot Chocolate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍫</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Almond Hot Chocolate</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/earl-grey-creme-brulee-latte.html" data-category="cozy-sips" data-index="35"><img src="images/earl-grey-creme-brulee-latte.jpg" alt="Earl Grey Creme Brulee Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">☕</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Earl Grey Creme Brulee Latte</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/london-fog-hojicha.html" data-category="cozy-sips" data-index="36"><img src="images/london-fog-hojicha.jpg" alt="London Fog Hojicha" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🫖</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">London Fog Hojicha</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/ube-hojicha-latte.html" data-category="cozy-sips" data-index="37"><img src="images/ube-hojicha-latte.jpg" alt="Ube Hojicha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Ube Hojicha Latte</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/black-sesame-hojicha-latte.html" data-category="cozy-sips" data-index="38"><img src="images/black-sesame-hojicha-latte.jpg" alt="Black Sesame Hojicha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🖤</div><div class="gram-hover"><p class="gram-hover-tag">Cozy Sips</p><p class="gram-hover-title">Black Sesame Hojicha Latte</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/apple-pie-matcha-latte.html" data-category="matcha" data-index="39"><img src="images/apple-pie-matcha-latte.jpg" alt="Apple Pie Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍎</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Apple Pie Matcha Latte</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/caramel-matcha-latte.html" data-category="matcha" data-index="40"><img src="images/caramel-matcha-latte.jpg" alt="Caramel Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Caramel Matcha Latte</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/maple-pumpkin-matcha-latte.html" data-category="matcha" data-index="41"><img src="images/maple-pumpkin-matcha-latte.jpg" alt="Maple Pumpkin Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🎃</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Maple Pumpkin Matcha Latte</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/tofu-pudding-matcha-latte.html" data-category="matcha" data-index="42"><img src="images/tofu-pudding-matcha-latte.jpg" alt="Tofu Pudding Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Tofu Pudding Matcha Latte</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/pickle-matcha-latte.html" data-category="matcha" data-index="43"><img src="images/pickle-matcha-latte.jpg" alt="Pickle Matcha Latte" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🥒</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Pickle Matcha Latte</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/matcha-latte-coffee-cake.html" data-category="matcha" data-index="44"><img src="images/matcha-latte-coffee-cake.jpg" alt="Matcha Latte Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Matcha Latte Coffee Cake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/matcha-brown-butter-blondie.html" data-category="matcha" data-index="45"><img src="images/matcha-brown-butter-blondie.jpg" alt="Matcha Brown Butter Brookie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Matcha Brown Butter Brookie</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/blueberry-muffin-tea-matcha-snowballs.html" data-category="matcha" data-index="46"><img src="images/blueberry-muffin-tea-matcha-snowballs.jpg" alt="Blueberry Muffin Tea Matcha Snowballs" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🫐</div><div class="gram-hover"><p class="gram-hover-tag">Matcha</p><p class="gram-hover-title">Blueberry Muffin Tea Matcha Snowballs</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/jasmine-chiffon-cake.html" data-category="cake" data-index="47"><img src="images/jasmine-chiffon-cake.jpg" alt="Jasmine Chiffon Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Jasmine Chiffon Cake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/hojicha-jasmine-longan-cake.html" data-category="cake" data-index="48"><img src="images/hojicha-jasmine-longan-cake.jpg" alt="Hojicha Jasmine Longan Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Hojicha Jasmine Longan Cake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/tofu-hua-chiffon-cake.html" data-category="cake" data-index="49"><img src="images/tofu-hua-chiffon-cake.jpg" alt="Tofu Hua Chiffon Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Tofu Hua Chiffon Cake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/london-fog-cake.html" data-category="cake" data-index="50"><img src="images/london-fog-cake.jpg" alt="London Fog Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🫖</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">London Fog Cake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/thai-green-tea-burnt-cheesecake.html" data-category="cake" data-index="51"><img src="images/thai-green-tea-burnt-cheesecake.jpg" alt="Thai Green Tea Burnt Cheesecake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Thai Green Tea Burnt Cheesecake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/salted-caramel-oolong-cake.html" data-category="cake" data-index="52"><img src="images/salted-caramel-oolong-cake.jpg" alt="Salted Caramel Oolong Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Salted Caramel Oolong Cake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/caramel-pumpkin-spiced-latte-cake.html" data-category="cake" data-index="53"><img src="images/caramel-pumpkin-spiced-latte-cake.jpg" alt="Caramel Pumpkin Spiced Latte Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🎃</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Caramel Pumpkin Spiced Latte Cake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/cinnamon-plum-coffee-cake.html" data-category="cake" data-index="54"><img src="images/cinnamon-plum-coffee-cake.jpg" alt="Cinnamon Plum Coffee Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍑</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Cinnamon Plum Coffee Cake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/carrot-cake.html" data-category="cake" data-index="55"><img src="images/carrot-cake.jpg" alt="Carrot Cake" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🥕</div><div class="gram-hover"><p class="gram-hover-tag">Cake</p><p class="gram-hover-title">Carrot Cake</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/peppermint-chocolate-brownie.html" data-category="cookies" data-index="56"><img src="images/peppermint-chocolate-brownie.jpg" alt="Peppermint Chocolate Brownie" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍫</div><div class="gram-hover"><p class="gram-hover-tag">Cookies</p><p class="gram-hover-title">Peppermint Chocolate Brownie</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/jasmine-creme-brulee-shortbread.html" data-category="cookies" data-index="57"><img src="images/jasmine-creme-brulee-shortbread.jpg" alt="Jasmine Creme Brulee Shortbread" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍵</div><div class="gram-hover"><p class="gram-hover-tag">Cookies</p><p class="gram-hover-title">Jasmine Creme Brulee Shortbread</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/saigon-chai-gingerbread-cookies.html" data-category="cookies" data-index="58"><img src="images/saigon-chai-gingerbread-cookies.jpg" alt="Saigon Chai Gingerbread Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍪</div><div class="gram-hover"><p class="gram-hover-tag">Cookies</p><p class="gram-hover-title">Saigon Chai Gingerbread Cookies</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/vanilla-cappuccino-choc-chip-cookies.html" data-category="cookies" data-index="59"><img src="images/vanilla-cappuccino-choc-chip-cookies.jpg" alt="Vanilla Cappuccino Choc Chip Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍪</div><div class="gram-hover"><p class="gram-hover-tag">Cookies</p><p class="gram-hover-title">Vanilla Cappuccino Choc Chip Cookies</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/peanut-butter-thumbprint-cookies.html" data-category="cookies" data-index="60"><img src="images/peanut-butter-thumbprint-cookies.jpg" alt="Peanut Butter Thumbprint Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🥜</div><div class="gram-hover"><p class="gram-hover-tag">Cookies</p><p class="gram-hover-title">Peanut Butter Thumbprint Cookies</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/black-sesame-pumpkin-loaf.html" data-category="loaf" data-index="61"><img src="images/black-sesame-pumpkin-loaf.jpg" alt="Black Sesame Pumpkin Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🖤</div><div class="gram-hover"><p class="gram-hover-tag">Loaf</p><p class="gram-hover-title">Black Sesame Pumpkin Loaf</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/apple-crumble-loaf.html" data-category="loaf" data-index="62"><img src="images/apple-crumble-loaf.jpg" alt="Apple Crumble Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍏</div><div class="gram-hover"><p class="gram-hover-tag">Loaf</p><p class="gram-hover-title">Apple Crumble Loaf</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/earl-grey-orange-loaf.html" data-category="loaf" data-index="63"><img src="images/earl-grey-orange-loaf.jpg" alt="Earl Grey Orange Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍊</div><div class="gram-hover"><p class="gram-hover-tag">Loaf</p><p class="gram-hover-title">Earl Grey Orange Loaf</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/orange-spice-tea-loaf.html" data-category="loaf" data-index="64"><img src="images/orange-spice-tea-loaf.jpg" alt="Orange Spice Tea Loaf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍊</div><div class="gram-hover"><p class="gram-hover-tag">Loaf</p><p class="gram-hover-title">Orange Spice Tea Loaf</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/apple-cider-donut.html" data-category="muffin" data-index="65"><img src="images/apple-cider-donut.jpg" alt="Apple Cider Donut" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍩</div><div class="gram-hover"><p class="gram-hover-tag">Muffin</p><p class="gram-hover-title">Apple Cider Donut</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/apple-custard-donut.html" data-category="muffin" data-index="66"><img src="images/apple-custard-donut.jpg" alt="Apple Custard Donut" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍩</div><div class="gram-hover"><p class="gram-hover-tag">Muffin</p><p class="gram-hover-title">Apple Custard Donut</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/zucchini-muffin.html" data-category="muffin" data-index="67"><img src="images/zucchini-muffin.jpg" alt="Zucchini Chai Muffin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🥒</div><div class="gram-hover"><p class="gram-hover-tag">Muffin</p><p class="gram-hover-title">Zucchini Chai Muffin</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/almond-poppy-berries-muffin.html" data-category="muffin" data-index="68"><img src="images/almond-poppy-berries-muffin.jpg" alt="Almond Poppy Berries Muffin" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🫐</div><div class="gram-hover"><p class="gram-hover-tag">Muffin</p><p class="gram-hover-title">Almond Poppy Berries Muffin</p></div></a>
-    <a class="gram-tile" style="display:none;" href="Recipe/apple-crisp.html" data-category="others" data-index="69"><img src="images/apple-crisp.jpg" alt="Apple Crisp" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="gram-fallback">🍎</div><div class="gram-hover"><p class="gram-hover-tag">Others</p><p class="gram-hover-title">Apple Crisp</p></div></a>
-  </div>
-
-</section>
-
-<!-- ══════════════════════════════════════════════════════════
-     ABOUT
-════════════════════════════════════════════════════════════ -->
-<section class="about-section" id="about-section">
-  <img src="images/amy-about.jpg" alt="Amy" style="width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:top;display:block;margin:0 auto;" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-  <div style="display:none;font-size:3rem;text-align:center;">🌿</div>
-  <p class="about-name">Amy</p>
-  <a class="about-handle" href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener" style="text-decoration:none;">@howaboutsaturday</a>
-  <p class="about-text">
-    Based in Toronto, I bake from memory and make things from scratch. How About Saturday is my little corner of the internet for cozy recipes, seasonal drinks, and slow weekend energy. So glad you are here.
-  </p>
-  </p>
-  <br />
-  <div class="about-btns">
-  <a class="btn" style="background:#5a3e32;color:#fde9c8;font-size:1rem;font-weight:700;padding:0.9rem 2.2rem;letter-spacing:0.1em;" href="mailto:howaboutsaturday.av@gmail.com">Work With Me</a>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════════════════
-     AD PRE-FOOTER LEADERBOARD (970×90)
-════════════════════════════════════════════════════════════ -->
-
-
-<!-- ══════════════════════════════════════════════════════════
-     FOOTER
-════════════════════════════════════════════════════════════ -->
+<!-- NEWSLETTER -->
 <div style="max-width:820px;margin:0 auto;padding:2rem 2rem 4rem;text-align:center;">
   <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#d4847a;margin-bottom:0.5rem;">Newsletter</p>
-  <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;font-weight:700;color:#5383c6;margin-bottom:0.75rem;white-space:nowrap;text-align:center;">A little something for your Saturday</h2>
+  <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;font-weight:700;color:#5383c6;margin-bottom:0.75rem;text-align:center;">A little something for your Saturday</h2>
   <p style="font-size:0.88rem;color:#5a3e32;line-height:1.75;max-width:480px;margin:0 auto 2rem;">Be the first to know about new recipes, exclusive baking tips, and what goes on at How About Saturday.</p>
   <div style="max-width:480px;margin:0 auto;">
     <div id="kit-form-wrap">
       <form id="kit-form" style="margin:0;">
-        <input type="text" name="fields[first_name]" placeholder="First name" required
-          style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
-      <input type="email" id="kit-email" name="email_address" placeholder="Your email address" required
-          style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
-        <button type="submit"
-          style="width:100%;background:#5383c6;color:#fde9c8;border:none;border-radius:20px;padding:0.65rem 1.5rem;font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">
-          Subscribe
-        </button>
+        <input type="text" name="fields[first_name]" placeholder="First name" required style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
+        <input type="email" id="kit-email" name="email_address" placeholder="Your email address" required style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
+        <button type="submit" style="width:100%;background:#5383c6;color:#fde9c8;border:none;border-radius:20px;padding:0.65rem 1.5rem;font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">Subscribe</button>
         <p style="font-size:0.75rem;color:#5a3e32;opacity:0.6;text-align:center;margin-top:0.75rem;">No spam. Unsubscribe at any time.</p>
       </form>
       <div id="kit-success" style="display:none;text-align:center;padding:1rem 0;">
@@ -532,324 +361,17 @@
         <p style="font-size:0.88rem;color:#5a3e32;">Check your email to confirm your subscription.</p>
       </div>
     </div>
-    <script>
-    (function(){
-      var forms = document.querySelectorAll('#kit-form');
-      forms.forEach(function(form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          var email = form.querySelector('#kit-email') || form.querySelector('[name="email_address"]');
-          if(!email || !email.value) return;
-          var data = new FormData();
-          data.append('email_address', email.value);
-          var iframe = document.createElement('iframe');
-            iframe.name = 'kit_inline_iframe';
-            iframe.style.display = 'none';
-            document.body.appendChild(iframe);
-            form.setAttribute('target', 'kit_inline_iframe');
-            form.setAttribute('action', 'https://app.kit.com/forms/9698796/subscriptions');
-            form.setAttribute('method', 'post');
-            form.submit();
-            setTimeout(function() {
-              form.style.display = 'none';
-              var success = form.parentNode.querySelector('#kit-success');
-              if(success) success.style.display = 'block';
-            }, 1000);
-        });
-      });
-    })();
-    </script>
   </div>
 </div>
+
 <footer>
   <span class="footer-logo">How About Saturday</span>
   <p>Baking, slow living &amp; cozy drinks.</p>
-  <p style="margin-top:0.75rem;"><a href="https://instagram.com/howaboutsaturday" target="_blank">Instagram</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/@howaboutsaturday" target="_blank">YouTube</a> &nbsp;·&nbsp; <a href="https://www.tiktok.com/@howaboutsaturday_" target="_blank">TikTok</a></p>
-  <p style="margin-top:0.5rem;opacity:0.5;font-size:0.75rem;">© 2025 How About Saturday · All rights reserved. · <a href="work-with-me.html" style="color:#fde9c8;text-decoration:underline;">Work with Me</a> · <a href="privacy-policy.html" style="color:#fde9c8;text-decoration:underline;">Privacy Policy</a></p>
+  <p style="margin-top:0.75rem;"><a href="https://instagram.com/howaboutsaturday" target="_blank">Instagram</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@howaboutsaturday" target="_blank">YouTube</a> &nbsp;&middot;&nbsp; <a href="https://www.tiktok.com/@howaboutsaturday_" target="_blank">TikTok</a></p>
+  <p style="margin-top:0.5rem;opacity:0.5;font-size:0.75rem;">&copy; 2026 How About Saturday &middot; All rights reserved. &middot; <a href="work-with-me.html" style="color:#fde9c8;text-decoration:underline;">Work with Me</a> &middot; <a href="privacy-policy.html" style="color:#fde9c8;text-decoration:underline;">Privacy Policy</a></p>
 </footer>
 
-<script>
-  let activeCategory = null;
-
-  function toggleDropdown(name) {
-    const menu = document.getElementById('menu-' + name);
-    const btn = document.getElementById('btn-' + name);
-    const others = ['beverage','baking'].filter(n => n !== name);
-    others.forEach(n => {
-      document.getElementById('menu-' + n).classList.remove('open');
-      document.getElementById('btn-' + n).classList.remove('open');
-    });
-    menu.classList.toggle('open');
-    btn.classList.toggle('open');
-  }
-
-  function filterRecipes(category, label, parent) {
-    activeCategory = category;
-    const tiles = document.querySelectorAll('.gram-tile');
-    tiles.forEach(tile => {
-      tile.style.display = tile.dataset.category === category ? '' : 'none';
-    });
-    document.getElementById('btn-' + parent).textContent = label + ' ▼';
-    document.getElementById('btn-' + parent).classList.add('active');
-    document.getElementById('menu-' + parent).classList.remove('open');
-    document.getElementById('btn-' + parent).classList.remove('open');
-    document.getElementById('clear-filter').style.display = 'inline-block';
-    checkNoResults();
-  }
-
-  function clearFilter() {
-    activeCategory = null;
-    const tiles = document.querySelectorAll('.gram-tile');
-    var isMobile = window.innerWidth <= 700; tiles.forEach((t, i) => { t.style.display = i < (isMobile ? 10 : 9) ? '' : 'none'; });
-    document.getElementById('btn-beverage').textContent = 'Beverage ▼';
-    document.getElementById('btn-baking').textContent = 'Baking ▼';
-    document.getElementById('btn-beverage').classList.remove('active');
-    document.getElementById('btn-baking').classList.remove('active');
-    document.getElementById('clear-filter').style.display = 'none';
-    const nr = document.querySelector('.gram-no-results');
-    if (nr) nr.style.display = 'none';
-  }
-
-  function checkNoResults() {
-    const visible = document.querySelectorAll('.gram-tile:not([style*="display: none"])').length;
-    const nr = document.querySelector('.gram-no-results');
-    if (nr) nr.style.display = visible === 0 ? 'block' : 'none';
-  }
-
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.filter-dropdown')) {
-      document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('open'));
-    }
-  });
-</script>
-
-
-<script>
-  (function(){
-    var h=document.getElementById('hamburger'),n=document.getElementById('nav-links');
-    if(!h||!n)return;
-    function u(){h.style.display=window.innerWidth<=860?'flex':'none';if(window.innerWidth>860)n.classList.remove('open');}
-    h.addEventListener('click',function(){n.classList.toggle('open');});
-    window.addEventListener('resize',u);u();
-  })();
-</script>
-<script>
-  (function(){
-    var tiles = document.querySelectorAll('.gram-tile');
-    var isMobile = window.innerWidth <= 700;
-    var show = isMobile ? 10 : 9;
-    tiles.forEach(function(t, i){ t.style.display = i < show ? '' : 'none'; });
-    window.addEventListener('resize', function(){
-      if(document.querySelector('.filter-btn.active') && document.querySelector('.filter-btn.active').dataset.filter !== 'all') return;
-      var mob = window.innerWidth <= 700;
-      var s = mob ? 10 : 9;
-      tiles.forEach(function(t, i){ t.style.display = i < s ? '' : 'none'; });
-    });
-  })();
-</script>
-
-<script>
-(function(){
-  var recipes = [
-    {title:"Almond Hot Chocolate with Jasmine Whipped Cream",tag:"Drinks",url:"Recipe/almond-hot-chocolate.html"},
-    {title:"Almond Poppy Berries Muffin",tag:"Muffin",url:"Recipe/almond-poppy-berries-muffin.html"},
-    {title:"Apple Cider Donut",tag:"Muffin",url:"Recipe/apple-cider-donut.html"},
-    {title:"Apple Crisp",tag:"Baking",url:"Recipe/apple-crisp.html"},
-    {title:"Apple Crumble Loaf",tag:"Loaf",url:"Recipe/apple-crumble-loaf.html"},
-    {title:"Apple Custard Donut",tag:"Baking",url:"Recipe/apple-custard-donut.html"},
-    {title:"Apple Pie Matcha Latte",tag:"Matcha",url:"Recipe/apple-pie-matcha-latte.html"},
-    {title:"The Perfect Banana Bread",tag:"Loaf",url:"Recipe/banana-bread.html"},
-    {title:"Black Sesame Hojicha Latte",tag:"Drinks",url:"Recipe/black-sesame-hojicha-latte.html"},
-    {title:"Black Sesame Pumpkin Loaf",tag:"Loaf",url:"Recipe/black-sesame-pumpkin-loaf.html"},
-    {title:"Blueberry Muffin Tea Matcha Snowballs",tag:"Cookies",url:"Recipe/blueberry-muffin-tea-matcha-snowballs.html"},
-    {title:"Roasted Brown Sugar Bourbon Milk Tea with Grass Jelly",tag:"Drinks",url:"Recipe/brown-sugar-bourbon-milk-tea.html"},
-    {title:"Butter Tart Cake",tag:"Cake",url:"Recipe/butter-tart-cake.html"},
-    {title:"Caramel Matcha Latte",tag:"Matcha",url:"Recipe/caramel-matcha-latte.html"},
-    {title:"Caramel Pumpkin Spiced Latte Cake",tag:"Cake",url:"Recipe/caramel-pumpkin-spiced-latte-cake.html"},
-    {title:"Perfectly Spiced Carrot Cake",tag:"Cake",url:"Recipe/carrot-cake.html"},
-    {title:"Chamomile Orange Blossom Basque Cheesecake",tag:"Cake",url:"Recipe/chamomile-orange-blossom-basque-cheesecake.html"},
-    {title:"Cinnamon Plum Coffee Cake",tag:"Cake",url:"Recipe/cinnamon-plum-coffee-cake.html"},
-    {title:"Coconut Matcha Lychee Cloud",tag:"Matcha",url:"Recipe/coconut-matcha-lychee-cloud.html"},
-    {title:"Earl Grey Creme Brulee Latte",tag:"Drinks",url:"Recipe/earl-grey-creme-brulee-latte.html"},
-    {title:"Earl Grey Orange Latte",tag:"Drinks",url:"Recipe/earl-grey-orange-latte.html"},
-    {title:"Earl Grey Orange Loaf",tag:"Loaf",url:"Recipe/earl-grey-orange-loaf.html"},
-    {title:"Fraisier",tag:"Cake",url:"Recipe/fraisier.html"},
-    {title:"Grape Tea Fizz",tag:"Drinks",url:"Recipe/grape-tea-fizz.html"},
-    {title:"Guava Oolong Cream Cheese Milk Tea",tag:"Drinks",url:"Recipe/guava-oolong-milk-tea.html"},
-    {title:"Guayaba (Guava) Tres Leches",tag:"Cake",url:"Recipe/guayaba-tres-leches.html"},
-    {title:"Hojicha Jasmine Longan Cake",tag:"Cake",url:"Recipe/hojicha-jasmine-longan-cake.html"},
-    {title:"Hojicha Tiramisu",tag:"Baking",url:"Recipe/hojicha-tiramisu.html"},
-    {title:"Honey Butter Matcha Latte",tag:"Matcha",url:"Recipe/honey-butter-matcha-latte.html"},
-    {title:"Jasmine Chiffon Cake with Lychee Whipped Cream",tag:"Cake",url:"Recipe/jasmine-chiffon-cake.html"},
-    {title:"Jasmine Creme Brulee Tea Shortbread",tag:"Cookies",url:"Recipe/jasmine-creme-brulee-shortbread.html"},
-    {title:"Jasmine Honey Cake",tag:"Cake",url:"Recipe/jasmine-honey-cake.html"},
-    {title:"Jasmine Matcha Latte",tag:"Matcha",url:"Recipe/jasmine-matcha-latte.html"},
-    {title:"Lemon Iced Tea Cake with Chatruemae Black Tea",tag:"Cake",url:"Recipe/lemon-iced-tea-cake.html"},
-    {title:"London Fog Cake",tag:"Cake",url:"Recipe/london-fog-cake.html"},
-    {title:"London Fog Hojicha",tag:"Drinks",url:"Recipe/london-fog-hojicha.html"},
-    {title:"Lychee Matcha Latte with Lychee Cream Cheese Foam",tag:"Matcha",url:"Recipe/lychee-matcha-latte.html"},
-    {title:"Mango Matcha Latte",tag:"Matcha",url:"Recipe/mango-matcha-latte.html"},
-    {title:"Mango Sago Butter Mochi Pudding",tag:"Loaf",url:"Recipe/mango-sago-mochi-pudding.html"},
-    {title:"Maple Pumpkin Matcha Latte",tag:"Matcha",url:"Recipe/maple-pumpkin-matcha-latte.html"},
-    {title:"Matcha Brown Butter Brookie",tag:"Matcha",url:"Recipe/matcha-brown-butter-blondie.html"},
-    {title:"Matcha Butter Mochi Tang Yuan",tag:"Matcha",url:"Recipe/matcha-butter-mochi-tang-yuan.html"},
-    {title:"Matcha Latte Coffee Cake",tag:"Matcha",url:"Recipe/matcha-latte-coffee-cake.html"},
-    {title:"Matcha Red Bean Coffee Cake",tag:"Matcha",url:"Recipe/matcha-red-bean-coffee-cake.html"},
-    {title:"Milky Oolong Matcha Latte",tag:"Matcha",url:"Recipe/milky-oolong-matcha-latte.html"},
-    {title:"Orange Earl Grey Chocolate Cake",tag:"Baking",url:"Recipe/orange-earl-grey-chocolate-cake.html"},
-    {title:"Orange Spice Tea Loaf",tag:"Loaf",url:"Recipe/orange-spice-tea-loaf.html"},
-    {title:"Pandan Coconut Custard Cake",tag:"Cake",url:"Recipe/pandan-coconut-custard-cake.html"},
-    {title:"Pandan Custard Matcha Latte",tag:"Matcha",url:"Recipe/pandan-custard-matcha-latte.html"},
-    {title:"Pandan Custard",tag:"Baking",url:"Recipe/pandan-custard.html"},
-    {title:"Pandan Leche Flan Cake",tag:"Cake",url:"Recipe/pandan-leche-flan-cake.html"},
-    {title:"Peanut Butter Tea Thumbprint Cookies",tag:"Cookies",url:"Recipe/peanut-butter-thumbprint-cookies.html"},
-    {title:"Peppermint Chocolate Brownie",tag:"Cookies",url:"Recipe/peppermint-chocolate-brownie.html"},
-    {title:"Pickle Matcha Latte (April Fools)",tag:"Matcha",url:"Recipe/pickle-matcha-latte.html"},
-    {title:"Upside Down Rhubarb Pistachio Cake with Strawberry Custard",tag:"Cake",url:"Recipe/rhubarb-pistachio-cake.html"},
-    {title:"Organic Saigon Chai Gingerbread Molasses Cookies",tag:"Cookies",url:"Recipe/saigon-chai-gingerbread-cookies.html"},
-    {title:"Salted Caramel Oolong Cake",tag:"Cake",url:"Recipe/salted-caramel-oolong-cake.html"},
-    {title:"Strawberry Hojicha Cheesecake",tag:"Baking",url:"Recipe/strawberry-hojicha-cheesecake.html"},
-    {title:"Strawberry Osmanthus Shortcake",tag:"Cake",url:"Recipe/strawberry-osmanthus-shortcake.html"},
-    {title:"Thai Green Tea Burnt Cheesecake",tag:"Baking",url:"Recipe/thai-green-tea-burnt-cheesecake.html"},
-    {title:"Tofu Hua Chiffon Cake",tag:"Cake",url:"Recipe/tofu-hua-chiffon-cake.html"},
-    {title:"Tofu Pudding Matcha Latte",tag:"Matcha",url:"Recipe/tofu-pudding-matcha-latte.html"},
-    {title:"Ube Hojicha Latte",tag:"Drinks",url:"Recipe/ube-hojicha-latte.html"},
-    {title:"Brown Butter Choc Chip Cookies with Vanilla Cappuccino Tea",tag:"Cookies",url:"Recipe/vanilla-cappuccino-choc-chip-cookies.html"},
-    {title:"Zucchini Chai Muffin",tag:"Muffin",url:"Recipe/zucchini-muffin.html"}
-  ];
-
-  var input = document.getElementById('search-input');
-  var results = document.getElementById('search-results');
-  if(!input || !results) return;
-
-  function getBase() {
-    var path = window.location.pathname;
-    return path.indexOf('/Recipe/') !== -1 ? '../' : '';
-  }
-
-  input.addEventListener('input', function() {
-    var q = this.value.trim().toLowerCase();
-    results.innerHTML = '';
-    if(q.length < 2) { results.classList.remove('open'); return; }
-    var matches = recipes.filter(function(r){ return r.title.toLowerCase().indexOf(q) !== -1 || r.tag.toLowerCase().indexOf(q) !== -1; }).slice(0, 6);
-    if(matches.length === 0) {
-      results.innerHTML = '<p class="search-no-results">No recipes found</p>';
-    } else {
-      matches.forEach(function(r) {
-        var a = document.createElement('a');
-        a.className = 'search-result-item';
-        a.href = getBase() + r.url;
-        a.innerHTML = '<span>' + r.tag + '</span>' + r.title;
-        results.appendChild(a);
-      });
-    }
-    results.classList.add('open');
-  });
-
-  document.addEventListener('click', function(e) {
-    if(!document.getElementById('search-wrap').contains(e.target)) {
-      results.classList.remove('open');
-      input.value = '';
-    }
-  });
-})();
-</script>
-
-<script>
-(function(){
-  var input = document.getElementById('mob-search-input');
-  var results = document.getElementById('mob-search-results');
-  if(!input||!results) return;
-  var recipes = [
-    {title:"Almond Hot Chocolate with Jasmine Whipped Cream",tag:"Drinks",url:"Recipe/almond-hot-chocolate.html"},
-    {title:"Almond Poppy Berries Muffin",tag:"Muffin",url:"Recipe/almond-poppy-berries-muffin.html"},
-    {title:"Apple Cider Donut",tag:"Muffin",url:"Recipe/apple-cider-donut.html"},
-    {title:"Apple Crisp",tag:"Baking",url:"Recipe/apple-crisp.html"},
-    {title:"Apple Crumble Loaf",tag:"Loaf",url:"Recipe/apple-crumble-loaf.html"},
-    {title:"Apple Custard Donut",tag:"Baking",url:"Recipe/apple-custard-donut.html"},
-    {title:"Apple Pie Matcha Latte",tag:"Matcha",url:"Recipe/apple-pie-matcha-latte.html"},
-    {title:"The Perfect Banana Bread",tag:"Loaf",url:"Recipe/banana-bread.html"},
-    {title:"Black Sesame Hojicha Latte",tag:"Drinks",url:"Recipe/black-sesame-hojicha-latte.html"},
-    {title:"Black Sesame Pumpkin Loaf",tag:"Loaf",url:"Recipe/black-sesame-pumpkin-loaf.html"},
-    {title:"Blueberry Muffin Tea Matcha Snowballs",tag:"Cookies",url:"Recipe/blueberry-muffin-tea-matcha-snowballs.html"},
-    {title:"Roasted Brown Sugar Bourbon Milk Tea with Grass Jelly",tag:"Drinks",url:"Recipe/brown-sugar-bourbon-milk-tea.html"},
-    {title:"Butter Tart Cake",tag:"Cake",url:"Recipe/butter-tart-cake.html"},
-    {title:"Caramel Matcha Latte",tag:"Matcha",url:"Recipe/caramel-matcha-latte.html"},
-    {title:"Caramel Pumpkin Spiced Latte Cake",tag:"Cake",url:"Recipe/caramel-pumpkin-spiced-latte-cake.html"},
-    {title:"Perfectly Spiced Carrot Cake",tag:"Cake",url:"Recipe/carrot-cake.html"},
-    {title:"Chamomile Orange Blossom Basque Cheesecake",tag:"Cake",url:"Recipe/chamomile-orange-blossom-basque-cheesecake.html"},
-    {title:"Cinnamon Plum Coffee Cake",tag:"Cake",url:"Recipe/cinnamon-plum-coffee-cake.html"},
-    {title:"Coconut Matcha Lychee Cloud",tag:"Matcha",url:"Recipe/coconut-matcha-lychee-cloud.html"},
-    {title:"Earl Grey Creme Brulee Latte",tag:"Drinks",url:"Recipe/earl-grey-creme-brulee-latte.html"},
-    {title:"Earl Grey Orange Latte",tag:"Drinks",url:"Recipe/earl-grey-orange-latte.html"},
-    {title:"Earl Grey Orange Loaf",tag:"Loaf",url:"Recipe/earl-grey-orange-loaf.html"},
-    {title:"Fraisier",tag:"Cake",url:"Recipe/fraisier.html"},
-    {title:"Grape Tea Fizz",tag:"Drinks",url:"Recipe/grape-tea-fizz.html"},
-    {title:"Guava Oolong Cream Cheese Milk Tea",tag:"Drinks",url:"Recipe/guava-oolong-milk-tea.html"},
-    {title:"Guayaba (Guava) Tres Leches",tag:"Cake",url:"Recipe/guayaba-tres-leches.html"},
-    {title:"Hojicha Jasmine Longan Cake",tag:"Cake",url:"Recipe/hojicha-jasmine-longan-cake.html"},
-    {title:"Hojicha Tiramisu",tag:"Baking",url:"Recipe/hojicha-tiramisu.html"},
-    {title:"Honey Butter Matcha Latte",tag:"Matcha",url:"Recipe/honey-butter-matcha-latte.html"},
-    {title:"Jasmine Chiffon Cake with Lychee Whipped Cream",tag:"Cake",url:"Recipe/jasmine-chiffon-cake.html"},
-    {title:"Jasmine Creme Brulee Tea Shortbread",tag:"Cookies",url:"Recipe/jasmine-creme-brulee-shortbread.html"},
-    {title:"Jasmine Honey Cake",tag:"Cake",url:"Recipe/jasmine-honey-cake.html"},
-    {title:"Jasmine Matcha Latte",tag:"Matcha",url:"Recipe/jasmine-matcha-latte.html"},
-    {title:"Lemon Iced Tea Cake with Chatruemae Black Tea",tag:"Cake",url:"Recipe/lemon-iced-tea-cake.html"},
-    {title:"London Fog Cake",tag:"Cake",url:"Recipe/london-fog-cake.html"},
-    {title:"London Fog Hojicha",tag:"Drinks",url:"Recipe/london-fog-hojicha.html"},
-    {title:"Lychee Matcha Latte with Lychee Cream Cheese Foam",tag:"Matcha",url:"Recipe/lychee-matcha-latte.html"},
-    {title:"Mango Matcha Latte",tag:"Matcha",url:"Recipe/mango-matcha-latte.html"},
-    {title:"Mango Sago Butter Mochi Pudding",tag:"Loaf",url:"Recipe/mango-sago-mochi-pudding.html"},
-    {title:"Maple Pumpkin Matcha Latte",tag:"Matcha",url:"Recipe/maple-pumpkin-matcha-latte.html"},
-    {title:"Matcha Brown Butter Brookie",tag:"Matcha",url:"Recipe/matcha-brown-butter-blondie.html"},
-    {title:"Matcha Butter Mochi Tang Yuan",tag:"Matcha",url:"Recipe/matcha-butter-mochi-tang-yuan.html"},
-    {title:"Matcha Latte Coffee Cake",tag:"Matcha",url:"Recipe/matcha-latte-coffee-cake.html"},
-    {title:"Matcha Red Bean Coffee Cake",tag:"Matcha",url:"Recipe/matcha-red-bean-coffee-cake.html"},
-    {title:"Milky Oolong Matcha Latte",tag:"Matcha",url:"Recipe/milky-oolong-matcha-latte.html"},
-    {title:"Orange Earl Grey Chocolate Cake",tag:"Baking",url:"Recipe/orange-earl-grey-chocolate-cake.html"},
-    {title:"Orange Spice Tea Loaf",tag:"Loaf",url:"Recipe/orange-spice-tea-loaf.html"},
-    {title:"Pandan Coconut Custard Cake",tag:"Cake",url:"Recipe/pandan-coconut-custard-cake.html"},
-    {title:"Pandan Custard Matcha Latte",tag:"Matcha",url:"Recipe/pandan-custard-matcha-latte.html"},
-    {title:"Pandan Custard",tag:"Baking",url:"Recipe/pandan-custard.html"},
-    {title:"Pandan Leche Flan Cake",tag:"Cake",url:"Recipe/pandan-leche-flan-cake.html"},
-    {title:"Peanut Butter Tea Thumbprint Cookies",tag:"Cookies",url:"Recipe/peanut-butter-thumbprint-cookies.html"},
-    {title:"Peppermint Chocolate Brownie",tag:"Cookies",url:"Recipe/peppermint-chocolate-brownie.html"},
-    {title:"Pickle Matcha Latte (April Fools)",tag:"Matcha",url:"Recipe/pickle-matcha-latte.html"},
-    {title:"Upside Down Rhubarb Pistachio Cake with Strawberry Custard",tag:"Cake",url:"Recipe/rhubarb-pistachio-cake.html"},
-    {title:"Organic Saigon Chai Gingerbread Molasses Cookies",tag:"Cookies",url:"Recipe/saigon-chai-gingerbread-cookies.html"},
-    {title:"Salted Caramel Oolong Cake",tag:"Cake",url:"Recipe/salted-caramel-oolong-cake.html"},
-    {title:"Strawberry Hojicha Cheesecake",tag:"Baking",url:"Recipe/strawberry-hojicha-cheesecake.html"},
-    {title:"Strawberry Osmanthus Shortcake",tag:"Cake",url:"Recipe/strawberry-osmanthus-shortcake.html"},
-    {title:"Thai Green Tea Burnt Cheesecake",tag:"Baking",url:"Recipe/thai-green-tea-burnt-cheesecake.html"},
-    {title:"Tofu Hua Chiffon Cake",tag:"Cake",url:"Recipe/tofu-hua-chiffon-cake.html"},
-    {title:"Tofu Pudding Matcha Latte",tag:"Matcha",url:"Recipe/tofu-pudding-matcha-latte.html"},
-    {title:"Ube Hojicha Latte",tag:"Drinks",url:"Recipe/ube-hojicha-latte.html"},
-    {title:"Brown Butter Choc Chip Cookies with Vanilla Cappuccino Tea",tag:"Cookies",url:"Recipe/vanilla-cappuccino-choc-chip-cookies.html"},
-    {title:"Zucchini Chai Muffin",tag:"Muffin",url:"Recipe/zucchini-muffin.html"}
-  ];
-  function getBase(){return window.location.pathname.indexOf('/Recipe/')!==-1?'../':'';}
-  input.addEventListener('input',function(){
-    var q=this.value.trim().toLowerCase();
-    results.innerHTML='';
-    if(q.length<2){results.style.display='none';return;}
-    var matches=recipes.filter(function(r){return r.title.toLowerCase().indexOf(q)!==-1||r.tag.toLowerCase().indexOf(q)!==-1;}).slice(0,5);
-    if(matches.length===0){
-      results.innerHTML='<p style="padding:0.6rem 1rem;font-size:0.82rem;color:#b89a80;font-style:italic;">No recipes found</p>';
-    } else {
-      matches.forEach(function(r){
-        var a=document.createElement('a');
-        a.href=getBase()+r.url;
-        a.style.cssText='display:block;padding:0.55rem 1rem;font-size:0.82rem;color:#5a3e32;text-decoration:none;border-bottom:1px solid #f0d4a8;';
-        a.innerHTML='<span style="display:block;font-size:0.68rem;color:#d4847a;text-transform:uppercase;letter-spacing:0.1em;">'+r.tag+'</span>'+r.title;
-        results.appendChild(a);
-      });
-    }
-    results.style.display='block';
-  });
-})();
-</script>
-
-<!-- Newsletter Popup -->
+<!-- NEWSLETTER POPUP -->
 <div id="newsletter-popup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;align-items:center;justify-content:center;background:rgba(90,62,50,0.4);">
   <div style="background:#fde9c8;border-radius:16px;padding:2.5rem 2rem;max-width:440px;width:90%;position:relative;box-shadow:0 16px 48px rgba(90,62,50,0.2);">
     <button onclick="closePopup()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.2rem;cursor:pointer;color:#5a3e32;opacity:0.5;line-height:1;">&#10005;</button>
@@ -857,65 +379,42 @@
     <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-weight:700;color:#5383c6;margin-bottom:0.75rem;line-height:1.2;white-space:nowrap;text-align:center;">A little something for your Saturday</h2>
     <p style="font-size:0.85rem;color:#5a3e32;line-height:1.75;margin-bottom:1.5rem;">Be the first to know about new recipes, exclusive baking tips, and what goes on at How About Saturday.</p>
     <form id="popup-kit-form" style="margin:0;">
-      <input type="text" name="fields[first_name]" placeholder="First name" required
-        style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
-      <input type="email" name="email_address" placeholder="Your email address" required
-        style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
-      <button type="submit"
-        style="width:100%;background:#5383c6;color:#fde9c8;border:none;border-radius:20px;padding:0.65rem 1.5rem;font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">
-        Subscribe
-      </button>
+      <input type="text" name="fields[first_name]" placeholder="First name" required style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
+      <input type="email" name="email_address" placeholder="Your email address" required style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
+      <button type="submit" style="width:100%;background:#5383c6;color:#fde9c8;border:none;border-radius:20px;padding:0.65rem 1.5rem;font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">Subscribe</button>
       <p style="font-size:0.75rem;color:#5a3e32;opacity:0.6;text-align:center;margin-top:0.75rem;">No spam. Unsubscribe at any time.</p>
     </form>
     <div id="popup-kit-success" style="display:none;text-align:center;padding:1rem 0;">
       <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.3rem;font-weight:700;color:#5383c6;margin-bottom:0.5rem;">You are in!</p>
       <p style="font-size:0.88rem;color:#5a3e32;">Check your email to confirm your subscription.</p>
     </div>
-    <script>
-    (function(){
-      var form = document.getElementById('popup-kit-form');
-      if(!form) return;
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var email = form.querySelector('[name="email_address"]');
-        var firstName = form.querySelector('[name="fields[first_name]"]');
-        if(!email || !email.value) return;
-        var data = new FormData();
-        data.append('email_address', email.value);
-        if(firstName && firstName.value) data.append('fields[first_name]', firstName.value);
-        var iframe = document.createElement('iframe');
-          iframe.name = 'kit_popup_iframe';
-          iframe.style.display = 'none';
-          document.body.appendChild(iframe);
-          form.setAttribute('target', 'kit_popup_iframe');
-          form.setAttribute('action', 'https://app.kit.com/forms/9698796/subscriptions');
-          form.setAttribute('method', 'post');
-          form.submit();
-          setTimeout(function() {
-            form.style.display = 'none';
-            document.getElementById('popup-kit-success').style.display = 'block';
-            setTimeout(function(){ closePopup(); }, 2500);
-          }, 1000);
-      });
-    })();
-    </script>
   </div>
 </div>
+
 <script>
-function closePopup() {
-  document.getElementById('newsletter-popup').style.display = 'none';
-  localStorage.setItem('newsletter_closed', '1');
-}
-(function() {
-  if(localStorage.getItem('newsletter_closed')) return;
-  setTimeout(function() {
-    var popup = document.getElementById('newsletter-popup');
-    if(popup) popup.style.display = 'flex';
-  }, 3000);
-  document.getElementById('newsletter-popup').addEventListener('click', function(e) {
-    if(e.target === this) closePopup();
-  });
-})();
+// Mobile nav
+(function(){var h=document.getElementById('hamburger'),n=document.getElementById('nav-links');if(!h||!n)return;function u(){h.style.display=window.innerWidth<=860?'flex':'none';if(window.innerWidth>860)n.classList.remove('open');}h.addEventListener('click',function(){n.classList.toggle('open');});window.addEventListener('resize',u);u();})();
+
+// Search close on outside click
+(function(){var wrap=document.getElementById('search-wrap'),results=document.getElementById('search-results');if(!wrap||!results)return;document.addEventListener('click',function(e){if(!wrap.contains(e.target))results.classList.remove('open');});})();
+
+// Tabs
+(function(){var tabs=document.querySelectorAll('.tab'),cards=document.querySelectorAll('#post-grid .post-card');tabs.forEach(function(tab){tab.addEventListener('click',function(){tabs.forEach(function(t){t.classList.remove('active');});tab.classList.add('active');var cat=tab.dataset.tab;cards.forEach(function(c){c.style.display=(cat==='latest'||c.dataset.cat===cat)?'':'none';});});});})();
+
+// Sidebar Kit form
+(function(){var form=document.getElementById('side-kit-form');if(!form)return;form.addEventListener('submit',function(e){e.preventDefault();var email=form.querySelector('[name="email_address"]');if(!email||!email.value)return;var iframe=document.createElement('iframe');iframe.name='kit_side_iframe';iframe.style.display='none';document.body.appendChild(iframe);form.setAttribute('target','kit_side_iframe');form.setAttribute('action','https://app.kit.com/forms/9698796/subscriptions');form.setAttribute('method','post');form.submit();setTimeout(function(){form.innerHTML='<p style="font-size:0.82rem;color:var(--mid);">You\'re in! Check your email.</p>';},1000);});})();
+
+// Inline Kit form
+(function(){var form=document.getElementById('kit-form');if(!form)return;form.addEventListener('submit',function(e){e.preventDefault();var email=form.querySelector('#kit-email');var firstName=form.querySelector('[name="fields[first_name]"]');if(!email||!email.value)return;var iframe=document.createElement('iframe');iframe.name='kit_inline_iframe';iframe.style.display='none';document.body.appendChild(iframe);form.setAttribute('target','kit_inline_iframe');form.setAttribute('action','https://app.kit.com/forms/9698796/subscriptions');form.setAttribute('method','post');form.submit();setTimeout(function(){form.style.display='none';document.getElementById('kit-success').style.display='block';},1000);});})();
+
+// Popup
+function closePopup(){document.getElementById('newsletter-popup').style.display='none';localStorage.setItem('newsletter_closed','1');}
+(function(){if(localStorage.getItem('newsletter_closed'))return;setTimeout(function(){var p=document.getElementById('newsletter-popup');if(p)p.style.display='flex';},3000);var pop=document.getElementById('newsletter-popup');if(pop)pop.addEventListener('click',function(e){if(e.target===this)closePopup();});var form=document.getElementById('popup-kit-form');if(form)form.addEventListener('submit',function(e){e.preventDefault();var email=form.querySelector('[name="email_address"]');var firstName=form.querySelector('[name="fields[first_name]"]');if(!email||!email.value)return;var iframe=document.createElement('iframe');iframe.name='kit_popup_iframe';iframe.style.display='none';document.body.appendChild(iframe);form.setAttribute('target','kit_popup_iframe');form.setAttribute('action','https://app.kit.com/forms/9698796/subscriptions');form.setAttribute('method','post');form.submit();setTimeout(function(){form.style.display='none';document.getElementById('popup-kit-success').style.display='block';setTimeout(function(){closePopup();},2500);},1000);});})();
+
+// Search
+(function(){var recipes=[{title:"Almond Hot Chocolate with Jasmine Whipped Cream",tag:"Drinks",url:"Recipe/almond-hot-chocolate.html"},{title:"Almond Poppy Berries Muffin",tag:"Muffin",url:"Recipe/almond-poppy-berries-muffin.html"},{title:"Apple Cider Donut",tag:"Baking",url:"Recipe/apple-cider-donut.html"},{title:"Apple Crisp",tag:"Baking",url:"Recipe/apple-crisp.html"},{title:"Apple Crumble Loaf",tag:"Loaf",url:"Recipe/apple-crumble-loaf.html"},{title:"Apple Custard Donut",tag:"Baking",url:"Recipe/apple-custard-donut.html"},{title:"Apple Pie Matcha Latte",tag:"Matcha",url:"Recipe/apple-pie-matcha-latte.html"},{title:"The Perfect Banana Bread",tag:"Loaf",url:"Recipe/banana-bread.html"},{title:"Birthday Matcha",tag:"Matcha",url:"Recipe/birthday-matcha.html"},{title:"Black Sesame Hojicha Latte",tag:"Hojicha",url:"Recipe/black-sesame-hojicha-latte.html"},{title:"Black Sesame Pumpkin Loaf",tag:"Loaf",url:"Recipe/black-sesame-pumpkin-loaf.html"},{title:"Blueberry Muffin Tea Matcha Snowballs",tag:"Matcha",url:"Recipe/blueberry-muffin-tea-matcha-snowballs.html"},{title:"Roasted Brown Sugar Bourbon Milk Tea",tag:"Cozy Sips",url:"Recipe/brown-sugar-bourbon-milk-tea.html"},{title:"Butter Tart Cake",tag:"Cake",url:"Recipe/butter-tart-cake.html"},{title:"Caramel Matcha Latte",tag:"Matcha",url:"Recipe/caramel-matcha-latte.html"},{title:"Caramel Pumpkin Spiced Latte Cake",tag:"Cake",url:"Recipe/caramel-pumpkin-spiced-latte-cake.html"},{title:"Carrot Cake",tag:"Cake",url:"Recipe/carrot-cake.html"},{title:"Chamomile Orange Blossom Basque Cheesecake",tag:"Cake",url:"Recipe/chamomile-orange-blossom-basque-cheesecake.html"},{title:"Cinnamon Plum Coffee Cake",tag:"Cake",url:"Recipe/cinnamon-plum-coffee-cake.html"},{title:"Coconut Matcha Lychee Cloud",tag:"Matcha",url:"Recipe/coconut-matcha-lychee-cloud.html"},{title:"Earl Grey Creme Brulee Latte",tag:"Cozy Sips",url:"Recipe/earl-grey-creme-brulee-latte.html"},{title:"Earl Grey Orange Loaf",tag:"Loaf",url:"Recipe/earl-grey-orange-loaf.html"},{title:"Fraisier",tag:"Cake",url:"Recipe/fraisier.html"},{title:"Grape Tea Fizz",tag:"Cozy Sips",url:"Recipe/grape-tea-fizz.html"},{title:"Guava Oolong Milk Tea",tag:"Cozy Sips",url:"Recipe/guava-oolong-milk-tea.html"},{title:"Guayaba Tres Leches",tag:"Cake",url:"Recipe/guayaba-tres-leches.html"},{title:"Hojicha Jasmine Longan Cake",tag:"Cake",url:"Recipe/hojicha-jasmine-longan-cake.html"},{title:"Hojicha Tiramisu",tag:"Baking",url:"Recipe/hojicha-tiramisu.html"},{title:"Honey Apple Coffee Cake",tag:"Cake",url:"Recipe/honey-apple-coffee-cake.html"},{title:"Honey Butter Matcha Latte",tag:"Matcha",url:"Recipe/honey-butter-matcha-latte.html"},{title:"Jasmine Chiffon Cake",tag:"Cake",url:"Recipe/jasmine-chiffon-cake.html"},{title:"Jasmine Creme Brulee Shortbread",tag:"Cookies",url:"Recipe/jasmine-creme-brulee-shortbread.html"},{title:"Jasmine Honey Cake",tag:"Cake",url:"Recipe/jasmine-honey-cake.html"},{title:"Jasmine Matcha Latte",tag:"Matcha",url:"Recipe/jasmine-matcha-latte.html"},{title:"Lemon Iced Tea Cake",tag:"Cake",url:"Recipe/lemon-iced-tea-cake.html"},{title:"Lemon Poppy Seed Rolls",tag:"Baking",url:"Recipe/lemon-poppy-seed-rolls.html"},{title:"London Fog Cake",tag:"Cake",url:"Recipe/london-fog-cake.html"},{title:"London Fog Hojicha",tag:"Hojicha",url:"Recipe/london-fog-hojicha.html"},{title:"Lychee Matcha Latte",tag:"Matcha",url:"Recipe/lychee-matcha-latte.html"},{title:"Mango Matcha Latte",tag:"Matcha",url:"Recipe/mango-matcha-latte.html"},{title:"Mango Sago Butter Mochi Pudding",tag:"Cake",url:"Recipe/mango-sago-mochi-pudding.html"},{title:"Maple Pumpkin Matcha Latte",tag:"Matcha",url:"Recipe/maple-pumpkin-matcha-latte.html"},{title:"Matcha Brown Butter Blondie",tag:"Matcha",url:"Recipe/matcha-brown-butter-blondie.html"},{title:"Matcha Butter Mochi Tang Yuan",tag:"Matcha",url:"Recipe/matcha-butter-mochi-tang-yuan.html"},{title:"Matcha Latte Coffee Cake",tag:"Cake",url:"Recipe/matcha-latte-coffee-cake.html"},{title:"Matcha Red Bean Coffee Cake",tag:"Cake",url:"Recipe/matcha-red-bean-coffee-cake.html"},{title:"Milky Oolong Matcha Latte",tag:"Matcha",url:"Recipe/milky-oolong-matcha-latte.html"},{title:"Orange Earl Grey Chocolate Cake",tag:"Cake",url:"Recipe/orange-earl-grey-chocolate-cake.html"},{title:"Orange Spice Tea Loaf",tag:"Loaf",url:"Recipe/orange-spice-tea-loaf.html"},{title:"Pandan Coconut Burnt Cheesecake",tag:"Cake",url:"Recipe/pandan-coconut-burnt-cheesecake.html"},{title:"Pandan Coconut Custard Cake",tag:"Cake",url:"Recipe/pandan-coconut-custard-cake.html"},{title:"Pandan Custard",tag:"Baking",url:"Recipe/pandan-custard.html"},{title:"Pandan Custard Matcha Latte",tag:"Matcha",url:"Recipe/pandan-custard-matcha-latte.html"},{title:"Pandan Leche Flan Cake",tag:"Cake",url:"Recipe/pandan-leche-flan-cake.html"},{title:"Peach Earl Grey Matcha Latte",tag:"Matcha",url:"Recipe/peach-earl-grey-matcha-latte.html"},{title:"Peach Jasmine Upside Down Cake",tag:"Cake",url:"Recipe/peach-jasmine-upside-down-cake.html"},{title:"Peanut Butter Thumbprint Cookies",tag:"Cookies",url:"Recipe/peanut-butter-thumbprint-cookies.html"},{title:"Peppermint Chocolate Brownie",tag:"Baking",url:"Recipe/peppermint-chocolate-brownie.html"},{title:"Pickle Matcha Latte",tag:"Matcha",url:"Recipe/pickle-matcha-latte.html"},{title:"Pumpkin Matcha Latte Cake",tag:"Cake",url:"Recipe/pumpkin-matcha-latte-cake.html"},{title:"Rhubarb Pistachio Cake",tag:"Cake",url:"Recipe/rhubarb-pistachio-cake.html"},{title:"Saigon Chai Gingerbread Cookies",tag:"Cookies",url:"Recipe/saigon-chai-gingerbread-cookies.html"},{title:"Salted Caramel Oolong Cake",tag:"Cake",url:"Recipe/salted-caramel-oolong-cake.html"},{title:"Strawberry Hojicha Cheesecake",tag:"Cake",url:"Recipe/strawberry-hojicha-cheesecake.html"},{title:"Strawberry Osmanthus Shortcake",tag:"Cake",url:"Recipe/strawberry-osmanthus-shortcake.html"},{title:"Thai Green Tea Burnt Cheesecake",tag:"Cake",url:"Recipe/thai-green-tea-burnt-cheesecake.html"},{title:"Tofu Hua Chiffon Cake",tag:"Cake",url:"Recipe/tofu-hua-chiffon-cake.html"},{title:"Tofu Pudding Matcha Latte",tag:"Matcha",url:"Recipe/tofu-pudding-matcha-latte.html"},{title:"Ube Hojicha Latte",tag:"Hojicha",url:"Recipe/ube-hojicha-latte.html"},{title:"Ube Leche Flan Cake",tag:"Cake",url:"Recipe/ube-leche-flan-cake.html"},{title:"Vanilla Cappuccino Choc Chip Cookies",tag:"Cookies",url:"Recipe/vanilla-cappuccino-choc-chip-cookies.html"},{title:"Zucchini Muffin",tag:"Muffin",url:"Recipe/zucchini-muffin.html"}];
+var input=document.getElementById('search-input'),results=document.getElementById('search-results');if(!input||!results)return;input.addEventListener('input',function(){var q=this.value.trim().toLowerCase();results.innerHTML='';if(q.length<2){results.classList.remove('open');return;}var matches=recipes.filter(function(r){return r.title.toLowerCase().indexOf(q)!==-1||r.tag.toLowerCase().indexOf(q)!==-1;}).slice(0,6);if(matches.length===0){results.innerHTML='<p class="search-no-results">No recipes found</p>';}else{matches.forEach(function(r){var a=document.createElement('a');a.className='search-result-item';a.href=r.url;a.innerHTML='<span>'+r.tag+'</span>'+r.title;results.appendChild(a);});}results.classList.add('open');});})();
 </script>
+
 </body>
 </html>
