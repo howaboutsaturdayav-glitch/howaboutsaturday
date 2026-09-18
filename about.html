@@ -174,7 +174,7 @@
     .cat-body { padding: 0 0.2rem; }
     .cat-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; color: var(--mid); line-height: 1.25; }
     .cat-card:hover .cat-title { color: var(--terracotta); }
-    .cat-section-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 700; color: var(--mid); max-width: 1100px; margin: 0 auto 1.25rem; padding: 0 2rem; }
+    .cat-section-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--mid); max-width: 1100px; margin: 0 auto 1.25rem; padding: 0 2rem; }
     @media (max-width: 860px) { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 560px) { .cat-grid { grid-template-columns: 1fr; } }
 
@@ -241,6 +241,62 @@
     .mob-link { display: block; padding: 0.6rem 2rem; font-size: 0.82rem; color: var(--mid); text-decoration: none; border-bottom: 1px solid var(--warm-tan); }
     .mob-link:hover { color: var(--terracotta); }
 
+  
+    /* ── ABOUT PAGE ADDITIONAL ── */
+    .about-lower { max-width: 820px; margin: 0 auto; padding: 2rem 2rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .about-photo-wrap { border-radius: 12px; overflow: hidden; }
+    .about-text-wrap { display: flex; flex-direction: column; gap: 1.25rem; }
+    .about-text-wrap p { font-size: 0.95rem; line-height: 1.85; color: var(--mid); margin: 0; }
+    @media (max-width: 680px) { .about-lower { grid-template-columns: 1fr; } }
+
+    /* ── SERIES PAGE ADDITIONAL ── */
+    .sr-section-desc { font-size: 0.85rem; color: var(--mid); opacity: 0.75; line-height: 1.6; margin-top: 0.2rem; }
+
+  
+    /* ── ABOUT PAGE ── */
+    .about-body { font-size: 0.95rem; line-height: 1.75; color: var(--mid); margin-bottom: 0.75rem; }
+    .about-tagline { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-mid); margin-bottom: 0.5rem; }
+    .about-text-block { font-size: 0.95rem; line-height: 1.85; color: var(--mid); margin-bottom: 1.25rem; }
+    .about-divider { border: none; border-top: 1px solid var(--warm-tan); margin: 2rem 0; }
+    .about-photo-placeholder { width: 100%; aspect-ratio: 3/4; border-radius: 12px; background: var(--warm-tan); overflow: hidden; }
+    .about-photo-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .about-social { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+
+    /* ── CATEGORY PAGES ── */
+    .page-sub { font-size: 0.9rem; color: var(--mid); opacity: 0.8; line-height: 1.7; max-width: 52ch; }
+    .page-intro { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 1.5rem; border-bottom: 1px solid var(--warm-tan); margin-bottom: 2rem; }
+    .cat-section { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 1rem; }
+
+    /* ── SERIES ── */
+    .sr-img-wrap { aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; background: var(--warm-tan); position: relative; margin-bottom: 0.7rem; }
+    .sr-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ── CONTACT / WORK WITH ME ── */
+    .contact-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; border-radius: 20px; font-family: var(--sans); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; font-weight: 500; background: var(--mid); color: var(--cream); transition: all 0.2s; cursor: pointer; border: none; }
+    .contact-btn:hover { background: var(--terracotta); }
+
+    /* ── PRIVACY POLICY ── */
+    .policy-section { max-width: 820px; margin: 0 auto; padding: 2rem 2rem 1rem; }
+    .page-date { font-family: var(--sans); font-size: 0.8rem; color: var(--mid); opacity: 0.6; margin-bottom: 2rem; }
+
+    /* ── INSTAGRAM EMBED ── */
+    .instagram-media { background: #fff; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width: 540px; padding: 0; width: calc(100% - 2px); }
+
+    /* ── INDEX ── */
+    .lifestyle-card { text-decoration: none; color: inherit; display: block; }
+    .lifestyle-card:hover h3 { color: var(--terracotta); }
+    .post-card { text-decoration: none; color: inherit; display: block; }
+    .post-card:hover h3 { color: var(--terracotta); }
+
+    /* ── ADSENSE ── */
+    .ad-slot { display: block; margin: 2rem auto; }
+    .adsbygoogle { display: block; }
+
+  
+  @media(max-width:680px){
+    div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;}
+  }
+
   </style>
 </head>
 <body>
@@ -292,397 +348,40 @@
     <div class="mob-section"><a class="mob-plain" href="https://instagram.com/howaboutsaturday" target="_blank">Instagram &#8599;</a></div>
   </nav>
 </header>
+<div style="max-width:900px;margin:0 auto;padding:3rem 2rem 0;">
 
-<!-- BIG HEADING -->
-<div class="about-hero">
-  <h1 class="meet-line">
-    <span class="meet-word">meet,</span>
-    <span class="name-word"> Amy</span>
+  <!-- meet, Amy heading -->
+  <p style="font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#d4847a;margin-bottom:0.5rem;">How About Saturday</p>
+  <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(3rem,8vw,5.5rem);font-weight:700;line-height:1;margin-bottom:0.4rem;">
+    <span style="color:#d4847a;">meet,</span>
+    <span style="color:#5383c6;"> Amy</span>
   </h1>
-  <a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener" style="font-family:var(--sans);font-size:0.85rem;letter-spacing:0.15em;color:var(--pink);text-decoration:none;display:block;margin-top:0.5rem;">@howaboutsaturday</a>
-</div>
+  <a href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener" style="font-family:'Jost',sans-serif;font-size:0.85rem;letter-spacing:0.15em;color:#d4847a;text-decoration:none;display:block;margin-bottom:2.5rem;">@howaboutsaturday</a>
 
-<!-- LOWER: PHOTO LEFT + TEXT RIGHT -->
-<div class="about-lower">
-
-  <!-- LEFT  photo -->
-  <div class="about-photo-wrap">
-    <img class="about-photo" src="images/amy-about.jpg" alt="Amy"
-         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-    <div class="about-photo-placeholder" style="display:none;">
-      <span>🌸</span>
-      <p>Add your photo as<br>images/amy-about.jpg</p>
+  <!-- photo + first paragraph -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-bottom:2.5rem;">
+    <div style="border-radius:12px;overflow:hidden;">
+      <img src="images/amy-about.jpg" alt="Amy" style="width:100%;display:block;border-radius:12px;" onerror="this.style.display='none'">
+    </div>
+    <div style="padding-top:0.5rem;">
+      <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1rem;font-style:italic;text-align:center;color:#d4847a;margin-bottom:1rem;">Made for <em>slow</em> <span style="color:#5383c6;">Saturdays</span></p>
+      <hr style="border:none;border-top:1px solid #f0d4a8;margin-bottom:1.25rem;">
+      <p style="font-size:0.92rem;line-height:1.8;color:#5a3e32;margin:0;">I started How About Saturday in 2020 during lockdown, from my home kitchen in Toronto, with no formal strategy and no audience. Just a deep love of baking, a camera, and a need to make something beautiful in an uncertain time. What began as a place to document cozy bakes and seasonal drinks has grown into a full creative practice built around slow living, Asian-inspired baking, and the kind of food that makes an ordinary Saturday feel like something worth celebrating.</p>
     </div>
   </div>
 
-  <!-- RIGHT  text -->
-  <div class="about-text-block">
-
-    <p class="about-tagline" style="text-align:center;">
-      Made for <em style="font-style:italic;color:#d4847a;">slow</em>
-      <span style="color:#5383c6;">Saturdays</span>
-    </p>
-
-    <div class="about-divider"></div>
-
-    <p class="about-body">
-      I started How About Saturday in 2020 during lockdown, from my home kitchen in Toronto, with no formal strategy and no audience. Just a deep love of baking, a camera, and a need to make something beautiful in an uncertain time. What began as a place to document cozy bakes and seasonal drinks has grown into a full creative practice built around slow living, Asian-inspired baking, and the kind of food that makes an ordinary Saturday feel like something worth celebrating.
-    </p>
-
-    <p class="about-body">
-      I grew up in Malaysia, and so many of my earliest food memories are tied to flavour in a very specific way. Pandan custard. Warm soy milk from the market. The smell of jasmine tea steeping in a clay pot. That sensory memory is the foundation of everything I make here. My Flavours of My Childhood series is an attempt to recreate those recipes from home, the ones that live in your body rather than in any cookbook.
-    </p>
-
-    <p class="about-body">
-      My recipes are not about perfection. They are about the process, the ritual, and the quiet pleasure of making something with your own hands. Whether you are here for the baking, the drinks, or just the cozy vibes, I am really glad you found your way to this little corner of the internet. Pull up a chair. Something good is probably already in the oven.
-    </p>
-
-    <div class="about-social">
-      <a class="btn" style="background:#5383c6;color:#fde9c8;" href="all-recipes.html">Browse Recipes</a>
-      <a class="btn" style="background:#5a3e32;color:#fde9c8;" href="mailto:howaboutsaturday.av@gmail.com">Work With Me</a>
-      <a class="btn" style="background:#d4847a;color:#fde9c8;" href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">@howaboutsaturday</a>
+  <!-- remaining paragraphs centred -->
+  <div style="max-width:640px;margin:0 auto;text-align:center;padding-bottom:3rem;">
+    <p style="font-size:0.92rem;line-height:1.8;color:#5a3e32;margin-bottom:1.25rem;">I grew up in Malaysia, and so many of my earliest food memories are tied to flavour in a very specific way. Pandan custard. Warm soy milk from the market. The smell of jasmine tea steeping in a clay pot. That sensory memory is the foundation of everything I make here. My Flavours of My Childhood series is an attempt to recreate those recipes from home, the ones that live in your body rather than in any cookbook.</p>
+    <p style="font-size:0.92rem;line-height:1.8;color:#5a3e32;margin-bottom:2rem;">My recipes are not about perfection. They are about the process, the ritual, and the quiet pleasure of making something with your own hands. Whether you are here for the baking, the drinks, or just the cozy vibes, I am really glad you found your way to this little corner of the internet. Pull up a chair. Something good is probably already in the oven.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;">
+      <a href="all-recipes.html" style="display:inline-flex;align-items:center;padding:0.7rem 1.5rem;border-radius:20px;font-family:'Jost',sans-serif;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;background:#5383c6;color:#fde9c8;text-decoration:none;">Browse Recipes</a>
+      <a href="work-with-me.html" style="display:inline-flex;align-items:center;padding:0.7rem 1.5rem;border-radius:20px;font-family:'Jost',sans-serif;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;background:#5a3e32;color:#fde9c8;text-decoration:none;">Work With Me</a>
+      <a href="https://instagram.com/howaboutsaturday" target="_blank" style="display:inline-flex;align-items:center;padding:0.7rem 1.5rem;border-radius:20px;font-family:'Jost',sans-serif;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;background:#d4847a;color:#fde9c8;text-decoration:none;">@howaboutsaturday</a>
     </div>
-
   </div>
+
 </div>
 
-<div style="max-width:820px;margin:0 auto;padding:2rem 2rem 4rem;text-align:center;">
-  <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#d4847a;margin-bottom:0.5rem;">Newsletter</p>
-  <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;font-weight:700;color:#5383c6;margin-bottom:0.75rem;white-space:nowrap;text-align:center;">A little something for your Saturday</h2>
-  <p style="font-size:0.88rem;color:#5a3e32;line-height:1.75;max-width:480px;margin:0 auto 2rem;">Be the first to know about new recipes, exclusive baking tips, and what goes on at How About Saturday.</p>
-  <div style="max-width:480px;margin:0 auto;">
-    <div id="kit-form-wrap">
-      <form id="kit-form" style="margin:0;">
-        <input type="text" name="fields[first_name]" placeholder="First name" required
-          style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
-      <input type="email" id="kit-email" name="email_address" placeholder="Your email address" required
-          style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
-        <button type="submit"
-          style="width:100%;background:#5383c6;color:#fde9c8;border:none;border-radius:20px;padding:0.65rem 1.5rem;font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">
-          Subscribe
-        </button>
-        <p style="font-size:0.75rem;color:#5a3e32;opacity:0.6;text-align:center;margin-top:0.75rem;">No spam. Unsubscribe at any time.</p>
-      </form>
-      <div id="kit-success" style="display:none;text-align:center;padding:1rem 0;">
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.3rem;font-weight:700;color:#5383c6;margin-bottom:0.5rem;">You are in!</p>
-        <p style="font-size:0.88rem;color:#5a3e32;">Check your email to confirm your subscription.</p>
-      </div>
-    </div>
-    <script>
-    (function(){
-      var forms = document.querySelectorAll('#kit-form');
-      forms.forEach(function(form) {
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          var email = form.querySelector('#kit-email') || form.querySelector('[name="email_address"]');
-          if(!email || !email.value) return;
-          var data = new FormData();
-          data.append('email_address', email.value);
-          var iframe = document.createElement('iframe');
-            iframe.name = 'kit_inline_iframe';
-            iframe.style.display = 'none';
-            document.body.appendChild(iframe);
-            form.setAttribute('target', 'kit_inline_iframe');
-            form.setAttribute('action', 'https://app.kit.com/forms/9698796/subscriptions');
-            form.setAttribute('method', 'post');
-            form.submit();
-            setTimeout(function() {
-              form.style.display = 'none';
-              var success = form.parentNode.querySelector('#kit-success');
-              if(success) success.style.display = 'block';
-            }, 1000);
-        });
-      });
-    })();
-    </script>
-  </div>
-</div>
-<footer>
-  <span class="footer-logo">How About Saturday</span>
-  <p>Baking, slow living &amp; cozy drinks.</p>
-  <p style="margin-top:0.75rem;"><a href="https://instagram.com/howaboutsaturday" target="_blank">Instagram</a> &nbsp;·&nbsp; <a href="https://www.youtube.com/@howaboutsaturday" target="_blank">YouTube</a> &nbsp;·&nbsp; <a href="https://www.tiktok.com/@howaboutsaturday_" target="_blank">TikTok</a></p>
-  <p style="margin-top:0.5rem;opacity:0.5;font-size:0.75rem;">© 2025 How About Saturday · All rights reserved. · <a href="work-with-me.html" style="color:#fde9c8;text-decoration:underline;">Work with Me</a> · <a href="privacy-policy.html" style="color:#fde9c8;text-decoration:underline;">Privacy Policy</a></p>
-</footer>
 
 
-<script>
-  (function(){
-    var h=document.getElementById('hamburger'),n=document.getElementById('nav-links');
-    if(!h||!n)return;
-    function u(){h.style.display=window.innerWidth<=860?'flex':'none';if(window.innerWidth>860)n.classList.remove('open');}
-    h.addEventListener('click',function(){n.classList.toggle('open');});
-    window.addEventListener('resize',u);u();
-  })();
-</script>
-
-<script>
-(function(){
-  var recipes = [
-    {title:"Almond Hot Chocolate with Jasmine Whipped Cream",tag:"Drinks",url:"Recipe/almond-hot-chocolate.html"},
-    {title:"Almond Poppy Berries Muffin",tag:"Muffin",url:"Recipe/almond-poppy-berries-muffin.html"},
-    {title:"Apple Cider Donut",tag:"Muffin",url:"Recipe/apple-cider-donut.html"},
-    {title:"Apple Crisp",tag:"Baking",url:"Recipe/apple-crisp.html"},
-    {title:"Apple Crumble Loaf",tag:"Loaf",url:"Recipe/apple-crumble-loaf.html"},
-    {title:"Apple Custard Donut",tag:"Baking",url:"Recipe/apple-custard-donut.html"},
-    {title:"Apple Pie Matcha Latte",tag:"Matcha",url:"Recipe/apple-pie-matcha-latte.html"},
-    {title:"The Perfect Banana Bread",tag:"Loaf",url:"Recipe/banana-bread.html"},
-    {title:"Black Sesame Hojicha Latte",tag:"Drinks",url:"Recipe/black-sesame-hojicha-latte.html"},
-    {title:"Black Sesame Pumpkin Loaf",tag:"Loaf",url:"Recipe/black-sesame-pumpkin-loaf.html"},
-    {title:"Blueberry Muffin Tea Matcha Snowballs",tag:"Cookies",url:"Recipe/blueberry-muffin-tea-matcha-snowballs.html"},
-    {title:"Roasted Brown Sugar Bourbon Milk Tea with Grass Jelly",tag:"Drinks",url:"Recipe/brown-sugar-bourbon-milk-tea.html"},
-    {title:"Butter Tart Cake",tag:"Cake",url:"Recipe/butter-tart-cake.html"},
-    {title:"Caramel Matcha Latte",tag:"Matcha",url:"Recipe/caramel-matcha-latte.html"},
-    {title:"Caramel Pumpkin Spiced Latte Cake",tag:"Cake",url:"Recipe/caramel-pumpkin-spiced-latte-cake.html"},
-    {title:"Perfectly Spiced Carrot Cake",tag:"Cake",url:"Recipe/carrot-cake.html"},
-    {title:"Chamomile Orange Blossom Basque Cheesecake",tag:"Cake",url:"Recipe/chamomile-orange-blossom-basque-cheesecake.html"},
-    {title:"Cinnamon Plum Coffee Cake",tag:"Cake",url:"Recipe/cinnamon-plum-coffee-cake.html"},
-    {title:"Coconut Matcha Lychee Cloud",tag:"Matcha",url:"Recipe/coconut-matcha-lychee-cloud.html"},
-    {title:"Earl Grey Creme Brulee Latte",tag:"Drinks",url:"Recipe/earl-grey-creme-brulee-latte.html"},
-    {title:"Earl Grey Orange Latte",tag:"Drinks",url:"Recipe/earl-grey-orange-latte.html"},
-    {title:"Earl Grey Orange Loaf",tag:"Loaf",url:"Recipe/earl-grey-orange-loaf.html"},
-    {title:"Fraisier",tag:"Cake",url:"Recipe/fraisier.html"},
-    {title:"Grape Tea Fizz",tag:"Drinks",url:"Recipe/grape-tea-fizz.html"},
-    {title:"Guava Oolong Cream Cheese Milk Tea",tag:"Drinks",url:"Recipe/guava-oolong-milk-tea.html"},
-    {title:"Guayaba (Guava) Tres Leches",tag:"Cake",url:"Recipe/guayaba-tres-leches.html"},
-    {title:"Hojicha Jasmine Longan Cake",tag:"Cake",url:"Recipe/hojicha-jasmine-longan-cake.html"},
-    {title:"Hojicha Tiramisu",tag:"Baking",url:"Recipe/hojicha-tiramisu.html"},
-    {title:"Honey Butter Matcha Latte",tag:"Matcha",url:"Recipe/honey-butter-matcha-latte.html"},
-    {title:"Jasmine Chiffon Cake with Lychee Whipped Cream",tag:"Cake",url:"Recipe/jasmine-chiffon-cake.html"},
-    {title:"Jasmine Creme Brulee Tea Shortbread",tag:"Cookies",url:"Recipe/jasmine-creme-brulee-shortbread.html"},
-    {title:"Jasmine Honey Cake",tag:"Cake",url:"Recipe/jasmine-honey-cake.html"},
-    {title:"Jasmine Matcha Latte",tag:"Matcha",url:"Recipe/jasmine-matcha-latte.html"},
-    {title:"Lemon Iced Tea Cake with Chatruemae Black Tea",tag:"Cake",url:"Recipe/lemon-iced-tea-cake.html"},
-    {title:"London Fog Cake",tag:"Cake",url:"Recipe/london-fog-cake.html"},
-    {title:"London Fog Hojicha",tag:"Drinks",url:"Recipe/london-fog-hojicha.html"},
-    {title:"Lychee Matcha Latte with Lychee Cream Cheese Foam",tag:"Matcha",url:"Recipe/lychee-matcha-latte.html"},
-    {title:"Mango Matcha Latte",tag:"Matcha",url:"Recipe/mango-matcha-latte.html"},
-    {title:"Mango Sago Butter Mochi Pudding",tag:"Loaf",url:"Recipe/mango-sago-mochi-pudding.html"},
-    {title:"Maple Pumpkin Matcha Latte",tag:"Matcha",url:"Recipe/maple-pumpkin-matcha-latte.html"},
-    {title:"Matcha Brown Butter Brookie",tag:"Matcha",url:"Recipe/matcha-brown-butter-blondie.html"},
-    {title:"Matcha Butter Mochi Tang Yuan",tag:"Matcha",url:"Recipe/matcha-butter-mochi-tang-yuan.html"},
-    {title:"Matcha Latte Coffee Cake",tag:"Matcha",url:"Recipe/matcha-latte-coffee-cake.html"},
-    {title:"Matcha Red Bean Coffee Cake",tag:"Matcha",url:"Recipe/matcha-red-bean-coffee-cake.html"},
-    {title:"Milky Oolong Matcha Latte",tag:"Matcha",url:"Recipe/milky-oolong-matcha-latte.html"},
-    {title:"Orange Earl Grey Chocolate Cake",tag:"Baking",url:"Recipe/orange-earl-grey-chocolate-cake.html"},
-    {title:"Orange Spice Tea Loaf",tag:"Loaf",url:"Recipe/orange-spice-tea-loaf.html"},
-    {title:"Pandan Coconut Custard Cake",tag:"Cake",url:"Recipe/pandan-coconut-custard-cake.html"},
-    {title:"Pandan Custard Matcha Latte",tag:"Matcha",url:"Recipe/pandan-custard-matcha-latte.html"},
-    {title:"Pandan Custard",tag:"Baking",url:"Recipe/pandan-custard.html"},
-    {title:"Pandan Leche Flan Cake",tag:"Cake",url:"Recipe/pandan-leche-flan-cake.html"},
-    {title:"Peanut Butter Tea Thumbprint Cookies",tag:"Cookies",url:"Recipe/peanut-butter-thumbprint-cookies.html"},
-    {title:"Peppermint Chocolate Brownie",tag:"Cookies",url:"Recipe/peppermint-chocolate-brownie.html"},
-    {title:"Pickle Matcha Latte (April Fools)",tag:"Matcha",url:"Recipe/pickle-matcha-latte.html"},
-    {title:"Upside Down Rhubarb Pistachio Cake with Strawberry Custard",tag:"Cake",url:"Recipe/rhubarb-pistachio-cake.html"},
-    {title:"Organic Saigon Chai Gingerbread Molasses Cookies",tag:"Cookies",url:"Recipe/saigon-chai-gingerbread-cookies.html"},
-    {title:"Salted Caramel Oolong Cake",tag:"Cake",url:"Recipe/salted-caramel-oolong-cake.html"},
-    {title:"Strawberry Hojicha Cheesecake",tag:"Baking",url:"Recipe/strawberry-hojicha-cheesecake.html"},
-    {title:"Strawberry Osmanthus Shortcake",tag:"Cake",url:"Recipe/strawberry-osmanthus-shortcake.html"},
-    {title:"Thai Green Tea Burnt Cheesecake",tag:"Baking",url:"Recipe/thai-green-tea-burnt-cheesecake.html"},
-    {title:"Tofu Hua Chiffon Cake",tag:"Cake",url:"Recipe/tofu-hua-chiffon-cake.html"},
-    {title:"Tofu Pudding Matcha Latte",tag:"Matcha",url:"Recipe/tofu-pudding-matcha-latte.html"},
-    {title:"Ube Hojicha Latte",tag:"Drinks",url:"Recipe/ube-hojicha-latte.html"},
-    {title:"Brown Butter Choc Chip Cookies with Vanilla Cappuccino Tea",tag:"Cookies",url:"Recipe/vanilla-cappuccino-choc-chip-cookies.html"},
-    {title:"Zucchini Chai Muffin",tag:"Muffin",url:"Recipe/zucchini-muffin.html"}
-  ];
-
-  var input = document.getElementById('search-input');
-  var results = document.getElementById('search-results');
-  if(!input || !results) return;
-
-  function getBase() {
-    var path = window.location.pathname;
-    return path.indexOf('/Recipe/') !== -1 ? '../' : '';
-  }
-
-  input.addEventListener('input', function() {
-    var q = this.value.trim().toLowerCase();
-    results.innerHTML = '';
-    if(q.length < 2) { results.classList.remove('open'); return; }
-    var matches = recipes.filter(function(r){ return r.title.toLowerCase().indexOf(q) !== -1 || r.tag.toLowerCase().indexOf(q) !== -1; }).slice(0, 6);
-    if(matches.length === 0) {
-      results.innerHTML = '<p class="search-no-results">No recipes found</p>';
-    } else {
-      matches.forEach(function(r) {
-        var a = document.createElement('a');
-        a.className = 'search-result-item';
-        a.href = getBase() + r.url;
-        a.innerHTML = '<span>' + r.tag + '</span>' + r.title;
-        results.appendChild(a);
-      });
-    }
-    results.classList.add('open');
-  });
-
-  document.addEventListener('click', function(e) {
-    if(!document.getElementById('search-wrap').contains(e.target)) {
-      results.classList.remove('open');
-      input.value = '';
-    }
-  });
-})();
-</script>
-
-<script>
-(function(){
-  var input = document.getElementById('mob-search-input');
-  var results = document.getElementById('mob-search-results');
-  if(!input||!results) return;
-  var recipes = [
-    {title:"Almond Hot Chocolate with Jasmine Whipped Cream",tag:"Drinks",url:"Recipe/almond-hot-chocolate.html"},
-    {title:"Almond Poppy Berries Muffin",tag:"Muffin",url:"Recipe/almond-poppy-berries-muffin.html"},
-    {title:"Apple Cider Donut",tag:"Muffin",url:"Recipe/apple-cider-donut.html"},
-    {title:"Apple Crisp",tag:"Baking",url:"Recipe/apple-crisp.html"},
-    {title:"Apple Crumble Loaf",tag:"Loaf",url:"Recipe/apple-crumble-loaf.html"},
-    {title:"Apple Custard Donut",tag:"Baking",url:"Recipe/apple-custard-donut.html"},
-    {title:"Apple Pie Matcha Latte",tag:"Matcha",url:"Recipe/apple-pie-matcha-latte.html"},
-    {title:"The Perfect Banana Bread",tag:"Loaf",url:"Recipe/banana-bread.html"},
-    {title:"Black Sesame Hojicha Latte",tag:"Drinks",url:"Recipe/black-sesame-hojicha-latte.html"},
-    {title:"Black Sesame Pumpkin Loaf",tag:"Loaf",url:"Recipe/black-sesame-pumpkin-loaf.html"},
-    {title:"Blueberry Muffin Tea Matcha Snowballs",tag:"Cookies",url:"Recipe/blueberry-muffin-tea-matcha-snowballs.html"},
-    {title:"Roasted Brown Sugar Bourbon Milk Tea with Grass Jelly",tag:"Drinks",url:"Recipe/brown-sugar-bourbon-milk-tea.html"},
-    {title:"Butter Tart Cake",tag:"Cake",url:"Recipe/butter-tart-cake.html"},
-    {title:"Caramel Matcha Latte",tag:"Matcha",url:"Recipe/caramel-matcha-latte.html"},
-    {title:"Caramel Pumpkin Spiced Latte Cake",tag:"Cake",url:"Recipe/caramel-pumpkin-spiced-latte-cake.html"},
-    {title:"Perfectly Spiced Carrot Cake",tag:"Cake",url:"Recipe/carrot-cake.html"},
-    {title:"Chamomile Orange Blossom Basque Cheesecake",tag:"Cake",url:"Recipe/chamomile-orange-blossom-basque-cheesecake.html"},
-    {title:"Cinnamon Plum Coffee Cake",tag:"Cake",url:"Recipe/cinnamon-plum-coffee-cake.html"},
-    {title:"Coconut Matcha Lychee Cloud",tag:"Matcha",url:"Recipe/coconut-matcha-lychee-cloud.html"},
-    {title:"Earl Grey Creme Brulee Latte",tag:"Drinks",url:"Recipe/earl-grey-creme-brulee-latte.html"},
-    {title:"Earl Grey Orange Latte",tag:"Drinks",url:"Recipe/earl-grey-orange-latte.html"},
-    {title:"Earl Grey Orange Loaf",tag:"Loaf",url:"Recipe/earl-grey-orange-loaf.html"},
-    {title:"Fraisier",tag:"Cake",url:"Recipe/fraisier.html"},
-    {title:"Grape Tea Fizz",tag:"Drinks",url:"Recipe/grape-tea-fizz.html"},
-    {title:"Guava Oolong Cream Cheese Milk Tea",tag:"Drinks",url:"Recipe/guava-oolong-milk-tea.html"},
-    {title:"Guayaba (Guava) Tres Leches",tag:"Cake",url:"Recipe/guayaba-tres-leches.html"},
-    {title:"Hojicha Jasmine Longan Cake",tag:"Cake",url:"Recipe/hojicha-jasmine-longan-cake.html"},
-    {title:"Hojicha Tiramisu",tag:"Baking",url:"Recipe/hojicha-tiramisu.html"},
-    {title:"Honey Butter Matcha Latte",tag:"Matcha",url:"Recipe/honey-butter-matcha-latte.html"},
-    {title:"Jasmine Chiffon Cake with Lychee Whipped Cream",tag:"Cake",url:"Recipe/jasmine-chiffon-cake.html"},
-    {title:"Jasmine Creme Brulee Tea Shortbread",tag:"Cookies",url:"Recipe/jasmine-creme-brulee-shortbread.html"},
-    {title:"Jasmine Honey Cake",tag:"Cake",url:"Recipe/jasmine-honey-cake.html"},
-    {title:"Jasmine Matcha Latte",tag:"Matcha",url:"Recipe/jasmine-matcha-latte.html"},
-    {title:"Lemon Iced Tea Cake with Chatruemae Black Tea",tag:"Cake",url:"Recipe/lemon-iced-tea-cake.html"},
-    {title:"London Fog Cake",tag:"Cake",url:"Recipe/london-fog-cake.html"},
-    {title:"London Fog Hojicha",tag:"Drinks",url:"Recipe/london-fog-hojicha.html"},
-    {title:"Lychee Matcha Latte with Lychee Cream Cheese Foam",tag:"Matcha",url:"Recipe/lychee-matcha-latte.html"},
-    {title:"Mango Matcha Latte",tag:"Matcha",url:"Recipe/mango-matcha-latte.html"},
-    {title:"Mango Sago Butter Mochi Pudding",tag:"Loaf",url:"Recipe/mango-sago-mochi-pudding.html"},
-    {title:"Maple Pumpkin Matcha Latte",tag:"Matcha",url:"Recipe/maple-pumpkin-matcha-latte.html"},
-    {title:"Matcha Brown Butter Brookie",tag:"Matcha",url:"Recipe/matcha-brown-butter-blondie.html"},
-    {title:"Matcha Butter Mochi Tang Yuan",tag:"Matcha",url:"Recipe/matcha-butter-mochi-tang-yuan.html"},
-    {title:"Matcha Latte Coffee Cake",tag:"Matcha",url:"Recipe/matcha-latte-coffee-cake.html"},
-    {title:"Matcha Red Bean Coffee Cake",tag:"Matcha",url:"Recipe/matcha-red-bean-coffee-cake.html"},
-    {title:"Milky Oolong Matcha Latte",tag:"Matcha",url:"Recipe/milky-oolong-matcha-latte.html"},
-    {title:"Orange Earl Grey Chocolate Cake",tag:"Baking",url:"Recipe/orange-earl-grey-chocolate-cake.html"},
-    {title:"Orange Spice Tea Loaf",tag:"Loaf",url:"Recipe/orange-spice-tea-loaf.html"},
-    {title:"Pandan Coconut Custard Cake",tag:"Cake",url:"Recipe/pandan-coconut-custard-cake.html"},
-    {title:"Pandan Custard Matcha Latte",tag:"Matcha",url:"Recipe/pandan-custard-matcha-latte.html"},
-    {title:"Pandan Custard",tag:"Baking",url:"Recipe/pandan-custard.html"},
-    {title:"Pandan Leche Flan Cake",tag:"Cake",url:"Recipe/pandan-leche-flan-cake.html"},
-    {title:"Peanut Butter Tea Thumbprint Cookies",tag:"Cookies",url:"Recipe/peanut-butter-thumbprint-cookies.html"},
-    {title:"Peppermint Chocolate Brownie",tag:"Cookies",url:"Recipe/peppermint-chocolate-brownie.html"},
-    {title:"Pickle Matcha Latte (April Fools)",tag:"Matcha",url:"Recipe/pickle-matcha-latte.html"},
-    {title:"Upside Down Rhubarb Pistachio Cake with Strawberry Custard",tag:"Cake",url:"Recipe/rhubarb-pistachio-cake.html"},
-    {title:"Organic Saigon Chai Gingerbread Molasses Cookies",tag:"Cookies",url:"Recipe/saigon-chai-gingerbread-cookies.html"},
-    {title:"Salted Caramel Oolong Cake",tag:"Cake",url:"Recipe/salted-caramel-oolong-cake.html"},
-    {title:"Strawberry Hojicha Cheesecake",tag:"Baking",url:"Recipe/strawberry-hojicha-cheesecake.html"},
-    {title:"Strawberry Osmanthus Shortcake",tag:"Cake",url:"Recipe/strawberry-osmanthus-shortcake.html"},
-    {title:"Thai Green Tea Burnt Cheesecake",tag:"Baking",url:"Recipe/thai-green-tea-burnt-cheesecake.html"},
-    {title:"Tofu Hua Chiffon Cake",tag:"Cake",url:"Recipe/tofu-hua-chiffon-cake.html"},
-    {title:"Tofu Pudding Matcha Latte",tag:"Matcha",url:"Recipe/tofu-pudding-matcha-latte.html"},
-    {title:"Ube Hojicha Latte",tag:"Drinks",url:"Recipe/ube-hojicha-latte.html"},
-    {title:"Brown Butter Choc Chip Cookies with Vanilla Cappuccino Tea",tag:"Cookies",url:"Recipe/vanilla-cappuccino-choc-chip-cookies.html"},
-    {title:"Zucchini Chai Muffin",tag:"Muffin",url:"Recipe/zucchini-muffin.html"}
-  ];
-  function getBase(){return window.location.pathname.indexOf('/Recipe/')!==-1?'../':'';}
-  input.addEventListener('input',function(){
-    var q=this.value.trim().toLowerCase();
-    results.innerHTML='';
-    if(q.length<2){results.style.display='none';return;}
-    var matches=recipes.filter(function(r){return r.title.toLowerCase().indexOf(q)!==-1||r.tag.toLowerCase().indexOf(q)!==-1;}).slice(0,5);
-    if(matches.length===0){
-      results.innerHTML='<p style="padding:0.6rem 1rem;font-size:0.82rem;color:#b89a80;font-style:italic;">No recipes found</p>';
-    } else {
-      matches.forEach(function(r){
-        var a=document.createElement('a');
-        a.href=getBase()+r.url;
-        a.style.cssText='display:block;padding:0.55rem 1rem;font-size:0.82rem;color:#5a3e32;text-decoration:none;border-bottom:1px solid #f0d4a8;';
-        a.innerHTML='<span style="display:block;font-size:0.68rem;color:#d4847a;text-transform:uppercase;letter-spacing:0.1em;">'+r.tag+'</span>'+r.title;
-        results.appendChild(a);
-      });
-    }
-    results.style.display='block';
-  });
-})();
-</script>
-
-<!-- Newsletter Popup -->
-<div id="newsletter-popup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;align-items:center;justify-content:center;background:rgba(90,62,50,0.4);">
-  <div style="background:#fde9c8;border-radius:16px;padding:2.5rem 2rem;max-width:440px;width:90%;position:relative;box-shadow:0 16px 48px rgba(90,62,50,0.2);">
-    <button onclick="closePopup()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.2rem;cursor:pointer;color:#5a3e32;opacity:0.5;line-height:1;">&#10005;</button>
-    <p style="font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#d4847a;margin-bottom:0.5rem;">Newsletter</p>
-    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-weight:700;color:#5383c6;margin-bottom:0.75rem;line-height:1.2;white-space:nowrap;text-align:center;">A little something for your Saturday</h2>
-    <p style="font-size:0.85rem;color:#5a3e32;line-height:1.75;margin-bottom:1.5rem;">Be the first to know about new recipes, exclusive baking tips, and what goes on at How About Saturday.</p>
-    <form id="popup-kit-form" style="margin:0;">
-      <input type="text" name="fields[first_name]" placeholder="First name" required
-        style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
-      <input type="email" name="email_address" placeholder="Your email address" required
-        style="width:100%;background:#faebd8;border:1.5px solid #f0d4a8;border-radius:20px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:#5a3e32;outline:none;margin-bottom:0.75rem;box-sizing:border-box;" />
-      <button type="submit"
-        style="width:100%;background:#5383c6;color:#fde9c8;border:none;border-radius:20px;padding:0.65rem 1.5rem;font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">
-        Subscribe
-      </button>
-      <p style="font-size:0.75rem;color:#5a3e32;opacity:0.6;text-align:center;margin-top:0.75rem;">No spam. Unsubscribe at any time.</p>
-    </form>
-    <div id="popup-kit-success" style="display:none;text-align:center;padding:1rem 0;">
-      <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.3rem;font-weight:700;color:#5383c6;margin-bottom:0.5rem;">You are in!</p>
-      <p style="font-size:0.88rem;color:#5a3e32;">Check your email to confirm your subscription.</p>
-    </div>
-    <script>
-    (function(){
-      var form = document.getElementById('popup-kit-form');
-      if(!form) return;
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        var email = form.querySelector('[name="email_address"]');
-        var firstName = form.querySelector('[name="fields[first_name]"]');
-        if(!email || !email.value) return;
-        var data = new FormData();
-        data.append('email_address', email.value);
-        if(firstName && firstName.value) data.append('fields[first_name]', firstName.value);
-        var iframe = document.createElement('iframe');
-          iframe.name = 'kit_popup_iframe';
-          iframe.style.display = 'none';
-          document.body.appendChild(iframe);
-          form.setAttribute('target', 'kit_popup_iframe');
-          form.setAttribute('action', 'https://app.kit.com/forms/9698796/subscriptions');
-          form.setAttribute('method', 'post');
-          form.submit();
-          setTimeout(function() {
-            form.style.display = 'none';
-            document.getElementById('popup-kit-success').style.display = 'block';
-            setTimeout(function(){ closePopup(); }, 2500);
-          }, 1000);
-      });
-    })();
-    </script>
-  </div>
-</div>
-<script>
-function closePopup() {
-  document.getElementById('newsletter-popup').style.display = 'none';
-  localStorage.setItem('newsletter_closed', '1');
-}
-(function() {
-  if(localStorage.getItem('newsletter_closed')) return;
-  setTimeout(function() {
-    var popup = document.getElementById('newsletter-popup');
-    if(popup) popup.style.display = 'flex';
-  }, 3000);
-  document.getElementById('newsletter-popup').addEventListener('click', function(e) {
-    if(e.target === this) closePopup();
-  });
-})();
-</script>
-</body>
-</html>
