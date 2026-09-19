@@ -5,7 +5,7 @@
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QW7E93V2XR');</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>48 Hours in London — How About Saturday</title>
+  <title>Life Outside the Kitchen — How About Saturday</title>
   <meta name="description" content="Recipes, baking, and slow living by Amy. @howaboutsaturday" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -168,7 +168,7 @@
     .cat-body { padding: 0 0.2rem; }
     .cat-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; color: var(--mid); line-height: 1.25; }
     .cat-card:hover .cat-title { color: var(--terracotta); }
-    .cat-section-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 700; color: var(--mid); max-width: 1100px; margin: 0 auto 1.25rem; padding: 0 2rem; }
+    .cat-section-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--mid); max-width: 1100px; margin: 0 auto 1.25rem; padding: 0 2rem; }
     @media (max-width: 860px) { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 560px) { .cat-grid { grid-template-columns: 1fr; } }
 
@@ -235,6 +235,46 @@
     .mob-link { display: block; padding: 0.6rem 2rem; font-size: 0.82rem; color: var(--mid); text-decoration: none; border-bottom: 1px solid var(--warm-tan); }
     .mob-link:hover { color: var(--terracotta); }
 
+  
+    /* ── ABOUT PAGE ── */
+    .about-body { font-size: 0.95rem; line-height: 1.75; color: var(--mid); margin-bottom: 0.75rem; }
+    .about-tagline { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-mid); margin-bottom: 0.5rem; }
+    .about-text-block { font-size: 0.95rem; line-height: 1.85; color: var(--mid); margin-bottom: 1.25rem; }
+    .about-divider { border: none; border-top: 1px solid var(--warm-tan); margin: 2rem 0; }
+    .about-photo-placeholder { width: 100%; aspect-ratio: 3/4; border-radius: 12px; background: var(--warm-tan); overflow: hidden; }
+    .about-photo-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .about-social { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+
+    /* ── CATEGORY PAGES ── */
+    .page-sub { font-size: 0.9rem; color: var(--mid); opacity: 0.8; line-height: 1.7; max-width: 52ch; }
+    .page-intro { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 1.5rem; border-bottom: 1px solid var(--warm-tan); margin-bottom: 2rem; }
+    .cat-section { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 1rem; }
+
+    /* ── SERIES ── */
+    .sr-img-wrap { aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; background: var(--warm-tan); position: relative; margin-bottom: 0.7rem; }
+    .sr-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ── CONTACT / WORK WITH ME ── */
+    .contact-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; border-radius: 20px; font-family: var(--sans); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; font-weight: 500; background: var(--mid); color: var(--cream); transition: all 0.2s; cursor: pointer; border: none; }
+    .contact-btn:hover { background: var(--terracotta); }
+
+    /* ── PRIVACY POLICY ── */
+    .policy-section { max-width: 820px; margin: 0 auto; padding: 2rem 2rem 1rem; }
+    .page-date { font-family: var(--sans); font-size: 0.8rem; color: var(--mid); opacity: 0.6; margin-bottom: 2rem; }
+
+    /* ── INSTAGRAM EMBED ── */
+    .instagram-media { background: #fff; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width: 540px; padding: 0; width: calc(100% - 2px); }
+
+    /* ── INDEX ── */
+    .lifestyle-card { text-decoration: none; color: inherit; display: block; }
+    .lifestyle-card:hover h3 { color: var(--terracotta); }
+    .post-card { text-decoration: none; color: inherit; display: block; }
+    .post-card:hover h3 { color: var(--terracotta); }
+
+    /* ── ADSENSE ── */
+    .ad-slot { display: block; margin: 2rem auto; }
+    .adsbygoogle { display: block; }
+
   </style>
 </head>
 <body>
@@ -246,88 +286,110 @@
       <input class="search-input" id="search-input" type="text" placeholder="Search" autocomplete="off" />
       <div class="search-results" id="search-results"></div>
     </div>
-    <a class="site-logo" href="../index.html">How About Saturday</a>
+    <a class="site-logo" href="index.html">How About Saturday</a>
     <div class="nav-top-icons">
       <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
   <nav class="nav-links-row" id="nav-links">
-    <a class="nav-link current" href="../index.html">Home</a>
+    <a class="nav-link current" href="index.html">Home</a>
     <div class="nav-item-dd">
-      <a href="../all-recipes.html">Recipes <span class="nav-arrow">&#9660;</span></a>
+      <a href="all-recipes.html">Recipes <span class="nav-arrow">&#9660;</span></a>
       <div class="nav-dropdown">
-        <a class="nav-dropdown-link" href="../all-recipes.html">View All Recipes</a>
+        <a class="nav-dropdown-link" href="all-recipes.html">View All Recipes</a>
         <div class="nav-dropdown-divider"></div>
-        <a class="nav-dropdown-item" href="../beverage.html">Beverage</a>
-        <a class="nav-dropdown-item" href="../baking.html">Baking</a>
+        <a class="nav-dropdown-item" href="beverage.html">Beverage</a>
+        <a class="nav-dropdown-item" href="baking.html">Baking</a>
       </div>
     </div>
     <div class="nav-item-dd">
-      <a href="../all-series.html">Series <span class="nav-arrow">&#9660;</span></a>
+      <a href="all-series.html">Series <span class="nav-arrow">&#9660;</span></a>
       <div class="nav-dropdown">
-        <a class="nav-dropdown-link" href="../all-series.html">View All Series</a>
+        <a class="nav-dropdown-link" href="all-series.html">View All Series</a>
         <div class="nav-dropdown-divider"></div>
-        <a class="nav-dropdown-item" href="../series-world-cup.html">2026 World Cup Series</a>
-        <a class="nav-dropdown-item" href="../series-flavours.html">Flavours of My Childhood</a>
-        <a class="nav-dropdown-item" href="../series-matcha.html">Matcha Series</a>
-        <a class="nav-dropdown-item" href="../series-hojicha.html">Hojicha Series</a>
-        <a class="nav-dropdown-item" href="../series-holiday-cookies.html">Holiday Cookies</a>
+        <a class="nav-dropdown-item" href="series-world-cup.html">2026 World Cup Series</a>
+        <a class="nav-dropdown-item" href="series-flavours.html">Flavours of My Childhood</a>
+        <a class="nav-dropdown-item" href="series-matcha.html">Matcha Series</a>
+        <a class="nav-dropdown-item" href="series-hojicha.html">Hojicha Series</a>
+        <a class="nav-dropdown-item" href="series-holiday-cookies.html">Holiday Cookies</a>
       </div>
     </div>
-    <a class="nav-link" href="../about.html">About</a>
-    <a class="nav-link" href="../work-with-me.html">Work with Me</a>
-    <a class="nav-link" href="../lifestyle.html">Life Outside the Kitchen</a>
+    <a class="nav-link" href="about.html">About</a>
+    <a class="nav-link" href="work-with-me.html">Work with Me</a>
+    <a class="nav-link" href="lifestyle.html">Life Outside the Kitchen</a>
     <a class="nav-link" href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a>
-    <div class="mob-section"><a class="mob-plain" href="../all-recipes.html">Recipes</a></div>
-    <div class="mob-section"><a class="mob-plain" href="../all-series.html">Series</a></div>
-    <div class="mob-section"><a class="mob-plain" href="../about.html">About</a></div>
-    <div class="mob-section"><a class="mob-plain" href="../work-with-me.html">Work with Me</a></div>
-    <div class="mob-section"><a class="mob-plain" href="../lifestyle.html">Life Outside the Kitchen</a></div>
+    <div class="mob-section"><a class="mob-plain" href="all-recipes.html">Recipes</a></div>
+    <div class="mob-section"><a class="mob-plain" href="all-series.html">Series</a></div>
+    <div class="mob-section"><a class="mob-plain" href="about.html">About</a></div>
+    <div class="mob-section"><a class="mob-plain" href="work-with-me.html">Work with Me</a></div>
+    <div class="mob-section"><a class="mob-plain" href="lifestyle.html">Life Outside the Kitchen</a></div>
     <div class="mob-section"><a class="mob-plain" href="https://instagram.com/howaboutsaturday" target="_blank">Instagram &#8599;</a></div>
   </nav>
 </header>
 
 
-<article style="max-width:740px;margin:0 auto;padding:3rem 2rem 5rem;">
-  <div style="margin-bottom:2rem;">
-    <a href="../lifestyle.html" style="font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:#d4847a;text-decoration:none;">&#8592; Life Outside the Kitchen</a>
-  </div>
-  <p style="font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#d4847a;margin-bottom:0.6rem;">Travel</p>
-  <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;color:#5383c6;line-height:1.05;margin:0 0 1rem;">48 Hours in London: Where We Ate &amp; Went</h1>
-  <p style="font-family:'Jost',sans-serif;font-size:0.85rem;color:#5a3e32;opacity:0.6;margin:0 0 2.5rem;border-bottom:1px solid #f0d4a8;padding-bottom:1.5rem;">Amy &amp; Daniel &nbsp;&middot;&nbsp; Sep 16, 2026</p>
+<!-- PAGE HEADER -->
+<div style="max-width:1100px;margin:0 auto;padding:3rem 2rem 2rem;border-bottom:1px solid #f0d4a8;">
+  <p style="font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#d4847a;margin-bottom:0.5rem;">How About Saturday</p>
+  <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2.5rem,6vw,4rem);font-weight:700;color:#5383c6;line-height:1.05;margin:0 0 0.75rem;">Life Outside the Kitchen</h1>
+  <p style="font-size:0.92rem;line-height:1.75;color:#5a3e32;margin:0;white-space:nowrap;">This is a space where you get a glimpse of my life outside the kitchen. Here, I share those ordinary Saturdays in between, sharing bits of where I've been, some of my favourite things, and favorite places I have visited.</p>
+</div>
 
-  <div style="aspect-ratio:16/9;border-radius:12px;background:linear-gradient(160deg,#f0d4a8,#d4847a 60%,#5383c6);margin-bottom:2.5rem;overflow:hidden;">
-    <img src="../images/lifestyle/london-featured.jpg" alt="London" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
-  </div>
-
-  <div style="font-size:0.95rem;line-height:1.9;color:#5a3e32;display:flex;flex-direction:column;gap:1.5rem;">
-    <p>We landed on almost no sleep and went straight to the airport M&amp;S, which is not a sentence I expected to be proud of. The Our Best Ever Prawn Sandwich is bussingggg. I will get one every single time I am in this country. Where else on earth is there a shrimp sandwich just sitting in a fridge, waiting for you.</p>
-    <p>There was no time to rest and no room to rest in, so we paid for early check-in, dropped the bags, and went right back out to Borough Market. We travel for food. It felt like the correct way to start. Borough was packed. Not lively-packed, more shuffle-sideways-through-a-crowd-and-lose-each-other packed. Some of it does live up to the hype but I will get into which parts in the next post. I spent a lot of it holding my bag against my chest.</p>
-    <p>Then Marylebone, which I had built up in my head and which turned out to be mostly coffee. We do not drink coffee. The stores that were cute were priced in a way that made us put things down gently and walk out. What saved it was Daunt. We always go back to Daunt. It is the shelving, a long green room, books stacked to the ceiling, everything angled so you keep finding things you were not looking for. Dan says it is one of his favourite bookshops anywhere, and I do not think he is exaggerating.</p>
-    <p>We wandered back toward the hotel, going into whatever looked open, and ended at Chill Since '93 for pizza. It is not really pizza. It is closer to focaccia, thick and chewy, and it is very good. The peach lager might be the best beer I have ever had, which is a big statement from someone who orders one beer a year. Then we went back to the room and were unconscious by nine.</p>
-
-    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;font-weight:700;color:#5383c6;margin-top:1rem;">Day 2</h2>
-
-    <div style="aspect-ratio:16/9;border-radius:10px;background:linear-gradient(150deg,#5383c6,#8fa8c6);overflow:hidden;">
-      <img src="../images/lifestyle/london-day2.jpg" alt="London Day 2" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+<!-- FEATURED POST -->
+<div style="max-width:1100px;margin:0 auto;padding:3rem 2rem 2rem;">
+  <p style="font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#d4847a;margin-bottom:1.25rem;">Latest</p>
+  <a href="lifestyle/48-hours-in-london.html" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;text-decoration:none;color:inherit;">
+    <div style="aspect-ratio:4/5;border-radius:12px;background:linear-gradient(160deg,#f0d4a8,#d4847a 60%,#5383c6);overflow:hidden;">
+      <img src="images/lifestyle/london-featured.jpg" alt="48 Hours in London" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
     </div>
-
-    <p>Up early for 26 Grains, which is our place. We go every time we are in London. Everyone talks about the porridge, and the porridge is worth talking about, but the eggs are what I think about on the way home. The whipped burrata omelette is one of the best things I have eaten in this city, in any city. We also ordered the lemon loaf with ricotta and blackberry jam, which is the kind of thing you eat in small bites to make it last longer.</p>
-    <p>Afternoon was Neal's Yard and the surrounding streets, which reward wandering. Then Padella for dinner, which has a queue and deserves one. The Fettuccine with 'nduja, lemon, and mascarpone is the dish. We stopped talking while we ate it. Dan and I do not stop talking. That is how good it was.</p>
-    <p>That was the trip. Two days, a lot of walking, one very good beer, two excellent breakfasts, and one pasta that I am still thinking about.</p>
-
-    <div style="padding:1.5rem;background:#faebd8;border-radius:12px;">
-      <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;font-weight:700;color:#5383c6;margin:0 0 0.75rem;">Places mentioned</p>
-      <p style="font-size:0.88rem;line-height:1.9;margin:0;">M&amp;S Food (Heathrow) &nbsp;&middot;&nbsp; Borough Market &nbsp;&middot;&nbsp; Daunt Books, Marylebone &nbsp;&middot;&nbsp; Chill Since '93 &nbsp;&middot;&nbsp; 26 Grains, Neal's Yard &nbsp;&middot;&nbsp; Padella, Borough</p>
+    <div>
+      <p style="font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#d4847a;margin-bottom:0.75rem;">Travel</p>
+      <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:700;color:#5a3e32;line-height:1.1;margin:0 0 1rem;">48 Hours in London: Where We Ate &amp; Went</h2>
+      <p style="font-size:0.9rem;line-height:1.8;color:#5a3e32;margin:0 0 1.25rem;">On no sleep, with a paid early check-in. Borough Market, Marylebone, 26 Grains, Padella, and a prawn sandwich from M&amp;S that I will not apologise for.</p>
+      <p style="font-family:'Jost',sans-serif;font-size:0.78rem;color:#5a3e32;opacity:0.6;margin:0;">Amy &amp; Daniel &nbsp;&middot;&nbsp; Sep 16, 2026</p>
     </div>
+  </a>
+</div>
 
-    <div style="padding-top:1.5rem;border-top:1px solid #f0d4a8;display:flex;gap:1.5rem;flex-wrap:wrap;font-size:0.82rem;">
-      <span style="color:#5a3e32;opacity:0.5;">More from this trip:</span>
-      <a href="worth-it-or-skip-it-london.html" style="color:#5383c6;text-decoration:none;">Worth It or Skip It &#8594;</a>
-      <a href="bites-of-the-city-london.html" style="color:#5383c6;text-decoration:none;">Bites of the City &#8594;</a>
-    </div>
+<!-- POST GRID -->
+<div style="max-width:1100px;margin:0 auto;padding:2rem 2rem 5rem;">
+  <h3 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;font-weight:700;color:#5383c6;margin:0 0 1.5rem;">All Posts</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem 1.5rem;">
+
+    <a href="lifestyle/48-hours-in-london.html" style="text-decoration:none;color:inherit;">
+      <div style="aspect-ratio:4/3;border-radius:10px;background:linear-gradient(150deg,#f0d4a8,#d4847a);margin-bottom:0.9rem;overflow:hidden;">
+        <img src="images/lifestyle/london-48hrs.jpg" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+      </div>
+      <p style="font-family:'Jost',sans-serif;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:#d4847a;margin-bottom:0.3rem;">Travel</p>
+      <h4 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.15rem;font-weight:700;color:#5a3e32;line-height:1.25;margin:0 0 0.4rem;">48 Hours in London: Where We Ate &amp; Went</h4>
+      <p style="font-size:0.82rem;color:#5a3e32;opacity:0.75;line-height:1.5;margin:0 0 0.4rem;">Borough, Marylebone, Padella, 26 Grains, and one very good airport sandwich.</p>
+      <p style="font-family:'Jost',sans-serif;font-size:0.75rem;color:#5a3e32;opacity:0.55;margin:0;">Amy &amp; Daniel &nbsp;&middot;&nbsp; Sep 16, 2026</p>
+    </a>
+
+    <a href="lifestyle/worth-it-or-skip-it-london.html" style="text-decoration:none;color:inherit;">
+      <div style="aspect-ratio:4/3;border-radius:10px;background:linear-gradient(150deg,#5383c6,#8fa8c6);margin-bottom:0.9rem;overflow:hidden;">
+        <img src="images/lifestyle/london-worth-it.jpg" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+      </div>
+      <p style="font-family:'Jost',sans-serif;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:#d4847a;margin-bottom:0.3rem;">Travel</p>
+      <h4 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.15rem;font-weight:700;color:#5a3e32;line-height:1.25;margin:0 0 0.4rem;">Worth It or Skip It: London Edition</h4>
+      <p style="font-size:0.82rem;color:#5a3e32;opacity:0.75;line-height:1.5;margin:0 0 0.4rem;">Borough Market is the most overrated meal in the city.</p>
+      <p style="font-family:'Jost',sans-serif;font-size:0.75rem;color:#5a3e32;opacity:0.55;margin:0;">Amy &amp; Daniel &nbsp;&middot;&nbsp; Sep 16, 2026</p>
+    </a>
+
+    <a href="lifestyle/bites-of-the-city-london.html" style="text-decoration:none;color:inherit;">
+      <div style="aspect-ratio:4/3;border-radius:10px;background:linear-gradient(150deg,#c9b79c,#5a3e32);margin-bottom:0.9rem;overflow:hidden;">
+        <img src="images/lifestyle/london-bites.jpg" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
+      </div>
+      <p style="font-family:'Jost',sans-serif;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:#d4847a;margin-bottom:0.3rem;">Food</p>
+      <h4 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.15rem;font-weight:700;color:#5a3e32;line-height:1.25;margin:0 0 0.4rem;">Bites of the City: London Edition</h4>
+      <p style="font-size:0.82rem;color:#5a3e32;opacity:0.75;line-height:1.5;margin:0 0 0.4rem;">Five each. We only agreed on two.</p>
+      <p style="font-family:'Jost',sans-serif;font-size:0.75rem;color:#5a3e32;opacity:0.55;margin:0;">Amy &amp; Daniel &nbsp;&middot;&nbsp; Sep 16, 2026</p>
+    </a>
+
   </div>
-</article>
+</div>
+
+
 
 <!-- NEWSLETTER -->
 <div style="max-width:820px;margin:0 auto;padding:2rem 2rem 4rem;text-align:center;">
@@ -354,7 +416,7 @@
   <span class="footer-logo">How About Saturday</span>
   <p>Baking, slow living &amp; cozy drinks.</p>
   <p style="margin-top:0.75rem;"><a href="https://instagram.com/howaboutsaturday" target="_blank">Instagram</a> &nbsp;&middot;&nbsp; <a href="https://www.youtube.com/@howaboutsaturday" target="_blank">YouTube</a> &nbsp;&middot;&nbsp; <a href="https://www.tiktok.com/@howaboutsaturday_" target="_blank">TikTok</a></p>
-  <p style="margin-top:0.5rem;opacity:0.5;font-size:0.75rem;">&copy; 2026 How About Saturday &middot; All rights reserved. &middot; <a href="../work-with-me.html" style="color:#fde9c8;text-decoration:underline;">Work with Me</a> &middot; <a href="../privacy-policy.html" style="color:#fde9c8;text-decoration:underline;">Privacy Policy</a></p>
+  <p style="margin-top:0.5rem;opacity:0.5;font-size:0.75rem;">&copy; 2026 How About Saturday &middot; All rights reserved. &middot; <a href="work-with-me.html" style="color:#fde9c8;text-decoration:underline;">Work with Me</a> &middot; <a href="privacy-policy.html" style="color:#fde9c8;text-decoration:underline;">Privacy Policy</a></p>
 </footer>
 
 <!-- NEWSLETTER POPUP -->

@@ -168,7 +168,7 @@
     .cat-body { padding: 0 0.2rem; }
     .cat-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; color: var(--mid); line-height: 1.25; }
     .cat-card:hover .cat-title { color: var(--terracotta); }
-    .cat-section-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 700; color: var(--mid); max-width: 1100px; margin: 0 auto 1.25rem; padding: 0 2rem; }
+    .cat-section-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--mid); max-width: 1100px; margin: 0 auto 1.25rem; padding: 0 2rem; }
     @media (max-width: 860px) { .cat-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 560px) { .cat-grid { grid-template-columns: 1fr; } }
 
@@ -235,6 +235,46 @@
     .mob-link { display: block; padding: 0.6rem 2rem; font-size: 0.82rem; color: var(--mid); text-decoration: none; border-bottom: 1px solid var(--warm-tan); }
     .mob-link:hover { color: var(--terracotta); }
 
+  
+    /* ── ABOUT PAGE ── */
+    .about-body { font-size: 0.95rem; line-height: 1.75; color: var(--mid); margin-bottom: 0.75rem; }
+    .about-tagline { font-family: var(--sans); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--light-mid); margin-bottom: 0.5rem; }
+    .about-text-block { font-size: 0.95rem; line-height: 1.85; color: var(--mid); margin-bottom: 1.25rem; }
+    .about-divider { border: none; border-top: 1px solid var(--warm-tan); margin: 2rem 0; }
+    .about-photo-placeholder { width: 100%; aspect-ratio: 3/4; border-radius: 12px; background: var(--warm-tan); overflow: hidden; }
+    .about-photo-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .about-social { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+
+    /* ── CATEGORY PAGES ── */
+    .page-sub { font-size: 0.9rem; color: var(--mid); opacity: 0.8; line-height: 1.7; max-width: 52ch; }
+    .page-intro { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem 1.5rem; border-bottom: 1px solid var(--warm-tan); margin-bottom: 2rem; }
+    .cat-section { max-width: 1100px; margin: 0 auto; padding: 2rem 2rem 1rem; }
+
+    /* ── SERIES ── */
+    .sr-img-wrap { aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; background: var(--warm-tan); position: relative; margin-bottom: 0.7rem; }
+    .sr-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ── CONTACT / WORK WITH ME ── */
+    .contact-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; border-radius: 20px; font-family: var(--sans); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; font-weight: 500; background: var(--mid); color: var(--cream); transition: all 0.2s; cursor: pointer; border: none; }
+    .contact-btn:hover { background: var(--terracotta); }
+
+    /* ── PRIVACY POLICY ── */
+    .policy-section { max-width: 820px; margin: 0 auto; padding: 2rem 2rem 1rem; }
+    .page-date { font-family: var(--sans); font-size: 0.8rem; color: var(--mid); opacity: 0.6; margin-bottom: 2rem; }
+
+    /* ── INSTAGRAM EMBED ── */
+    .instagram-media { background: #fff; border: 0; border-radius: 3px; box-shadow: 0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width: 540px; padding: 0; width: calc(100% - 2px); }
+
+    /* ── INDEX ── */
+    .lifestyle-card { text-decoration: none; color: inherit; display: block; }
+    .lifestyle-card:hover h3 { color: var(--terracotta); }
+    .post-card { text-decoration: none; color: inherit; display: block; }
+    .post-card:hover h3 { color: var(--terracotta); }
+
+    /* ── ADSENSE ── */
+    .ad-slot { display: block; margin: 2rem auto; }
+    .adsbygoogle { display: block; }
+
   </style>
 </head>
 <body>
@@ -292,18 +332,18 @@
   <div style="margin-bottom:2rem;">
     <a href="../lifestyle.html" style="font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:#d4847a;text-decoration:none;">&#8592; Life Outside the Kitchen</a>
   </div>
-  <p style="font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#d4847a;margin-bottom:0.6rem;">Food</p>
+    <p style="font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#d4847a;margin-bottom:0.6rem;">Food</p>
   <h1 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(2rem,5vw,3rem);font-weight:700;color:#5383c6;line-height:1.05;margin:0 0 0.75rem;">Bites of the City: London Edition</h1>
   <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;font-style:italic;color:#5a3e32;opacity:0.7;margin:0 0 1rem;">Five each. We only agreed on two.</p>
   <p style="font-family:'Jost',sans-serif;font-size:0.85rem;color:#5a3e32;opacity:0.6;margin:0 0 2.5rem;border-bottom:1px solid #f0d4a8;padding-bottom:1.5rem;">Amy &amp; Daniel &nbsp;&middot;&nbsp; Sep 16, 2026</p>
 
   <div style="font-size:0.95rem;line-height:1.9;color:#5a3e32;display:flex;flex-direction:column;gap:1.5rem;">
 
-    <p>Every trip we each rank the five best things we ate. We do it separately, which is the only reason it is interesting. This time we overlapped on two dishes and then went completely different directions.</p>
+    <p>Welcome to our food-obsessed travel diary! On this trip, Dan and I decided to make things interesting by ranking the top five things we ate in every city. Spoiler: we have eerily similar taste buds, so you'll spot some serious overlap, and that's half the fun.</p>
 
     <div style="background:#faebd8;border-radius:12px;padding:1.5rem;">
       <p style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;font-weight:700;color:#5383c6;margin:0 0 0.75rem;">What we both picked</p>
-      <p style="margin:0;">The whipped burrata omelette at 26 Grains, and the Padella Fettuccine with 'nduja, lemon, and mascarpone. If you take nothing else from this post: those two, in that order, whatever else you plan.</p>
+      <p style="margin:0;">If you remember nothing else from this post, let it be these two words: burrata omelette. Okay, make it six words if you include Padella's Fettuccine with 'nduja, lemon, and mascarpone. These dishes were so good, we're still dreaming about them. Seriously, if you're planning your own trip, put these at the top of your list.</p>
     </div>
 
     <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;font-weight:700;color:#5383c6;margin-top:1rem;">Amy's five</h2>
@@ -311,26 +351,24 @@
       <img src="../images/lifestyle/london-amy-picks.jpg" alt="Amy's picks" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
     </div>
     <ol style="padding-left:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
-      <li><strong>26 Grains</strong> — whipped burrata omelette. Soft, rich, and the kind of thing you eat slowly to make it last longer.</li>
-      <li><strong>26 Grains</strong> — lemon loaf with ricotta and blackberry jam. Yes, two from the same place. I would order both again tomorrow.</li>
-      <li><strong>Garlic Pig</strong> — traditional sausage roll. The one thing at Borough Market I would queue for.</li>
-      <li><strong>Padella</strong> — Fettuccine with 'nduja, lemon, and mascarpone. We stopped talking while eating it.</li>
-      <li><strong>M&amp;S</strong> — Our Best Ever Prawn Sandwich. I am not sorry. It is an airport sandwich and it is better than things I have paid four times more for.</li>
+      <li><strong>26 Grains</strong> — whipped burrata omelette.</li>
+      <li><strong>26 Grains</strong> — lemon loaf with ricotta and blackberry jam. Yes, I'm putting two dishes from the same spot. No regrets. I'd order both again tomorrow if I could.</li>
+      <li><strong>Garlic Pig</strong> — traditional sausage roll. The only thing at Borough Market I'd actually stand in line for (and that's saying something).</li>
+      <li><strong>Padella</strong> — Fettuccine with 'nduja, lemon, and mascarpone. Spicy, creamy, and basically pasta perfection.</li>
+      <li><strong>M&amp;S</strong> — Our Best Ever Prawn Sandwich. Yes, it's just a sandwich from a grocery store, but I loved it so much I'd happily eat it every time I land in London.</li>
     </ol>
 
-    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;font-weight:700;color:#5383c6;margin-top:1rem;">Dan's five</h2>
+    <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-size:1.7rem;font-weight:700;color:#5383c6;margin-top:1rem;">Dan's top five</h2>
     <div style="aspect-ratio:16/9;border-radius:10px;background:linear-gradient(150deg,#5383c6,#8fa8c6);overflow:hidden;">
       <img src="../images/lifestyle/london-dan-picks.jpg" alt="Dan's picks" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'">
     </div>
     <ol style="padding-left:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
-      <li><strong>Garlic Pig</strong> — sausage roll. He put it first. I put it third. This was discussed.</li>
-      <li><strong>26 Grains</strong> — whipped burrata omelette.</li>
-      <li><strong>Padella</strong> — Fettuccine with 'nduja, lemon, and mascarpone.</li>
-      <li><strong>The Black Pig</strong> — the best one. The other thing at Borough worth the crowd.</li>
-      <li><strong>Chill Since '93</strong> — peach lager. He used one of his five slots on a beer. I want that noted.</li>
+      <li><strong>Garlic Pig</strong> — sausage roll. Dan absolutely raved about this one, putting it in his number one spot (whereas I only ranked it third). It was flaky, well seasoned, and definitely worth the long line.</li>
+      <li><strong>26 Grains</strong> — whipped burrata omelette. Another dish we both loved, and honestly, I think Dan would eat this for breakfast every day if he could. There's just something about the creamy burrata with fluffy eggs that hits all the right notes.</li>
+      <li><strong>Padella</strong> — Fettuccine with 'nduja, lemon, and mascarpone. If you've never tried 'nduja in pasta, you're missing out.</li>
+      <li><strong>The Black Pig</strong> — sandwich, which Dan claims is the only other thing at Borough Market truly worth elbowing through the crowds for.</li>
+      <li><strong>Chill Since '93</strong> — peach lager. Yes, Dan used one of his precious five slots on a beer. I was a little skeptical at first, but honestly, after tasting it, I totally get why. It was light and refreshing, and the peach flavour was the perfect pick-me-up after a long day of walking.</li>
     </ol>
-
-    <p>The real split: he gave two spots to Borough Market, a place I would tell you to mostly skip, and I gave two to a breakfast restaurant and one to a supermarket. I think that says something true about both of us.</p>
 
     <div style="padding-top:1.5rem;border-top:1px solid #f0d4a8;display:flex;gap:1.5rem;flex-wrap:wrap;font-size:0.82rem;">
       <a href="48-hours-in-london.html" style="color:#5383c6;text-decoration:none;">&#8592; 48 Hours in London</a>
