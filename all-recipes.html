@@ -324,8 +324,30 @@
     <a class="nav-link" href="work-with-me.html">Work with Me</a>
     <a class="nav-link" href="lifestyle.html">Life Outside the Kitchen</a>
     <a class="nav-link" href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a>
-    <div class="mob-section"><a class="mob-plain" href="all-recipes.html">Recipes</a></div>
-    <div class="mob-section"><a class="mob-plain" href="all-series.html">Series</a></div>
+    <div class="mob-section" style="padding:0.75rem 1.5rem;border-bottom:1px solid var(--warm-tan);position:relative;">
+      <span style="position:absolute;left:2.35rem;top:50%;transform:translateY(-50%);color:var(--mid);font-size:0.85rem;pointer-events:none;opacity:0.5;">&#9906;</span>
+      <input id="mob-search-input" type="text" placeholder="Search recipes…" autocomplete="off" style="width:100%;border:1.5px solid var(--warm-tan);background:var(--parchment);border-radius:20px;padding:0.5rem 1rem 0.5rem 2.1rem;font-size:0.85rem;font-family:var(--sans);color:var(--mid);outline:none;" />
+      <div id="mob-search-results" style="display:none;position:absolute;top:calc(100% - 0.75rem + 8px);left:1.5rem;right:1.5rem;background:var(--cream);border:1px solid var(--warm-tan);border-radius:12px;z-index:600;box-shadow:0 8px 32px rgba(58,46,40,0.12);overflow:hidden;max-height:60vh;overflow-y:auto;"></div>
+    </div>
+    <div class="mob-section">
+      <button class="mob-plain" onclick="var p=document.getElementById('mob-recipes-dd');p.style.display=p.style.display==='block'?'none':'block';this.querySelector('.mob-acc-arrow').style.transform=p.style.display==='block'?'rotate(180deg)':'';" style="width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;font-family:var(--sans);">Recipes <span class="mob-acc-arrow" style="font-size:0.75rem;transition:transform 0.2s;">&#9660;</span></button>
+      <div id="mob-recipes-dd" style="display:none;background:var(--parchment);">
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--warm-tan);" href="all-recipes.html">View All Recipes</a>
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--warm-tan);" href="beverage.html">Beverage</a>
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;" href="baking.html">Baking</a>
+      </div>
+    </div>
+    <div class="mob-section">
+      <button class="mob-plain" onclick="var p=document.getElementById('mob-series-dd');p.style.display=p.style.display==='block'?'none':'block';this.querySelector('.mob-acc-arrow').style.transform=p.style.display==='block'?'rotate(180deg)':'';" style="width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;font-family:var(--sans);">Series <span class="mob-acc-arrow" style="font-size:0.75rem;transition:transform 0.2s;">&#9660;</span></button>
+      <div id="mob-series-dd" style="display:none;background:var(--parchment);">
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--warm-tan);" href="all-series.html">View All Series</a>
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--warm-tan);" href="series-world-cup.html">2026 World Cup Series</a>
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--warm-tan);" href="series-flavours.html">Flavours of My Childhood</a>
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--warm-tan);" href="series-matcha.html">Matcha Series</a>
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--warm-tan);" href="series-hojicha.html">Hojicha Series</a>
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;" href="series-holiday-cookies.html">Holiday Cookies</a>
+      </div>
+    </div>
     <div class="mob-section"><a class="mob-plain" href="about.html">About</a></div>
     <div class="mob-section"><a class="mob-plain" href="work-with-me.html">Work with Me</a></div>
     <div class="mob-section"><a class="mob-plain" href="lifestyle.html">Life Outside the Kitchen</a></div>
@@ -830,7 +852,6 @@
     {title:"Lychee Matcha Latte with Lychee Cream Cheese Foam",tag:"Matcha",url:"Recipe/lychee-matcha-latte.html"},
     {title:"Mango Matcha Latte",tag:"Matcha",url:"Recipe/mango-matcha-latte.html"},
     {title:"Mango Sago Butter Mochi Pudding",tag:"Loaf",url:"Recipe/mango-sago-mochi-pudding.html"},
-    {title:"Brown Sugar Cinnamon Pumpkin Matcha Latte",tag:"Matcha",url:"Recipe/brown-sugar-cinnamon-pumpkin-matcha-latte.html"},
     {title:"Maple Pumpkin Matcha Latte",tag:"Matcha",url:"Recipe/maple-pumpkin-matcha-latte.html"},
     {title:"Matcha Brown Butter Brookie",tag:"Matcha",url:"Recipe/matcha-brown-butter-blondie.html"},
     {title:"Matcha Butter Mochi Tang Yuan",tag:"Matcha",url:"Recipe/matcha-butter-mochi-tang-yuan.html"},
