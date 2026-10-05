@@ -283,8 +283,30 @@
     <a class="nav-link" href="../work-with-me.html">Work with Me</a>
     <a class="nav-link" href="../lifestyle.html">Life Outside the Kitchen</a>
     <a class="nav-link" href="https://instagram.com/howaboutsaturday" target="_blank" rel="noopener">Instagram &#8599;</a>
-    <div class="mob-section"><a class="mob-plain" href="../all-recipes.html">Recipes</a></div>
-    <div class="mob-section"><a class="mob-plain" href="../all-series.html">Series</a></div>
+    <div class="mob-section" style="padding:0.75rem 1.5rem;border-bottom:1px solid var(--warm-tan);position:relative;">
+      <span style="position:absolute;left:2.35rem;top:50%;transform:translateY(-50%);color:var(--mid);font-size:0.85rem;pointer-events:none;opacity:0.5;">&#9906;</span>
+      <input id="mob-search-input" type="text" placeholder="Search recipes…" autocomplete="off" style="width:100%;border:1.5px solid var(--warm-tan);background:var(--parchment);border-radius:20px;padding:0.5rem 1rem 0.5rem 2.1rem;font-size:0.85rem;font-family:var(--sans);color:var(--mid);outline:none;" />
+      <div id="mob-search-results" style="display:none;position:absolute;top:calc(100% - 0.75rem + 8px);left:1.5rem;right:1.5rem;background:var(--cream);border:1px solid var(--warm-tan);border-radius:12px;z-index:600;box-shadow:0 8px 32px rgba(58,46,40,0.12);overflow:hidden;max-height:60vh;overflow-y:auto;"></div>
+    </div>
+    <div class="mob-section">
+      <button class="mob-plain" onclick="var p=document.getElementById('mob-recipes-dd');p.style.display=p.style.display==='block'?'none':'block';this.querySelector('.mob-acc-arrow').style.transform=p.style.display==='block'?'rotate(180deg)':'';" style="width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;font-family:var(--sans);">Recipes <span class="mob-acc-arrow" style="font-size:0.75rem;transition:transform 0.2s;">&#9660;</span></button>
+      <div id="mob-recipes-dd" style="display:none;background:var(--parchment);">
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--warm-tan);" href="../all-recipes.html">View All Recipes</a>
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--warm-tan);" href="../beverage.html">Beverage</a>
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;" href="../baking.html">Baking</a>
+      </div>
+    </div>
+    <div class="mob-section">
+      <button class="mob-plain" onclick="var p=document.getElementById('mob-series-dd');p.style.display=p.style.display==='block'?'none':'block';this.querySelector('.mob-acc-arrow').style.transform=p.style.display==='block'?'rotate(180deg)':'';" style="width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;font-family:var(--sans);">Series <span class="mob-acc-arrow" style="font-size:0.75rem;transition:transform 0.2s;">&#9660;</span></button>
+      <div id="mob-series-dd" style="display:none;background:var(--parchment);">
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--warm-tan);" href="../all-series.html">View All Series</a>
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--warm-tan);" href="../series-world-cup.html">2026 World Cup Series</a>
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--warm-tan);" href="../series-flavours.html">Flavours of My Childhood</a>
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--warm-tan);" href="../series-matcha.html">Matcha Series</a>
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;border-bottom:1px solid var(--warm-tan);" href="../series-hojicha.html">Hojicha Series</a>
+        <a style="display:block;padding:0.6rem 2rem;font-size:0.82rem;color:var(--mid);text-decoration:none;" href="../series-holiday-cookies.html">Holiday Cookies</a>
+      </div>
+    </div>
     <div class="mob-section"><a class="mob-plain" href="../about.html">About</a></div>
     <div class="mob-section"><a class="mob-plain" href="../work-with-me.html">Work with Me</a></div>
     <div class="mob-section"><a class="mob-plain" href="../lifestyle.html">Life Outside the Kitchen</a></div>
@@ -362,7 +384,7 @@
 
   <div class="divider"></div>
   <h2 class="recipe-section-title">Tips &amp; Notes</h2>
-  <p style="font-size:0.92rem;line-height:1.85;color:var(--cork);margin-bottom:2rem;">Zest the orange before juicing it. The earl grey should be steeped strong use 2 tea bags for a more pronounced flavour. The glaze should be poured over while the loaf is still slightly warm so it drips down the sides beautifully.</p>
+  <p style="font-size:0.92rem;line-height:1.85;color:var(--cork);margin-bottom:2rem;">Zest the orange before juicing it. Grind the earl grey tea into as fine a powder as you can before adding it to the batter. The finer the grind, the better it incorporates and the more flavour you get. This loaf keeps well for 3 days wrapped at room temperature and the flavour deepens as it sits.</p>
 
 </div>
 
@@ -453,7 +475,7 @@
     {title:"Pandan Leche Flan Cake",tag:"Cake",url:"../Recipe/pandan-leche-flan-cake.html"},
     {title:"Peanut Butter Tea Thumbprint Cookies",tag:"Cookies",url:"../Recipe/peanut-butter-thumbprint-cookies.html"},
     {title:"Peppermint Chocolate Brownie",tag:"Cookies",url:"../Recipe/peppermint-chocolate-brownie.html"},
-    {title:"Pickle Matcha Latte (April Fools)",tag:"Matcha",url:"../Recipe/pickle-matcha-latte.html"},
+    {title:"Pickle Matcha Latte (April Fools)",tag:"Matcha",url:"../Recipe/pickle-matcha-latte.html"},{title:"Pumpkin Chai Tiramisu",tag:"Tiramisu",url:"../Recipe/pumpkin-chai-tiramisu.html"},
     {title:"Upside Down Rhubarb Pistachio Cake with Strawberry Custard",tag:"Cake",url:"../Recipe/rhubarb-pistachio-cake.html"},
     {title:"Organic Saigon Chai Gingerbread Molasses Cookies",tag:"Cookies",url:"../Recipe/saigon-chai-gingerbread-cookies.html"},
     {title:"Salted Caramel Oolong Cake",tag:"Cake",url:"../Recipe/salted-caramel-oolong-cake.html"},
@@ -565,7 +587,7 @@
     {title:"Pandan Leche Flan Cake",tag:"Cake",url:"../Recipe/pandan-leche-flan-cake.html"},
     {title:"Peanut Butter Tea Thumbprint Cookies",tag:"Cookies",url:"../Recipe/peanut-butter-thumbprint-cookies.html"},
     {title:"Peppermint Chocolate Brownie",tag:"Cookies",url:"../Recipe/peppermint-chocolate-brownie.html"},
-    {title:"Pickle Matcha Latte (April Fools)",tag:"Matcha",url:"../Recipe/pickle-matcha-latte.html"},
+    {title:"Pickle Matcha Latte (April Fools)",tag:"Matcha",url:"../Recipe/pickle-matcha-latte.html"},{title:"Pumpkin Chai Tiramisu",tag:"Tiramisu",url:"../Recipe/pumpkin-chai-tiramisu.html"},
     {title:"Upside Down Rhubarb Pistachio Cake with Strawberry Custard",tag:"Cake",url:"../Recipe/rhubarb-pistachio-cake.html"},
     {title:"Organic Saigon Chai Gingerbread Molasses Cookies",tag:"Cookies",url:"../Recipe/saigon-chai-gingerbread-cookies.html"},
     {title:"Salted Caramel Oolong Cake",tag:"Cake",url:"../Recipe/salted-caramel-oolong-cake.html"},
