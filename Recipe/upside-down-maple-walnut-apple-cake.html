@@ -170,6 +170,10 @@
   <p class="recipe-desc">There is something about the first cool weekend of fall that makes me want to turn the oven on and fill the apartment with the smell of cinnamon and maple. This cake came out of one of those Saturdays. I had a bag of apples on the counter, a bottle of maple syrup in the fridge, and a craving for something that felt like a warm sweater in cake form.</p>
   <p class="recipe-desc">The best part is the flip. You bake it with the maple walnut layer on the bottom, then turn it out onto a plate and watch that glossy, caramelized topping slowly drip down the sides. It looks like you fussed over it for hours, but it comes together with pantry staples and a single pan.</p>
 
+  <div class="video-wrap">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Dejr3eXRobg/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;padding:0;width:calc(100% - 2px);"></blockquote>
+  </div>
+
   <div class="recipe-meta">
     <span>One 9 inch round cake</span>
     <span>350°F</span>
@@ -337,6 +341,16 @@
 
 <script>
   (function(){
+    var s = document.createElement('script');
+    s.src = 'https://www.instagram.com/embed.js';
+    s.async = true;
+    s.onload = function(){ if(window.instgrm) window.instgrm.Embeds.process(); };
+    document.body.appendChild(s);
+    setTimeout(function(){ if(window.instgrm) window.instgrm.Embeds.process(); }, 2000);
+  })();
+</script>
+<script>
+  (function(){
     var h=document.getElementById('hamburger'),n=document.getElementById('nav-links');
     if(!h||!n)return;
     function u(){h.style.display=window.innerWidth<=860?'flex':'none';if(window.innerWidth>860)n.classList.remove('open');}
@@ -473,8 +487,6 @@
 })();
 </script>
 
-<!-- PSA -->
-<p style="text-align:center;font-family:'Jost',sans-serif;font-size:0.72rem;color:#b89a80;letter-spacing:0.05em;padding:1rem 1.5rem 2rem;">This page was formatted and created with the help of AI.</p>
 
 <!-- Newsletter Popup -->
 <div id="newsletter-popup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;align-items:center;justify-content:center;background:rgba(90,62,50,0.4);">
