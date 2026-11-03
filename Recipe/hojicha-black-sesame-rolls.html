@@ -89,6 +89,7 @@
     .recipe-section-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--mid); margin-bottom: 1.25rem; }
     .recipe-meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-size: 0.82rem; color: var(--mid); opacity: 0.75; margin-bottom: 2rem; }
     .recipe-meta span { display: flex; align-items: center; gap: 0.4rem; }
+    .video-wrap { max-width: 540px; margin: 0 auto 2rem; }
   </style>
 </head>
 <body>
@@ -149,6 +150,10 @@
 
   <p class="recipe-desc">Toasty hojicha, nutty black sesame and a pillowy soft dough. These rolls have everything I love about cozy fall baking. This time, I switched up my dough and added a tangzhong starter, a popular Asian baking method that keeps buns incredibly soft and fluffy, even the next day. The roasty hojicha pairs perfectly with the rich black sesame filling, and a swipe of black sesame cream cheese frosting brings it all together.</p>
   <p class="recipe-desc">Since it is spooky season, I added one last touch: jumbo marshmallow ghosts with little hand drawn faces, torched until toasty. They are completely optional, but they make these the cutest Halloween treat on the table.</p>
+
+  <div class="video-wrap">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/De-G4GGpEYF/" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;padding:0;width:calc(100% - 2px);"></blockquote>
+  </div>
 
   <div class="divider"></div>
 
@@ -333,6 +338,16 @@
     function u(){h.style.display=window.innerWidth<=860?'flex':'none';if(window.innerWidth>860)n.classList.remove('open');}
     h.addEventListener('click',function(){n.classList.toggle('open');});
     window.addEventListener('resize',u);u();
+  })();
+</script>
+<script>
+  (function(){
+    var s = document.createElement('script');
+    s.src = 'https://www.instagram.com/embed.js';
+    s.async = true;
+    s.onload = function(){ if(window.instgrm) window.instgrm.Embeds.process(); };
+    document.body.appendChild(s);
+    setTimeout(function(){ if(window.instgrm) window.instgrm.Embeds.process(); }, 2000);
   })();
 </script>
 
